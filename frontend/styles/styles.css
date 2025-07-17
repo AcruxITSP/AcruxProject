@@ -1,13 +1,23 @@
+:root
+{
+    --bg-color: #ddddff;
+    --fg-color: black;
+    --banner-fg-color: white;
+    --user-icon-bg-color: white;
+    --button-bg-color: #f4f4f4;
+    --large-text-fg-color: #444;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--fg-color);
 }
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #fff;
-    color: #000;
+    background-color: var(--bg-color);
 }
 
 header {
@@ -15,7 +25,6 @@ header {
 }
 
 .top-bar {
-    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,7 +36,6 @@ header {
 }
 
 .nav-menu a {
-    color: #000;
     margin: 0 20px;
     font-size: 16px;
     font-weight: bold;
@@ -43,7 +51,7 @@ header {
 .user-icon i {
     color: black;
     font-size: 50px;
-    background-color: #ffffff;
+    background-color: var(--user-icon-bg-color);
     border-radius: 50%;
 
 }
@@ -80,9 +88,13 @@ header {
     position: relative;
     z-index: 2;
     text-align: center;
-    color: white;
+    color: var(--banner-fg-color);
     padding: 20px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.header-text * {
+    color: var(--banner-fg-color);
 }
 
 .header-text h1 {
@@ -90,10 +102,6 @@ header {
     margin-bottom: 15px;
     font-weight: 700;
     letter-spacing: 2px;
-}
-
-.header-text .white {
-    color: white;
 }
 
 .header-text p {
@@ -119,7 +127,6 @@ header {
     gap: 30px;
     flex-wrap: wrap;
     padding: 40px;
-    background-color: #fff;
 }
 
 .recurso {
@@ -127,12 +134,11 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--button-bg-color);
     border-radius: 50px;
     padding: 20px;
     width: 250px;
     text-decoration: none;
-    color: inherit;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -144,11 +150,10 @@ header {
 
 .recurso h3 {
     font-size: 20px;
-    color: #000000;
     margin-bottom: 10px;
 }
 
 .recurso p {
     font-size: 14px;
-    color: #444;
+    color: var(--large-text-fg-color)
 }
