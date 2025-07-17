@@ -6,6 +6,10 @@
     --user-icon-bg-color: white;
     --button-bg-color: #f4f4f4;
     --large-text-fg-color: #444;
+
+    --nav-padding: 20px;
+    --nav-column-sides-size: 200px;
+    --logo-size: 60px;
 }
 
 * {
@@ -25,14 +29,21 @@ header {
 }
 
 .top-bar {
-    display: flex;
+    display: grid;
+    /* Nos aseguramos que la celda del centro este centrada al mantener los lados del grid de igual tama;o*/
+    grid-template-columns: var(--nav-column-sides-size) auto var(--nav-column-sides-size);
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: calc(var(--nav-padding)/2) var(--nav-padding);
 }
 
 .logo {
-    height: 50px;
+    height: var(--logo-size);
+    width: auto;
+}
+
+.nav-menu {
+   text-align: center;
 }
 
 .nav-menu a {
@@ -46,6 +57,10 @@ header {
 
 .nav-menu a:hover {
     color:rgb(0, 47, 255);
+}
+
+.user-icon {
+    justify-self: end;
 }
 
 .user-icon i {
@@ -64,7 +79,7 @@ header {
 .header-image {
     position: relative;
     width: 100%;
-    height: 525px;
+    height: 65vh;
     background-image: url('../img/banner.jpg');
     background-size: cover;
     background-position: center;
@@ -111,6 +126,7 @@ header {
 .logo-group {
     display: flex;
     align-items: center;
+    justify-self: start;
     gap: 10px;
 }
 
