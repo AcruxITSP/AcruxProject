@@ -1,3 +1,5 @@
+/*---------- GENERAL ----------*/
+
 :root
 {
     --bg-color: #ddddff;
@@ -8,7 +10,7 @@
     --large-text-fg-color: #444;
 
     --nav-padding: 20px;
-    --nav-column-sides-size: 70px;
+    --nav-column-sides-size: 70px;  /* Tama;o de las columnas extremas del navbar*/
     --logo-size: 60px;
 }
 
@@ -28,7 +30,9 @@ header {
     width: 100%;
 }
 
-.top-bar {
+/*---------- NAVBAR ----------*/
+
+.nav-bar {
     display: grid;
     /* Nos aseguramos que la celda del centro este centrada al mantener los lados del grid de igual tama;o*/
     grid-template-columns: var(--nav-column-sides-size) auto var(--nav-column-sides-size);
@@ -37,16 +41,31 @@ header {
     padding: calc(var(--nav-padding)/2) var(--nav-padding);
 }
 
+.logo-group {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    gap: 10px;
+}
+
 .logo {
     height: var(--logo-size);
     width: auto;
 }
 
-.nav-menu {
+/* En desuso */
+.separator {
+    width: 1px;
+    height: 50px;
+    background-color: #999;
+    margin: 0 10px;
+}
+
+.nav-links {
    text-align: center;
 }
 
-.nav-menu a {
+.nav-links a {
     margin: 0 20px;
     font-size: 14px;
     font-weight: bold;
@@ -73,10 +92,11 @@ header {
 .user-icon:hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
-.header-image {
+/*---------- BANNER ----------*/
+
+.banner {
     position: relative;
     width: 100%;
     height: 65vh;
@@ -88,7 +108,7 @@ header {
     justify-content: center;
 }
 
-.header-image::after {
+.banner::after {
     content: "";
     position: absolute;
     top: 0;
@@ -99,7 +119,7 @@ header {
     z-index: 1;
 }
 
-.header-text {
+.banner-text {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -108,34 +128,22 @@ header {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-.header-text * {
+.banner-text * {
     color: var(--banner-fg-color);
 }
 
-.header-text h1 {
+.banner-text h1 {
     font-size: 56px;
     margin-bottom: 15px;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
-.header-text p {
+.banner-text p {
     font-size: 22px;
 }
 
-.logo-group {
-    display: flex;
-    align-items: center;
-    justify-self: start;
-    gap: 10px;
-}
-
-.separator {
-    width: 1px;
-    height: 50px;
-    background-color: #999;
-    margin: 0 10px;
-}
+/*---------- RECURSOS ----------*/
 
 .recursos {
     display: flex;
