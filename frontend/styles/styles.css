@@ -87,6 +87,10 @@ header {
 
 }
 
+.nav-drop-menu {
+    display: none;
+}
+
 /*---------- BANNER ----------*/
 
 .banner {
@@ -169,6 +173,26 @@ header {
 .recurso p {
     font-size: 14px;
     color: var(--large-text-fg-color)
+}
+
+/* Celular en vertical */
+@media only screen and (max-width: 320px) {
+    .banner {
+        height: 40vh;
+    }
+
+    .user-icon {
+        display: none;
+    }
+
+    .nav-links, .nav-links a {
+        display: none;
+    }
+
+    .nav-drop-menu {
+        /* La propiedad !important prioriza esa regla de estilo por sobre las demás */
+        display: block !important;
+    }
 }
 
 @media only screen and (max-width: 480px) {
