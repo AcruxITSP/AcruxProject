@@ -171,29 +171,20 @@ header {
     color: var(--large-text-fg-color)
 }
 
-/* Celular (vertical) | 0px - 320px */
-@media only screen and (max-width: 320px) {
-    .nav-links a:active {
-        color: rgb(0, 47, 255);
+@media only screen and (max-width: 480px) {
+    .banner {
+        height: 40vh;
     }
 }
 
-/* Celular (horizontal) y tablet (vertical) | 320px - 768px */
-@media only screen and (min-width: 320px) {
-    .nav-links a:active {
-        color: rgb(0, 47, 255);
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
     }
 }
 
-/* Tablet (horizontal) | 768px - 1024px */
-@media only screen and (min-width: 768px) {
-    .nav-links a:active {
-        color: rgb(0, 47, 255);
-    }
-}
-
-/* Escritorios | + 1024px*/
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 968px) {
     .recurso:hover {
         transform: translateY(-5px);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
