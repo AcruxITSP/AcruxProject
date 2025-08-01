@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- El metodo POST permite que los datos se envien sin mostrarse en la URL, por lo que es mas seguro -->
+    <form id="logInForm" action="logIn.php" method="post">
+
+        <h5><label for="DNI">Ingrese su cédula (sin símbolos ni guion)</label></h5>
+        <input type="text" id="DNI" name="DNI" placeholder="Cédula" required>
+
+        <h5><label for="password">Ingrese su contraseña</label></h5>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+        <input type="submit" value="Ingresar">
+        
+    </form>
 </body>
 </html>
