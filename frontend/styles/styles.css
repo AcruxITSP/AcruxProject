@@ -11,7 +11,7 @@
     --large-text-fg-color: #444;
 
     --nav-padding: 20px;
-    --nav-column-sides-size: 70px;  /* Tama;o de las columnas extremas del navbar*/
+    --nav-column-sides-size: 70px;  /* Tamaño de las columnas extremas del navbar*/
     --logo-size: 60px;
 }
 
@@ -35,7 +35,7 @@ header {
 
 .nav-bar {
     display: grid;
-    /* Nos aseguramos que la celda del centro este centrada al mantener los lados del grid de igual tama;o*/
+    /* Nos aseguramos que la celda del centro este centrada al mantener los lados del grid de igual tamaño*/
     grid-template-columns: var(--nav-column-sides-size) auto var(--nav-column-sides-size);
     align-items: center;
     justify-content: space-between;
