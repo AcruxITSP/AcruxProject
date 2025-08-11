@@ -1,0 +1,225 @@
+/*---------- GENERAL ----------*/
+
+:root {
+    /* bg -> BackGround */
+    --bg-color: #ddddff;
+    /* fg -> ForeGround (color de las letras) */
+    --fg-color: black;
+    --banner-fg-color: white;
+    --user-icon-bg-color: white;
+    --button-bg-color: #f4f4f4;
+    --large-text-fg-color: #444;
+
+    --nav-padding: 20px;
+    --nav-column-sides-size: 70px;  /* Tamaño de las columnas extremas del navbar*/
+    --logo-size: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--fg-color);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+}
+
+header {
+    width: 100%;
+}
+
+/*---------- NAVBAR ----------*/
+
+.nav-bar {
+    display: grid;
+    /* Nos aseguramos que la celda del centro este centrada al mantener los lados del grid de igual tamaño*/
+    grid-template-columns: var(--nav-column-sides-size) auto var(--nav-column-sides-size);
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--nav-padding)/2) var(--nav-padding);
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    gap: 10px;
+}
+
+.logo {
+    height: var(--logo-size);
+    width: auto;
+}
+
+/* En desuso */
+.separator {
+    width: 1px;
+    height: 50px;
+    background-color: #999;
+    margin: 0 10px;
+}
+
+.nav-links {
+   text-align: center;
+}
+
+.nav-links a {
+    margin: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.user-icon {
+    justify-self: end;
+}
+
+.user-icon i {
+    color: black;
+    font-size: 40px;
+    background-color: var(--user-icon-bg-color);
+    border-radius: 50%;
+
+}
+
+.nav-drop-menu {
+    display: none;
+}
+
+/*---------- BANNER ----------*/
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    /* Capa oscura */
+    z-index: 1;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--banner-fg-color);
+    padding: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.banner-text * {
+    color: var(--banner-fg-color);
+}
+
+.banner-text h1 {
+    font-size: 56px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.banner-text p {
+    font-size: 22px;
+}
+
+/*---------- RECURSOS ----------*/
+
+.recursos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.recurso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--button-bg-color);
+    border-radius: 50px;
+    padding: 20px;
+    width: 250px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recurso h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.recurso p {
+    font-size: 14px;
+    color: var(--large-text-fg-color)
+}
+
+/* Celular en vertical */
+@media only screen and (max-width: 320px) {
+    .banner {
+        height: 40vh;
+    }
+
+    .user-icon {
+        display: none;
+    }
+
+    .nav-links, .nav-links a {
+        display: none;
+    }
+
+    .nav-drop-menu {
+        /* La propiedad !important prioriza esa regla de estilo por sobre las demás */
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .banner {
+        height: 40vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 968px) {
+    .recurso:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .user-icon:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: rgb(0, 47, 255);
+    }
+}
