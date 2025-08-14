@@ -81,7 +81,5 @@ domForm.addEventListener("submit", (e) => {
 	if(!validateDni(dni)) return;
 	if(!validatePassword(password)) return;
 
-	console.log("si, andubo");
-
 	domForm.submit();
 });
