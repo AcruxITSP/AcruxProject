@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root"; // Nombre de usuario por defecto en phpMyAdmin
 $password = ""; // Contrasena por defecto
-$dbname = "acrux_db";
+$dbname = "db_acrux";
 
 // Crear una conexion con la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
