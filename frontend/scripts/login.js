@@ -1,6 +1,6 @@
 const domDni = document.getElementById("DNI");
 const domPassword = document.getElementById("password");
-const domSubmit = document.getElementById("submit");
+const domForm = document.getElementById("logInForm");
 
 const passwordMinLen = 10;
 
@@ -68,11 +68,12 @@ function validatePassword(password)
 		showError("La contrasena tiene que tener digitos.");
 		return false;
 	}
+
 	return true;
 }
 
 
-domSubmit.addEventListener("click", (e) => {
+domForm.addEventListener("submit", (e) => {
 	let dni = domDni.value;
 	let password = domPassword.value;
 
@@ -80,5 +81,7 @@ domSubmit.addEventListener("click", (e) => {
 	if(!validateDni(dni)) return;
 	if(!validatePassword(password)) return;
 
-	showError("OK.");
+	console.log("si, andubo");
+
+	domForm.submit();
 });
