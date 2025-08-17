@@ -40,7 +40,6 @@ if ($registro->num_rows == 0){ // Si la consulta no devuelve un registro, se env
   // La funcion "fetch_assoc()" permite seleccionar el primer registro (linea) del resultado
   // Nota: Cada vez que se usa, se mueve al siguiente registro. Si no encuentra registros, devuelve un error 
   $row = $registro->fetch_assoc();
-  echo "Nombre: " . $row["Nombre"] . "<br>Apellido: " . $row["Apellido"];
 
   header("Location: " . "index.php"); // Redirige a la pagina index
 }
