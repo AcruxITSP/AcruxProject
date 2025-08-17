@@ -41,6 +41,7 @@ function validateDni(dni)
 // Retorna: Boolean, indicando si la validacion fue exitosa.
 function validatePassword(password)
 {
+
 	if(password == undefined || password == null)
 	{
 		showError("Debe ingresar una contrasena.");
