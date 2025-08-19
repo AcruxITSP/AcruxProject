@@ -19,10 +19,12 @@ if ($conn->connect_error) {
 $DNI = $_POST["DNI"];
 $password = $_POST["password"];
 
+//Buscar en la tabla Funcionarios
+
 // La funcion "prepare()" permite insertar "variables" en una query de SQL
 // Esto para mejorar la seguridad, para prevenir injection SQL
 // Estas variables se representan con "?"
-$query = $conn->prepare("SELECT * FROM Estudiante WHERE DNI = ? AND contrasena = ? ");
+$query = $conn->prepare("SELECT * FROM Funcionario WHERE DNI = ? AND contrasena = ? ");
 
 // Para asignarle los valores, se usa la funcion "bind_param()"
 // Primero se indica el tipo de dato de cada variable, en este caso usamos "ss", ya que ambas son Strings
@@ -32,16 +34,26 @@ $query->bind_param("ss", $DNI, $password);
 
 $query->execute(); // Ejecuta la consulta
 
-$registro = $query->get_result(); // El resultado de la consulta se guarda en la variable "$registro"
+$registroFun = $query->get_result(); // El resultado de la consulta se guarda en la variable "$registroFun"
 
-if ($registro->num_rows == 0){ // Si la consulta no devuelve un registro, se envia un mensaje de error
-  echo "No hubo coincidencias";
-} else {
-  // La funcion "fetch_assoc()" permite seleccionar el primer registro (linea) del resultado
-  // Nota: Cada vez que se usa, se mueve al siguiente registro. Si no encuentra registros, devuelve un error 
-  $row = $registro->fetch_assoc();
-
+if ($registroFun->num_rows == 1){ // Si la consulta no devuelve un registro, se envia un mensaje de error
+  $row = $registroFun->fetch_assoc();
   header("Location: " . "index.php"); // Redirige a la pagina index
 }
+
+//Buscar en tabla Estudiante
+
+$query = $conn->prepare("SELECT * FROM Estudiante WHERE DNI = ? AND contrasena = ? ");
+$query->bind_param("ss", $DNI, $password);
+$query->execute(); // Ejecuta la consulta
+
+$registroEs = $query->get_result(); // El resultado de la consulta se guarda en la variable "$registroFun"
+
+if ($registroEs->num_rows == 1){ // Si la consulta no devuelve un registro, se envia un mensaje de error
+  $row = $registroEs->fetch_assoc();
+  header("Location: " . "index.php"); // Redirige a la pagina index
+}
+
+echo ("ERROR: Contraseña o usuario incorrecto");
 
 $conn->close(); // Cierra la conexion con la base de datos
