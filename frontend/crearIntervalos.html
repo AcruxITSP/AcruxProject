@@ -8,18 +8,18 @@
 </head>
 
 <body>
-    <form id="formIntervalos" action="crearIntervalos.php" method="post">
-        <label>Hora entrada</label>
-        <input type="number" id="horaIn" name="horaIn">:<input type="number" id="minsIn" name="minsIn"><br><br>
+    <form id="formIntervalos" action="scriptCrearIntervalos.php" method="post">
+        <label for="horaIn">Hora entrada</label>
+        <input type="number" id="horaIn" name="horaIn" required>:<input type="number" id="minsIn" name="minsIn" required><br><br>
 
-        <label>Hora salida</label>
-        <input type="number" id="horaFin" name="horaFin">:<input type="number" id="minsFin" name="minsFin"><br><br>
+        <label for="horaFin">Hora salida</label>
+        <input type="number" id="horaFin" name="horaFin" required>:<input type="number" id="minsFin" name="minsFin" required><br><br>
 
-        <label>Duracion de cada clase</label>
-        <input type="number" id="claseDuracion" name="claseDuracion"><br><br>
+        <label for="claseDuracion">Duracion de cada clase</label>
+        <input type="number" id="claseDuracion" name="claseDuracion" required><br><br>
 
-        <label>Duracion del recreo</label>
-        <input type="number" id="recreo" name="recreo"><br><br>
+        <label for="recreo">Duracion del recreo</label>
+        <input type="number" id="recreo" name="recreo" required><br><br>
 
         <input type="submit">
     </form>
