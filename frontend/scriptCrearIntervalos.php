@@ -1,22 +1,10 @@
 <?php
-// Guardar la informacion de la base de datos en distintas variables (no necesariamente deben llamarse asi)
-$servername = "localhost";
-$username = "root"; // Nombre de usuario por defecto en phpMyAdmin
-$password = ""; // Contrasena por defecto
-$dbname = "db_acrux";
-
-// Crear una conexion con la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Revisar si no hubo algun error en la conexion
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // Aca comienza el codigo
 include 'globalFunctions.php';
 
-if (hayRegistro("Intervalo")) {
+$conn = iniciarConexion();
+
+if (hayRegistros("Intervalo")) {
     $conn->close();
     exit("ERROR: Ya hay un horario registrado");
     // Se le debe dar la opcion al usuario de sobrescribir los registros ya existentes
@@ -41,7 +29,7 @@ $horaExactaFin = $horaFin * 60 + $minsFin;
 $varTiempo = $horaExactaFin - $horaExactaIn;
 
 if ($claseDur > $varTiempo) {
-    echo "ERROR: El horario no puede tener menos de una clase al día";
+    exit("ERROR: El horario no puede tener menos de una clase al día");
 }
 
 // Verificar que el horario sea divisible segun los valores ingresados 

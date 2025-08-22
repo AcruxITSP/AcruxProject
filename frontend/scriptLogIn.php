@@ -1,19 +1,8 @@
 <?php
-// Guardar la informacion de la base de datos en distintas variables (no necesariamente deben llamarse asi)
-$servername = "localhost";
-$username = "root"; // Nombre de usuario por defecto en phpMyAdmin
-$password = ""; // Contrasena por defecto
-$dbname = "db_acrux";
-
-// Crear una conexion con la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Revisar si no hubo algun error en la conexion
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
 /* Aca comienza el codigo*/
+include 'globalFunctions.php';
+
+$conn = iniciarConexion();
 
 // Toma el valor de los campos en el formulario. NO utiliza el "id" del input, sino su atributo de "name"
 $DNI = $_POST["DNI"];

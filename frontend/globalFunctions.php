@@ -1,7 +1,53 @@
 <?php
+function iniciarConexion()
+{
+    $servername = "localhost";
+    $username = "root"; // Nombre de usuario por defecto en phpMyAdmin
+    $password = ""; // Contrasena por defecto
+    $dbname = "db_acrux";
+
+    // Crear una conexion con la base de datos
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    return $conn;
+}
+function buscarRegistro($tabla, $columna, $valor)
+{
+    global $conn;
+
+    // Identificar el tipo de dato para la funcion bind_param()
+    switch (gettype($valor)) {
+        case "integer":
+            $tipoValor = "i";
+            break;
+
+        case "string":
+            $tipoValor = "s";
+            break;
+    }
+
+    // Ejecuta la query
+    $query = $conn->prepare("SELECT * FROM $tabla WHERE $columna = ?");
+    $query->bind_param("$tipoValor", $valor);
+    $query->execute();
+
+    // El resultado de la consulta se guarda en la variable "$registroFun"
+    $registroFun = $query->get_result();
+
+    // Si la consulta no devuelve un registro, se envia un mensaje de error
+    if ($registroFun->num_rows == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 // Comprobar si hay registros en una tabla especifica
-function hayRegistro($tabla)
+function hayRegistros($tabla)
 {
     $cantidadRegistros = contarRegistros($tabla);
 
@@ -33,12 +79,12 @@ function relacionarHorario($tabla1, $tablaForan, $tabla2)
 {
     global $conn;
     // Verificar que existan registros en ambas tablas
-    if (!(hayRegistro($tabla1) || hayRegistro($tabla2))) {
+    if (!(hayRegistros($tabla1) || hayRegistros($tabla2))) {
         exit();
     }
 
     // Si la tabla con ambas claves ya tiene registros, se eliminan
-    if (hayRegistro($tablaForan)) {
+    if (hayRegistros($tablaForan)) {
         eliminarRegistros($tablaForan);
     }
 
