@@ -122,3 +122,10 @@ function resetAutoIncrement($tabla)
     $query = $conn->prepare("ALTER TABLE $tabla AUTO_INCREMENT = 1;");
     $query->execute();
 }
+
+
+function cerrarSesion(){
+    session_start();
+    session_unset();
+    session_destroy();
+}

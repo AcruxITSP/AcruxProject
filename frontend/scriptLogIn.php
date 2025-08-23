@@ -40,6 +40,13 @@ $registroEs = $query->get_result(); // El resultado de la consulta se guarda en 
 
 if ($registroEs->num_rows == 1){ // Si la consulta no devuelve un registro, se envia un mensaje de error
   $row = $registroEs->fetch_assoc();
+  
+  //session permite guardar la informacion del usuario en una variable global, 
+  //la cual esta almacenada en el servidor
+  session_start();
+  // Guardar el username, compuesto por el nombre y apellido de la persona
+  $_SESSION["username"] = $row["Nombre"] . " " . $row['Apellido'];
+  
   header("Location: " . "index.php"); // Redirige a la pagina index
 }
 

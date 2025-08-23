@@ -1,5 +1,15 @@
+<?php 
+session_start();
+// Comprobar que la sesión esté iniciada
+// Si la variable "username" no tiene valor, redirecciona al usuario a index.php
+if (!isset($_SESSION["username"])){
+  header("Location: " . "logIn.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +17,11 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
   <div class="dashboard-container">
-    
+
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
@@ -32,12 +43,16 @@
         <div class="user-dropdown">
           <div class="user-info" onclick="toggleDropdown()">
             <i class="fas fa-user-circle"></i>
-            <span>Usuario</span>
+            <?php
+            echo "<span>" . $_SESSION["username"] . "</span>";
+            ?>
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="dropdown-menu" id="dropdownMenu">
             <a href="#">Cambiar usuario</a>
-            <a href="#">Cerrar sesión</a>
+            <form action="scriptCerrarSesion.php" method="post">
+              <button id="btn-unLog" type="submit">Cerrar sesión</button>
+            </form>
           </div>
         </div>
       </header>
@@ -85,4 +100,5 @@
   </script>
 
 </body>
+
 </html>

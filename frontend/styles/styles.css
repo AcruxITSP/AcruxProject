@@ -237,6 +237,27 @@ header {
     font-size: 14px;
 }
 
+#btn-unLog {
+    color: #1f2357;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    /* Cambia los atributos del elemento de forma procedural, dentro de un cierto tiempo */
+    transition-duration: 500ms;
+}
+
+/* Al poner el mouse encima, el boton cambia*/
+#btn-unLog:hover {
+    background-color: rgb(236, 39, 39);
+    color: black;
+}
+
+
 .dropdown-menu a:hover {
     background-color: #f1f1f1;
 }
