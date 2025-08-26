@@ -22,7 +22,7 @@ foreach ($_POST as $dia => $seleccionado){
     header("Location: " . "crearIntervalos.html"); 
 }
 
-relacionarHorario("Dia", "Horario", "Intervalo");
+relacionarHorario();
 
 function insertDia($dia)
 {

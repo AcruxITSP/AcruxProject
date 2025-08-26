@@ -76,7 +76,7 @@ if (!($resto == 0)) {
     }
 }
 
-relacionarHorario("Dia", "Horario", "Intervalo");
+relacionarHorario();
 
 
 function sumarMinutos($cantidad)

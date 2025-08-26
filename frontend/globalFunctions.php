@@ -75,31 +75,31 @@ function contarRegistros($tabla)
     return $cantidadRegistros;
 }
 
-function relacionarHorario($tabla1, $tablaForan, $tabla2)
+function relacionarHorario()
 {
     global $conn;
     // Verificar que existan registros en ambas tablas
-    if (!(hayRegistros($tabla1) || hayRegistros($tabla2))) {
+    if (!(hayRegistros("dia") || hayRegistros("intervalo"))) {
         exit();
     }
 
     // Si la tabla con ambas claves ya tiene registros, se eliminan
-    if (hayRegistros($tablaForan)) {
-        eliminarRegistros($tablaForan);
+    if (hayRegistros("Hora")) {
+        eliminarRegistros("Hora");
     }
 
-    resetAutoIncrement($tablaForan);
+    resetAutoIncrement("Hora");
 
     // Se cuenta cuantos registros tiene cada tabla
-    $registrosT1 = contarRegistros($tabla1);
-    $registrosT2 = contarRegistros($tabla2);
+    $registrosT1 = contarRegistros("dia");
+    $registrosT2 = contarRegistros("intervalo");
 
     // Cada registro de la primera tabla se relaciona con cada registro de la segunda
     for ($i = 1; $i <= $registrosT1; $i++) {
 
         for ($j = 1; $j <= $registrosT2; $j++) {
 
-            $query = $conn->prepare("INSERT INTO $tablaForan (Id_$tabla1, Id_$tabla2) VALUES (?, ?);");
+            $query = $conn->prepare("INSERT INTO Hora (Id_dia, Id_intervalo) VALUES (?, ?);");
             $query->bind_param("ii", $i, $j); // "i" -> numero entero
             $query->execute();
         }
