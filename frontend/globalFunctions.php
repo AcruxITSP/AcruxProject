@@ -123,9 +123,47 @@ function resetAutoIncrement($tabla)
     $query->execute();
 }
 
-
 function cerrarSesion(){
     session_start();
     session_unset();
     session_destroy();
 }
+
+/* Solucionar esto es demasiado complejo 😬
+// Funcion para insertar un registro en una tabla cualquiera
+// "$insert" es un array asociativo que guarda el nombre de la columna y su valor correspondiente
+// Ej: "Nombre" => "Juan"
+function insertInto($tabla, $insert){
+    global $conn;
+    $columns = "";
+    $values = "";
+    $tipoValor = "";
+    $bindValues = "";
+
+    foreach ($insert as $column => $value){
+        $columns .= $column . ", ";
+        $values .= $value . ", ";
+        $bindValues .= "?, ";
+
+        switch (gettype($value)) {
+        case "integer":
+            $tipoValor .= "i";
+            break;
+
+        case "string":
+            $tipoValor .= "s";
+            break;
+    }
+    }
+
+    $columns = substr($columns, 0, -2);
+    $values = substr($values, 0, -2);
+    $bindValues = substr($bindValues, 0, -2);
+
+    $query = $conn->prepare("INSERT INTO $tabla ($columns) VALUES ($bindValues);");
+    // Cuando se pasa la variable $values, lo toma como un unico valor
+    // Es necesario utilizar punteros y la funcion "call_user_func_array()", cosa que no se
+    $query->bind_param($tipoValor, $values);
+    $query->execute();
+}
+*/

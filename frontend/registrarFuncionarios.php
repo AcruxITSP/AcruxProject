@@ -31,10 +31,9 @@
 
         <label for="password">Contraseña (Por defecto será la cédula):</label><br>
         <!-- Tal vez haya que poner una opcion para ocultar la contraseña, si es que el usuario quiere-->
-        <input type="text" id="password" name="password"><br>
+        <input type="text" id="contrasena" name="contrasena"><br>
 
         <input type="submit">
-
         
     </form>
 </body>
