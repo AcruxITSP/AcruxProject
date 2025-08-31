@@ -1,10 +1,7 @@
-<?php 
+<?php
+include 'globalFunctions.php';
 session_start();
-// Comprobar que la sesión esté iniciada
-// Si la variable "username" no tiene valor, redirecciona al usuario a index.php
-if (!isset($_SESSION["username"])){
-  header("Location: " . "logIn.html");
-}
+verificarInicioSesion();
 ?>
 
 <!DOCTYPE html>

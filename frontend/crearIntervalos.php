@@ -1,3 +1,8 @@
+<?php
+include 'globalFunctions.php';
+session_start();
+//verificarInicioSesion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

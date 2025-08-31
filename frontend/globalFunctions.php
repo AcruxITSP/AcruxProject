@@ -1,4 +1,13 @@
 <?php
+
+function verificarInicioSesion()
+{
+    // Comprobar que la sesión esté iniciada
+    // Si la variable "username" no tiene valor, redirecciona al usuario a index.php
+    if (!isset($_SESSION["username"])) {
+        header("Location: " . "logIn.php");
+    }
+}
 function iniciarConexion()
 {
     $servername = "localhost";
@@ -123,7 +132,8 @@ function resetAutoIncrement($tabla)
     $query->execute();
 }
 
-function cerrarSesion(){
+function cerrarSesion()
+{
     session_start();
     session_unset();
     session_destroy();
