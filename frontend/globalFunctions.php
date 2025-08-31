@@ -162,7 +162,7 @@ function insertInto($tabla, $insert){
 
     $query = $conn->prepare("INSERT INTO $tabla ($columns) VALUES ($bindValues);");
     // Cuando se pasa la variable $values, lo toma como un unico valor
-    // Es necesario utilizar punteros y la funcion "call_user_func_array()", cosa que no se
+    // Es necesario utilizar punteros y la funcion "call_user_func_array()"... cosa que no se
     $query->bind_param($tipoValor, $values);
     $query->execute();
 }
