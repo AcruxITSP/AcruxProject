@@ -1,5 +1,5 @@
 <?php
-include 'globalFunctions.php';
+require 'globalFunctions.php';
 //verificarInicioSesion();
 ?>
 <!DOCTYPE html>

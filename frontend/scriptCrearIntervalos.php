@@ -1,10 +1,9 @@
 <?php
 // Aca comienza el codigo
-include 'globalFunctions.php';
-
+require 'globalFunctions.php';
 $conn = iniciarConexion();
 
-if (hayRegistros("Intervalo")) {
+if (tieneRegistros("Intervalo")) {
     $conn->close();
     exit("ERROR: Ya hay un horario registrado");
     // Se le debe dar la opcion al usuario de sobrescribir los registros ya existentes

@@ -1,7 +1,6 @@
 <?php
 // Aca comienza el codigo
-include 'globalFunctions.php';
-
+require 'globalFunctions.php';
 $conn = iniciarConexion();
 
 $DNI = $_POST["DNI"];
