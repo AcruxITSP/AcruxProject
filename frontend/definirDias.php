@@ -1,46 +1,42 @@
 <?php
-// Guardar la informacion de la base de datos en distintas variables (no necesariamente deben llamarse asi)
-$servername = "localhost";
-$username = "root"; // Nombre de usuario por defecto en phpMyAdmin
-$password = ""; // Contrasena por defecto
-$dbname = "db_acrux";
+require 'globalFunctions.php';
+session_start();
+//verificarInicioSesion();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definir días de clase</title>
+</head>
+<body>
+    <form id="formDias" action="scriptDefinirDias.php" method="post">
+        <h3>Seleccione todos los días en los que se dictará clase durante la semana</h3>
 
-// Crear una conexion con la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+        <input type="checkbox" id="Lunes" name="Lunes" value="true">
+        <label for="Lunes">Lunes</label><br>
 
-// Revisar si no hubo algun error en la conexion
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+        <input type="checkbox" id="Martes" name="Martes" value="true">
+        <label for="Martes">Martes</label><br>
 
-// Aca comienza el codigo
-include 'globalFunctions.php';
+        <input type="checkbox" id="Miércoles" name="Miércoles" value="true">
+        <label for="Miércoles">Miércoles</label><br>
 
-if (hayRegistro("Dia")) {
-    $conn->close();
-    exit("ERROR: Ya hay un horario semanal registrado");
-    // Se le debe dar la opcion al usuario de sobrescribir los registros ya existentes
-}
+        <input type="checkbox" id="Jueves" name="Jueves" value="true">
+        <label for="Jueves">Jueves</label><br>
 
-// Reinicia los valores de las claves primarias para que empiecen a contar desde 1
-resetAutoIncrement("Dia");
+        <input type="checkbox" id="Viernes" name="Viernes" value="true">
+        <label for="Viernes">Viernes</label><br>
 
-foreach ($_POST as $dia => $seleccionado){
+        <input type="checkbox" id="Sábado" name="Sábado" value="true">
+        <label for="Sábado">Sábado</label><br>
 
-    if ($seleccionado === "true"){
-        insertDia($dia);
-    }
+        <input type="checkbox" id="Domingo" name="Domingo" value="true">
+        <label for="Domingo">Domingo</label><br><br>
 
-    header("Location: " . "crearIntervalos.html"); 
-}
-
-relacionarHorario("Dia", "Horario", "Intervalo");
-
-function insertDia($dia)
-{
-    global $conn;
-
-    $query = $conn->prepare("INSERT INTO Dia (Nombre) VALUES (?);");
-    $query->bind_param("s", $dia);
-    $query->execute();
-}
+        <input type="submit">
+    </form>
+    <script src="scripts/filtroDefinirDias.js"></script>
+</body>
+</html>

@@ -1,47 +1,44 @@
-<?php
-// Guardar la informacion de la base de datos en distintas variables (no necesariamente deben llamarse asi)
-$servername = "localhost";
-$username = "root"; // Nombre de usuario por defecto en phpMyAdmin
-$password = ""; // Contrasena por defecto
-$dbname = "db_acrux";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles/styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-// Crear una conexion con la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+<body class="login-page">
 
-// Revisar si no hubo algun error en la conexion
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+    <div class="login-container">
+    <!-- Formulario -->
+    <div class="login-form">
+        <h2>¡Hola!</h2>
+        <form id="logInForm" action="scriptLogIn.php" method="post">
+            <div class="input-group">
+                <i class="fa fa-id-card"></i>
+                <input type="text" name="DNI" placeholder="Cédula" required>
+            </div>
+            <div class="input-group">
+    <i class="fa fa-lock"></i>
+    <input type="password" name="password" placeholder="Contraseña" required>
+</div>
+<p class="password-info">
+    La contraseña debe tener al menos 8 caracteres, incluir mayúsculas, minúsculas, números y símbolos.
+</p>
 
-/* Aca comienza el codigo*/
+            <input id="btn-submit" type="submit" value="Ingresar">
+      </form>
+    </div>
 
-// Toma el valor de los campos en el formulario. NO utiliza el "id" del input, sino su atributo de "name"
-$DNI = $_POST["DNI"];
-$password = $_POST["password"];
+    <!-- Información lateral -->
+    <div class="login-info">
+        <h3>¡Bienvenido de nuevo!</h3>
+        <p>Ingresa tus datos para acceder a tu cuenta.</p>
+    </div>
+</div>
 
-// La funcion "prepare()" permite insertar "variables" en una query de SQL
-// Esto para mejorar la seguridad, para prevenir injection SQL
-// Estas variables se representan con "?"
-$query = $conn->prepare("SELECT * FROM Estudiante WHERE DNI = ? AND contrasena = ? ");
-
-// Para asignarle los valores, se usa la funcion "bind_param()"
-// Primero se indica el tipo de dato de cada variable, en este caso usamos "ss", ya que ambas son Strings
-// Luego, se indica la variable de la que se va a tomar el valor.
-// Nota: Todo se debe separar con comas (,) y debe estar puesto en orden (de izquierda a derecha)
-$query->bind_param("ss", $DNI, $password);
-
-$query->execute(); // Ejecuta la consulta
-
-$registro = $query->get_result(); // El resultado de la consulta se guarda en la variable "$registro"
-
-if ($registro->num_rows == 0){ // Si la consulta no devuelve un registro, se envia un mensaje de error
-  echo "No hubo coincidencias";
-} else {
-  // La funcion "fetch_assoc()" permite seleccionar el primer registro (linea) del resultado
-  // Nota: Cada vez que se usa, se mueve al siguiente registro. Si no encuentra registros, devuelve un error 
-  $row = $registro->fetch_assoc();
-
-  header("Location: " . "index.php"); // Redirige a la pagina index
-}
-
-$conn->close(); // Cierra la conexion con la base de datos
+    <script src="scripts/filtroLogin.js"></script>
+</body>
+</html>

@@ -1,129 +1,34 @@
 <?php
-// Guardar la informacion de la base de datos en distintas variables (no necesariamente deben llamarse asi)
-$servername = "localhost";
-$username = "root"; // Nombre de usuario por defecto en phpMyAdmin
-$password = ""; // Contrasena por defecto
-$dbname = "db_acrux";
+require 'globalFunctions.php';
+session_start();
+//verificarInicioSesion();
+?>
+<!DOCTYPE html>
+<html lang="en">
 
-// Crear una conexion con la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Horarios</title>
+</head>
 
-// Revisar si no hubo algun error en la conexion
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+<body>
+    <form id="formIntervalos" action="scriptCrearIntervalos.php" method="post">
+        <label for="horaIn">Hora entrada</label>
+        <input type="number" id="horaIn" name="horaIn" required>:<input type="number" id="minsIn" name="minsIn" required><br><br>
 
-// Aca comienza el codigo
-include 'globalFunctions.php';
+        <label for="horaFin">Hora salida</label>
+        <input type="number" id="horaFin" name="horaFin" required>:<input type="number" id="minsFin" name="minsFin" required><br><br>
 
-if (hayRegistro("Intervalo")) {
-    $conn->close();
-    exit("ERROR: Ya hay un horario registrado");
-    // Se le debe dar la opcion al usuario de sobrescribir los registros ya existentes
-}
+        <label for="claseDuracion">Duracion de cada clase</label>
+        <input type="number" id="claseDuracion" name="claseDuracion" required><br><br>
 
-// Reinicia los valores de las claves primarias para que empiecen a contar desde 1
-resetAutoIncrement("Intervalo");
+        <label for="recreo">Duracion del recreo</label>
+        <input type="number" id="recreo" name="recreo" required><br><br>
 
-// Tomar los valores del formulario
-$horaIn = $_POST["horaIn"];
-$minsIn = $_POST["minsIn"];
-$horaFin = $_POST["horaFin"];
-$minsFin = $_POST["minsFin"];
-$claseDur = $_POST["claseDuracion"];
-$recreo = $_POST["recreo"];
+        <input type="submit">
+    </form>
+    <script src="scripts/filtroCrearIntervalos.js"></script>
+</body>
 
-// Pasar las horas a su valor en minutos 
-$horaExactaIn = $horaIn * 60 + $minsIn;
-$horaExactaFin = $horaFin * 60 + $minsFin;
-
-// Calcular la variacion de tiempo en minutos 
-$varTiempo = $horaExactaFin - $horaExactaIn;
-
-if ($claseDur > $varTiempo) {
-    echo "ERROR: El horario no puede tener menos de una clase al día";
-}
-
-// Verificar que el horario sea divisible segun los valores ingresados 
-$resto = ($varTiempo + $recreo) % ($claseDur + $recreo);
-
-if (!($resto == 0)) {
-    echo "El horario no es divisible D:";
-
-    /* DARLE LA OPCION DE QUITAR EL EXCEDENTE AL USUARIO */
-
-} else {
-    // Calcular cuantos intervalos caben en un dia
-    $cantHoras = ($varTiempo + $recreo) / ($claseDur + $recreo);
-    echo "El horario tendra $cantHoras horas <br>";
-
-    $horaEntrada = $horaIn;
-    $minEntrada = $minsIn;
-
-    $horaSalida = $horaIn;
-    $minSalida = $minsIn;
-
-    // Ingresar los intervalos a la BD (Se excluyen los tiempos de recreo)
-    for ($i = 1; $i <= $cantHoras; $i++) {
-        // Se calcula a qué hora terminará el intervalo
-        sumarMinutos($claseDur);
-
-        // Junta las horas con los minutos en un String
-        $timeEntrada = toTime($horaEntrada, $minEntrada);
-        $timeSalida = toTime($horaSalida, $minSalida);
-
-        // Ingresa el registro en la base de datos
-        insertIntervalo();
-
-        // Devuelve las horas y minutos a su valor numerico
-        $horaSalida = (int) $horaSalida;
-        $minSalida = (int) $minSalida;
-
-        // Se agrega el tiempo de recreo a la hora de salida
-        sumarMinutos($recreo);
-
-        // La hora de salida del intervalo anterior se convierte en la hora de entrada del siguiente
-        $horaEntrada = $horaSalida;
-        $minEntrada = $minSalida;
-    }
-}
-
-relacionarHorario("Dia", "Horario", "Intervalo");
-
-
-function sumarMinutos($cantidad)
-{
-    global $minSalida, $horaSalida;
-
-    $minSalida += $cantidad;
-
-    // Cuando se alcanzan los 60 minutos, se suma 1 hora
-    while ($minSalida >= 60) {
-        $horaSalida += 1;
-        $minSalida -= 60;
-    }
-}
-
-function addZero($numero)
-{
-    // "str_pad()" permite agregarle caracteres a un string hasta que se alcanze una cierta longitud
-    $numeroTexto = str_pad($numero, 2, "0");
-    return $numeroTexto;
-}
-
-function toTime($hora, $minuto)
-{
-    addZero($minuto);
-    $hora = (string) $hora;
-
-    return "$hora:$minuto";
-}
-
-function insertIntervalo()
-{
-    global $conn, $timeEntrada, $timeSalida;
-
-    $query = $conn->prepare("INSERT INTO Intervalo (Entrada, Salida) VALUES (?, ?);");
-    $query->bind_param("ss", $timeEntrada, $timeSalida);
-    $query->execute();
-}
+</html>
