@@ -1,5 +1,5 @@
 <?php
-require 'globalFunctions.php';
+require 'scriptsPhp/globalFunctions.php';
 session_start();
 //verificarInicioSesion();
 ?>
@@ -11,7 +11,8 @@ session_start();
     <title>Definir días de clase</title>
 </head>
 <body>
-    <form id="formDias" action="scriptDefinirDias.php" method="post">
+    <!-- Nota: Hay que poner un filtro para que el usuario este obligado a seleccionar al menos 1 dia -->
+    <form id="formDias" action="scriptsPhp/scriptDefinirDias.php" method="post">
         <h3>Seleccione todos los días en los que se dictará clase durante la semana</h3>
 
         <input type="checkbox" id="Lunes" name="Lunes" value="true">

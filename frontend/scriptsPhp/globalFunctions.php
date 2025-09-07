@@ -1,4 +1,5 @@
 <?php
+// @collapse
 $conn = iniciarConexion();
 
 // Crear un nuevo objeto de tipo mysqli y retornarlo
@@ -22,6 +23,7 @@ function iniciarConexion()
 // Traer todos los registros de una tabla cualquiera y ordenarlos segun un valor especifico
 // El resultado se guardara en la variable "$registros" para luego ser retornada
 // Nota: Se ordenan de mayor a menor
+
 function fetchAllRegisters($tabla, $atributoOrdenador)
 {
     global $conn;
@@ -37,6 +39,7 @@ function fetchAllRegisters($tabla, $atributoOrdenador)
 // Buscar toda la informacion de los funcionarios que esten registrados en la tabla de un cierto rol
 // El resultado se guardara en la variable "$registros" para luego ser retornada
 // Nota: No se puede usar "Funcionario" como argumento
+
 function fetchRole($rol)
 {
     global $conn;
@@ -84,6 +87,7 @@ function fetchEstudiante()
 // "listarUsuario(nombreTabla)" crea un elemento "tabla" de HTMl, en la que se muestran los registros de 
 // cada persona registrada en la tabla indicada, mostrando su cedula, nombre, apellido y una columna que
 // permite seleccionarlas a traves de un input de tipo checkbox
+
 function listarUsuario($tabla)
 {
     $tabla = strtolower($tabla);
@@ -127,7 +131,7 @@ function verificarInicioSesion()
     // Comprobar que la sesión esté iniciada
     // Si la variable "username" no tiene valor, redirecciona al usuario a index.php
     if (!isset($_SESSION["username"])) {
-        header("Location: " . "logIn.php");
+        header("Location: " . "../logIn.php");
     }
 }
 function buscarRegistro($tabla, $columna, $valor)
@@ -253,6 +257,7 @@ function relacionarHorario()
 // Funcion para insertar un registro en cualquier tabla
 // "$insert" es un array asociativo que guarda el nombre de cada columna en la tabla junto a su valor correspondiente
 // Ej: "Nombre" => "Juan"
+
 function insertInto($tabla, $insert)
 {
     global $conn;

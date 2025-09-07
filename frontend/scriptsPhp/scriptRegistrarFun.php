@@ -7,14 +7,14 @@ $DNI = $_POST["DNI"];
 $nombre = $_POST["nombre"];
 $apellido = $_POST["apellido"];
 $email = $_POST["email"];
-$password = $_POST["password"];
+$contrasena = $_POST["contrasena"];
 
 if (empty($email)){
     $email == NULL;
 }
 
-if (empty($password)) {
-    $password = $DNI;
+if (empty($contrasena)) {
+    $contrasena = $DNI;
 }
 
 if (buscarRegistro("Funcionario", "DNI", $DNI) == true) {
@@ -33,7 +33,7 @@ if (buscarRegistro("Funcionario", "DNI", $DNI) == true) {
 }
 
 $query = $conn->prepare("INSERT INTO Funcionario (nombre, apellido, DNI, email, contrasena) VALUES (?, ?, ?, ?, ?);");
-$query->bind_param("sssss", $nombre, $apellido, $DNI, $email, $password);
+$query->bind_param("sssss", $nombre, $apellido, $DNI, $email, $contrasena);
 $query->execute();
 
 echo "Funcionario registrado";

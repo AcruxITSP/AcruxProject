@@ -1,5 +1,5 @@
 <?php
-require 'globalFunctions.php';
+require 'scriptsPhp/globalFunctions.php';
 session_start();
 //verificarInicioSesion();
 ?>
@@ -13,7 +13,7 @@ session_start();
 </head>
 
 <body>
-    <form id="formIntervalos" action="scriptCrearIntervalos.php" method="post">
+    <form id="formIntervalos" action="scriptsPhp/scriptCrearIntervalos.php" method="post">
         <label for="horaIn">Hora entrada</label>
         <input type="number" id="horaIn" name="horaIn" required>:<input type="number" id="minsIn" name="minsIn" required><br><br>
 

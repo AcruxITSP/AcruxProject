@@ -1,5 +1,5 @@
 <?php
-require 'globalFunctions.php';
+require 'scriptsPhp/globalFunctions.php';
 session_start();
 verificarInicioSesion();
 ?>
@@ -47,7 +47,7 @@ verificarInicioSesion();
           </div>
           <div class="dropdown-menu" id="dropdownMenu">
             <a href="#">Cambiar usuario</a>
-            <form action="scriptCerrarSesion.php" method="post">
+            <form action="scriptsPhp/scriptCerrarSesion.php" method="post">
               <button id="btn-unLog" type="submit">Cerrar sesión</button>
             </form>
           </div>
