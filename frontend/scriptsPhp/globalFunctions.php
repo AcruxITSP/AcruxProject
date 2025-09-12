@@ -1,5 +1,6 @@
 <?php
 // @collapse
+
 $conn = iniciarConexion();
 
 // Crear un nuevo objeto de tipo mysqli y retornarlo
@@ -113,7 +114,7 @@ function listarUsuario($tabla)
         </tr>
     <?php
 
-    for ($i = 0; $i < $registros->num_rows; $i++) {
+    for ($i = 1; $i <= $registros->num_rows; $i++) {
         $row = $registros->fetch_assoc();
         echo "<tr>";
         echo "<td class='DNI'><label for='fun$i'>" . $row['DNI'] . "</label></td>";
