@@ -100,8 +100,22 @@ CREATE TABLE Grupo (
     Id_grupo TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Designacion VARCHAR(15) NOT NULL,
     Curso VARCHAR(100) NOT NULL,
-    Id_adscripta TINYINT UNSIGNED NOT NULL
+    Id_adscripta TINYINT UNSIGNED NOT NULL,
+    Id_curso TINYINT UNSIGNED NOT NULL
 );
+
+
+CREATE TABLE Curso (
+    Id_curso TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(100) NOT NULL,
+    DuracionAnios TINYINT UNSIGNED NOT NULL
+);
+
+
+CREATE TABLE Materia_Curso (
+    Id_materia SMALLINT UNSIGNED NOT NULL,
+    Id_curso TINYINT UNSIGNED NOT NULL
+)
 
 
 CREATE TABLE Estudiante (
@@ -305,6 +319,10 @@ ALTER TABLE Hora ADD CONSTRAINT fk_hora__intervalo FOREIGN KEY (Id_intervalo) RE
 ALTER TABLE Hora ADD CONSTRAINT fk_hora__dia FOREIGN KEY (Id_dia) REFERENCES Dia (Id_dia) ON DELETE CASCADE;
 
 ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__adscripta FOREIGN KEY (Id_adscripta) REFERENCES Adscripta (Id_adscripta);
+ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso);
+
+ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__materia FOREIGN KEY (Id_materia) REFERENCES Materia (Id_materia) ON DELETE CASCADE;
+ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE CASCADE;
 
 ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo);
 
