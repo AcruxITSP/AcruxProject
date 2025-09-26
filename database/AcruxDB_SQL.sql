@@ -25,7 +25,7 @@ CREATE TABLE Telefono_Funcionario (
 
 CREATE TABLE Turno (
     Id_turno TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Turno VARCHAR(20)
+    Turno ENUM('Diurno', 'Matutino', 'Vespertino', 'Nocturno') DEFAULT 'Diurno' NOT NULL
 );
 
 
