@@ -45,6 +45,10 @@ require 'scriptsPhp/globalFunctions.php';
 
         <input type="submit">
     </form>
+    <br>
+    <a href="reservasAulas.php">Reservar un aula</a>
+    <br><br>
+    <a href="menuRecursos.php">Volver</a>
 </body>
 
 </html>

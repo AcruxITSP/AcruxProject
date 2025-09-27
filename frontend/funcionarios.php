@@ -38,8 +38,19 @@ require 'scriptsPhp/globalFunctions.php';
         <input type="text" id="contrasena" name="contrasena"><br>
 
         <input type="submit">
-        
+
     </form>
+    <br><br>
+    <h3>Ver el horario de un funcionario (aun no implementado)</h3>
+    <form id="form-FunSelect" method="get">
+        <?php
+        listarUsuario("Funcionario");
+        ?>
+
+        <input type="submit">
+    </form>
+    <br>
+    <a href="menurecursos.php">Volver</a>
 </body>
 
 </html>
