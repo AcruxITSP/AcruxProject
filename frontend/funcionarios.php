@@ -1,5 +1,5 @@
 <?php
-require 'globalFunctions.php';
+require 'scriptsPhp/globalFunctions.php';
 //verificarInicioSesion();
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ require 'globalFunctions.php';
             margin-bottom: 1rem;
         }
     </style>
-    <form id="registFun-Form" action="scriptRegistrarFun.php" method="post" target="_self">
+    <form id="registFun-Form" action="scriptsPhp/scriptRegistrarFun.php" method="post" target="_self">
 
         <h3>Registrar Funcionarios</h3>
 
@@ -33,13 +33,24 @@ require 'globalFunctions.php';
         <label for="email">Email (No es obligatorio):</label><br>
         <input type="email" id="email" name="email"><br>
 
-        <label for="password">Contraseña (Por defecto será la cédula):</label><br>
+        <label for="contrasena">Contraseña (Por defecto será la cédula):</label><br>
         <!-- Tal vez haya que poner una opcion para ocultar la contraseña, si es que el usuario quiere-->
         <input type="text" id="contrasena" name="contrasena"><br>
 
         <input type="submit">
-        
+
     </form>
+    <br><br>
+    <h3>Ver el horario de un funcionario (aun no implementado)</h3>
+    <form id="form-FunSelect" method="get">
+        <?php
+        listarUsuario("Funcionario");
+        ?>
+
+        <input type="submit">
+    </form>
+    <br>
+    <a href="menurecursos.php">Volver</a>
 </body>
 
 </html>

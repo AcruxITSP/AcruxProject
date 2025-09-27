@@ -18,7 +18,7 @@ foreach ($_POST as $dia => $seleccionado){
         insertDia($dia);
     }
 
-    header("Location: " . "crearIntervalos.html"); 
+    header("Location: " . "../crearIntervalos.php"); 
 }
 
 relacionarHorario();

@@ -1,5 +1,5 @@
 <?php
-require 'globalFunctions.php';
+require 'scriptsPhp/globalFunctions.php';
 //verificarInicioSesion();
 ?>
 <!DOCTYPE html>
@@ -17,12 +17,12 @@ require 'globalFunctions.php';
             margin-bottom: 1rem;
         }
     </style>
-    <form id="ingresarAulas-Form" action="scriptRegistrarAulas.php" method="post">
+    <form id="ingresarAulas-Form" action="scriptsPhp/scriptRegistrarAulas.php" method="post">
 
         <h3>Registrar Aulas</h3>
 
         <label for="codigo">Código:</label><br>
-        <input type="text" id="codigo" name="codigo"><br>
+        <input type="text" id="codigo" name="codigo" required><br>
 
         <label>Piso:</label><br>
         <select name="piso" required>
@@ -37,6 +37,7 @@ require 'globalFunctions.php';
             <option value="Laboratorio">Laboratorio</option>
             <option value="Taller">Taller</option>
             <option value="Aula Informatica">Aula Informática</option>
+            <option value="General">Otro (Aun no implementado)</option>
         </select><br>
 
         <label for="cantidadSillas">Capacidad (cantidad de sillas):</label><br>
@@ -44,6 +45,10 @@ require 'globalFunctions.php';
 
         <input type="submit">
     </form>
+    <br>
+    <a href="reservasAulas.php">Reservar un aula</a>
+    <br><br>
+    <a href="menuRecursos.php">Volver</a>
 </body>
 
 </html>
