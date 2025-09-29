@@ -1,5 +1,5 @@
 <?php
-require 'globalFunctions.php';
+require 'scriptsPhp/globalFunctions.php';
 session_start();
 verificarInicioSesion();
 ?>
@@ -31,10 +31,12 @@ verificarInicioSesion();
         <button class="close-btn" onclick="toggleSidebar()">&times;</button>
       </div>
       <nav class="sidebar-nav">
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-info-circle"></i> Información</a>
-        <a href="#"><i class="fas fa-book"></i> Recursos</a>
-        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+        <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
+        <a href="infoPage.php"><i class="fas fa-info-circle"></i> Información</a>
+        <a href="menuRecursos.php"><i class="fas fa-book"></i> Recursos</a>
+        <a href="contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
+        <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a>
+        <a href="parteDiario.php"><i class="fas fa-list"></i> Parte Diario</a>
       </nav>
     </aside>
 
@@ -55,8 +57,9 @@ verificarInicioSesion();
             <i class="fas fa-caret-down"></i>
           </div>
           <div class="dropdown-menu" id="dropdownMenu">
-            <a href="#">Cambiar usuario</a>
-            <form action="scriptCerrarSesion.php" method="post">
+            <a href="myAccount.php">Mi cuenta</a>
+            <a href="configuracion.php">Configuración</a>
+            <form action="scriptsPhp/scriptCerrarSesion.php" method="post">
               <button id="btn-unLog" type="submit">Cerrar sesión</button>
             </form>
           </div>
