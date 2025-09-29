@@ -24,7 +24,6 @@ verificarInicioSesion();
             </div>
             <nav class="sidebar-nav">
                 <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
-                <a href="infoPage.php"><i class="fas fa-info-circle"></i> Información</a>
                 <a href="menuRecursos.php"><i class="fas fa-book"></i> Recursos</a>
                 <a href="contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
                 <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a>
