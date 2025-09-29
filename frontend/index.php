@@ -17,12 +17,18 @@ verificarInicioSesion();
 
 <body>
 
+  <!-- Botón hamburguesa -->
+  <button class="hamburger" onclick="toggleSidebar()">
+  <img src="img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+</button>
+
   <div class="dashboard-container">
 
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h2>ITSP</h2>
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
       </div>
       <nav class="sidebar-nav">
         <a href="#"><i class="fas fa-home"></i> Inicio</a>
@@ -31,6 +37,9 @@ verificarInicioSesion();
         <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
       </nav>
     </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
     <!-- Contenido principal -->
     <main class="main-content">
@@ -62,7 +71,7 @@ verificarInicioSesion();
       <!-- Tarjetas informativas -->
       <section class="card-section">
         <div class="card">
-          <h3>3450</h3>
+          <h3>450</h3>
           <p>Estudiantes</p>
         </div>
         <div class="card">
@@ -81,20 +90,8 @@ verificarInicioSesion();
     </main>
   </div>
 
-  <!-- Script para el dropdown -->
-  <script>
-    function toggleDropdown() {
-      const dropdown = document.getElementById('dropdownMenu');
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    }
-
-    window.addEventListener('click', function(e) {
-      const dropdown = document.getElementById('dropdownMenu');
-      if (!e.target.closest('.user-dropdown')) {
-        dropdown.style.display = 'none';
-      }
-    });
-  </script>
+<script src="scripts/menuHamburgesa.js"></script>
+<script src="scripts/dropdownMenu.js"></script>
 
 </body>
 
