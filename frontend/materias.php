@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Materias</h2>
-    <p>Aca va a haber una lista con las materias</p>
+    <p>Aca va a haber una lista con las materias segun el programa</p>
     <br>
     <a href="menuRecursos.php">Volver</a>
 </body>
