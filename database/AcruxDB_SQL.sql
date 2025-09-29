@@ -99,7 +99,6 @@ CREATE TABLE Noticia_Etiqueta (
 CREATE TABLE Grupo (
     Id_grupo TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Designacion VARCHAR(15) NOT NULL,
-    Curso VARCHAR(100) NOT NULL,
     Id_adscripta TINYINT UNSIGNED NOT NULL,
     Id_curso TINYINT UNSIGNED NOT NULL
 );
@@ -115,7 +114,7 @@ CREATE TABLE Curso (
 CREATE TABLE Materia_Curso (
     Id_materia SMALLINT UNSIGNED NOT NULL,
     Id_curso TINYINT UNSIGNED NOT NULL
-)
+);
 
 
 CREATE TABLE Estudiante (
@@ -173,6 +172,7 @@ CREATE TABLE Bloque (
     Id_aula TINYINT UNSIGNED NOT NULL,
     Id_hora TINYINT UNSIGNED NOT NULL
 );
+
 
 CREATE TABLE Reserva (
     Id_reserva SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -382,6 +382,19 @@ VALUES
 ('Inglés Técnico II'),
 ('Programación Full Stack');
 
+INSERT INTO Curso (nombre, DuracionAnios)
+VALUES
+('Informática Bilingüe', 3),
+('Informática', 3);
+
+INSERT INTO Materia_Curso (Id_materia, Id_curso)
+VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(1, 2),
+(2, 2),
+(3, 2);
 
 INSERT INTO Funcionario (Nombre, Apellido, DNI, Email, Contrasena)
 VALUES
@@ -446,10 +459,10 @@ VALUES
 (10);
 
 
-INSERT INTO Grupo (Designacion, Curso, Id_adscripta)
+INSERT INTO Grupo (Designacion, Id_adscripta, Id_curso)
 VALUES
-('3ro MD', 'Informática bilingüe', 2),
-('2do MR', 'Informática', 1);
+('3ro MD', 2, 2),
+('2do MR', 1, 1);
 
 
 INSERT INTO Estudiante (nombre, apellido, DNI, Email, Contrasena, Id_grupo)
