@@ -5,8 +5,7 @@ verificarInicioSesion();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,22 +13,25 @@ verificarInicioSesion();
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-    <style>
-        a:not(.sidebar-nav a){
-            margin-right: 1rem;
-        }
-    </style>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Botón hamburguesa -->
+    <button class="hamburger" onclick="toggleSidebar()">
+        <img src="img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+    </button>
+
     <div class="dashboard-container">
+
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h2>ITSP</h2>
+                <button class="close-btn" onclick="toggleSidebar()">&times;</button>
             </div>
             <nav class="sidebar-nav">
                 <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
-                <a href="infoPage.php"><i class="fas fa-info-circle"></i> Información</a>
                 <a href="menuRecursos.php"><i class="fas fa-book"></i> Recursos</a>
                 <a href="contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
                 <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a>
@@ -40,14 +42,13 @@ verificarInicioSesion();
         <!-- Contenido principal -->
         <main class="main-content">
 
-            <!-- Top Header con dropdown -->
-            <header class="main-header">
+            <!-- Header usuario + título -->
+            <div class="header">
+                <h1>Recursos ITSP</h1>
                 <div class="user-dropdown">
                     <div class="user-info" onclick="toggleDropdown()">
                         <i class="fas fa-user-circle"></i>
-                        <?php
-                        echo "<span>" . $_SESSION["username"] . "</span>";
-                        ?>
+                        <?php echo "<span>" . $_SESSION["username"] . "</span>"; ?>
                         <i class="fas fa-caret-down"></i>
                     </div>
                     <div class="dropdown-menu" id="dropdownMenu">
@@ -58,22 +59,44 @@ verificarInicioSesion();
                         </form>
                     </div>
                 </div>
-            </header>
+            </div>
 
-            <h2>Recursos</h2>
-            <br>
-            <a href="planillaHorario.php">Planilla de horario</a>
-            <a href="materias.php">Materias</a>
-            <a href="cursos.php">Cursos</a>
-            <a href="grupos.php">Grupos</a>
-            <a href="aulas.php">Aulas</a>
-            <a href="recursosAulas.php">Recursos de las aulas</a>
-            <a href="funcionarios.php">Funcionarios</a>
+            <!-- Tarjetas de recursos -->
+            <div class="resources-container">
+                <div class="resource-card">
+                    <i class="fas fa-calendar-days icon-card"></i>
+                    <a href="planillaHorario.php">Planilla de Horario</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-book icon-card"></i>
+                    <a href="materias.php">Materias</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-graduation-cap icon-card"></i>
+                    <a href="cursos.php">Cursos</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-users icon-card"></i>
+                    <a href="grupos.php">Grupos</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-chalkboard icon-card"></i>
+                    <a href="aulas.php">Aulas</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-laptop icon-card"></i>
+                    <a href="recursosAulas.php">Recursos de Aulas</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-user-tie icon-card"></i>
+                    <a href="funcionarios.php">Funcionarios</a>
+                </div>
+            </div>
+
         </main>
     </div>
 
-    <!-- Script para el dropdown -->
     <script src="scripts/indexDropMenu.js"></script>
+    <script src="scripts/menuHamburgesa.js"></script>
 </body>
-
 </html>
