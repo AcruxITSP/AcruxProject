@@ -2,10 +2,10 @@
 include_once '../db/db_errors.php';
 include_once 'base_model.php';
 
-enum TurnoGrupoError : string
+enum MateriaCursoError : string
 {
-    case NOT_FOUND = "TURNOGRUPO_NOT_FOUND";
-    case UNKNOWN_DUPLICATE = "TURNOGRUPO_UNKNOWN_DUPLICATE";
+    case NOT_FOUND = "MATERIACURSO_NOT_FOUND";
+    case UNKNOWN_DUPLICATE = "MATERIACURSO_UNKNOWN_DUPLICATE";
 	
 }
 
@@ -17,7 +17,7 @@ enum TurnoGrupoError : string
 *
 * Cualquier operación que acepte un blob como entrada esperará un binario sin procesar.
 */
-class TurnoGrupo extends BaseModel
+class MateriaCurso extends BaseModel
 {
     /**
     * Esta constante se utiliza para indicar que una operación INSERT debe
@@ -25,30 +25,30 @@ class TurnoGrupo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "01999b0e-df0d-7bdd-8731-80963c7d603e";
+    const SQL_DEFAULT = "01999b0e-df2a-7e1f-8ee1-6e7935722293";
 
     protected mysqli $con;
-	public int $idTurno;
-	public int $idGrupo;
+	public int $idMateria;
+	public int $idCurso;
 
 	/**
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, int $idTurno, int $idGrupo)
+	protected function __construct(mysqli $con, int $idMateria, int $idCurso)
 	{
 	    $this->con = $con;
-		$this->idTurno = $idTurno;
-		$this->idGrupo = $idGrupo;
+		$this->idMateria = $idMateria;
+		$this->idCurso = $idCurso;
 	}
 
 	#region CREATE
 	/** 
-	* Crea un nuevo TurnoGrupo en la base de datos.
+	* Crea un nuevo MateriaCurso en la base de datos.
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, int $idTurno, int $idGrupo) : TurnoGrupo|TurnoGrupoError|ErrorDB
+	public static function create(mysqli $con, int $idMateria, int $idCurso) : MateriaCurso|MateriaCursoError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;
@@ -57,16 +57,16 @@ class TurnoGrupo extends BaseModel
 	    $values = [];
 	    $types = "";
 	
-		// Añade 'Id_turno' para la consulta de inserción SQL.
-		$columns[] = "Id_turno";
+		// Añade 'Id_materia' para la consulta de inserción SQL.
+		$columns[] = "Id_materia";
 		$placeholders[] = "?";
-		$values[] = $idTurno;
+		$values[] = $idMateria;
 		$types .= 'i';
 		
-		// Añade 'Id_grupo' para la consulta de inserción SQL.
-		$columns[] = "Id_grupo";
+		// Añade 'Id_curso' para la consulta de inserción SQL.
+		$columns[] = "Id_curso";
 		$placeholders[] = "?";
-		$values[] = $idGrupo;
+		$values[] = $idCurso;
 		$types .= 'i';
 	    
 	    // Si no hay columnas que insertar, informe este problema.
@@ -75,7 +75,7 @@ class TurnoGrupo extends BaseModel
 	    }
 	
 	    // Preparacion
-	    $sql = "INSERT INTO Turno_Grupo (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
+	    $sql = "INSERT INTO Materia_Curso (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
@@ -91,27 +91,27 @@ class TurnoGrupo extends BaseModel
 	        return ErrorDB::EXECUTE;
 	    }
 	
-	    // TurnoGrupo se ha creado exitosamente.
+	    // MateriaCurso se ha creado exitosamente.
 	    $stmt->close();
-	    return self::getByFKs($con, $idTurno, $idGrupo);
+	    return self::getByFKs($con, $idMateria, $idCurso);
 	}
 	#endregion
 	
 	
 	#region GET
 	/**
-	* Obtiene un 'TurnoGrupo' de la base de datos identificando 'TurnoGrupo' por sus claves externas como una clave compuesta. 
+	* Obtiene un 'MateriaCurso' de la base de datos identificando 'MateriaCurso' por sus claves externas como una clave compuesta. 
 	* Take into account that any attribute of type BLOB will store the base64 encoding of the blob.
 	*/
-	public static function getByFKs(mysqli $con, int $idTurno, int $idGrupo) : TurnoGrupo|TurnoGrupoError|ErrorDB
+	public static function getByFKs(mysqli $con, int $idMateria, int $idCurso) : MateriaCurso|MateriaCursoError|ErrorDB
 	{
 	    // Preparacion
-	    $sql = "SELECT * FROM Turno_Grupo WHERE Id_turno = ? AND Id_grupo = ?";
+	    $sql = "SELECT * FROM Materia_Curso WHERE Id_materia = ? AND Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vinculacion
-	    $stmt->bind_param("ii", $idTurno, $idGrupo);
+	    $stmt->bind_param("ii", $idMateria, $idCurso);
 	
 	    // Ejecucion
 	    if(!$stmt->execute())
@@ -126,14 +126,14 @@ class TurnoGrupo extends BaseModel
 	    if($result->num_rows === 0)
 	    {
 	        $result->free();
-	        return TurnoGrupoError::NOT_FOUND;
+	        return MateriaCursoError::NOT_FOUND;
 	    }
 	
 	    $row = $result->fetch_assoc();
 	    $instance = new self (
 			$con,
-			(int)($row['Id_turno']),
-			(int)($row['Id_grupo'])
+			(int)($row['Id_materia']),
+			(int)($row['Id_curso'])
 	    );
 	    
 	    $stmt->close();
@@ -145,20 +145,20 @@ class TurnoGrupo extends BaseModel
 	
 	
 	
-	#region SET — IdTurno
+	#region SET — IdMateria
 	/**
-	* Establece el valor Id_turno de TurnoGrupo a partir de la base de datos que identifica TurnoGrupo mediante sus claves externas como clave compuesta. 
+	* Establece el valor Id_materia de MateriaCurso a partir de la base de datos que identifica MateriaCurso mediante sus claves externas como clave compuesta. 
 	*/
-	public static function setIdTurnoByFKs(mysqli $con, int $idTurno, int $idGrupo, int $newIdTurno) : true|TurnoGrupoError|ErrorDB
+	public static function setIdMateriaByFKs(mysqli $con, int $idMateria, int $idCurso, int $newIdMateria) : true|MateriaCursoError|ErrorDB
 	{
 	    // Preparacion
-	    $sql = "UPDATE Turno_Grupo SET Id_turno = ? WHERE Id_turno = ? AND Id_grupo = ?";
+	    $sql = "UPDATE Materia_Curso SET Id_materia = ? WHERE Id_materia = ? AND Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vinculacion
 	    $null = null;
-	    $stmt->bind_param("iii", $newIdTurno, $idTurno, $idGrupo);
+	    $stmt->bind_param("iii", $newIdMateria, $idMateria, $idCurso);
 	
 	
 	    // Ejecucion
@@ -170,23 +170,23 @@ class TurnoGrupo extends BaseModel
 	
 	    return true;
 	}
-	#endregion SET — IdTurno
+	#endregion SET — IdMateria
 	
 	
-	#region SET — IdGrupo
+	#region SET — IdCurso
 	/**
-	* Establece el valor Id_grupo de TurnoGrupo a partir de la base de datos que identifica TurnoGrupo mediante sus claves externas como clave compuesta. 
+	* Establece el valor Id_curso de MateriaCurso a partir de la base de datos que identifica MateriaCurso mediante sus claves externas como clave compuesta. 
 	*/
-	public static function setIdGrupoByFKs(mysqli $con, int $idTurno, int $idGrupo, int $newIdGrupo) : true|TurnoGrupoError|ErrorDB
+	public static function setIdCursoByFKs(mysqli $con, int $idMateria, int $idCurso, int $newIdCurso) : true|MateriaCursoError|ErrorDB
 	{
 	    // Preparacion
-	    $sql = "UPDATE Turno_Grupo SET Id_grupo = ? WHERE Id_turno = ? AND Id_grupo = ?";
+	    $sql = "UPDATE Materia_Curso SET Id_curso = ? WHERE Id_materia = ? AND Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vinculacion
 	    $null = null;
-	    $stmt->bind_param("iii", $newIdGrupo, $idTurno, $idGrupo);
+	    $stmt->bind_param("iii", $newIdCurso, $idMateria, $idCurso);
 	
 	
 	    // Ejecucion
@@ -198,6 +198,6 @@ class TurnoGrupo extends BaseModel
 	
 	    return true;
 	}
-	#endregion SET — IdGrupo
+	#endregion SET — IdCurso
 }
 ?>

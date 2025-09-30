@@ -2,11 +2,11 @@
 include_once '../db/db_errors.php';
 include_once 'base_model.php';
 
-enum HoraError : string
+enum CursoError : string
 {
-    case NOT_FOUND = "HORA_NOT_FOUND";
-    case UNKNOWN_DUPLICATE = "HORA_UNKNOWN_DUPLICATE";
-	case DUPLICATE_ID_HORA = "HORA_DUPLICATE_ID_HORA";
+    case NOT_FOUND = "CURSO_NOT_FOUND";
+    case UNKNOWN_DUPLICATE = "CURSO_UNKNOWN_DUPLICATE";
+	case DUPLICATE_ID_CURSO = "CURSO_DUPLICATE_ID_CURSO";
 }
 
 /**
@@ -17,7 +17,7 @@ enum HoraError : string
 *
 * Cualquier operación que acepte un blob como entrada esperará un binario sin procesar.
 */
-class Hora extends BaseModel
+class Curso extends BaseModel
 {
     /**
     * Esta constante se utiliza para indicar que una operación INSERT debe
@@ -25,32 +25,32 @@ class Hora extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "01999b0e-df3c-7ca7-8144-7414f6c15cda";
+    const SQL_DEFAULT = "01999b0e-df29-7b02-a392-4e25ab52b49d";
 
     protected mysqli $con;
-	public int $idHora;
-	public int $idIntervalo;
-	public int $idDia;
+	public int $idCurso;
+	public string $nombre;
+	public int $duracionanios;
 
 	/**
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, int $idIntervalo, int $idDia, int $idHora)
+	protected function __construct(mysqli $con, string $nombre, int $duracionanios, int $idCurso)
 	{
 	    $this->con = $con;
-		$this->idHora = $idHora;
-		$this->idIntervalo = $idIntervalo;
-		$this->idDia = $idDia;
+		$this->idCurso = $idCurso;
+		$this->nombre = $nombre;
+		$this->duracionanios = $duracionanios;
 	}
 
 	#region CREATE
 	/** 
-	* Crea un nuevo Hora en la base de datos.
+	* Crea un nuevo Curso en la base de datos.
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, int $idIntervalo, int $idDia, string|int $idHora = self::SQL_DEFAULT) : Hora|HoraError|ErrorDB
+	public static function create(mysqli $con, string $nombre, int $duracionanios, string|int $idCurso = self::SQL_DEFAULT) : Curso|CursoError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;
@@ -59,25 +59,25 @@ class Hora extends BaseModel
 	    $values = [];
 	    $types = "";
 	
-		// Añade 'Id_intervalo' para la consulta de inserción SQL.
-		$columns[] = "Id_intervalo";
+		// Añade 'Nombre' para la consulta de inserción SQL.
+		$columns[] = "Nombre";
 		$placeholders[] = "?";
-		$values[] = $idIntervalo;
+		$values[] = $nombre;
+		$types .= 's';
+		
+		// Añade 'DuracionAnios' para la consulta de inserción SQL.
+		$columns[] = "DuracionAnios";
+		$placeholders[] = "?";
+		$values[] = $duracionanios;
 		$types .= 'i';
 		
-		// Añade 'Id_dia' para la consulta de inserción SQL.
-		$columns[] = "Id_dia";
-		$placeholders[] = "?";
-		$values[] = $idDia;
-		$types .= 'i';
-		
-		// Añade 'Id_hora' a la consulta de inserción SQL, solo si el parámetro
+		// Añade 'Id_curso' a la consulta de inserción SQL, solo si el parámetro
 		// no indica que se debe utilizar el valor predeterminado de la base de datos (self::SQL_DEFAULT).
-		if ($idHora !== self::SQL_DEFAULT)
+		if ($idCurso !== self::SQL_DEFAULT)
 		{
-		    $columns[] = "Id_hora";
+		    $columns[] = "Id_curso";
 		    $placeholders[] = "?";
-		    $values[] = $idHora;
+		    $values[] = $idCurso;
 		    $types .= 'i';
 		}
 	    
@@ -87,7 +87,7 @@ class Hora extends BaseModel
 	    }
 	
 	    // Preparacion
-	    $sql = "INSERT INTO Hora (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
+	    $sql = "INSERT INTO Curso (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
@@ -106,14 +106,14 @@ class Hora extends BaseModel
 	            {
 	                $duplicateValue = $matches[1];
 	                $duplicateKey   = $matches[2];
-					if($duplicateKey == 'Id_hora')
+					if($duplicateKey == 'Id_curso')
 					{
 					    $stmt->close();
-					    return HoraError::DUPLICATE_ID_HORA;
+					    return CursoError::DUPLICATE_ID_CURSO;
 					}
 	                // Alternativa en caso de que no haya un código de error para la entrada duplicada específica.
 	                $stmt->close();
-	                return HoraError::UNKNOWN_DUPLICATE;
+	                return CursoError::UNKNOWN_DUPLICATE;
 	            }
 	        }
 	
@@ -122,7 +122,7 @@ class Hora extends BaseModel
 	        return ErrorDB::EXECUTE;
 	    }
 	
-	    // Hora se ha creado exitosamente.
+	    // Curso se ha creado exitosamente.
 	    $stmt->close();
 	    return self::getById($con, $con->insert_id);
 	}
@@ -131,18 +131,18 @@ class Hora extends BaseModel
 	
 	#region GET
 	/**
-	* Obtiene un Hora de la base de datos identificando Hora por su clave primaria única. 
+	* Obtiene un Curso de la base de datos identificando Curso por su clave primaria única. 
 	* Take into account that any attribute of type BLOB will store the base64 encoding of the blob.
 	*/
-	public static function getById(mysqli $con, int $idHora) : Hora|HoraError|ErrorDB
+	public static function getById(mysqli $con, int $idCurso) : Curso|CursoError|ErrorDB
 	{
 	    // Preparar
-	    $sql = "SELECT * FROM Hora WHERE Id_hora = ?";
+	    $sql = "SELECT * FROM Curso WHERE Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vincular
-	    $stmt->bind_param("i", $idHora);
+	    $stmt->bind_param("i", $idCurso);
 	
 	    // Ejecucion
 	    if(!$stmt->execute())
@@ -158,15 +158,15 @@ class Hora extends BaseModel
 	    {
 	        $result->free();
 	        $stmt->close();
-	        return HoraError::NOT_FOUND;
+	        return CursoError::NOT_FOUND;
 	    }
 	
 	    $row = $result->fetch_assoc();
 	    $instance = new self(
 			$con,
-			(int)($row['Id_intervalo']),
-			(int)($row['Id_dia']),
-			(int)($row['Id_hora'])
+			(string)($row['Nombre']),
+			(int)($row['DuracionAnios']),
+			(int)($row['Id_curso'])
 	    );
 	
 	    $result->free();
@@ -176,19 +176,19 @@ class Hora extends BaseModel
 	#endregion GET
 	
 	
-	#region GET — IdIntervalo
+	#region GET — Nombre
 	/**
-	* Obtiene el valor Id_intervalo de Hora de la base de datos identificando Hora por su clave primaria única. 
+	* Obtiene el valor Nombre de Curso de la base de datos identificando Curso por su clave primaria única. 
 	*/
-	public static function getIdIntervaloById(mysqli $con, int $idHora) : int|HoraError|ErrorDB
+	public static function getNombreById(mysqli $con, int $idCurso) : string|CursoError|ErrorDB
 	{
 	    // Preparar
-	    $sql = "SELECT Id_intervalo FROM Hora WHERE Id_hora = ?";
+	    $sql = "SELECT Nombre FROM Curso WHERE Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vincular
-	    $stmt->bind_param("i", $idHora);
+	    $stmt->bind_param("i", $idCurso);
 	
 	    // Ejecucion
 	    if(!$stmt->execute())
@@ -204,30 +204,30 @@ class Hora extends BaseModel
 	    {
 	        $result->free();
 	        $stmt->close();
-	        return HoraError::NOT_FOUND;
+	        return CursoError::NOT_FOUND;
 	    }
 	
-	    $attributeValue = ((int)($result->fetch_assoc()['Id_intervalo']));
+	    $attributeValue = ((string)($result->fetch_assoc()['Nombre']));
 	    $result->free();
 	    $stmt->close();
 	    return $attributeValue;
 	}
-	#endregion GET — IdIntervalo
+	#endregion GET — Nombre
 	
 	
-	#region GET — IdDia
+	#region GET — Duracionanios
 	/**
-	* Obtiene el valor Id_dia de Hora de la base de datos identificando Hora por su clave primaria única. 
+	* Obtiene el valor DuracionAnios de Curso de la base de datos identificando Curso por su clave primaria única. 
 	*/
-	public static function getIdDiaById(mysqli $con, int $idHora) : int|HoraError|ErrorDB
+	public static function getDuracionaniosById(mysqli $con, int $idCurso) : int|CursoError|ErrorDB
 	{
 	    // Preparar
-	    $sql = "SELECT Id_dia FROM Hora WHERE Id_hora = ?";
+	    $sql = "SELECT DuracionAnios FROM Curso WHERE Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vincular
-	    $stmt->bind_param("i", $idHora);
+	    $stmt->bind_param("i", $idCurso);
 	
 	    // Ejecucion
 	    if(!$stmt->execute())
@@ -243,33 +243,33 @@ class Hora extends BaseModel
 	    {
 	        $result->free();
 	        $stmt->close();
-	        return HoraError::NOT_FOUND;
+	        return CursoError::NOT_FOUND;
 	    }
 	
-	    $attributeValue = ((int)($result->fetch_assoc()['Id_dia']));
+	    $attributeValue = ((int)($result->fetch_assoc()['DuracionAnios']));
 	    $result->free();
 	    $stmt->close();
 	    return $attributeValue;
 	}
-	#endregion GET — IdDia
+	#endregion GET — Duracionanios
 	
 	
 	
 	
-	#region SET — IdIntervalo
+	#region SET — Nombre
 	/**
-	* Establece el valor Id_intervalo de Hora a partir de la base de datos que identifica Hora por su clave principal. 
+	* Establece el valor Nombre de Curso a partir de la base de datos que identifica Curso por su clave principal. 
 	*/
-	public static function setIdIntervaloById(mysqli $con, int $idHora, int $newIdIntervalo) : true|HoraError|ErrorDB
+	public static function setNombreById(mysqli $con, int $idCurso, string $newNombre) : true|CursoError|ErrorDB
 	{
 	    // Preparacion
-	    $sql = "UPDATE Hora SET Id_intervalo = ? WHERE Id_hora = ?";
+	    $sql = "UPDATE Curso SET Nombre = ? WHERE Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vinculacion
 	    $null = null;
-	    $stmt->bind_param("ii", $newIdIntervalo, $idHora);
+	    $stmt->bind_param("si", $newNombre, $idCurso);
 	
 	
 	    // Ejecucion
@@ -281,23 +281,23 @@ class Hora extends BaseModel
 	
 	    return true;
 	}
-	#endregion SET — IdIntervalo
+	#endregion SET — Nombre
 	
 	
-	#region SET — IdDia
+	#region SET — Duracionanios
 	/**
-	* Establece el valor Id_dia de Hora a partir de la base de datos que identifica Hora por su clave principal. 
+	* Establece el valor DuracionAnios de Curso a partir de la base de datos que identifica Curso por su clave principal. 
 	*/
-	public static function setIdDiaById(mysqli $con, int $idHora, int $newIdDia) : true|HoraError|ErrorDB
+	public static function setDuracionaniosById(mysqli $con, int $idCurso, int $newDuracionanios) : true|CursoError|ErrorDB
 	{
 	    // Preparacion
-	    $sql = "UPDATE Hora SET Id_dia = ? WHERE Id_hora = ?";
+	    $sql = "UPDATE Curso SET DuracionAnios = ? WHERE Id_curso = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::PREPARE;
 	
 	    // Vinculacion
 	    $null = null;
-	    $stmt->bind_param("ii", $newIdDia, $idHora);
+	    $stmt->bind_param("ii", $newDuracionanios, $idCurso);
 	
 	
 	    // Ejecucion
@@ -309,6 +309,6 @@ class Hora extends BaseModel
 	
 	    return true;
 	}
-	#endregion SET — IdDia
+	#endregion SET — Duracionanios
 }
 ?>
