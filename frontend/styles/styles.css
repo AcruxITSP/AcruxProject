@@ -453,7 +453,7 @@ body.login-page {
     border-color: #6a11cb;
 }
 
-/* BOTÓN DE INGRESAR */
+/* BOTÓN DE INGRESAR login*/
 #btn-submit {
     background: linear-gradient(90deg, #6a11cb, #0f316d);
     color: white;
@@ -690,6 +690,55 @@ body.login-page {
     color: #1f4587;
 }
 
+/* FORMULARIO REGISTRAR AULAS */
+#ingresarAulas-Form input[type="text"],
+#ingresarAulas-Form input[type="number"],
+#ingresarAulas-Form select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#ingresarAulas-Form input:focus,
+#ingresarAulas-Form select:focus {
+    border-color: #0f316d;
+    outline: none;
+}
+
+#ingresarAulas-Form input[type="submit"] {
+    margin-top: 15px;
+}
+
+/* FORMULARIO REGISTRAR FUNCIONARIOS */
+#registFun-Form input[type="text"],
+#registFun-Form input[type="email"],
+#registFun-Form input[type="password"],
+#registFun-Form input[type="number"],
+#form-FunSelect select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#registFun-Form input:focus,
+#registFun-Form select:focus,
+#form-FunSelect select:focus {
+    border-color: #0f316d;
+    outline: none;
+}
+
+#registFun-Form input[type="submit"],
+#form-FunSelect input[type="submit"] {
+    margin-top: 15px;
+}
 /* RESPONSIVE: MOBILE */
 @media (max-width: 768px) {
     .forms-container {
