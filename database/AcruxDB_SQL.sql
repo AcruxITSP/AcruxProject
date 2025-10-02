@@ -502,7 +502,7 @@ VALUES
 
 INSERT INTO Estudiante (reputacion, Id_persona, Id_grupo)
 VALUES
-('INPUNTUAL', 17, 1),
+('IMPUNTUAL', 17, 1),
 ('MALA', 18, 2);
 
 
@@ -605,8 +605,8 @@ VALUES
 
 INSERT INTO RecExt_Funcionario (Id_recursoEx, Id_funcionario, Fecha_Hora, Accion, Id_secretario)
 VALUES
-(1, 5, 'Retirar', '2025-06-20 10:20', 1),
-(1, 5, 'Devolver', '2025-06-20 10:30', 2),
+(1, 5, '2025-06-20 10:20', 'Retirar', 1),
+(1, 5, '2025-06-20 10:30', 'Devolver', 2),
 (4, 1, '2025-06-29 10:15', 'Retirar', 1),
 (4, 1, '2025-06-29 10:50', 'Devolver', 1),
 (2, 1, '2025-06-29 9:00', 'Retirar', 2),
