@@ -8,12 +8,12 @@ $conn = iniciarConexion();
 $DNI = $_POST["DNI"];
 $password = $_POST["password"];
 
-//Buscar en la tabla Funcionarios
+//Buscar en la tabla Personas un registro que coincida con los datos ingresados
 
 // La funcion "prepare()" permite insertar "variables" en una query de SQL
 // Esto para mejorar la seguridad, para prevenir injection SQL
 // Estas variables se representan con "?"
-$query = $conn->prepare("SELECT * FROM Funcionario WHERE DNI = ? AND contrasena = ? ");
+$query = $conn->prepare("SELECT * FROM Persona WHERE DNI = ? AND contrasena = ? ");
 
 // Para asignarle los valores, se usa la funcion "bind_param()"
 // Primero se indica el tipo de dato de cada variable, en este caso usamos "ss", ya que ambas son Strings
@@ -27,18 +27,6 @@ $registroFun = $query->get_result(); // El resultado de la consulta se guarda en
 
 if ($registroFun->num_rows == 1){ // Si la consulta no devuelve un registro, se envia un mensaje de error
   guardarDatos($registroFun);
-  header("Location: " . "../index.php"); // Redirige a la pagina index
-}
-
-//Buscar en tabla Estudiante
-$query = $conn->prepare("SELECT * FROM Estudiante WHERE DNI = ? AND contrasena = ? ");
-$query->bind_param("ss", $DNI, $password);
-$query->execute(); // Ejecuta la consulta
-
-$registroEs = $query->get_result(); // El resultado de la consulta se guarda en la variable "$registroFun"
-
-if ($registroEs->num_rows == 1){ // Si la consulta no devuelve un registro, se envia un mensaje de error
-  guardarDatos($registroEs);
   header("Location: " . "../index.php"); // Redirige a la pagina index
 }
 
