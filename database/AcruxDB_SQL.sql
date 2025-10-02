@@ -3,10 +3,10 @@ CREATE DATABASE db_acrux CHARACTER SET utf16 COLLATE utf16_spanish_ci;
 
 
 -- Creacion de Tablas
-CREATE TABLE Funcionario (
+CREATE TABLE Persona (
     -- "SMALLINT UNSIGNED" permite que el rango de valores positivos de la variable se duplique, pero no podrá contener números negativos
     -- AUTO_INCREMENT incrementa en 1 con cada nuevo registro
-    Id_funcionario SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_persona SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(50) NOT NULL,
     Apellido VARCHAR(50) NOT NULL,
     -- "UNIQUE" hace que el atributo no pueda repetirse en la misma tabla
@@ -16,10 +16,16 @@ CREATE TABLE Funcionario (
 );
 
 
-CREATE TABLE Telefono_Funcionario (
+CREATE TABLE Funcionario (
+    Id_funcionario SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_persona SMALLINT UNSIGNED NOT NULL
+);
+
+
+CREATE TABLE Telefono_Persona (
     Id_tel INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Telefono VARCHAR(20) NOT NULL,
-    Id_funcionario SMALLINT UNSIGNED NOT NULL
+    Id_persona SMALLINT UNSIGNED NOT NULL
 );
 
 
@@ -119,21 +125,9 @@ CREATE TABLE Materia_Curso (
 
 CREATE TABLE Estudiante (
     Id_estudiante SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(50) NOT NULL,
-    Apellido VARCHAR(50) NOT NULL,
-    DNI VARCHAR(10) UNIQUE NOT NULL,
-    Email VARCHAR(255) NULL,
-    Contrasena VARCHAR(255) NOT NULL,
     Reputacion ENUM('BUENA', 'IMPUNTUAL', 'MALA') DEFAULT 'BUENA' NOT NULL,
-    -- La reputacion es en base a si devuelve los recursos prestados en tiempo y forma
-    Id_grupo TINYINT UNSIGNED NOT NULL
-);
-
-
-CREATE TABLE Telefono_Estudiante (
-    Id_tel SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Telefono VARCHAR(20) NOT NULL,
-    Id_estudiante SMALLINT UNSIGNED NOT NULL
+    Id_grupo TINYINT UNSIGNED NOT NULL,
+    Id_persona SMALLINT UNSIGNED NOT NULL
 );
 
 
@@ -298,8 +292,10 @@ ALTER TABLE Profesor ADD CONSTRAINT fk_profesor__funcionario FOREIGN KEY (Id_fun
 ALTER TABLE Clase ADD CONSTRAINT fk_clase__profesor FOREIGN KEY (Id_profesor) REFERENCES Profesor (Id_profesor) ON DELETE CASCADE;
 ALTER TABLE Clase ADD CONSTRAINT fk_clase__materia FOREIGN KEY (Id_materia) REFERENCES Materia (Id_materia) ON DELETE CASCADE; 
 
+ALTER TABLE Funcionario ADD CONSTRAINT fk_funcionario__persona FOREIGN KEY (Id_persona) REFERENCES Persona (Id_persona) ON DELETE CASCADE;
+
 -- Nota: En el caso de los telefonos, la clave foranea se va a llamar como la tabla (despues de "fk_")
-ALTER TABLE Telefono_Funcionario ADD CONSTRAINT fk_telefono_funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
+ALTER TABLE Telefono_Persona ADD CONSTRAINT fk_telefono_persona FOREIGN KEY (Id_persona) REFERENCES Persona (Id_persona) ON DELETE CASCADE;
 
 ALTER TABLE Bloque ADD CONSTRAINT fk_bloque__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo) ON DELETE CASCADE;
 ALTER TABLE Bloque ADD CONSTRAINT fk_bloque__clase FOREIGN KEY (Id_clase) REFERENCES Clase (Id_clase);
@@ -325,10 +321,9 @@ ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__materia FOREIGN KEY (
 ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE CASCADE;
 
 ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo);
+ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__persona FOREIGN KEY (Id_persona) REFERENCES Persona (Id_persona) ON DELETE CASCADE;
 
 ALTER TABLE Telefono_Tutor ADD CONSTRAINT fk_telefono_tutor FOREIGN KEY (Id_estudiante) REFERENCES Estudiante (Id_estudiante) ON DELETE CASCADE;
-
-ALTER TABLE Telefono_Estudiante ADD CONSTRAINT fk_telefono_estudiante FOREIGN KEY (Id_estudiante) REFERENCES Estudiante (Id_estudiante) ON DELETE CASCADE;
 
 ALTER TABLE Adscripta ADD CONSTRAINT fk_adscripta__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
 
@@ -376,27 +371,7 @@ ALTER TABLE Auxiliar_Cargo ADD CONSTRAINT fk_auxiliar_cargo__auxiliar FOREIGN KE
 ALTER TABLE Auxiliar_Cargo ADD CONSTRAINT fk_auxiliar_cargo__cargo FOREIGN KEY (Id_cargo) REFERENCES Cargo (Id_cargo);
 
 -- Registros de Prueba
-INSERT INTO Materia (nombre)
-VALUES
-('Sociología'),
-('Inglés Técnico II'),
-('Programación Full Stack');
-
-INSERT INTO Curso (nombre, DuracionAnios)
-VALUES
-('Informática Bilingüe', 3),
-('Informática', 3);
-
-INSERT INTO Materia_Curso (Id_materia, Id_curso)
-VALUES
-(1, 1),
-(2, 1),
-(3, 1),
-(1, 2),
-(2, 2),
-(3, 2);
-
-INSERT INTO Funcionario (Nombre, Apellido, DNI, Email, Contrasena)
+INSERT INTO Persona (Nombre, Apellido, DNI, Email, Contrasena)
 VALUES
 ('Susana', 'Arbelo', '56473235', 'susanarbelo@gmail.com', '123'),
 ('Federico', 'Fagundez', '53748294', 'federicofagundez@gmail.com', '123'),
@@ -407,14 +382,59 @@ VALUES
 ('Roberto', 'Gutierrez', '65594733', 'robertogutierrez@gmail.com', '123'),
 ('Pancho', 'Mendoza', '65859476', NULL, '123'),
 ('Martina', 'Hernandez', '67394813', 'martinahernandez@gmail.com', '123'),
-('Fernando', 'Root', '88888888', 'fernandoroot@gmail.com', '123');
+('Fernando', 'Root', '88888888', 'fernandoroot@gmail.com', '123'),
+('Nehuel', 'Acosta', '11111111', 'nehuelacosta@gmail.com', '123'),
+('Alejo', 'Bottesch', '22222222', 'alejobottesch@gmail.com', '123'),
+('Michel', 'de Agustini', '44444444', 'micheldeagustini@gmail.com', '123'),
+('Sofía', 'Verocai', '55555555', 'sofiaverocai@gmail.com', '123'),
+('Emanuel', 'Gomez', '64648465', NULL, '123'),
+('Sebastian', 'Menendez', '65486625', 'sebastianmenendez@gmail.com', '123'),
+('Thiago', 'Díaz', '33333333', 'thiagodiaz@gmail.com', '123'),
+('Bryan', 'Velara', '12637427', 'bryanvelara@gmail.com', '123');
+
+
+INSERT INTO Materia (nombre)
+VALUES
+('Sociología'),
+('Inglés Técnico II'),
+('Programación Full Stack');
+
+
+INSERT INTO Curso (nombre, DuracionAnios)
+VALUES
+('Informática Bilingüe', 3),
+('Informática', 3);
+
+
+INSERT INTO Materia_Curso (Id_materia, Id_curso)
+VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(1, 2),
+(2, 2),
+(3, 2);
+
+
+INSERT INTO Funcionario (Id_persona)
+VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10);
 
 
 INSERT INTO Profesor (FechaIngreso, Id_funcionario)
 VALUES
 ('2020-05-20', 1),
-('Federico', 2),
-('Facundo', 3);
+('2020-02-17', 2),
+('2023-07-01', 3);
 
 
 INSERT INTO Clase (Id_profesor, Id_materia)
@@ -425,14 +445,19 @@ VALUES
 (3, 3);
 
 
-INSERT INTO Telefono_Funcionario (telefono, Id_funcionario)
+INSERT INTO Telefono_Persona (telefono, Id_persona)
 VALUES
 ('098567443', 1),
 ('095354772', 2),
 ('094367936', 3),
 ('094364993', 4),
 ('097484939', 5),
-('096364853', 5);
+('096364853', 5),
+('097674325', 11),
+('094356482', 12),
+('094564637', 13),
+('094656564', 13),
+('095463722', 15);
 
 
 INSERT INTO Adscripta (Id_funcionario)
@@ -465,34 +490,25 @@ VALUES
 ('2do MR', 1, 1);
 
 
-INSERT INTO Estudiante (nombre, apellido, DNI, Email, Contrasena, Id_grupo)
+INSERT INTO Estudiante (Id_persona, Id_grupo)
 VALUES
-('Nehuel', 'Acosta', '11111111', 'nehuelacosta@gmail.com', '123', 1),
-('Alejo', 'Bottesch', '22222222', 'alejobottesch@gmail.com', '123', 1),
-('Michel', 'de Agustini', '44444444', 'micheldeagustini@gmail.com', '123', 1),
-('Sofía', 'Verocai', '55555555', 'sofiaverocai@gmail.com', '123', 1),
-('Emanuel', 'Gomez', '64648465', NULL, '123', 2),
-('Sebastian', 'Menendez', '65486625', 'sebastianmenendez@gmail.com', '123', 2);
+(11, 1),
+(12, 1),
+(13, 1),
+(14, 1),
+(15, 2),
+(16, 2);
 
 
-INSERT INTO Estudiante (nombre, apellido, DNI, Email, Contrasena, reputacion, Id_grupo)
+INSERT INTO Estudiante (reputacion, Id_persona, Id_grupo)
 VALUES
-('Thiago', 'Díaz', '33333333', 'thiagodiaz@gmail.com', '123', 'INPUNTUAL', 1),
-('Bryan', 'Velara', '12637427', 'bryanvelara@gmail.com', '123', 'MALA', 2);
-
-
-INSERT INTO Telefono_Estudiante (telefono, Id_estudiante)
-VALUES
-('097674325', 1),
-('094356482', 2),
-('094564637', 3),
-('094656564', 3),
-('095463722', 5);
+('INPUNTUAL', 17, 1),
+('MALA', 18, 2);
 
 
 INSERT INTO Telefono_Tutor (telefono, NombreTutor, Id_estudiante)
 VALUES
-('097346885','Fulano', 1),
+('097346885', 'Fulano', 1),
 ('096472845', 'Mengano', 2);
 
 
