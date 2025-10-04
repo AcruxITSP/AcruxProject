@@ -11,7 +11,7 @@ CREATE TABLE Persona (
     Apellido VARCHAR(50) NOT NULL,
     -- "UNIQUE" hace que el atributo no pueda repetirse en la misma tabla
     DNI VARCHAR(10) UNIQUE NOT NULL,
-    Email VARCHAR(255) NULL,
+    Email VARCHAR(255) UNIQUE NULL,
     Contrasena VARCHAR(255) NOT NULL
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE Funcionario (
 
 CREATE TABLE Telefono_Persona (
     Id_tel INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Telefono VARCHAR(20) NOT NULL,
+    Telefono VARCHAR(20) UNIQUE NOT NULL,
     Id_persona SMALLINT UNSIGNED NOT NULL
 );
 
@@ -49,7 +49,7 @@ CREATE TABLE Turno_Grupo (
 
 CREATE TABLE Materia (
     Id_materia SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(100) NOT NULL -- "Not Null" establece que el valor no puede ser nulo
+    Nombre VARCHAR(100) UNIQUE NOT NULL -- "Not Null" establece que el valor no puede ser nulo
 );
 
 
@@ -92,7 +92,7 @@ CREATE TABLE Noticia (
 
 CREATE TABLE Etiqueta (
     Id_etiqueta TINYINT UNSIGNED  PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(25) NOT NULL
+    Nombre VARCHAR(25) UNIQUE NOT NULL
 );
 
 
@@ -104,7 +104,7 @@ CREATE TABLE Noticia_Etiqueta (
 
 CREATE TABLE Grupo (
     Id_grupo TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Designacion VARCHAR(15) NOT NULL,
+    Codigo VARCHAR(15) UNIQUE NOT NULL,
     Id_adscripta TINYINT UNSIGNED NOT NULL,
     Id_curso TINYINT UNSIGNED NOT NULL
 );
@@ -112,7 +112,7 @@ CREATE TABLE Grupo (
 
 CREATE TABLE Curso (
     Id_curso TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(100) NOT NULL,
+    Nombre VARCHAR(100) UNIQUE NOT NULL,
     DuracionAnios TINYINT UNSIGNED NOT NULL
 );
 
@@ -133,7 +133,7 @@ CREATE TABLE Estudiante (
 
 CREATE TABLE Telefono_Tutor (
     Id_tel SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Telefono VARCHAR(20) NOT NULL,
+    Telefono VARCHAR(20) UNIQUE NOT NULL,
     NombreTutor VARCHAR(100) NOT NULL,
     Id_estudiante SMALLINT UNSIGNED NOT NULL
 );
@@ -148,7 +148,7 @@ CREATE TABLE Intervalo (
 
 CREATE TABLE Dia (
     Id_dia TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(20) NOT NULL
+    Nombre VARCHAR(20) UNIQUE NOT NULL
 );
 
 
@@ -198,7 +198,7 @@ CREATE TABLE Computadora (
 
 CREATE TABLE Software (
     Id_software TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(255) NOT NULL
+    Nombre VARCHAR(255) UNIQUE NOT NULL
 );
 
 
@@ -264,7 +264,7 @@ CREATE TABLE Auxiliar (
 
 CREATE TABLE Cargo (
     Id_cargo TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Nombre VARCHAR(100) NOT NULL
+    Nombre VARCHAR(100) UNIQUE NOT NULL
 );
 
 
@@ -484,7 +484,7 @@ VALUES
 (10);
 
 
-INSERT INTO Grupo (Designacion, Id_adscripta, Id_curso)
+INSERT INTO Grupo (Codigo, Id_adscripta, Id_curso)
 VALUES
 ('3ro MD', 2, 2),
 ('2do MR', 1, 1);
