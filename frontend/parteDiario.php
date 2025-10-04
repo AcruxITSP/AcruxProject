@@ -8,13 +8,28 @@
 
 </head>
 <body>
+    <style>
+        td {
+            padding: 0.2rem 1rem 0.2rem 1rem;
+        }
+    </style>
+
     <h2>Parte Diario</h2>
-    <ul>
-        <li>Aqui</li>
-        <li>Se van a listar</li>
-        <li>Todos los registros</li>
-        <li>Del parte diario</li>
-    </ul>
+    <template id="tpl">
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Descripcion</th>
+            </tr>
+        </table>
+    </template>
+
+    <div id="tablaRegistros"></div>
+
+    <p id="errorMsg"></p>
     <a href="index.php">Volver al menu</a>
+
+    <script type="module" src="scripts/mostrarPartediario.js"></script>
 </body>
 </html>
