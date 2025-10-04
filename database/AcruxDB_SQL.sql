@@ -1,5 +1,6 @@
 ﻿-- Crear base de datos (Se debe ejecutar antes que el resto, por separado)
 CREATE DATABASE db_acrux CHARACTER SET utf16 COLLATE utf16_spanish_ci;
+USE db_acrux;
 
 
 -- Creacion de Tablas
