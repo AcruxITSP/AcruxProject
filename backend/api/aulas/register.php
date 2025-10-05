@@ -16,9 +16,12 @@ if($_SERVER['REQUEST_METHOD'] !== "POST")
 {
     die();
 }
+
+// TODO: APLICAR LUEGO DE TERMINAR REGISTERS
 // if(!isLoginAdscripta() && !isLoginAdministrador()) sendRedirectResponse("login.php");
 $con = connectDb();
 
+// TODO: VALIDAR
 $codigo = $_POST['codigo'] ?? null;
 $piso = $_POST['codigo'] ?? null;
 $proposito = $_POST['proposito'] ?? null;
