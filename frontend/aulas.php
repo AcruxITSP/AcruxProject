@@ -16,7 +16,7 @@ require 'scriptsPhp/globalFunctions.php';
     <div class="forms-container">
         <div class="form-card">
             <h2>Registrar Aulas</h2>
-            <form id="ingresarAulas-Form" action="scriptsPhp/scriptRegistrarAulas.php" method="post">
+            <form id="ingresarAulas-Form" action="../backend/api/aulas/register.php" method="post">
 
                 <label for="codigo">Código:</label>
                 <input type="text" id="codigo" name="codigo" required>
