@@ -10,8 +10,6 @@
 </head>
 
 <body>
-
-    <body>
         <div class="forms-container">
             <!-- Crear Intervalos -->
             <div class="form-card">
