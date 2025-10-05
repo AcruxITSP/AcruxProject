@@ -14,6 +14,9 @@
         <input type="submit">
     </form>
 
+    <br>
+    <a href="ver.php">Volver</a>
+
     <script type="module" src="../../scripts/paginaMaterias.js"></script>
 </body>
 </html>

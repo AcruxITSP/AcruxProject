@@ -17,7 +17,7 @@
     <p id="errorMsg"></p>
     <a href="registrar.php">Registrar materias</a><br><br>
 
-    <a href="../index.php">Volver al menu</a>
+    <a href="../menuRecursos.php">Volver al menu</a>
 
     <script type="module" src="../../scripts/paginaMaterias.js"></script>
 </body>

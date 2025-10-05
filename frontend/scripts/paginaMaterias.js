@@ -54,8 +54,7 @@ async function waitFormSubmit(){
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-
-        const respuesta = await client_materias_register(formData.nombre);
+        const respuesta = await client_materias_register(formData);
 
         if (respuesta === true){
             console.log("Materia registrada exitosamente");
