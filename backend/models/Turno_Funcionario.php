@@ -1,7 +1,7 @@
 <?php
-include_once '../error_base.php';
-include_once '../db/db_errors.php';
-include_once 'base_model.php';
+require_once dirname(__FILE__).'/../error_base.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
+require_once dirname(__FILE__).'/base_model.php';
 
 enum TurnoFuncionarioErrorType : string
 {
@@ -46,7 +46,7 @@ class TurnoFuncionario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b22e-e0cc-7f86-a478-b5ef5d86aba8";
+    const SQL_DEFAULT = "0199b279-8e86-7436-a9c0-9b6e36a6065a";
 
     protected mysqli $con;
 	public int $idFuncionario;

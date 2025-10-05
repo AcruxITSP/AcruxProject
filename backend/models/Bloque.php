@@ -1,7 +1,7 @@
 <?php
-include_once '../error_base.php';
-include_once '../db/db_errors.php';
-include_once 'base_model.php';
+require_once dirname(__FILE__).'/../error_base.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
+require_once dirname(__FILE__).'/base_model.php';
 
 enum BloqueErrorType : string
 {
@@ -51,7 +51,7 @@ class Bloque extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b22e-e124-7867-8429-d6ea2bce0a18";
+    const SQL_DEFAULT = "0199b279-8eb6-7b43-ad01-dadf66da6d94";
 
     protected mysqli $con;
 	public int $idBloque;

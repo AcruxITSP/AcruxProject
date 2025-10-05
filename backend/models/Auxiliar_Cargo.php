@@ -1,7 +1,7 @@
 <?php
-include_once '../error_base.php';
-include_once '../db/db_errors.php';
-include_once 'base_model.php';
+require_once dirname(__FILE__).'/../error_base.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
+require_once dirname(__FILE__).'/base_model.php';
 
 enum AuxiliarCargoErrorType : string
 {
@@ -46,7 +46,7 @@ class AuxiliarCargo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b22e-e20b-708d-9470-e9d4fa688895";
+    const SQL_DEFAULT = "0199b279-8edb-745e-906c-fa6e5f7123a4";
 
     protected mysqli $con;
 	public int $idAuxiliar;

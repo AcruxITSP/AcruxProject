@@ -1,10 +1,10 @@
 <?php
 session_start();
-include_once '../../utils/sql.php';
-include_once '../../utils/respuestas.php';
-include_once '../../db/connection.php';
-include_once '../../models/Persona.php';
-include_once '../../models/Funcionario.php';
+require_once dirname(__FILE__).'/../../utils/sql.php';
+require_once dirname(__FILE__).'/../../utils/respuestas.php';
+require_once dirname(__FILE__).'/../../db/connection.php';
+require_once dirname(__FILE__).'/../../models/Persona.php';
+require_once dirname(__FILE__).'/../../models/Funcionario.php';
 
 enum LoginError : string
 {
@@ -17,8 +17,8 @@ if($_SERVER['REQUEST_METHOD'] !== "POST")
 }
 
 $con = connectDb();
-$ci = $_POST["ci"] ?? null;
-$contrasena = $_POST["contrasena"] ?? null;
+$ci = $_POST["DNI"] ?? null;
+$contrasena = $_POST["password"] ?? null;
 
 // Obtener Persona
 $getPersonaResult = Persona::getByDni($con, $ci);

@@ -1,5 +1,5 @@
 <?php
-include_once 'error_base.php';
+include_once dirname(__FILE__).'/../error_base.php';
 
 class ErrorDB extends ErrorBase
 {

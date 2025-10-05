@@ -1,7 +1,7 @@
 <?php
-include_once '../error_base.php';
-include_once '../db/db_errors.php';
-include_once 'base_model.php';
+require_once dirname(__FILE__).'/../error_base.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
+require_once dirname(__FILE__).'/base_model.php';
 
 enum ComputadoraErrorType : string
 {
@@ -51,7 +51,7 @@ class Computadora extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b22e-e1d2-7291-b847-488587fa67c1";
+    const SQL_DEFAULT = "0199b279-8ec1-7bac-9b04-776a24611fb0";
 
     protected mysqli $con;
 	public int $idCompu;

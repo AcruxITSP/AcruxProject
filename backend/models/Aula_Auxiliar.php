@@ -1,7 +1,7 @@
 <?php
-include_once '../error_base.php';
-include_once '../db/db_errors.php';
-include_once 'base_model.php';
+require_once dirname(__FILE__).'/../error_base.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
+require_once dirname(__FILE__).'/base_model.php';
 
 enum AulaAuxiliarErrorType : string
 {
@@ -46,7 +46,7 @@ class AulaAuxiliar extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b22e-e283-7b4d-aa76-08acf770610a";
+    const SQL_DEFAULT = "0199b279-8ee3-71da-abf2-f94585a2a4db";
 
     protected mysqli $con;
 	public int $idAula;

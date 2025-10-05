@@ -1,7 +1,7 @@
 <?php
-include_once '../error_base.php';
-include_once '../db/db_errors.php';
-include_once 'base_model.php';
+require_once dirname(__FILE__).'/../error_base.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
+require_once dirname(__FILE__).'/base_model.php';
 
 enum SoftwareErrorType : string
 {
@@ -58,7 +58,7 @@ class Software extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b22e-e1d6-772b-b941-327a0c6538f6";
+    const SQL_DEFAULT = "0199b279-8ec3-7e4b-ba6e-501aad351bb0";
 
     protected mysqli $con;
 	public int $idSoftware;

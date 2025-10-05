@@ -15,7 +15,7 @@
     <!-- Formulario -->
     <div class="login-form">
         <h2>¡Hola!</h2>
-        <form id="logInForm" action="scriptsPhp/scriptLogIn.php" method="post">
+        <form id="logInForm" action="../backend/api/users/login.php" method="post">
             <div class="input-group">
                 <i class="fa fa-id-card"></i>
                 <input type="text" name="DNI" placeholder="Cédula" required>

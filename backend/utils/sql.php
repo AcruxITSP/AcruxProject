@@ -1,5 +1,5 @@
 <?php
-include_once '../db/db_errors.php';
+require_once dirname(__FILE__).'/../db/db_errors.php';
 
 abstract class SQL
 {
