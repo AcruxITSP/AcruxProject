@@ -51,7 +51,7 @@ class Reserva extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8eb8-7631-b920-85c0146a51f2";
+    const SQL_DEFAULT = "0199b599-f662-7c33-881c-2b90d94d132f";
 
     protected mysqli $con;
 	public int $idReserva;

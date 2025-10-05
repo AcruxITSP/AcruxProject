@@ -65,7 +65,7 @@ class Persona extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8e60-769b-b95a-be734918d040";
+    const SQL_DEFAULT = "0199b599-f60d-7166-9d83-c62a4d251389";
 
     protected mysqli $con;
 	public int $idPersona;

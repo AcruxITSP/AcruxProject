@@ -58,7 +58,7 @@ class Grupo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8ea2-7b66-954f-b59bf05c0807";
+    const SQL_DEFAULT = "0199b599-f64d-7aa3-bce9-7aece7dee64d";
 
     protected mysqli $con;
 	public int $idGrupo;

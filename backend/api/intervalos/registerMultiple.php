@@ -16,11 +16,13 @@ enum CursoRegisterError : string
 
 class DatosCreacionIntervalo
 {
+    public int $numero;
     public int $horaInicioUnix;
     public int $horaFinalUnix;
 
-    public function __construct(int $horaInicioUnix, int $horaFinalUnix)
+    public function __construct(int $numero, int $horaInicioUnix, int $horaFinalUnix)
     {
+        $this->numero = $numero;
         $this->horaInicioUnix = $horaInicioUnix;
         $this->horaFinalUnix = $horaFinalUnix;
     }
@@ -54,7 +56,7 @@ while($currentTimeUnix < $horaCierreUnix)
     $currentTimeUnix = UnixTimeHelper::addMinutes($currentTimeUnix, $duracionHoraMinutos);
     $finalIntervaloUnix = $currentTimeUnix;
 
-    $intervalos[] = new DatosCreacionIntervalo($inicioIntervaloUnix, $finalIntervaloUnix);
+    $intervalos[] = new DatosCreacionIntervalo($horaActual, $inicioIntervaloUnix, $finalIntervaloUnix);
     $currentTimeUnix = UnixTimeHelper::addMinutes($currentTimeUnix, $duracionRecreoMinutos);
     ++$horaActual;
 }
@@ -66,8 +68,9 @@ foreach($intervalos as $intervalo)
 {
     $inicioIntervaloSql = UnixTimeHelper::toMySQLTime($intervalo->horaInicioUnix);
     $finalIntervaloSql = UnixTimeHelper::toMySQLTime($intervalo->horaFinalUnix);
+    $numeroHora = $intervalo->numero;
 
-    $createIntervaloResult = Intervalo::create($con, $inicioIntervaloSql, $finalIntervaloSql);
+    $createIntervaloResult = Intervalo::create($con, $numeroHora, $inicioIntervaloSql, $finalIntervaloSql);
     if(!($createIntervaloResult instanceof Intervalo)) Respuestas::enviarError($createIntervaloResult);
 }
 

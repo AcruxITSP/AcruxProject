@@ -51,7 +51,7 @@ class Funcionario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8e70-77cf-a790-f14cd314554d";
+    const SQL_DEFAULT = "0199b599-f61d-7d99-b208-ff8987f07bfd";
 
     protected mysqli $con;
 	public int $idFuncionario;

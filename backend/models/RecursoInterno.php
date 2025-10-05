@@ -51,7 +51,7 @@ class Recursointerno extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8eca-715d-9106-d932b4571e3b";
+    const SQL_DEFAULT = "0199b599-f674-7bca-9dec-76d82b9c3977";
 
     protected mysqli $con;
 	public int $idRecursoIn;

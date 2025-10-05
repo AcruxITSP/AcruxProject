@@ -51,7 +51,7 @@ class Partediario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8e95-7893-8350-3014534cb07d";
+    const SQL_DEFAULT = "0199b599-f641-775b-9a5c-91db158f7cae";
 
     protected mysqli $con;
 	public int $idEntrada;

@@ -51,7 +51,7 @@ class Hora extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8eb4-74e4-b961-670fbd6cd4f1";
+    const SQL_DEFAULT = "0199b599-f65e-7dfb-8382-b21752a1f48c";
 
     protected mysqli $con;
 	public int $idHora;

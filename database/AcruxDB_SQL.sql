@@ -1,4 +1,5 @@
 ﻿-- Crear base de datos (Se debe ejecutar antes que el resto, por separado)
+DROP DATABASE db_acrux;
 CREATE DATABASE db_acrux CHARACTER SET utf16 COLLATE utf16_spanish_ci;
 USE db_acrux;
 
@@ -142,6 +143,7 @@ CREATE TABLE Telefono_Tutor (
 
 CREATE TABLE Intervalo (
     Id_intervalo TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Numero INT NOT NULL UNIQUE,
     Entrada TIME NOT NULL,
     Salida TIME NOT NULL
 );

@@ -51,7 +51,7 @@ class RecextEstudiante extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8ed4-7de9-8312-85a3523dc6ae";
+    const SQL_DEFAULT = "0199b599-f67d-7313-a852-07c92c615fa8";
 
     protected mysqli $con;
 	public int $idRegistro;

@@ -46,7 +46,7 @@ class TurnoGrupo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8e88-7958-9c17-3f696d450932";
+    const SQL_DEFAULT = "0199b599-f632-7146-a868-43199a8cc215";
 
     protected mysqli $con;
 	public int $idTurno;

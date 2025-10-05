@@ -51,7 +51,7 @@ class Administrador extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b279-8ec7-765d-b931-ad5ca1443b2e";
+    const SQL_DEFAULT = "0199b599-f671-7c09-95b5-182f8eebafab";
 
     protected mysqli $con;
 	public int $idAdministrador;
