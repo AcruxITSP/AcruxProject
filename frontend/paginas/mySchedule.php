@@ -1,5 +1,5 @@
 <?php
-require 'scriptsPhp/globalFunctions.php';
+require '../scriptsPhp/globalFunctions.php';
 session_start();
 verificarInicioSesion();
 ?>
@@ -10,8 +10,8 @@ verificarInicioSesion();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Mi horario</title>
+    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -47,21 +47,21 @@ verificarInicioSesion();
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="myAccount.php">Mi cuenta</a>
                         <a href="configuracion.php">Configuración</a>
-                        <form action="scriptsPhp/scriptCerrarSesion.php" method="post">
+                        <form action="../scriptsPhp/scriptCerrarSesion.php" method="post">
                             <button id="btn-unLog" type="submit">Cerrar sesión</button>
                         </form>
                     </div>
                 </div>
             </header>
 
-            <h2>Contactos</h2>
-
-            <h3>Nuestros contactos</h3>
+            <h2>Su horario de esta semana: </h2>
+            <br>
+            <p>Aún no hay un horario definido</p>
         </main>
     </div>
 
     <!-- Script para el dropdown -->
-    <script src="scripts/indexDropMenu.js"></script>
+    <script src="../scripts/indexDropMenu.js"></script>
 </body>
 
 </html>

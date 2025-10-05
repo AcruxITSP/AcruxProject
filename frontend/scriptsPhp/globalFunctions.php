@@ -132,7 +132,7 @@ function verificarInicioSesion()
     // Comprobar que la sesión esté iniciada
     // Si la variable "username" no tiene valor, redirecciona al usuario a index.php
     if (!isset($_SESSION["username"])) {
-        header("Location: " . "../frontend/logIn.php");
+        header("Location: " . "../frontend/paginas/logIn.php");
     }
 }
 function buscarRegistro($tabla, $columna, $valor)

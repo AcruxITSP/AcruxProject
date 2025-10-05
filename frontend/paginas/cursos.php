@@ -63,7 +63,7 @@
     <p id="errorMsg"></p>
     <a href="index.php">Volver al menu</a>
 
-    <script type="module" src="scripts/paginaCursos.js"></script>
+    <script type="module" src="../scripts/paginaCursos.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parte Diario</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
 <body>
@@ -30,6 +30,6 @@
     <p id="errorMsg"></p>
     <a href="index.php">Volver al menu</a>
 
-    <script type="module" src="scripts/paginaPartediario.js"></script>
+    <script type="module" src="../scripts/paginaPartediario.js"></script>
 </body>
 </html>

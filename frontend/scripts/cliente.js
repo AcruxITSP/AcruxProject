@@ -22,6 +22,36 @@ export async function client_cursos_fetchAll() {
     return registros;
 }
 
+export async function client_materias_fetchAll() {
+    // objetos de ejemplo
+    const registro1 = new RegistroMateria("Sistemas Operativos");
+    const registro2 = new RegistroMateria("Programacion II");
+    const registro3 = new RegistroMateria("Refuerzo II");
+
+    const registros = [registro1, registro2, registro3];
+
+    return registros;
+}
+
+export async function client_materias_register(nombre) {
+    const formData = new FormData();                                        
+    formData.append("nombre", nombre);                                      
+
+    const requestInit = {method: 'POST', body: formData};
+    //const localizacionApi = '../backend/api/user/obtener_por_nombre.php';
+    //const respuesta = await fetch(localizacionApi, requestInit);
+
+    let respuesta;
+
+    if (typeof formData.get("nombre") === "string"){
+        respuesta = true;
+    } else {
+        respuesta = "Error";
+    }
+
+    return respuesta;    // La respuesta es true, o un error
+}
+
 class RegistroPartediario {
     constructor(fechaHora, accion) {
         this.fechaHora = fechaHora;
@@ -34,5 +64,11 @@ class RegistroCursos {
         this.nombre = nombre;
         this.duracion = duracion;
         this.materias = materias;
+    }
+}
+
+class RegistroMateria {
+    constructor(nombre){
+        this.nombre = nombre;
     }
 }

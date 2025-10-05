@@ -27,7 +27,7 @@ $registroFun = $query->get_result(); // El resultado de la consulta se guarda en
 
 if ($registroFun->num_rows == 1){ // Si la consulta no devuelve un registro, se envia un mensaje de error
   guardarDatos($registroFun);
-  header("Location: " . "../index.php"); // Redirige a la pagina index
+  header("Location: " . "../paginas/index.php"); // Redirige a la pagina index
 }
 
 echo ("ERROR: Contraseña o usuario incorrecto");

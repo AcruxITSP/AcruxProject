@@ -1,5 +1,5 @@
 <?php
-require 'scriptsPhp/globalFunctions.php';
+require '../scriptsPhp/globalFunctions.php';
 session_start();
 verificarInicioSesion();
 ?>
@@ -11,7 +11,7 @@ verificarInicioSesion();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITSP Dashboard</title>
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="../styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -58,7 +58,7 @@ verificarInicioSesion();
           <div class="dropdown-menu" id="dropdownMenu">
             <a href="myAccount.php">Mi cuenta</a>
             <a href="configuracion.php">Configuración</a>
-            <form action="scriptsPhp/scriptCerrarSesion.php" method="post">
+            <form action="../scriptsPhp/scriptCerrarSesion.php" method="post">
               <button id="btn-unLog" type="submit">Cerrar sesión</button>
             </form>
           </div>
@@ -67,7 +67,7 @@ verificarInicioSesion();
 
       <!-- Imagen de ITSP -->
       <div class="banner-img">
-        <img src="img/banner.jpg" alt="Imagen ITSP">
+        <img src="../img/banner.jpg" alt="Imagen ITSP">
       </div>
 
      <!-- Tarjetas informativas -->
@@ -103,8 +103,8 @@ verificarInicioSesion();
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </section>
-<script src="scripts/menuHamburgesa.js"></script>
-<script src="scripts/dropdownMenu.js"></script>
+<script src="../scripts/menuHamburgesa.js"></script>
+<script src="../scripts/dropdownMenu.js"></script>
 
 </body>
 

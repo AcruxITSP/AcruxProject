@@ -1,5 +1,5 @@
 <?php
-require 'scriptsPhp/globalFunctions.php';
+require '../scriptsPhp/globalFunctions.php';
 //verificarInicioSesion();
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ require 'scriptsPhp/globalFunctions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar funcionarios</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@ require 'scriptsPhp/globalFunctions.php';
         <!-- Formulario Registrar Funcionarios -->
         <div class="form-card">
             <h2>Registrar Funcionarios</h2>
-            <form id="registFun-Form" action="scriptsPhp/scriptRegistrarFun.php" method="post" target="_self">
+            <form id="registFun-Form" action="../scriptsPhp/scriptRegistrarFun.php" method="post" target="_self">
 
                 <label for="DNI">DNI:</label>
                 <input type="text" id="DNI" name="DNI" required>

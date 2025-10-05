@@ -1,5 +1,5 @@
 <?php
-require 'scriptsPhp/globalFunctions.php';
+require '../scriptsPhp/globalFunctions.php';
 session_start();
 verificarInicioSesion();
 ?>
@@ -10,7 +10,7 @@ verificarInicioSesion();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recursos</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -54,7 +54,7 @@ verificarInicioSesion();
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="myAccount.php">Mi cuenta</a>
                         <a href="configuracion.php">Configuración</a>
-                        <form action="scriptsPhp/scriptCerrarSesion.php" method="post">
+                        <form action="../scriptsPhp/scriptCerrarSesion.php" method="post">
                             <button id="btn-unLog" type="submit">Cerrar sesión</button>
                         </form>
                     </div>
@@ -69,7 +69,7 @@ verificarInicioSesion();
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-book icon-card"></i>
-                    <a href="materias.php">Materias</a>
+                    <a href="materias/ver.php">Materias</a>
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-graduation-cap icon-card"></i>
@@ -96,7 +96,7 @@ verificarInicioSesion();
         </main>
     </div>
 
-    <script src="scripts/indexDropMenu.js"></script>
-    <script src="scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/indexDropMenu.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
 </body>
 </html>
