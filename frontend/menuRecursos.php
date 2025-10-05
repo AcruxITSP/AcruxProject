@@ -63,35 +63,36 @@ verificarInicioSesion();
 
             <!-- Tarjetas de recursos -->
             <div class="resources-container">
-                <div class="resource-card">
-                    <i class="fas fa-calendar-days icon-card"></i>
-                    <a href="planillaHorario.php">Planilla de Horario</a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-book icon-card"></i>
-                    <a href="materias.php">Materias</a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-graduation-cap icon-card"></i>
-                    <a href="cursos.php">Cursos</a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-users icon-card"></i>
-                    <a href="grupos.php">Grupos</a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-chalkboard icon-card"></i>
-                    <a href="aulas.php">Aulas</a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-laptop icon-card"></i>
-                    <a href="recursosAulas.php">Recursos de Aulas</a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-user-tie icon-card"></i>
-                    <a href="funcionarios.php">Funcionarios</a>
-                </div>
-            </div>
+    <a href="planillaHorario.php" class="resource-card">
+        <i class="fas fa-calendar-days icon-card"></i>
+        <span>Planilla de Horario</span>
+    </a>
+
+    <a href="materias.php" class="resource-card">
+        <i class="fas fa-book icon-card"></i>
+        <span>Cursos y Materias</span>
+    </a>
+
+    <a href="grupos.php" class="resource-card">
+        <i class="fas fa-users icon-card"></i>
+        <span>Grupos</span>
+    </a>
+
+    <a href="aulas.php" class="resource-card">
+        <i class="fas fa-chalkboard icon-card"></i>
+        <span>Aulas</span>
+    </a>
+
+    <a href="recursosAulas.php" class="resource-card">
+        <i class="fas fa-laptop icon-card"></i>
+        <span>Recursos de Aulas</span>
+    </a>
+
+    <a href="funcionarios.php" class="resource-card">
+        <i class="fas fa-user-tie icon-card"></i>
+        <span>Funcionarios</span>
+    </a>
+</div>
 
         </main>
     </div>

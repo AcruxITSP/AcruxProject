@@ -463,14 +463,12 @@ body.login-page {
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
-    transition: transform 0.2s ease, opacity 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
     margin-top: 10px;
 }
 
 #btn-submit:hover {
     opacity: 0.9;
-    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -540,10 +538,37 @@ body.login-page {
 
 /* Hover opcional */
 .mapa:hover {
-    transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 /* CONTENEDORES DE FORMULARIOS */
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 200px;
+    height: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; /* quita subrayado */
+    color: #0f316d; /* color texto */
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.resource-card span {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .forms-container {
     display: flex;
     gap: 30px;
@@ -580,12 +605,24 @@ body.login-page {
 }
 
 /* GRUPOS DE INPUTS (hora entrada/salida) */
-.input-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.form-card input[type="time"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
     margin-bottom: 20px;
+    transition: border-color 0.3s;
+    color: #333;
+    background-color: #fff;
 }
+
+.form-card input[type="time"]:focus {
+    border-color: #0f316d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(15, 49, 109, 0.3);
+}
+
 
 .input-group input[type="number"] {
     width: 70px;
