@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 require_once dirname(__FILE__).'/../../utils/sql.php';
 require_once dirname(__FILE__).'/../../utils/respuestas.php';
 require_once dirname(__FILE__).'/../../db/connection.php';

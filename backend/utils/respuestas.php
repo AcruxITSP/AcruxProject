@@ -2,7 +2,7 @@
 
 abstract class Respuestas
 {
-    public static function enviarOk($valor) : void
+    public static function enviarOk(mixed $valor = null) : void
     {
         http_response_code(200);
         echo json_encode(["ok" => true, "value" => $valor]);
