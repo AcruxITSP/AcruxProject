@@ -9,7 +9,7 @@ require_once dirname(__FILE__).'/../../models/Intervalo.php';
 require_once dirname(__FILE__).'/../_auth/roles.php';
 require_once dirname(__FILE__).'/../_auth/redirects.php';
 
-enum CursoRegisterError : string
+enum IntervaloRegisterError : string
 {
     case MISSING_PERMISSIONS = "MATERIA_REGISTER_MISSING_PERMISSIONS";
 }
