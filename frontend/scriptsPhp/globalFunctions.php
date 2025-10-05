@@ -1,6 +1,5 @@
 <?php
 
-
 $conn = iniciarConexion();
 
 // Crear un nuevo objeto de tipo mysqli y retornarlo
@@ -63,7 +62,7 @@ function fetchFuncionarios()
 {
     global $conn;
 
-    $query = $conn->prepare("SELECT * FROM funcionario;");
+    $query = $conn->prepare("SELECT * FROM persona, funcionario WHERE persona.id_persona = funcionario.id_persona;");
     $query->execute();
 
     $registros = $query->get_result();

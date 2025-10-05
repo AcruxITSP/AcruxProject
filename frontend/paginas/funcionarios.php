@@ -13,6 +13,12 @@ require '../scriptsPhp/globalFunctions.php';
 </head>
 
 <body>
+    <style>
+        td {
+            padding: 0.2rem 1rem 0.2rem 1rem;
+        }
+    </style>
+    
     <div class="forms-container">
         <!-- Formulario Registrar Funcionarios -->
         <div class="form-card">
