@@ -10,8 +10,13 @@ enum NoticiaErrorType : string
 	case DUPLICATE_ID_NOTICIA = "NOTICIA_DUPLICATE_ID_NOTICIA";
 }
 
-abstract class NoticiaError extends ErrorBase
+class NoticiaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : NoticiaError
     {
         return new self(NoticiaErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Noticia extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f119-7530-b4b2-0d34e1ee20f9";
+    const SQL_DEFAULT = "0199b22e-e0f3-7b30-bc35-cd95f1b561b6";
 
     protected mysqli $con;
 	public int $idNoticia;

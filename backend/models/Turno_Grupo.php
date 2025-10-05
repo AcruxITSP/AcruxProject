@@ -10,8 +10,13 @@ enum TurnoGrupoErrorType : string
 	
 }
 
-abstract class TurnoGrupoError extends ErrorBase
+class TurnoGrupoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : TurnoGrupoError
     {
         return new self(TurnoGrupoErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class TurnoGrupo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f10a-7f5d-af23-d0988ecc39fd";
+    const SQL_DEFAULT = "0199b22e-e0d3-7e49-9117-5f6db3f9004e";
 
     protected mysqli $con;
 	public int $idTurno;

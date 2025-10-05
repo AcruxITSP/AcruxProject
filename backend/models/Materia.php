@@ -11,8 +11,13 @@ enum MateriaErrorType : string
 	case DUPLICATE_NOMBRE = "MATERIA_DUPLICATE_NOMBRE";
 }
 
-abstract class MateriaError extends ErrorBase
+class MateriaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : MateriaError
     {
         return new self(MateriaErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Materia extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f10c-71ca-bac9-e517ba9201da";
+    const SQL_DEFAULT = "0199b22e-e0dc-7ffd-ab8d-06a72bff8c85";
 
     protected mysqli $con;
 	public int $idMateria;

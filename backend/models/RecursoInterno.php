@@ -10,8 +10,13 @@ enum RecursointernoErrorType : string
 	case DUPLICATE_ID_RECURSOIN = "RECURSOINTERNO_DUPLICATE_ID_RECURSOIN";
 }
 
-abstract class RecursointernoError extends ErrorBase
+class RecursointernoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : RecursointernoError
     {
         return new self(RecursointernoErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Recursointerno extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f152-7169-9a47-f8e82d4891a1";
+    const SQL_DEFAULT = "0199b22e-e1e7-732a-9ac9-694539c50435";
 
     protected mysqli $con;
 	public int $idRecursoIn;

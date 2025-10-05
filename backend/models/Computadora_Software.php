@@ -10,8 +10,13 @@ enum ComputadoraSoftwareErrorType : string
 	
 }
 
-abstract class ComputadoraSoftwareError extends ErrorBase
+class ComputadoraSoftwareError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : ComputadoraSoftwareError
     {
         return new self(ComputadoraSoftwareErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class ComputadoraSoftware extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f147-7367-a7f5-27f5787d41c9";
+    const SQL_DEFAULT = "0199b22e-e1d8-7395-92fb-104172d6a2e5";
 
     protected mysqli $con;
 	public int $idCompu;

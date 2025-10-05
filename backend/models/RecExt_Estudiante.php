@@ -10,8 +10,13 @@ enum RecextEstudianteErrorType : string
 	case DUPLICATE_ID_REGISTRO = "RECEXTESTUDIANTE_DUPLICATE_ID_REGISTRO";
 }
 
-abstract class RecextEstudianteError extends ErrorBase
+class RecextEstudianteError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : RecextEstudianteError
     {
         return new self(RecextEstudianteErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class RecextEstudiante extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f157-7e33-9dc7-82f74e44eb84";
+    const SQL_DEFAULT = "0199b22e-e1ec-7f9c-bc11-dbe1bd92ba62";
 
     protected mysqli $con;
 	public int $idRegistro;

@@ -10,8 +10,13 @@ enum ProfesorErrorType : string
 	case DUPLICATE_ID_PROFESOR = "PROFESOR_DUPLICATE_ID_PROFESOR";
 }
 
-abstract class ProfesorError extends ErrorBase
+class ProfesorError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : ProfesorError
     {
         return new self(ProfesorErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Profesor extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f10f-756c-b1e5-f99b59bb7efe";
+    const SQL_DEFAULT = "0199b22e-e0df-734f-a2cf-18d03b7ed38d";
 
     protected mysqli $con;
 	public int $idProfesor;

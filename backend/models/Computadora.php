@@ -10,8 +10,13 @@ enum ComputadoraErrorType : string
 	case DUPLICATE_ID_COMPU = "COMPUTADORA_DUPLICATE_ID_COMPU";
 }
 
-abstract class ComputadoraError extends ErrorBase
+class ComputadoraError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : ComputadoraError
     {
         return new self(ComputadoraErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Computadora extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f142-7ab3-a057-850b263496de";
+    const SQL_DEFAULT = "0199b22e-e1d2-7291-b847-488587fa67c1";
 
     protected mysqli $con;
 	public int $idCompu;

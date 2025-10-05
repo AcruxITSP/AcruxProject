@@ -11,8 +11,13 @@ enum GrupoErrorType : string
 	case DUPLICATE_CODIGO = "GRUPO_DUPLICATE_CODIGO";
 }
 
-abstract class GrupoError extends ErrorBase
+class GrupoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : GrupoError
     {
         return new self(GrupoErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Grupo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f121-78c4-86bf-84cbf3615817";
+    const SQL_DEFAULT = "0199b22e-e105-70d0-a8a9-0e277d34ef00";
 
     protected mysqli $con;
 	public int $idGrupo;

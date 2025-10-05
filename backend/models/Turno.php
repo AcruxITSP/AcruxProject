@@ -10,8 +10,13 @@ enum TurnoErrorType : string
 	case DUPLICATE_ID_TURNO = "TURNO_DUPLICATE_ID_TURNO";
 }
 
-abstract class TurnoError extends ErrorBase
+class TurnoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : TurnoError
     {
         return new self(TurnoErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Turno extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f0f2-7414-bb0b-09f000940e02";
+    const SQL_DEFAULT = "0199b22e-e0b0-7f09-994f-0a447fc57e95";
 
     protected mysqli $con;
 	public int $idTurno;

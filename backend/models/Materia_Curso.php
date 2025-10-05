@@ -10,8 +10,13 @@ enum MateriaCursoErrorType : string
 	
 }
 
-abstract class MateriaCursoError extends ErrorBase
+class MateriaCursoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : MateriaCursoError
     {
         return new self(MateriaCursoErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class MateriaCurso extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f125-74e9-967d-576102992fbf";
+    const SQL_DEFAULT = "0199b22e-e114-75e8-a5d5-9043160d2094";
 
     protected mysqli $con;
 	public int $idMateria;

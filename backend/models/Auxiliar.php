@@ -10,8 +10,13 @@ enum AuxiliarErrorType : string
 	case DUPLICATE_ID_AUXILIAR = "AUXILIAR_DUPLICATE_ID_AUXILIAR";
 }
 
-abstract class AuxiliarError extends ErrorBase
+class AuxiliarError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : AuxiliarError
     {
         return new self(AuxiliarErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Auxiliar extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f161-7798-b8d7-b54a92a6581c";
+    const SQL_DEFAULT = "0199b22e-e1fa-7995-9f76-474cd082d3b1";
 
     protected mysqli $con;
 	public int $idAuxiliar;

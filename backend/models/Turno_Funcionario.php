@@ -10,8 +10,13 @@ enum TurnoFuncionarioErrorType : string
 	
 }
 
-abstract class TurnoFuncionarioError extends ErrorBase
+class TurnoFuncionarioError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : TurnoFuncionarioError
     {
         return new self(TurnoFuncionarioErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class TurnoFuncionario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f101-7b34-a162-d5ea79fce59a";
+    const SQL_DEFAULT = "0199b22e-e0cc-7f86-a478-b5ef5d86aba8";
 
     protected mysqli $con;
 	public int $idFuncionario;

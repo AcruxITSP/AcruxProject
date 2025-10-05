@@ -10,8 +10,13 @@ enum SecretarioErrorType : string
 	case DUPLICATE_ID_SECRETARIO = "SECRETARIO_DUPLICATE_ID_SECRETARIO";
 }
 
-abstract class SecretarioError extends ErrorBase
+class SecretarioError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : SecretarioError
     {
         return new self(SecretarioErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Secretario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f14d-78d6-bb4c-08515ea2f088";
+    const SQL_DEFAULT = "0199b22e-e1d9-7e1e-bbb5-14a5438e8d67";
 
     protected mysqli $con;
 	public int $idSecretario;

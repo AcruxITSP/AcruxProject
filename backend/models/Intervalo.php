@@ -10,8 +10,13 @@ enum IntervaloErrorType : string
 	case DUPLICATE_ID_INTERVALO = "INTERVALO_DUPLICATE_ID_INTERVALO";
 }
 
-abstract class IntervaloError extends ErrorBase
+class IntervaloError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : IntervaloError
     {
         return new self(IntervaloErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Intervalo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f130-7ca7-939c-a63dd49466cf";
+    const SQL_DEFAULT = "0199b22e-e11e-7b76-a2e2-cc3b30a1771c";
 
     protected mysqli $con;
 	public int $idIntervalo;

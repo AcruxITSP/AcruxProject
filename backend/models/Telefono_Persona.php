@@ -11,8 +11,13 @@ enum TelefonoPersonaErrorType : string
 	case DUPLICATE_TELEFONO = "TELEFONOPERSONA_DUPLICATE_TELEFONO";
 }
 
-abstract class TelefonoPersonaError extends ErrorBase
+class TelefonoPersonaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : TelefonoPersonaError
     {
         return new self(TelefonoPersonaErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class TelefonoPersona extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f0f0-792e-a023-9bad56d5d8af";
+    const SQL_DEFAULT = "0199b22e-e0ae-754c-ad4f-6c8a47eaa900";
 
     protected mysqli $con;
 	public int $idTel;

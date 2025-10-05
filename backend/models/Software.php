@@ -11,8 +11,13 @@ enum SoftwareErrorType : string
 	case DUPLICATE_NOMBRE = "SOFTWARE_DUPLICATE_NOMBRE";
 }
 
-abstract class SoftwareError extends ErrorBase
+class SoftwareError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : SoftwareError
     {
         return new self(SoftwareErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Software extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f146-7fe6-bda0-2145899ee963";
+    const SQL_DEFAULT = "0199b22e-e1d6-772b-b941-327a0c6538f6";
 
     protected mysqli $con;
 	public int $idSoftware;

@@ -10,8 +10,13 @@ enum AdscriptaErrorType : string
 	case DUPLICATE_ID_ADSCRIPTA = "ADSCRIPTA_DUPLICATE_ID_ADSCRIPTA";
 }
 
-abstract class AdscriptaError extends ErrorBase
+class AdscriptaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : AdscriptaError
     {
         return new self(AdscriptaErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Adscripta extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f111-7265-a2bf-839f42c4fbdc";
+    const SQL_DEFAULT = "0199b22e-e0e3-7080-b950-b48c986d7f9b";
 
     protected mysqli $con;
 	public int $idAdscripta;

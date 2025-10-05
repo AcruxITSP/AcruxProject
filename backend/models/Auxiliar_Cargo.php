@@ -10,8 +10,13 @@ enum AuxiliarCargoErrorType : string
 	
 }
 
-abstract class AuxiliarCargoError extends ErrorBase
+class AuxiliarCargoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : AuxiliarCargoError
     {
         return new self(AuxiliarCargoErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class AuxiliarCargo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f170-7cc6-8326-fdbdc219d880";
+    const SQL_DEFAULT = "0199b22e-e20b-708d-9470-e9d4fa688895";
 
     protected mysqli $con;
 	public int $idAuxiliar;

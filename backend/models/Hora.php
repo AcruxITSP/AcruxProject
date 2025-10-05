@@ -10,8 +10,13 @@ enum HoraErrorType : string
 	case DUPLICATE_ID_HORA = "HORA_DUPLICATE_ID_HORA";
 }
 
-abstract class HoraError extends ErrorBase
+class HoraError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : HoraError
     {
         return new self(HoraErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Hora extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f133-79ac-927d-10f3cd22b65b";
+    const SQL_DEFAULT = "0199b22e-e122-7979-a527-f69f831be135";
 
     protected mysqli $con;
 	public int $idHora;

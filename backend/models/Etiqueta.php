@@ -11,8 +11,13 @@ enum EtiquetaErrorType : string
 	case DUPLICATE_NOMBRE = "ETIQUETA_DUPLICATE_NOMBRE";
 }
 
-abstract class EtiquetaError extends ErrorBase
+class EtiquetaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : EtiquetaError
     {
         return new self(EtiquetaErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Etiqueta extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f11d-75d3-8dd9-4950cfa8c81a";
+    const SQL_DEFAULT = "0199b22e-e0fc-70ed-9725-034231661dd3";
 
     protected mysqli $con;
 	public int $idEtiqueta;

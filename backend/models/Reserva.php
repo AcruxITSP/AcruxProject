@@ -10,8 +10,13 @@ enum ReservaErrorType : string
 	case DUPLICATE_ID_RESERVA = "RESERVA_DUPLICATE_ID_RESERVA";
 }
 
-abstract class ReservaError extends ErrorBase
+class ReservaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : ReservaError
     {
         return new self(ReservaErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Reserva extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f137-7d9e-95b4-16e0d5cf9fa2";
+    const SQL_DEFAULT = "0199b22e-e129-748d-a699-a400600c30c5";
 
     protected mysqli $con;
 	public int $idReserva;

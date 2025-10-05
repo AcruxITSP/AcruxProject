@@ -10,8 +10,13 @@ enum FuncionarioErrorType : string
 	case DUPLICATE_ID_FUNCIONARIO = "FUNCIONARIO_DUPLICATE_ID_FUNCIONARIO";
 }
 
-abstract class FuncionarioError extends ErrorBase
+class FuncionarioError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : FuncionarioError
     {
         return new self(FuncionarioErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Funcionario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f0ed-7413-a625-3e208fa295e5";
+    const SQL_DEFAULT = "0199b22e-e0ab-7567-9d3c-b66c91f03dfd";
 
     protected mysqli $con;
 	public int $idFuncionario;

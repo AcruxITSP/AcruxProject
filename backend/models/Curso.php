@@ -11,8 +11,13 @@ enum CursoErrorType : string
 	case DUPLICATE_NOMBRE = "CURSO_DUPLICATE_NOMBRE";
 }
 
-abstract class CursoError extends ErrorBase
+class CursoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : CursoError
     {
         return new self(CursoErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Curso extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f123-7860-900d-48a138262465";
+    const SQL_DEFAULT = "0199b22e-e112-7328-9952-baa0d955e14d";
 
     protected mysqli $con;
 	public int $idCurso;

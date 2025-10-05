@@ -11,8 +11,13 @@ enum CargoErrorType : string
 	case DUPLICATE_NOMBRE = "CARGO_DUPLICATE_NOMBRE";
 }
 
-abstract class CargoError extends ErrorBase
+class CargoError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : CargoError
     {
         return new self(CargoErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Cargo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f16e-7007-b48d-4da24c703921";
+    const SQL_DEFAULT = "0199b22e-e209-7789-956f-c4da00e169dc";
 
     protected mysqli $con;
 	public int $idCargo;

@@ -10,8 +10,13 @@ enum PartediarioErrorType : string
 	case DUPLICATE_ID_ENTRADA = "PARTEDIARIO_DUPLICATE_ID_ENTRADA";
 }
 
-abstract class PartediarioError extends ErrorBase
+class PartediarioError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : PartediarioError
     {
         return new self(PartediarioErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Partediario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f114-7005-9649-3925d4243724";
+    const SQL_DEFAULT = "0199b22e-e0ef-701d-b30c-ddd92a613343";
 
     protected mysqli $con;
 	public int $idEntrada;

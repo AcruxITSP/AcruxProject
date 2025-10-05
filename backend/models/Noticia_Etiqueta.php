@@ -10,8 +10,13 @@ enum NoticiaEtiquetaErrorType : string
 	
 }
 
-abstract class NoticiaEtiquetaError extends ErrorBase
+class NoticiaEtiquetaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : NoticiaEtiquetaError
     {
         return new self(NoticiaEtiquetaErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class NoticiaEtiqueta extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f11f-72b9-b56b-b1b5d8dc9796";
+    const SQL_DEFAULT = "0199b22e-e100-7ac7-a006-d9709fa19057";
 
     protected mysqli $con;
 	public int $idNoticia;

@@ -11,8 +11,13 @@ enum DiaErrorType : string
 	case DUPLICATE_NOMBRE = "DIA_DUPLICATE_NOMBRE";
 }
 
-abstract class DiaError extends ErrorBase
+class DiaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : DiaError
     {
         return new self(DiaErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Dia extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f132-7309-ba75-f48dfbaa1082";
+    const SQL_DEFAULT = "0199b22e-e120-77bc-aa44-f1509e81ebd3";
 
     protected mysqli $con;
 	public int $idDia;

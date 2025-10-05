@@ -10,8 +10,13 @@ enum BloqueErrorType : string
 	case DUPLICATE_ID_BLOQUE = "BLOQUE_DUPLICATE_ID_BLOQUE";
 }
 
-abstract class BloqueError extends ErrorBase
+class BloqueError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : BloqueError
     {
         return new self(BloqueErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Bloque extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f135-735a-a20d-1633788b2e47";
+    const SQL_DEFAULT = "0199b22e-e124-7867-8429-d6ea2bce0a18";
 
     protected mysqli $con;
 	public int $idBloque;

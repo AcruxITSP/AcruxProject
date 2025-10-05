@@ -10,8 +10,13 @@ enum AulaAuxiliarErrorType : string
 	
 }
 
-abstract class AulaAuxiliarError extends ErrorBase
+class AulaAuxiliarError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : AulaAuxiliarError
     {
         return new self(AulaAuxiliarErrorType::NOT_FOUND, null);
@@ -41,7 +46,7 @@ class AulaAuxiliar extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f174-776a-9825-e8fe9329e484";
+    const SQL_DEFAULT = "0199b22e-e283-7b4d-aa76-08acf770610a";
 
     protected mysqli $con;
 	public int $idAula;

@@ -11,8 +11,13 @@ enum AulaErrorType : string
 	case DUPLICATE_CODIGO = "AULA_DUPLICATE_CODIGO";
 }
 
-abstract class AulaError extends ErrorBase
+class AulaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : AulaError
     {
         return new self(AulaErrorType::NOT_FOUND, null);
@@ -53,7 +58,7 @@ class Aula extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f13f-7bd5-9edb-7073ddc8cb02";
+    const SQL_DEFAULT = "0199b22e-e12f-738a-bbce-0e5536def39f";
 
     protected mysqli $con;
 	public int $idAula;

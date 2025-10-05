@@ -12,8 +12,13 @@ enum PersonaErrorType : string
 	case DUPLICATE_EMAIL = "PERSONA_DUPLICATE_EMAIL";
 }
 
-abstract class PersonaError extends ErrorBase
+class PersonaError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : PersonaError
     {
         return new self(PersonaErrorType::NOT_FOUND, null);
@@ -60,7 +65,7 @@ class Persona extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f0de-7ad3-a2b2-8eb549752502";
+    const SQL_DEFAULT = "0199b22e-e098-7bf5-84ed-a1d4c037cd97";
 
     protected mysqli $con;
 	public int $idPersona;
@@ -75,8 +80,7 @@ class Persona extends BaseModel
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
 	protected function __construct(mysqli $con, string $nombre, string $apellido, string $dni, ?string $email, string $contrasena, int $idPersona)
-	{	
-		parent::__construct("contrasena");
+	{
 	    $this->con = $con;
 		$this->idPersona = $idPersona;
 		$this->nombre = $nombre;

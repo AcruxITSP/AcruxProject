@@ -10,8 +10,13 @@ enum AdministradorErrorType : string
 	case DUPLICATE_ID_ADMINISTRADOR = "ADMINISTRADOR_DUPLICATE_ID_ADMINISTRADOR";
 }
 
-abstract class AdministradorError extends ErrorBase
+class AdministradorError extends ErrorBase
 {
+    private function __construct(mixed $type, mixed $data)
+    {
+        parent::__construct($type, $data);
+    }
+
     public static function notFound() : AdministradorError
     {
         return new self(AdministradorErrorType::NOT_FOUND, null);
@@ -46,7 +51,7 @@ class Administrador extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b13b-f14f-7fb7-a547-7035509adea3";
+    const SQL_DEFAULT = "0199b22e-e1dc-700e-9292-d941b7e418b0";
 
     protected mysqli $con;
 	public int $idAdministrador;
