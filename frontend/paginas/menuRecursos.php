@@ -35,7 +35,7 @@ verificarInicioSesion();
                 <a href="menuRecursos.php"><i class="fas fa-book"></i> Recursos</a>
                 <a href="contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
                 <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a>
-                <a href="parteDiario.php"><i class="fas fa-list"></i> Parte Diario</a>
+                <a href="parteDiario/ver.php"><i class="fas fa-list"></i> Parte Diario</a>
             </nav>
         </aside>
 
@@ -73,7 +73,7 @@ verificarInicioSesion();
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-graduation-cap icon-card"></i>
-                    <a href="cursos.php">Cursos</a>
+                    <a href="cursos/ver.php">Cursos</a>
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-users icon-card"></i>
@@ -81,7 +81,7 @@ verificarInicioSesion();
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-chalkboard icon-card"></i>
-                    <a href="aulas.php">Aulas</a>
+                    <a href="aulas/registrar.php">Aulas</a>
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-laptop icon-card"></i>

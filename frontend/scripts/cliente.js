@@ -33,17 +33,17 @@ export async function client_materias_fetchAll() {
     return registros;
 }
 
-export async function client_materias_register(nombre) {
-    const formData = new FormData();                                        
-    formData.append("nombre", nombre);                                      
+export async function client_materias_register(sendedFormData) {
+    const formData = new FormData();
+    formData.append("nombre", sendedFormData.get("nombre"));
 
-    const requestInit = {method: 'POST', body: formData};
+    const requestInit = { method: 'POST', body: formData };
     //const localizacionApi = '../backend/api/user/obtener_por_nombre.php';
     //const respuesta = await fetch(localizacionApi, requestInit);
 
     let respuesta;
 
-    if (typeof formData.get("nombre") === "string"){
+    if (typeof formData.get("nombre") === "string") {
         respuesta = true;
     } else {
         respuesta = "Error";
@@ -68,7 +68,7 @@ class RegistroCursos {
 }
 
 class RegistroMateria {
-    constructor(nombre){
+    constructor(nombre) {
         this.nombre = nombre;
     }
 }

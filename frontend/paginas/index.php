@@ -35,7 +35,7 @@ verificarInicioSesion();
         <a href="menuRecursos.php"><i class="fas fa-book"></i> Recursos</a>
         <a href="contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
         <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a>
-        <a href="parteDiario.php"><i class="fas fa-list"></i> Parte Diario</a>
+        <a href="parteDiario/ver.php"><i class="fas fa-list"></i> Parte Diario</a>
       </nav>
     </aside>
 

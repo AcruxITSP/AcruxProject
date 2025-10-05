@@ -1,9 +1,21 @@
 import { client_parteDiario_fetchAll } from "./cliente.js";
 
 document.addEventListener('DOMContentLoaded', async e => {
-    mostrarRegistrosPartediario();
-});
+    const regexPaginaVer = /paginas\/parteDiario\/ver\.php/;
+    const regexPaginaRegister = /paginas\/parteDiario\/registrar\.php/;
+    const regexPaginaEditar = /paginas\/parteDiario\/editar\.php/;
+    const ubicacionActual = String(window.location.href);
 
+    if (regexPaginaVer.test(ubicacionActual)) {
+        mostrarRegistrosPartediario();
+    } else if (regexPaginaRegister.test(ubicacionActual)) {
+        waitFormSubmit();
+    } else if (regexPaginaEditar.test(ubicacionActual)) {
+        // Pagina para editar la informacion de las materias
+    } else {
+        // Pagina no identificada
+    }
+});
 async function mostrarRegistrosPartediario() {
     const tpl = document.getElementById("tpl");
     const domErrorMsg = document.getElementById("errorMsg");
@@ -44,4 +56,22 @@ async function mostrarRegistrosPartediario() {
 
         domTabla.appendChild(clone);
     }
+}
+
+async function waitFormSubmit(){
+    const dom_formPartediario = document.getElementById("form-register-partediario");
+
+    dom_formPartediario.addEventListener("submit", async e => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        const respuesta = await client_materias_register(formData.nombre);
+
+        if (respuesta === true){
+            console.log("Materia registrada exitosamente");
+        } else {
+            console.log("ERROR: " + respuesta);
+        }
+    });
 }
