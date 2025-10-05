@@ -38,13 +38,16 @@ abstract class SQL
 		$stmt = $con->prepare($query);
 		if(!$stmt) return ErrorDB::prepare($query);
 
-		$unblobedValues = self::replaceBlobsValuesWithNull($types, $values);
-		if(!$stmt->bind_param($types, ...$unblobedValues)) return ErrorDB::bindParam($query);
-
-		$blobEntries = self::getBlobEntries($types, $values);
-		foreach($blobEntries as $blobIndex => $blob)
+		if($types !== "")
 		{
-			if(!$stmt->send_long_data($blobIndex, $blob)) return ErrorDB::sendLongData($query);
+			$unblobedValues = self::replaceBlobsValuesWithNull($types, $values);
+			if(!$stmt->bind_param($types, ...$unblobedValues)) return ErrorDB::bindParam($query);
+
+			$blobEntries = self::getBlobEntries($types, $values);
+			foreach($blobEntries as $blobIndex => $blob)
+			{
+				if(!$stmt->send_long_data($blobIndex, $blob)) return ErrorDB::sendLongData($query);
+			}
 		}
 
 		if(!$stmt->execute()) return ErrorDB::execute($query);
