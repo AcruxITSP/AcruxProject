@@ -1,5 +1,5 @@
 <?php
-// @collapse
+
 
 $conn = iniciarConexion();
 

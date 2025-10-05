@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async e => {
         // Pagina no identificada
     }
 });
+
 async function mostrarRegistrosPartediario() {
     const tpl = document.getElementById("tpl");
     const domErrorMsg = document.getElementById("errorMsg");

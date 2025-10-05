@@ -1,5 +1,6 @@
+/* Objetos de ejemplo */
+
 export async function client_parteDiario_fetchAll() {
-    // objetos de ejemplo
 
     const registro1 = new RegistroPartediario("2025-07-31 09:30:00", "El estudiante Thiago Diaz se retiró por dolor de c");
     const registro2 = new RegistroPartediario("2025-06-23 14:23:00", "El estudiante Alejo Bottesch se retiró sin previo");
@@ -10,7 +11,6 @@ export async function client_parteDiario_fetchAll() {
 }
 
 export async function client_cursos_fetchAll() {
-    // objetos de ejemplo
     const materias1 = ["Sociologia", "Ingles", "Programacion", "Agricultura"];
     const materias2 = ["Natacion", "Gastronomia", "Sandwiches II", "Polimatizacion"];
 
@@ -23,7 +23,6 @@ export async function client_cursos_fetchAll() {
 }
 
 export async function client_materias_fetchAll() {
-    // objetos de ejemplo
     const registro1 = new RegistroMateria("Sistemas Operativos");
     const registro2 = new RegistroMateria("Programacion II");
     const registro3 = new RegistroMateria("Refuerzo II");
@@ -52,6 +51,16 @@ export async function client_materias_register(sendedFormData) {
     return respuesta;    // La respuesta es true, o un error
 }
 
+export async function client_aulas_fetchAll() {
+    const registro1 = new RegistroAula('2B', 'PB', 'Informática', 25);
+    const registro2 = new RegistroAula('1A', '1', 'Lab. Física', 20);
+    const registro3 = new RegistroAula('3D', '2', 'General', 40);
+
+    const registros = [registro1, registro2, registro3];
+
+    return registros;
+}
+
 class RegistroPartediario {
     constructor(fechaHora, accion) {
         this.fechaHora = fechaHora;
@@ -70,5 +79,14 @@ class RegistroCursos {
 class RegistroMateria {
     constructor(nombre) {
         this.nombre = nombre;
+    }
+}
+
+class RegistroAula {
+    constructor(codigo, piso, proposito, cantidadSillas){
+        this.codigo = codigo;
+        this.piso = piso;
+        this.proposito = proposito;
+        this.cantidadSillas = cantidadSillas;
     }
 }

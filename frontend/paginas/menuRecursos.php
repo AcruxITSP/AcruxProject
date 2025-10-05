@@ -81,7 +81,7 @@ verificarInicioSesion();
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-chalkboard icon-card"></i>
-                    <a href="aulas/registrar.php">Aulas</a>
+                    <a href="aulas/ver.php">Aulas</a>
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-laptop icon-card"></i>
