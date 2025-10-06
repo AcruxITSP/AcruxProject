@@ -26,7 +26,7 @@ if(!($getPersonaResult instanceof Persona)) Respuestas::enviarError($getPersonaR
 $persona = $getPersonaResult;
 
 // Validar contrasena
-if(!password_verify($persona->contrasena, PASSWORD_BCRYPT))
+if(!password_verify($contrasena, $persona->contrasena))
 {
     Respuestas::enviarError(LoginError::INVALID_PASSWORD);
 }
@@ -64,7 +64,7 @@ if(!($getAdministradorResult instanceof mysqli_result)) Respuestas::enviarError(
 if($getAdministradorResult->num_rows != 0)
 {
     $administrador = $getAdministradorResult->fetch_assoc();
-    $_SESSION["Id_administrador"] = $funcionario['Id_administrador'];
+    $_SESSION["Id_administrador"] = $administrador['Id_administrador'];
     $_SESSION["rol"] = "administrador";
 }
 
@@ -79,7 +79,7 @@ if(!($getAdscriptaResult instanceof mysqli_result)) Respuestas::enviarError($get
 if($getAdscriptaResult->num_rows != 0)
 {
     $adscripta = $getAdscriptaResult->fetch_assoc();
-    $_SESSION["Id_adscripta"] = $funcionario['Id_adscripta'];
+    $_SESSION["Id_adscripta"] = $adscripta['Id_adscripta'];
     $_SESSION["rol"] = "adscripta";
 }
 
@@ -94,13 +94,13 @@ if(!($getAuxiliarResult instanceof mysqli_result)) Respuestas::enviarError($getA
 if($getAuxiliarResult->num_rows != 0)
 {
     $auxiliar = $getAuxiliarResult->fetch_assoc();
-    $_SESSION["Id_auxiliar"] = $funcionario['Id_auxiliar'];
+    $_SESSION["Id_auxiliar"] = $auxiliar['Id_auxiliar'];
     $_SESSION["rol"] = "auxiliar";
 }
 
 // Obtener y guardar Profesor (si aplica)
 $sql = "SELECT Profesor.*
-        FROM Auxiliar, Funcionario, Persona
+        FROM Profesor, Funcionario, Persona
         WHERE Persona.DNI = ? 
         AND Persona.Id_persona = Funcionario.Id_persona 
         AND Funcionario.Id_funcionario = Profesor.Id_funcionario";
@@ -109,7 +109,7 @@ if(!($getProfesorResult instanceof mysqli_result)) Respuestas::enviarError($getP
 if($getProfesorResult->num_rows != 0)
 {
     $profesor = $getProfesorResult->fetch_assoc();
-    $_SESSION["Id_profesor"] = $funcionario['Id_profesor'];
+    $_SESSION["Id_profesor"] = $profesor['Id_profesor'];
     $_SESSION["rol"] = "profesor";
 }
 
@@ -124,7 +124,7 @@ if(!($getSecretarioResult instanceof mysqli_result)) Respuestas::enviarError($ge
 if($getSecretarioResult->num_rows != 0)
 {
     $secretario = $getSecretarioResult->fetch_assoc();
-    $_SESSION["Id_secretario"] = $funcionario['Id_secretario'];
+    $_SESSION["Id_secretario"] = $secretario['Id_secretario'];
     $_SESSION["rol"] = "secretario";
 }
 
@@ -132,13 +132,15 @@ if($getSecretarioResult->num_rows != 0)
 $sql = "SELECT Estudiante.*
         FROM Estudiante, Persona
         WHERE Persona.DNI = ? 
-        AND Persona.Id_persona = Estudiante.Id_funcionario";
+        AND Persona.Id_persona = Estudiante.Id_persona";
 $getEstudianteResult = SQL::valueQuery($con, $sql, "s", $ci);
 if(!($getEstudianteResult instanceof mysqli_result)) Respuestas::enviarError($getEstudianteResult);
 if($getEstudianteResult->num_rows != 0)
 {
     $estudiante = $getEstudianteResult->fetch_assoc();
-    $_SESSION["Id_estudiante"] = $funcionario['Id_estudiante'];
+    $_SESSION["Id_estudiante"] = $estudiante['Id_estudiante'];
     $_SESSION["rol"] = "estudiante";
 }
+
+Respuestas::enviarOk();
 ?>
