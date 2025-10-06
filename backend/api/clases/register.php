@@ -29,7 +29,7 @@ $idMateria = (int)($_POST['id_materia'] ?? 0);
 
 $checkClaseSql = "SELECT COUNT(Id_clase) as count FROM clase WHERE Id_profesor = ? AND Id_materia = ?";
 $checkClaseResult = SQL::valueQuery($con, $checkClaseSql, "ii", $idProfesor, $idMateria);
-if($checkClaseResult instanceof ErrorDB) Respuestas::enviarError(new ErrorBase(ClaseRegisterError::CANT_CHECK_IF_CLASE_EXISTS, null));
+if($checkClaseResult instanceof ErrorDB) Respuestas::enviarError(new ErrorBase(ClaseRegisterError::CANT_CHECK_IF_CLASE_EXISTS, $checkClaseResult));
 if((int)$checkClaseResult->fetch_assoc()['count'] > 0) Respuestas::enviarError(new ErrorBase(ClaseRegisterError::CLASE_ALREADY_EXISTS, null));
 
 $createClaseResult = Clase::create($con, $idProfesor, $idMateria);

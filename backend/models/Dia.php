@@ -58,7 +58,7 @@ class Dia extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f65d-7479-9976-777625dacb5d";
+    const SQL_DEFAULT = "0199bae7-2d3d-74cd-b2bb-8e15143e6d8a";
 
     protected mysqli $con;
 	public int $idDia;

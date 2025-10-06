@@ -58,7 +58,7 @@ class Software extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f66d-78f1-a02a-cbe740a1fa92";
+    const SQL_DEFAULT = "0199bae7-2d4e-7b7e-befd-75be55666ff3";
 
     protected mysqli $con;
 	public int $idSoftware;

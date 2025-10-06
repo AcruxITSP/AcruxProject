@@ -51,7 +51,7 @@ class Secretario extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f670-753f-8c58-a2b2e5ff8701";
+    const SQL_DEFAULT = "0199bae7-2d51-77e4-9d0f-c00e26822065";
 
     protected mysqli $con;
 	public int $idSecretario;

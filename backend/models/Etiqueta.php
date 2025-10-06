@@ -58,7 +58,7 @@ class Etiqueta extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f649-7391-b91a-483f485edb8d";
+    const SQL_DEFAULT = "0199bae7-2d23-707c-96ae-b67ba46a404b";
 
     protected mysqli $con;
 	public int $idEtiqueta;
