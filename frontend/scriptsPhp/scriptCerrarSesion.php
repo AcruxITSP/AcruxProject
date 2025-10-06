@@ -1,4 +1,4 @@
 <?php
 require 'globalFunctions.php';
 cerrarSesion();
-header("Location:../login.php");
+header("Location:../paginas/login.php");

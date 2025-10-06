@@ -1,24 +1,31 @@
 ﻿-- Crear base de datos (Se debe ejecutar antes que el resto, por separado)
 DROP DATABASE db_acrux;
+DROP DATABASE db_acrux;
 CREATE DATABASE db_acrux CHARACTER SET utf16 COLLATE utf16_spanish_ci;
+USE db_acrux;
 USE db_acrux;
 
 
 -- Creacion de Tablas
 CREATE TABLE Persona (
     -- "INT UNSIGNED" permite que el rango de valores positivos de la variable se duplique, pero no podrá contener números negativos
+    -- "INT UNSIGNED" permite que el rango de valores positivos de la variable se duplique, pero no podrá contener números negativos
     -- AUTO_INCREMENT incrementa en 1 con cada nuevo registro
+    Id_persona INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_persona INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(50) NOT NULL,
     Apellido VARCHAR(50) NOT NULL,
     -- "UNIQUE" hace que el atributo no pueda repetirse en la misma tabla
     DNI VARCHAR(10) UNIQUE NOT NULL,
     Email VARCHAR(255) UNIQUE NULL,
+    Email VARCHAR(255) UNIQUE NULL,
     Contrasena VARCHAR(255) NOT NULL
 );
 
 
 CREATE TABLE Funcionario (
+    Id_funcionario INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_persona INT UNSIGNED NOT NULL
     Id_funcionario INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_persona INT UNSIGNED NOT NULL
 );
@@ -28,10 +35,13 @@ CREATE TABLE Telefono_Persona (
     Id_tel INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Telefono VARCHAR(20) UNIQUE NOT NULL,
     Id_persona INT UNSIGNED NOT NULL
+    Telefono VARCHAR(20) UNIQUE NOT NULL,
+    Id_persona INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Turno (
+    Id_turno INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_turno INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Turno ENUM('Diurno', 'Matutino', 'Vespertino', 'Nocturno') DEFAULT 'Diurno' NOT NULL
 );
@@ -40,10 +50,14 @@ CREATE TABLE Turno (
 CREATE TABLE Turno_Funcionario (
     Id_funcionario INT UNSIGNED NOT NULL,
     Id_turno INT UNSIGNED NOT NULL
+    Id_funcionario INT UNSIGNED NOT NULL,
+    Id_turno INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Turno_Grupo (
+    Id_turno INT UNSIGNED NOT NULL,
+    Id_grupo INT UNSIGNED NOT NULL
     Id_turno INT UNSIGNED NOT NULL,
     Id_grupo INT UNSIGNED NOT NULL
 );
@@ -52,17 +66,25 @@ CREATE TABLE Turno_Grupo (
 CREATE TABLE Materia (
     Id_materia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(100) UNIQUE NOT NULL -- "Not Null" establece que el valor no puede ser nulo
+    Id_materia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(100) UNIQUE NOT NULL -- "Not Null" establece que el valor no puede ser nulo
 );
 
 
 CREATE TABLE Profesor (
     Id_profesor INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_profesor INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     FechaIngreso DATE NOT NULL,
+    Id_funcionario INT UNSIGNED NOT NULL
     Id_funcionario INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Clase (
+    Id_clase INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_profesor INT UNSIGNED NOT NULL,
+    -- Es necesario que las claves foráneas sean del tipo "INT UNSIGNED" para ser compatibles con las claves primarias
+    Id_materia INT UNSIGNED NOT NULL
     Id_clase INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_profesor INT UNSIGNED NOT NULL,
     -- Es necesario que las claves foráneas sean del tipo "INT UNSIGNED" para ser compatibles con las claves primarias
@@ -73,6 +95,8 @@ CREATE TABLE Clase (
 CREATE TABLE Adscripta (
     Id_adscripta INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_funcionario INT UNSIGNED NOT NULL
+    Id_adscripta INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_funcionario INT UNSIGNED NOT NULL
 );
 
 
@@ -81,18 +105,23 @@ CREATE TABLE ParteDiario (
     Accion VARCHAR(512) NOT NULL,
     Fecha_Hora TIMESTAMP NOT NULL,
     Id_adscripta INT UNSIGNED NULL
+    Id_adscripta INT UNSIGNED NULL
 );
 
 
 CREATE TABLE Noticia (
     Id_noticia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_noticia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Fecha_Hora TIMESTAMP NOT NULL,
     Contenido VARCHAR(512) NOT NULL,
+    Id_adscripta INT UNSIGNED NULL
     Id_adscripta INT UNSIGNED NULL
 );
 
 
 CREATE TABLE Etiqueta (
+    Id_etiqueta INT UNSIGNED  PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(25) UNIQUE NOT NULL
     Id_etiqueta INT UNSIGNED  PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(25) UNIQUE NOT NULL
 );
@@ -101,10 +130,16 @@ CREATE TABLE Etiqueta (
 CREATE TABLE Noticia_Etiqueta (
     Id_noticia INT UNSIGNED NOT NULL,
     Id_etiqueta INT UNSIGNED NOT NULL
+    Id_noticia INT UNSIGNED NOT NULL,
+    Id_etiqueta INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Grupo (
+    Id_grupo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Codigo VARCHAR(15) UNIQUE NOT NULL,
+    Id_adscripta INT UNSIGNED NULL,
+    Id_curso INT UNSIGNED NULL
     Id_grupo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Codigo VARCHAR(15) UNIQUE NOT NULL,
     Id_adscripta INT UNSIGNED NULL,
@@ -116,10 +151,15 @@ CREATE TABLE Curso (
     Id_curso INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(100) UNIQUE NOT NULL,
     DuracionAnios INT UNSIGNED NOT NULL
+    Id_curso INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(100) UNIQUE NOT NULL,
+    DuracionAnios INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Materia_Curso (
+    Id_materia INT UNSIGNED NOT NULL,
+    Id_curso INT UNSIGNED NOT NULL
     Id_materia INT UNSIGNED NOT NULL,
     Id_curso INT UNSIGNED NOT NULL
 );
@@ -127,7 +167,10 @@ CREATE TABLE Materia_Curso (
 
 CREATE TABLE Estudiante (
     Id_estudiante INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_estudiante INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Reputacion ENUM('BUENA', 'IMPUNTUAL', 'MALA') DEFAULT 'BUENA' NOT NULL,
+    Id_grupo INT UNSIGNED NULL,
+    Id_persona INT UNSIGNED NOT NULL
     Id_grupo INT UNSIGNED NULL,
     Id_persona INT UNSIGNED NOT NULL
 );
@@ -136,12 +179,17 @@ CREATE TABLE Estudiante (
 CREATE TABLE Telefono_Tutor (
     Id_tel INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Telefono VARCHAR(20) UNIQUE NOT NULL,
+    Id_tel INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Telefono VARCHAR(20) UNIQUE NOT NULL,
     NombreTutor VARCHAR(100) NOT NULL,
+    Id_estudiante INT UNSIGNED NOT NULL
     Id_estudiante INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Intervalo (
+    Id_intervalo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Numero INT NOT NULL UNIQUE,
     Id_intervalo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Numero INT NOT NULL UNIQUE,
     Entrada TIME NOT NULL,
@@ -152,6 +200,8 @@ CREATE TABLE Intervalo (
 CREATE TABLE Dia (
     Id_dia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(20) UNIQUE NOT NULL
+    Id_dia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(20) UNIQUE NOT NULL
 );
 
 
@@ -159,10 +209,18 @@ CREATE TABLE Hora (
     Id_hora INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_intervalo INT UNSIGNED NOT NULL,
     Id_dia INT UNSIGNED NOT NULL
+    Id_hora INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_intervalo INT UNSIGNED NOT NULL,
+    Id_dia INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Bloque (
+    Id_bloque INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_grupo INT UNSIGNED NOT NULL,
+    Id_clase INT UNSIGNED NOT NULL,
+    Id_aula INT UNSIGNED NOT NULL,
+    Id_hora INT UNSIGNED NOT NULL
     Id_bloque INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_grupo INT UNSIGNED NOT NULL,
     Id_clase INT UNSIGNED NOT NULL,
@@ -176,30 +234,40 @@ CREATE TABLE Reserva (
     Id_hora INT UNSIGNED NOT NULL,
     Id_aula INT UNSIGNED NOT NULL,
     Id_funcionario INT UNSIGNED NOT NULL,
+    Id_reserva INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_hora INT UNSIGNED NOT NULL,
+    Id_aula INT UNSIGNED NOT NULL,
+    Id_funcionario INT UNSIGNED NOT NULL,
     Fecha DATE NOT NULL
 );
 
 
 CREATE TABLE Aula (
     Id_aula INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_aula INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Codigo VARCHAR(10) UNIQUE NOT NULL,
     Piso VARCHAR(15) NOT NULL,
     Proposito VARCHAR(100) NOT NULL,
+    CantidadSillas INT UNSIGNED NOT NULL
     CantidadSillas INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Computadora (
     Id_compu INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_compu INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     SO VARCHAR(100) NOT NULL,
     -- "ENUM(valor1, valor2, etc)" permite limitar los valores de una columna a una lista concreta
     Estado ENUM('OK', 'MALFUNCIONAMIENTO', 'ROTO') DEFAULT 'OK' NOT NULL,
     Problema VARCHAR(512) NOT NULL DEFAULT 'Ninguno',
     Id_aula INT UNSIGNED NOT NULL
+    Id_aula INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Software (
+    Id_software INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(255) UNIQUE NOT NULL
     Id_software INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(255) UNIQUE NOT NULL
 );
@@ -208,10 +276,14 @@ CREATE TABLE Software (
 CREATE TABLE Computadora_Software (
     Id_compu INT UNSIGNED NOT NULL,
     Id_software INT UNSIGNED NOT NULL
+    Id_compu INT UNSIGNED NOT NULL,
+    Id_software INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Secretario (
+    Id_secretario INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_funcionario INT UNSIGNED NOT NULL
     Id_secretario INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_funcionario INT UNSIGNED NOT NULL
 );
@@ -219,47 +291,45 @@ CREATE TABLE Secretario (
 CREATE TABLE Administrador (
     Id_administrador INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_funcionario INT UNSIGNED NOT NULL
+    Id_administrador INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_funcionario INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE RecursoInterno (
     Id_recursoIn INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_recursoIn INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Tipo VARCHAR(50) NOT NULL,
     Estado ENUM('OK', 'MALFUNCIONAMIENTO', 'ROTO') DEFAULT 'OK' NOT NULL,
     Problema VARCHAR(512) NOT NULL DEFAULT 'Ninguno',
+    Id_aula INT UNSIGNED NULL
     Id_aula INT UNSIGNED NULL
 );
 
 
 CREATE TABLE RecursoExterno (
     Id_recursoEx INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_recursoEx INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Tipo VARCHAR(50) NOT NULL,
     Disponible BOOLEAN NOT NULL DEFAULT TRUE,
+    Id_aula INT UNSIGNED NULL
     Id_aula INT UNSIGNED NULL
 );
 
 
-CREATE TABLE RecExt_Estudiante (
+CREATE TABLE RecExt_Persona (
     Id_registro INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Accion VARCHAR(50) NOT NULL,
     Fecha_Hora TIMESTAMP NOT NULL,
     Id_recursoEx INT UNSIGNED NOT NULL,
     Id_secretario INT UNSIGNED NULL,
-    Id_estudiante INT UNSIGNED NOT NULL
-);
-
-
-CREATE TABLE RecExt_Funcionario (
-    Id_registro INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Accion VARCHAR(50) NOT NULL,
-    Fecha_Hora TIMESTAMP NOT NULL,
-    Id_recursoEx INT UNSIGNED NOT NULL,
-    Id_secretario INT UNSIGNED NULL,
-    Id_funcionario INT UNSIGNED NOT NULL
+    Id_persona INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Auxiliar (
+    Id_auxiliar INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_funcionario INT UNSIGNED NOT NULL
     Id_auxiliar INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Id_funcionario INT UNSIGNED NOT NULL
 );
@@ -268,16 +338,22 @@ CREATE TABLE Auxiliar (
 CREATE TABLE Cargo (
     Id_cargo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR(100) UNIQUE NOT NULL
+    Id_cargo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(100) UNIQUE NOT NULL
 );
 
 
 CREATE TABLE Auxiliar_Cargo (
     Id_auxiliar INT UNSIGNED NOT NULL,
     Id_cargo INT UNSIGNED NOT NULL
+    Id_auxiliar INT UNSIGNED NOT NULL,
+    Id_cargo INT UNSIGNED NOT NULL
 );
 
 
 CREATE TABLE Aula_Auxiliar (
+    Id_aula INT UNSIGNED NOT NULL,
+    Id_auxiliar INT UNSIGNED NOT NULL
     Id_aula INT UNSIGNED NOT NULL,
     Id_auxiliar INT UNSIGNED NOT NULL
 );
@@ -319,10 +395,13 @@ ALTER TABLE Hora ADD CONSTRAINT fk_hora__dia FOREIGN KEY (Id_dia) REFERENCES Dia
 
 ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__adscripta FOREIGN KEY (Id_adscripta) REFERENCES Adscripta (Id_adscripta) ON DELETE SET NULL;
 ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE SET NULL;
+ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__adscripta FOREIGN KEY (Id_adscripta) REFERENCES Adscripta (Id_adscripta) ON DELETE SET NULL;
+ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE SET NULL;
 
 ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__materia FOREIGN KEY (Id_materia) REFERENCES Materia (Id_materia) ON DELETE CASCADE;
 ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE CASCADE;
 
+ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo) ON DELETE SET NULL;
 ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo) ON DELETE SET NULL;
 ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__persona FOREIGN KEY (Id_persona) REFERENCES Persona (Id_persona) ON DELETE CASCADE;
 
@@ -347,16 +426,14 @@ ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__computa
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__software FOREIGN KEY (Id_software) REFERENCES Software (Id_software);
 
 ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
+ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
 ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
+ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
-ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
-ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
-ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__estudiante FOREIGN KEY (Id_estudiante) REFERENCES Estudiante (Id_estudiante) ON DELETE CASCADE;
-
-ALTER TABLE RecExt_Funcionario ADD CONSTRAINT fk_recext_funcionario__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
-ALTER TABLE RecExt_Funcionario ADD CONSTRAINT fk_recext_funcionario__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
-ALTER TABLE RecExt_Funcionario ADD CONSTRAINT fk_recext_funcionario__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
+ALTER TABLE RecExt_Persona ADD CONSTRAINT fk_recext_persona__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
+ALTER TABLE RecExt_Persona ADD CONSTRAINT fk_recext_persona__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
+ALTER TABLE RecExt_Persona ADD CONSTRAINT fk_recext_persona__persona FOREIGN KEY (Id_persona) REFERENCES persona (Id_persona) ON DELETE CASCADE;
 
 ALTER TABLE Secretario ADD CONSTRAINT fk_secretario__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
 
@@ -488,6 +565,7 @@ VALUES
 
 
 INSERT INTO Grupo (Codigo, Id_adscripta, Id_curso)
+INSERT INTO Grupo (Codigo, Id_adscripta, Id_curso)
 VALUES
 ('3ro MD', 2, 2),
 ('2do MR', 1, 1);
@@ -601,12 +679,7 @@ VALUES
 ('Llave G1', 3); -- G: Aula General
 
 
-INSERT INTO RecExt_Estudiante (Accion, Fecha_Hora, Id_recursoEx, Id_secretario, Id_estudiante)
-VALUES
-('Devolver', '2025-06-29 12:15', 2, 2, 1);
-
-
-INSERT INTO RecExt_Funcionario (Id_recursoEx, Id_funcionario, Fecha_Hora, Accion, Id_secretario)
+INSERT INTO RecExt_Persona (Id_recursoEx, Id_persona, Fecha_Hora, Accion, Id_secretario)
 VALUES
 (1, 5, '2025-06-20 10:20', 'Retirar', 1),
 (1, 5, '2025-06-20 10:30', 'Devolver', 2),
@@ -617,7 +690,8 @@ VALUES
 (2, 2, '2025-06-27 11:00', 'Retirar', 2),
 (3, 2, '2025-06-27 11:00', 'Retirar', 2),
 (2, 2, '2025-06-27 11:20', 'Devolver', 2),
-(3, 2, '2025-06-27 11:20', 'Devolver', 2);
+(3, 2, '2025-06-27 11:20', 'Devolver', 2),
+(2, 12, '2025-06-29 12:15', 'Devolver', 1);
 
 
 INSERT INTO Auxiliar (Id_funcionario)
@@ -679,6 +753,16 @@ INSERT INTO Turno_Grupo (Id_grupo, Id_turno)
 VALUES
 (1, 1),
 (2, 1);
+
+INSERT INTO Dia (Nombre)
+VALUES
+("Lunes"),
+("Martes"),
+("Miercoles"),
+("Jueves"),
+("Viernes"),
+("Sabado"),
+("Domingo");
 
 INSERT INTO Dia (Nombre)
 VALUES
