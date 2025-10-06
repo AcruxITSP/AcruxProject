@@ -346,9 +346,9 @@ ALTER TABLE Computadora ADD CONSTRAINT fk_computadora__aula FOREIGN KEY (Id_aula
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__computadora FOREIGN KEY (Id_compu) REFERENCES Computadora (Id_compu) ON DELETE CASCADE;
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__software FOREIGN KEY (Id_software) REFERENCES Software (Id_software);
 
-ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula);
+ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
-ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE CASCADE;
+ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
 ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
 ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
