@@ -13,7 +13,7 @@ verificarInicioSesion();
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body onload="checkDarkMode()">
     <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -98,5 +98,6 @@ verificarInicioSesion();
 
     <script src="scripts/indexDropMenu.js"></script>
     <script src="scripts/menuHamburgesa.js"></script>
+    <script src="Darckmode.js"></script>
 </body>
 </html>

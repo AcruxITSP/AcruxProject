@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<body class="login-page">
+<body class="login-page" onload="checkDarkMode()">
 
     <div class="login-container">
     <!-- Formulario -->
@@ -40,5 +40,7 @@
 </div>
 
     <script src="scripts/filtroLogin.js"></script>
+    <script src="toggle.js"></script>
+    <script src="Darckmode.js"></script>
 </body>
 </html>

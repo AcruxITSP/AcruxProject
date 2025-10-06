@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
-<body>
+<body onload="checkDarkMode()">
     <h2>Parte Diario</h2>
     <ul>
         <li>Aqui</li>
@@ -16,5 +16,6 @@
         <li>Del parte diario</li>
     </ul>
     <a href="index.php">Volver al menu</a>
+    <script src="frontend\scripts\Darckmode.js"></script>
 </body>
 </html>

@@ -9,10 +9,10 @@ require 'scriptsPhp/globalFunctions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar funcionarios</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles\styles.css">
 </head>
 
-<body>
+<body onload="checkDarkMode()">
     <div class="forms-container">
         <div class="form-card">
             <h2>Registrar Aulas</h2>
@@ -47,6 +47,7 @@ require 'scriptsPhp/globalFunctions.php';
             <a href="menuRecursos.php">Volver</a>
         </div>
     </div>
+    <script src="Darckmode.js"></script>
 </body>
 
 </html>

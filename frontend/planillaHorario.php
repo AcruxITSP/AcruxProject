@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body onload="checkDarkMode()">
 
     <body>
         <div class="forms-container">
@@ -57,6 +57,7 @@
 
         <script src="scripts/filtroCrearIntervalos.js"></script>
         <script src="scripts/filtroDefinirDias.js"></script>
+        <script src="Darckmode.js"></script>
     </body>
 
 </html>
