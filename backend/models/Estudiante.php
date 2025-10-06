@@ -51,19 +51,19 @@ class Estudiante extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f652-748a-aaea-2c54b9e8b523";
+    const SQL_DEFAULT = "0199bae7-2d31-73e9-be4a-427a119fbf3f";
 
     protected mysqli $con;
 	public int $idEstudiante;
 	public string $reputacion;
-	public int $idGrupo;
+	public ?int $idGrupo;
 	public int $idPersona;
 
 	/**
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, int $idGrupo, int $idPersona, int $idEstudiante, string $reputacion)
+	protected function __construct(mysqli $con, ?int $idGrupo, int $idPersona, int $idEstudiante, string $reputacion)
 	{
 	    $this->con = $con;
 		$this->idEstudiante = $idEstudiante;
@@ -78,7 +78,7 @@ class Estudiante extends BaseModel
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, int $idGrupo, int $idPersona, string|int $idEstudiante = self::SQL_DEFAULT, string $reputacion = self::SQL_DEFAULT) : Estudiante|EstudianteError|ErrorDB
+	public static function create(mysqli $con, ?int $idGrupo, int $idPersona, string|int $idEstudiante = self::SQL_DEFAULT, string $reputacion = self::SQL_DEFAULT) : Estudiante|EstudianteError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;

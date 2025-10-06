@@ -51,11 +51,12 @@ class Reserva extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f662-7c33-881c-2b90d94d132f";
+    const SQL_DEFAULT = "0199bae7-2d42-7513-b72e-bbe8588abb43";
 
     protected mysqli $con;
 	public int $idReserva;
-	public int $idHora;
+	public int $idHoraInicio;
+	public int $idHoraFinal;
 	public int $idAula;
 	public int $idFuncionario;
 	public string $fecha;
@@ -64,11 +65,12 @@ class Reserva extends BaseModel
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, int $idHora, int $idAula, int $idFuncionario, string $fecha, int $idReserva)
+	protected function __construct(mysqli $con, int $idHoraInicio, int $idHoraFinal, int $idAula, int $idFuncionario, string $fecha, int $idReserva)
 	{
 	    $this->con = $con;
 		$this->idReserva = $idReserva;
-		$this->idHora = $idHora;
+		$this->idHoraInicio = $idHoraInicio;
+		$this->idHoraFinal = $idHoraFinal;
 		$this->idAula = $idAula;
 		$this->idFuncionario = $idFuncionario;
 		$this->fecha = $fecha;
@@ -80,7 +82,7 @@ class Reserva extends BaseModel
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, int $idHora, int $idAula, int $idFuncionario, string $fecha, string|int $idReserva = self::SQL_DEFAULT) : Reserva|ReservaError|ErrorDB
+	public static function create(mysqli $con, int $idHoraInicio, int $idHoraFinal, int $idAula, int $idFuncionario, string $fecha, string|int $idReserva = self::SQL_DEFAULT) : Reserva|ReservaError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;
@@ -89,10 +91,16 @@ class Reserva extends BaseModel
 	    $values = [];
 	    $types = "";
 	
-		// Añade 'Id_hora' para la consulta de inserción SQL.
-		$columns[] = "Id_hora";
+		// Añade 'Id_horaInicio' para la consulta de inserción SQL.
+		$columns[] = "Id_horaInicio";
 		$placeholders[] = "?";
-		$values[] = $idHora;
+		$values[] = $idHoraInicio;
+		$types .= 'i';
+		
+		// Añade 'Id_horaFinal' para la consulta de inserción SQL.
+		$columns[] = "Id_horaFinal";
+		$placeholders[] = "?";
+		$values[] = $idHoraFinal;
 		$types .= 'i';
 		
 		// Añade 'Id_aula' para la consulta de inserción SQL.
@@ -206,7 +214,8 @@ class Reserva extends BaseModel
 	    $row = $result->fetch_assoc();
 	    $instance = new self(
 			$con,
-			(int)($row['Id_hora']),
+			(int)($row['Id_horaInicio']),
+			(int)($row['Id_horaFinal']),
 			(int)($row['Id_aula']),
 			(int)($row['Id_funcionario']),
 			(string)($row['Fecha']),
@@ -220,14 +229,14 @@ class Reserva extends BaseModel
 	#endregion GET
 	
 	
-	#region GET — IdHora
+	#region GET — IdHoraInicio
 	/**
-	* Obtiene el valor Id_hora de Reserva de la base de datos identificando Reserva por su clave primaria única. 
+	* Obtiene el valor Id_horaInicio de Reserva de la base de datos identificando Reserva por su clave primaria única. 
 	*/
-	public static function getIdHoraById(mysqli $con, int $idReserva) : int|ReservaError|ErrorDB
+	public static function getIdHoraInicioById(mysqli $con, int $idReserva) : int|ReservaError|ErrorDB
 	{
 	    // Preparar
-	    $sql = "SELECT Id_hora FROM Reserva WHERE Id_reserva = ?";
+	    $sql = "SELECT Id_horaInicio FROM Reserva WHERE Id_reserva = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::prepare($sql);
 	
@@ -251,12 +260,51 @@ class Reserva extends BaseModel
 	        return ReservaError::notFound();
 	    }
 	
-	    $attributeValue = ((int)($result->fetch_assoc()['Id_hora']));
+	    $attributeValue = ((int)($result->fetch_assoc()['Id_horaInicio']));
 	    $result->free();
 	    $stmt->close();
 	    return $attributeValue;
 	}
-	#endregion GET — IdHora
+	#endregion GET — IdHoraInicio
+	
+	
+	#region GET — IdHoraFinal
+	/**
+	* Obtiene el valor Id_horaFinal de Reserva de la base de datos identificando Reserva por su clave primaria única. 
+	*/
+	public static function getIdHoraFinalById(mysqli $con, int $idReserva) : int|ReservaError|ErrorDB
+	{
+	    // Preparar
+	    $sql = "SELECT Id_horaFinal FROM Reserva WHERE Id_reserva = ?";
+	    $stmt = $con->prepare($sql);
+	    if(!$stmt) return ErrorDB::prepare($sql);
+	
+	    // Vincular
+	    $stmt->bind_param("i", $idReserva);
+	
+	    // Ejecucion
+	    if(!$stmt->execute())
+	    {
+	        $stmt->close();
+	        return ErrorDB::execute($sql);
+	    }
+	
+	    // Resultado
+	    $result = $stmt->get_result();
+	    if(!$result) return ErrorDB::result($sql);
+	    if($result->num_rows === 0)
+	    {
+	        $result->free();
+	        $stmt->close();
+	        return ReservaError::notFound();
+	    }
+	
+	    $attributeValue = ((int)($result->fetch_assoc()['Id_horaFinal']));
+	    $result->free();
+	    $stmt->close();
+	    return $attributeValue;
+	}
+	#endregion GET — IdHoraFinal
 	
 	
 	#region GET — IdAula
@@ -378,20 +426,20 @@ class Reserva extends BaseModel
 	
 	
 	
-	#region SET — IdHora
+	#region SET — IdHoraInicio
 	/**
-	* Establece el valor Id_hora de Reserva a partir de la base de datos que identifica Reserva por su clave principal. 
+	* Establece el valor Id_horaInicio de Reserva a partir de la base de datos que identifica Reserva por su clave principal. 
 	*/
-	public static function setIdHoraById(mysqli $con, int $idReserva, int $newIdHora) : true|ReservaError|ErrorDB
+	public static function setIdHoraInicioById(mysqli $con, int $idReserva, int $newIdHoraInicio) : true|ReservaError|ErrorDB
 	{
 	    // Preparacion
-	    $sql = "UPDATE Reserva SET Id_hora = ? WHERE Id_reserva = ?";
+	    $sql = "UPDATE Reserva SET Id_horaInicio = ? WHERE Id_reserva = ?";
 	    $stmt = $con->prepare($sql);
 	    if(!$stmt) return ErrorDB::prepare($sql);
 	
 	    // Vinculacion
 	    $null = null;
-	    $stmt->bind_param("ii", $newIdHora, $idReserva);
+	    $stmt->bind_param("ii", $newIdHoraInicio, $idReserva);
 	
 	
 	    // Ejecucion
@@ -418,7 +466,50 @@ class Reserva extends BaseModel
 	
 	    return true;
 	}
-	#endregion SET — IdHora
+	#endregion SET — IdHoraInicio
+	
+	
+	#region SET — IdHoraFinal
+	/**
+	* Establece el valor Id_horaFinal de Reserva a partir de la base de datos que identifica Reserva por su clave principal. 
+	*/
+	public static function setIdHoraFinalById(mysqli $con, int $idReserva, int $newIdHoraFinal) : true|ReservaError|ErrorDB
+	{
+	    // Preparacion
+	    $sql = "UPDATE Reserva SET Id_horaFinal = ? WHERE Id_reserva = ?";
+	    $stmt = $con->prepare($sql);
+	    if(!$stmt) return ErrorDB::prepare($sql);
+	
+	    // Vinculacion
+	    $null = null;
+	    $stmt->bind_param("ii", $newIdHoraFinal, $idReserva);
+	
+	
+	    // Ejecucion
+	    if(!$stmt->execute())
+	    {
+	        // Gestionar entradas duplicadas
+	        if($stmt->errno == 1062)
+	        {
+	            $msg = $stmt->error;
+	            if (preg_match("/Duplicate entry '(.+)' for key '(.+)'/", $msg, $matches))
+	            {
+	                $duplicateValue = $matches[1];
+	                $duplicateKey   = $matches[2];
+					
+	                // Alternativa en caso de que no haya un código de error para la entrada duplicada específica.
+	                $stmt->close();
+	                return ReservaError::unknownDuplicate(["column" => $duplicateKey, "value" => $duplicateValue]);
+	            }
+	        }
+	
+	        $stmt->close();
+	        return ErrorDB::execute($sql);
+	    }
+	
+	    return true;
+	}
+	#endregion SET — IdHoraFinal
 	
 	
 	#region SET — IdAula

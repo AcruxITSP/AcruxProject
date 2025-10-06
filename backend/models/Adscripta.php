@@ -51,7 +51,7 @@ class Adscripta extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f63f-7073-a343-39bd0647f439";
+    const SQL_DEFAULT = "0199bae7-2d1d-720f-bfe1-4f98f9064fa8";
 
     protected mysqli $con;
 	public int $idAdscripta;

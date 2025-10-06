@@ -231,7 +231,8 @@ CREATE TABLE Bloque (
 
 CREATE TABLE Reserva (
     Id_reserva INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Id_hora INT UNSIGNED NOT NULL,
+    Id_horaInicio INT UNSIGNED NOT NULL,
+    Id_horaFinal INT UNSIGNED NOT NULL,
     Id_aula INT UNSIGNED NOT NULL,
     Id_funcionario INT UNSIGNED NOT NULL,
     Id_reserva INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -386,7 +387,8 @@ ALTER TABLE Bloque ADD CONSTRAINT uq_grupo__horario UNIQUE (id_grupo, id_hora);
 -- Tampoco se le puede asignar una clase a varios grupos al mismo tiempo (porque, en teoria, un profesor no le puede dar clase a más de un grupo a la vez)
 ALTER TABLE Bloque ADD CONSTRAINT uq_clase__horario UNIQUE (id_clase, id_hora);
 
-ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__hora FOREIGN KEY (Id_hora) REFERENCES Hora (Id_hora) ON DELETE CASCADE;
+ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__horaInicio FOREIGN KEY (Id_horaInicio) REFERENCES Hora (Id_hora) ON DELETE CASCADE;
+ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__horaFinal FOREIGN KEY (Id_horaFinal) REFERENCES Hora (Id_hora) ON DELETE CASCADE;
 ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE CASCADE;
 ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
 

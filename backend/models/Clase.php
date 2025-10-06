@@ -51,7 +51,7 @@ class Clase extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f63e-75ed-9e3a-23fd803a25fd";
+    const SQL_DEFAULT = "0199bae7-2d1c-7523-98cb-d5e37951aa8d";
 
     protected mysqli $con;
 	public int $idClase;

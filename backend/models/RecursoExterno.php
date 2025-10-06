@@ -51,19 +51,19 @@ class Recursoexterno extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f676-7f7b-b859-e9d2a21d6615";
+    const SQL_DEFAULT = "0199bae7-2d57-738b-9094-9f9df6afa40c";
 
     protected mysqli $con;
 	public int $idRecursoEx;
 	public string $tipo;
 	public bool $disponible;
-	public int $idAula;
+	public ?int $idAula;
 
 	/**
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, string $tipo, int $idAula, int $idRecursoEx, bool $disponible)
+	protected function __construct(mysqli $con, string $tipo, ?int $idAula, int $idRecursoEx, bool $disponible)
 	{
 	    $this->con = $con;
 		$this->idRecursoEx = $idRecursoEx;
@@ -78,7 +78,7 @@ class Recursoexterno extends BaseModel
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, string $tipo, int $idAula, string|int $idRecursoEx = self::SQL_DEFAULT, string|bool $disponible = self::SQL_DEFAULT) : Recursoexterno|RecursoexternoError|ErrorDB
+	public static function create(mysqli $con, string $tipo, ?int $idAula, string|int $idRecursoEx = self::SQL_DEFAULT, string|bool $disponible = self::SQL_DEFAULT) : Recursoexterno|RecursoexternoError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;

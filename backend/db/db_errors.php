@@ -8,9 +8,9 @@ class ErrorDB extends ErrorBase
         return new ErrorDB(ErrorDBType::NO_VALUES, $table);
     }
 
-    public static function prepare(string $sql) : ErrorDB
+    public static function prepare(string $sql, mixed $data = null) : ErrorDB
     {
-        return new ErrorDB(ErrorDBType::PREPARE, $sql);
+        return new ErrorDB(ErrorDBType::PREPARE, $data ?? $sql);
     }
 
     public static function bindParam(string $sql) : ErrorDB

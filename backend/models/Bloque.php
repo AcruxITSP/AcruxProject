@@ -51,7 +51,7 @@ class Bloque extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f660-758a-8b89-a8b86dbce6b6";
+    const SQL_DEFAULT = "0199bae7-2d40-774e-91aa-a4ccd87a2181";
 
     protected mysqli $con;
 	public int $idBloque;

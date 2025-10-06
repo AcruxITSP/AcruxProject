@@ -51,20 +51,20 @@ class Recursointerno extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f674-7bca-9dec-76d82b9c3977";
+    const SQL_DEFAULT = "0199bae7-2d55-7174-bb90-ec95ed09078d";
 
     protected mysqli $con;
 	public int $idRecursoIn;
 	public string $tipo;
 	public string $estado;
 	public string $problema;
-	public int $idAula;
+	public ?int $idAula;
 
 	/**
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, string $tipo, int $idAula, int $idRecursoIn, string $estado, string $problema)
+	protected function __construct(mysqli $con, string $tipo, ?int $idAula, int $idRecursoIn, string $estado, string $problema)
 	{
 	    $this->con = $con;
 		$this->idRecursoIn = $idRecursoIn;
@@ -80,7 +80,7 @@ class Recursointerno extends BaseModel
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, string $tipo, int $idAula, string|int $idRecursoIn = self::SQL_DEFAULT, string $estado = self::SQL_DEFAULT, string $problema = self::SQL_DEFAULT) : Recursointerno|RecursointernoError|ErrorDB
+	public static function create(mysqli $con, string $tipo, ?int $idAula, string|int $idRecursoIn = self::SQL_DEFAULT, string $estado = self::SQL_DEFAULT, string $problema = self::SQL_DEFAULT) : Recursointerno|RecursointernoError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;

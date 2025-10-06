@@ -58,19 +58,19 @@ class Grupo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f64d-7aa3-bce9-7aece7dee64d";
+    const SQL_DEFAULT = "0199bae7-2d2c-7f81-b1ba-3e1e90864ff4";
 
     protected mysqli $con;
 	public int $idGrupo;
 	public string $codigo;
-	public int $idAdscripta;
-	public int $idCurso;
+	public ?int $idAdscripta;
+	public ?int $idCurso;
 
 	/**
 	* En caso de que un parámetro represente una columna SQL de cualquier tipo BLOB, se debe introducir el binario sin procesar,
 	* dicho binario se codificará en base64 al almacenarlo.
 	*/
-	protected function __construct(mysqli $con, string $codigo, int $idAdscripta, int $idCurso, int $idGrupo)
+	protected function __construct(mysqli $con, string $codigo, ?int $idAdscripta, ?int $idCurso, int $idGrupo)
 	{
 	    $this->con = $con;
 		$this->idGrupo = $idGrupo;
@@ -85,7 +85,7 @@ class Grupo extends BaseModel
 	* Los parámetros cuyos valores predeterminados son `self::SQL_DEFAULT` son opcionales, por lo tanto,
 	* la base de datos les asignará un valor predeterminado o automático si no se especifica ningún otro valor.
 	*/
-	public static function create(mysqli $con, string $codigo, int $idAdscripta, int $idCurso, string|int $idGrupo = self::SQL_DEFAULT) : Grupo|GrupoError|ErrorDB
+	public static function create(mysqli $con, string $codigo, ?int $idAdscripta, ?int $idCurso, string|int $idGrupo = self::SQL_DEFAULT) : Grupo|GrupoError|ErrorDB
 	{
 	    // Preparacion dinamica de datos a insertar
 	    $null = null;
