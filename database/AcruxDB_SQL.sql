@@ -107,8 +107,8 @@ CREATE TABLE Noticia_Etiqueta (
 CREATE TABLE Grupo (
     Id_grupo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Codigo VARCHAR(15) UNIQUE NOT NULL,
-    Id_adscripta INT UNSIGNED NOT NULL,
-    Id_curso INT UNSIGNED NOT NULL
+    Id_adscripta INT UNSIGNED NULL,
+    Id_curso INT UNSIGNED NULL
 );
 
 
@@ -227,7 +227,7 @@ CREATE TABLE RecursoInterno (
     Tipo VARCHAR(50) NOT NULL,
     Estado ENUM('OK', 'MALFUNCIONAMIENTO', 'ROTO') DEFAULT 'OK' NOT NULL,
     Problema VARCHAR(512) NOT NULL DEFAULT 'Ninguno',
-    Id_aula TINYINT UNSIGNED NULL
+    Id_aula INT UNSIGNED NULL
 );
 
 
@@ -235,27 +235,17 @@ CREATE TABLE RecursoExterno (
     Id_recursoEx INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Tipo VARCHAR(50) NOT NULL,
     Disponible BOOLEAN NOT NULL DEFAULT TRUE,
-    Id_aula TINYINT UNSIGNED NULL
+    Id_aula INT UNSIGNED NULL
 );
 
 
-CREATE TABLE RecExt_Estudiante (
+CREATE TABLE RecExt_Persona (
     Id_registro INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Accion VARCHAR(50) NOT NULL,
     Fecha_Hora TIMESTAMP NOT NULL,
     Id_recursoEx INT UNSIGNED NOT NULL,
     Id_secretario INT UNSIGNED NULL,
-    Id_estudiante INT UNSIGNED NOT NULL
-);
-
-
-CREATE TABLE RecExt_Funcionario (
-    Id_registro INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Accion VARCHAR(50) NOT NULL,
-    Fecha_Hora TIMESTAMP NOT NULL,
-    Id_recursoEx INT UNSIGNED NOT NULL,
-    Id_secretario INT UNSIGNED NULL,
-    Id_funcionario INT UNSIGNED NOT NULL
+    Id_persona INT UNSIGNED NOT NULL
 );
 
 
@@ -346,17 +336,13 @@ ALTER TABLE Computadora ADD CONSTRAINT fk_computadora__aula FOREIGN KEY (Id_aula
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__computadora FOREIGN KEY (Id_compu) REFERENCES Computadora (Id_compu) ON DELETE CASCADE;
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__software FOREIGN KEY (Id_software) REFERENCES Software (Id_software);
 
-ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula);
+ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
-ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE CASCADE;
+ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
-ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
-ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
-ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__estudiante FOREIGN KEY (Id_estudiante) REFERENCES Estudiante (Id_estudiante) ON DELETE CASCADE;
-
-ALTER TABLE RecExt_Funcionario ADD CONSTRAINT fk_recext_funcionario__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
-ALTER TABLE RecExt_Funcionario ADD CONSTRAINT fk_recext_funcionario__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
-ALTER TABLE RecExt_Funcionario ADD CONSTRAINT fk_recext_funcionario__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
+ALTER TABLE RecExt_Persona ADD CONSTRAINT fk_recext_persona__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
+ALTER TABLE RecExt_Persona ADD CONSTRAINT fk_recext_persona__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
+ALTER TABLE RecExt_Persona ADD CONSTRAINT fk_recext_persona__persona FOREIGN KEY (Id_persona) REFERENCES persona (Id_persona) ON DELETE CASCADE;
 
 ALTER TABLE Secretario ADD CONSTRAINT fk_secretario__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
 
@@ -601,12 +587,7 @@ VALUES
 ('Llave G1', 3); -- G: Aula General
 
 
-INSERT INTO RecExt_Estudiante (Accion, Fecha_Hora, Id_recursoEx, Id_secretario, Id_estudiante)
-VALUES
-('Devolver', '2025-06-29 12:15', 2, 2, 1);
-
-
-INSERT INTO RecExt_Funcionario (Id_recursoEx, Id_funcionario, Fecha_Hora, Accion, Id_secretario)
+INSERT INTO RecExt_Persona (Id_recursoEx, Id_persona, Fecha_Hora, Accion, Id_secretario)
 VALUES
 (1, 5, '2025-06-20 10:20', 'Retirar', 1),
 (1, 5, '2025-06-20 10:30', 'Devolver', 2),
@@ -617,7 +598,8 @@ VALUES
 (2, 2, '2025-06-27 11:00', 'Retirar', 2),
 (3, 2, '2025-06-27 11:00', 'Retirar', 2),
 (2, 2, '2025-06-27 11:20', 'Devolver', 2),
-(3, 2, '2025-06-27 11:20', 'Devolver', 2);
+(3, 2, '2025-06-27 11:20', 'Devolver', 2),
+(2, 12, '2025-06-29 12:15', 'Devolver', 1);
 
 
 INSERT INTO Auxiliar (Id_funcionario)
