@@ -25,9 +25,13 @@ $con = connectDb();
 // TODO: VALIDAR
 $tipo = $_POST['tipo'] ?? null;
 $tipo = normalizeTitle($tipo);
+$cantidad = (int)($_POST['cantidad'] ?? 0);
 
-$createRecursoResult = RecursoExterno::create($con, $tipo, 1, disponible:true);
-if(!($createRecursoResult instanceof RecursoExterno)) Respuestas::enviarError($createRecursoResult);
+for($i = 0; $i < $cantidad; ++$i)
+{
+    $createRecursoResult = RecursoExterno::create($con, $tipo, 1, disponible:true);
+    if(!($createRecursoResult instanceof RecursoExterno)) Respuestas::enviarError($createRecursoResult);
+}
 
 Respuestas::enviarOk();
 ?>
