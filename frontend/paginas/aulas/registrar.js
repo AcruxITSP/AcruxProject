@@ -30,7 +30,4 @@ ingresarAulasForm.addEventListener('submit', async event => {
             icon: "success"
         });
     }
-
-    response = await response;
-
 });

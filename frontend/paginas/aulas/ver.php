@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver aulas</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
 
     <h2>Aulas</h2>
     <br>
-    <table>
+    <table id="table-registros">
         <tr>
             <th>Codigo</th>
             <th>Piso</th>
@@ -45,45 +46,28 @@
             <th>Capacidad</th>
             <th>Botones</th>
         </tr>
-        <tr>
-            <td>2B</td>
-            <td>PB</td>
-            <td>Informatica</td>
-            <td>25</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>1A</td>
-            <td>1</td>
-            <td>Lab. Fisica</td>
-            <td>20</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>3D</td>
-            <td>2</td>
-            <td>General</td>
-            <td>40</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
     </table>
+
+    <template id="template-registro">
+        <tr>
+            <td name="codigo">2B</td>
+            <td name="piso">PB</td>
+            <td name="proposito">Informatica</td>
+            <td name="capacidad">25</td>
+            <td>
+                <div class="botones-edit-delete">
+                    <a name="editar" href="editar.php"> editar </a>
+                    <a href="#"> X </a>
+                </div>
+            </td>
+        </tr>
+    </template>
+
     <br>
     <a href="registrar.php">Nuevo registro</a>
+
+    <script src="../../scripts/cliente.js"></script>
+    <script src="ver.js"></script>
 </body>
 
 </html>

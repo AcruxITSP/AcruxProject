@@ -27,7 +27,4 @@ loginForm.addEventListener('submit', async event => {
     {
         location.replace("index.php");
     }
-
-    response = await response;
-
 });

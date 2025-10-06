@@ -9,19 +9,48 @@
 class Aulas
 {
     /**
-    * Calls the Aulas's "register" endpoint using POST method and the arguments 'codigo', 'proposito' and 'cantidadSillas' as form data.
+    * Calls the Aulas's "get" endpoint using POST method and the arguments  as form data.
+
+    * @returns A Promise that resolves to the Response object from the fetch call.
+    */
+    static async get()
+    {
+        let formData = new FormData();
+
+        return await Aulas.getWith(formData);
+    }
+
+    /**
+    * Calls the Aulas's "get" endpoint using POST method and the given form data.
+    * @param formData The FormData object containing the form fields to send.
+    * @returns A Promise that resolves to the Response object from the fetch call.
+    */
+    static async getWith(formData)
+    {
+        let endpointPath = '/backend/api/aulas/get.php';
+        const response = await fetch(endpointPath, {
+            method: 'POST',
+            body: formData
+        });
+
+        return response;
+    }
+    /**
+    * Calls the Aulas's "register" endpoint using POST method and the arguments 'codigo', 'piso', 'proposito' and 'cantidadSillas' as form data.
     * @param codigo The value for the 'codigo' form field
+    * @param piso The value for the 'piso' form field
     * @param proposito The value for the 'proposito' form field
     * @param cantidadSillas The value for the 'cantidadSillas' form field
     * @returns A Promise that resolves to the Response object from the fetch call.
     */
-    static async register(codigo, proposito, cantidadSillas)
+    static async register(codigo, piso, proposito, cantidadSillas)
     {
         let formData = new FormData();
         formData.append('codigo', codigo);
+        formData.append('piso', piso);
         formData.append('proposito', proposito);
         formData.append('cantidadSillas', cantidadSillas);
-        return await registerWith(formData);
+        return await Aulas.registerWith(formData);
     }
 
     /**
@@ -59,7 +88,7 @@ class Bloques
         formData.append('id_clase', id_clase);
         formData.append('id_aula', id_aula);
         formData.append('id_hora', id_hora);
-        return await registerWith(formData);
+        return await Bloques.registerWith(formData);
     }
 
     /**
@@ -93,7 +122,7 @@ class Clases
         let formData = new FormData();
         formData.append('id_profesor', id_profesor);
         formData.append('id_materia', id_materia);
-        return await registerWith(formData);
+        return await Clases.registerWith(formData);
     }
 
     /**
@@ -127,7 +156,7 @@ class Cursos
         let formData = new FormData();
         formData.append('nombre', nombre);
         formData.append('duracionAnios', duracionAnios);
-        return await registerWith(formData);
+        return await Cursos.registerWith(formData);
     }
 
     /**
@@ -163,7 +192,7 @@ class Grupos
         formData.append('codigo', codigo);
         formData.append('id_curso', id_curso);
         formData.append('id_adscripta', id_adscripta);
-        return await registerWith(formData);
+        return await Grupos.registerWith(formData);
     }
 
     /**
@@ -195,7 +224,7 @@ class Horas
     {
         let formData = new FormData();
 
-        return await generateWith(formData);
+        return await Horas.generateWith(formData);
     }
 
     /**
@@ -233,7 +262,7 @@ class Intervalos
         formData.append('horaCierre', horaCierre);
         formData.append('duracionHoraMinutos', duracionHoraMinutos);
         formData.append('duracionRecreoMinutos', duracionRecreoMinutos);
-        return await registermultipleWith(formData);
+        return await Intervalos.registermultipleWith(formData);
     }
 
     /**
@@ -265,7 +294,7 @@ class Materias
     {
         let formData = new FormData();
         formData.append('nombre', nombre);
-        return await registerWith(formData);
+        return await Materias.registerWith(formData);
     }
 
     /**
@@ -301,7 +330,7 @@ class Recursoexterno
         formData.append('tipo', tipo);
         formData.append('id_aula', id_aula);
         formData.append('cantidad', cantidad);
-        return await registerWith(formData);
+        return await Recursoexterno.registerWith(formData);
     }
 
     /**
@@ -337,7 +366,7 @@ class Recursointerno
         formData.append('tipo', tipo);
         formData.append('id_aula', id_aula);
         formData.append('cantidad', cantidad);
-        return await registerWith(formData);
+        return await Recursointerno.registerWith(formData);
     }
 
     /**
@@ -373,7 +402,7 @@ class Reservas
         formData.append('id_hora_inicio', id_hora_inicio);
         formData.append('id_hora_final', id_hora_final);
         formData.append('id_aula', id_aula);
-        return await registerWith(formData);
+        return await Reservas.registerWith(formData);
     }
 
     /**
@@ -407,7 +436,7 @@ class TelefonoPersona
         let formData = new FormData();
         formData.append('telefono', telefono);
         formData.append('id_persona', id_persona);
-        return await registerWith(formData);
+        return await TelefonoPersona.registerWith(formData);
     }
 
     /**
@@ -441,7 +470,7 @@ class Users
         let formData = new FormData();
         formData.append('DNI', DNI);
         formData.append('password', password);
-        return await loginWith(formData);
+        return await Users.loginWith(formData);
     }
 
     /**
@@ -484,7 +513,7 @@ class Users
         formData.append('telefonos', telefonos);
         formData.append('id_cargos', id_cargos);
         formData.append('id_grupo', id_grupo);
-        return await signupWith(formData);
+        return await Users.signupWith(formData);
     }
 
     /**
@@ -516,7 +545,7 @@ class _uth
     {
         let formData = new FormData();
 
-        return await redirectsWith(formData);
+        return await _uth.redirectsWith(formData);
     }
 
     /**
@@ -543,7 +572,7 @@ class _uth
     {
         let formData = new FormData();
 
-        return await rolesWith(formData);
+        return await _uth.rolesWith(formData);
     }
 
     /**
