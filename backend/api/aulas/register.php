@@ -23,7 +23,7 @@ $con = connectDb();
 
 // TODO: VALIDAR
 $codigo = $_POST['codigo'] ?? null;
-$piso = $_POST['codigo'] ?? null;
+$piso = $_POST['piso'] ?? null;
 $proposito = $_POST['proposito'] ?? null;
 $cantidadSillas = $_POST['cantidadSillas'] ?? null;
 

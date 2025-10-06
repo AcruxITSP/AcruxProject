@@ -8,12 +8,13 @@ require '../../scriptsPhp/globalFunctions.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Registrar funcionarios</title>
 </head>
 
 <body>
     <h2>Registrar Aulas</h2>
-    <form id="ingresarAulas-Form" action="scriptsPhp/scriptRegistrarAulas.php" method="post">
+    <form id="ingresarAulas-Form">
 
         <label for="codigo">Código:</label>
         <input type="text" id="codigo" name="codigo" required><br><br>
@@ -26,7 +27,7 @@ require '../../scriptsPhp/globalFunctions.php';
         </select><br><br>
 
         <label for="proposito">Propósito:</label>
-        <select>
+        <select name="proposito">
             <option value="General">General</option>
             <option value="Laboratorio">Laboratorio</option>
             <option value="Taller">Taller</option>
@@ -41,6 +42,9 @@ require '../../scriptsPhp/globalFunctions.php';
     </form>
     <br>
     <a href="ver.php">Volver</a>
+
+    <script src="../../scripts/cliente.js"></script>
+    <script src="registrar.js"></script>
 </body>
 
 </html>
