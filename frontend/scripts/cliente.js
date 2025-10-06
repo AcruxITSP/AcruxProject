@@ -31,7 +31,7 @@ class Aulas
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/aulas/register.php';
+        let endpointPath = '/backend/api/aulas/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -69,7 +69,7 @@ class Bloques
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/bloques/register.php';
+        let endpointPath = '/backend/api/bloques/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -103,7 +103,7 @@ class Clases
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/clases/register.php';
+        let endpointPath = '/backend/api/clases/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -137,7 +137,7 @@ class Cursos
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/cursos/register.php';
+        let endpointPath = '/backend/api/cursos/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -173,7 +173,7 @@ class Grupos
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/grupos/register.php';
+        let endpointPath = '/backend/api/grupos/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -205,7 +205,7 @@ class Horas
     */
     static async generateWith(formData)
     {
-        let endpointPath = '../../backend/api/horas/generate.php';
+        let endpointPath = '/backend/api/horas/generate.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -243,7 +243,7 @@ class Intervalos
     */
     static async registermultipleWith(formData)
     {
-        let endpointPath = '../../backend/api/intervalos/registerMultiple.php';
+        let endpointPath = '/backend/api/intervalos/registerMultiple.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -275,7 +275,7 @@ class Materias
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/materias/register.php';
+        let endpointPath = '/backend/api/materias/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -311,7 +311,7 @@ class Recursoexterno
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/recursoexterno/register.php';
+        let endpointPath = '/backend/api/recursoexterno/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -347,7 +347,7 @@ class Recursointerno
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/recursointerno/register.php';
+        let endpointPath = '/backend/api/recursointerno/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -383,7 +383,7 @@ class Reservas
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/reservas/register.php';
+        let endpointPath = '/backend/api/reservas/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -417,7 +417,7 @@ class TelefonoPersona
     */
     static async registerWith(formData)
     {
-        let endpointPath = '../../backend/api/telefono_persona/register.php';
+        let endpointPath = '/backend/api/telefono_persona/register.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -451,7 +451,7 @@ class Users
     */
     static async loginWith(formData)
     {
-        let endpointPath = '../../backend/api/users/login.php';
+        let endpointPath = '/backend/api/users/login.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -494,7 +494,7 @@ class Users
     */
     static async signupWith(formData)
     {
-        let endpointPath = '../../backend/api/users/signup.php';
+        let endpointPath = '/backend/api/users/signup.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -526,7 +526,7 @@ class _uth
     */
     static async redirectsWith(formData)
     {
-        let endpointPath = '../../backend/api/_auth/redirects.php';
+        let endpointPath = '/backend/api/_auth/redirects.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
@@ -553,7 +553,7 @@ class _uth
     */
     static async rolesWith(formData)
     {
-        let endpointPath = '../../backend/api/_auth/roles.php';
+        let endpointPath = '/backend/api/_auth/roles.php';
         const response = await fetch(endpointPath, {
             method: 'POST',
             body: formData
