@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Materias</title>
+    <title>Editar Curso</title>
 </head>
 
 <body>
     <style>
-        input:not([type = submit]) {
+        input:not([type=submit]) {
             width: 15rem;
         }
     </style>
-    <h2>Editar la informacion del administrador</h2>
+    <h2>Editar la informacion del curso</h2>
 
     <form>
-        <input type="text" placeholder="Nombre de la materia">
+        <label for="curso-nombre">Nombre:</label>
+        <input type="text" id="curso-nombre">
+
+        <label for="curso-duracionAnios">Duracion (años):</label>
+        <input type="number" id="curso-duracionAnios">
 
         <input type="submit">
     </form>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Materias</title>
+    <title>Editar Estudiante</title>
 </head>
 
 <body>
@@ -13,10 +13,12 @@
             width: 15rem;
         }
     </style>
-    <h2>Editar la informacion del administrador</h2>
+    <h2>Editar la informacion del estudiante</h2>
 
-    <form>
-        <input type="text" placeholder="Nombre de la materia">
+    <form id="form-register-clases">
+        <input type="text" placeholder="Reputacion (opcional)">
+        <input type="number" placeholder="Id del grupo">
+        <input type="number" placeholder="Id de la persona">
 
         <input type="submit">
     </form>

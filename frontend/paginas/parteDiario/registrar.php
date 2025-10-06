@@ -11,6 +11,8 @@
     <h2>Nuevo registro</h2><br>
 
     <form id="form-register-partediario">
+        <input type="number" placeholder="Id de la adscripta"><br><br>
+
         <p>Fecha y hora actuales (En un futuro esto se hará automáticamente)</p>
         <input type="date">  <input type="time"><br><br>
 

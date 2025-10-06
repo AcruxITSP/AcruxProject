@@ -5,66 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+
 </head>
 
 <body>
     <style>
-        /* Esto se puede sobrescribir nomas */
         /* Nota: Si no hay registros, se mostrara un mensaje de error */
-        form {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+
+        td {
+            padding: 0.2rem 1rem 0.2rem 1rem;
+            width: 10rem;
+            text-align: center;
         }
 
-        input:not(#agregarCurso, #materia-nombre) {
-            margin-right: 100%;
-            margin-bottom: 1rem;
+        .botones-edit-delete {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a[href="#"] {
+            background-color: red;
+            color: black;
+            font-weight: bold;
+            padding: 2px;
         }
     </style>
 
     <h2>Cursos</h2>
-
-    <label for="agregarCurso">Agregar Curso</label>
-    <input type="checkbox" id="agregarCurso">
-
-    <template id="tpl-form-cursos">
-        <form>
-            <label for="curso-nombre">Nombre:</label>
-            <input type="text" id="curso-nombre">
-
-            <label for="curso-duracionAnios">Duracion (años):</label>
-            <input type="number" id="curso-duracionAnios">
-
-            <input type="submit">
-        </form>
-    </template>
-
-    <template id="tpl-form-materias">
-        <form>
-            <label for="materia-nombre">Agregar materia:</label>
-            <input type="text" id="materia-nombre">
-
-            <input type="submit">
-        </form>
-    </template>
-
-    <template id="tpl-lista-cursos">
-        <ul class="tpl-list">
-            <li>
-                <h3></h3>
-                <ul class="lista-materias"></ul>
-            </li>
-        </ul>
-    </template>
-
-    <div id="form-cursos"></div>
-
-    <div id="listaCursos"></div>
-
-    <p id="errorMsg"></p>
-    <a href="../menuRecursos.php">Volver al menu</a>
-
-    <script type="module" src="../../scripts/paginaCursos.js"></script>
+    <br>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Duracion (años)</th>
+            <th>Botones</th>
+        </tr>
+        <tr>
+            <td>Informatica Bilingue</td>
+            <td>3</td>
+            <td>
+                <div class="botones-edit-delete">
+                    <a href="editar.php"> editar </a>
+                    <a href="#"> X </a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Informatica Bilingue</td>
+            <td>3</td>
+            <td>
+                <div class="botones-edit-delete">
+                    <a href="editar.php"> editar </a>
+                    <a href="#"> X </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="registrar.php">Nuevo registro</a>
 </body>
 
 </html>

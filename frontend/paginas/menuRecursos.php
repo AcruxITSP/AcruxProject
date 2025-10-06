@@ -77,7 +77,7 @@ verificarInicioSesion();
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-users icon-card"></i>
-                    <a href="grupos.php">Grupos</a>
+                    <a href="grupos/registrar.php">Grupos</a>
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-chalkboard icon-card"></i>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Materias</title>
+    <title>Editar Bloque</title>
 </head>
 
 <body>
@@ -13,10 +13,13 @@
             width: 15rem;
         }
     </style>
-    <h2>Editar la informacion del administrador</h2>
+    <h2>Editar la informacion del bloque</h2>
 
-    <form>
-        <input type="text" placeholder="Nombre de la materia">
+    <form id="form-register-clases">
+        <input type="number" placeholder="Id del grupo">
+        <input type="number" placeholder="Id de la clase">
+        <input type="number" placeholder="Id del aula">
+        <input type="number" placeholder="Id de la hora">
 
         <input type="submit">
     </form>

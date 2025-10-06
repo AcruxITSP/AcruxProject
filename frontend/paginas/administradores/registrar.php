@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar materias</title>
+    <title>Registrar Administrador</title>
 </head>
 <body>
-    <h2>Registrar materias</h2>
+    <h2>Registrar administradores</h2>
 
-    <form id="form-register-materias">
-        <input type="text" placeholder="Nombre de la materia">
+    <form>
+        <input type="number" placeholder="Id del funcionario">
 
         <input type="submit">
     </form>

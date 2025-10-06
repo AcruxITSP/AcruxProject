@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Curso</title>
+</head>
+
+<body>
+    <h2>Registrar cursos</h2>
+
+    <form>
+        <label for="curso-nombre">Nombre:</label>
+        <input type="text" id="curso-nombre">
+
+        <label for="curso-duracionAnios">Duracion (años):</label>
+        <input type="number" id="curso-duracionAnios">
+
+        <input type="submit">
+    </form>
+    <br>
+    <a href="ver.php">Volver</a>
+</body>
+
+</html>

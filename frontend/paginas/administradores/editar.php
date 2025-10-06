@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Materias</title>
+    <title>Editar Administrador</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <h2>Editar la informacion del administrador</h2>
 
     <form>
-        <input type="text" placeholder="Nombre de la materia">
+        <input type="number" id="id_funcionario" placeholder="Cambiar el id del funcionario">
 
         <input type="submit">
     </form>

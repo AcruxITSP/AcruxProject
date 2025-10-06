@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver aulas</title>
+    <title>Bloques</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+
 </head>
 
 <body>
@@ -13,7 +15,7 @@
 
         td {
             padding: 0.2rem 1rem 0.2rem 1rem;
-            width: 5rem;
+            width: 10rem;
             text-align: center;
         }
 
@@ -26,7 +28,7 @@
             text-decoration: none;
         }
 
-        a[href="#"] {
+        a[href = "#"]{
             background-color: red;
             color: black;
             font-weight: bold;
@@ -34,34 +36,19 @@
         }
     </style>
 
-
-    <h2>Aulas</h2>
+    <h2>Bloques</h2>
     <br>
     <table>
         <tr>
-            <th>Codigo</th>
-            <th>Piso</th>
-            <th>Propósito</th>
-            <th>Capacidad</th>
-            <th>Botones</th>
+            <th>Id grupo</th>
+            <th>Id clase</th>
+            <th>Id aula</th>
+            <th>id hora</th>
         </tr>
         <tr>
-            <td>2B</td>
-            <td>PB</td>
-            <td>Informatica</td>
-            <td>25</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>1A</td>
             <td>1</td>
-            <td>Lab. Fisica</td>
-            <td>20</td>
+            <td>2</td>
+            <td>3</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -70,10 +57,20 @@
             </td>
         </tr>
         <tr>
-            <td>3D</td>
+            <td>1</td>
             <td>2</td>
-            <td>General</td>
-            <td>40</td>
+            <td>3</td>
+            <td>
+                <div class="botones-edit-delete">
+                    <a href="editar.php"> editar </a>
+                    <a href="#"> X </a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
