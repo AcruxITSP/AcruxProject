@@ -105,8 +105,8 @@ CREATE TABLE Noticia_Etiqueta (
 CREATE TABLE Grupo (
     Id_grupo TINYINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Codigo VARCHAR(15) UNIQUE NOT NULL,
-    Id_adscripta TINYINT UNSIGNED NOT NULL,
-    Id_curso TINYINT UNSIGNED NOT NULL
+    Id_adscripta TINYINT UNSIGNED NULL,
+    Id_curso TINYINT UNSIGNED NULL
 );
 
 
@@ -126,7 +126,7 @@ CREATE TABLE Materia_Curso (
 CREATE TABLE Estudiante (
     Id_estudiante SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Reputacion ENUM('BUENA', 'IMPUNTUAL', 'MALA') DEFAULT 'BUENA' NOT NULL,
-    Id_grupo TINYINT UNSIGNED NOT NULL,
+    Id_grupo TINYINT UNSIGNED NULL,
     Id_persona SMALLINT UNSIGNED NOT NULL
 );
 
@@ -224,7 +224,7 @@ CREATE TABLE RecursoInterno (
     Tipo VARCHAR(50) NOT NULL,
     Estado ENUM('OK', 'MALFUNCIONAMIENTO', 'ROTO') DEFAULT 'OK' NOT NULL,
     Problema VARCHAR(512) NOT NULL DEFAULT 'Ninguno',
-    Id_aula TINYINT UNSIGNED NOT NULL
+    Id_aula TINYINT UNSIGNED NULL
 );
 
 
@@ -232,7 +232,7 @@ CREATE TABLE RecursoExterno (
     Id_recursoEx SMALLINT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Tipo VARCHAR(50) NOT NULL,
     Disponible BOOLEAN NOT NULL DEFAULT TRUE,
-    Id_aula TINYINT UNSIGNED NOT NULL
+    Id_aula TINYINT UNSIGNED NULL
 );
 
 
@@ -314,13 +314,13 @@ ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__funcionario FOREIGN KEY (Id_funci
 ALTER TABLE Hora ADD CONSTRAINT fk_hora__intervalo FOREIGN KEY (Id_intervalo) REFERENCES Intervalo (Id_intervalo) ON DELETE CASCADE;
 ALTER TABLE Hora ADD CONSTRAINT fk_hora__dia FOREIGN KEY (Id_dia) REFERENCES Dia (Id_dia) ON DELETE CASCADE;
 
-ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__adscripta FOREIGN KEY (Id_adscripta) REFERENCES Adscripta (Id_adscripta);
-ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso);
+ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__adscripta FOREIGN KEY (Id_adscripta) REFERENCES Adscripta (Id_adscripta) ON DELETE SET NULL;
+ALTER TABLE Grupo ADD CONSTRAINT fk_grupo__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE SET NULL;
 
 ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__materia FOREIGN KEY (Id_materia) REFERENCES Materia (Id_materia) ON DELETE CASCADE;
 ALTER TABLE Materia_Curso ADD CONSTRAINT fk_materia_curso__curso FOREIGN KEY (Id_curso) REFERENCES Curso (Id_curso) ON DELETE CASCADE;
 
-ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo);
+ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__grupo FOREIGN KEY (Id_grupo) REFERENCES Grupo (Id_grupo) ON DELETE SET NULL;
 ALTER TABLE Estudiante ADD CONSTRAINT fk_estudiante__persona FOREIGN KEY (Id_persona) REFERENCES Persona (Id_persona) ON DELETE CASCADE;
 
 ALTER TABLE Telefono_Tutor ADD CONSTRAINT fk_telefono_tutor FOREIGN KEY (Id_estudiante) REFERENCES Estudiante (Id_estudiante) ON DELETE CASCADE;
