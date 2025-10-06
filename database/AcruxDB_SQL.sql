@@ -107,8 +107,8 @@ CREATE TABLE Noticia_Etiqueta (
 CREATE TABLE Grupo (
     Id_grupo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Codigo VARCHAR(15) UNIQUE NOT NULL,
-    Id_adscripta INT UNSIGNED NOT NULL,
-    Id_curso INT UNSIGNED NOT NULL
+    Id_adscripta INT UNSIGNED NULL,
+    Id_curso INT UNSIGNED NULL
 );
 
 
@@ -227,7 +227,7 @@ CREATE TABLE RecursoInterno (
     Tipo VARCHAR(50) NOT NULL,
     Estado ENUM('OK', 'MALFUNCIONAMIENTO', 'ROTO') DEFAULT 'OK' NOT NULL,
     Problema VARCHAR(512) NOT NULL DEFAULT 'Ninguno',
-    Id_aula TINYINT UNSIGNED NULL
+    Id_aula INT UNSIGNED NULL
 );
 
 
@@ -235,7 +235,7 @@ CREATE TABLE RecursoExterno (
     Id_recursoEx INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Tipo VARCHAR(50) NOT NULL,
     Disponible BOOLEAN NOT NULL DEFAULT TRUE,
-    Id_aula TINYINT UNSIGNED NULL
+    Id_aula INT UNSIGNED NULL
 );
 
 
@@ -346,9 +346,9 @@ ALTER TABLE Computadora ADD CONSTRAINT fk_computadora__aula FOREIGN KEY (Id_aula
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__computadora FOREIGN KEY (Id_compu) REFERENCES Computadora (Id_compu) ON DELETE CASCADE;
 ALTER TABLE Computadora_Software ADD CONSTRAINT fk_computadora_software__software FOREIGN KEY (Id_software) REFERENCES Software (Id_software);
 
-ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula);
+ALTER TABLE RecursoInterno ADD CONSTRAINT fk_recursointerno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
-ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE CASCADE;
+ALTER TABLE RecursoExterno ADD CONSTRAINT fk_recursoexterno__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE SET NULL;
 
 ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__recursoexterno FOREIGN KEY (Id_recursoEx) REFERENCES RecursoExterno (Id_recursoEx) ON DELETE CASCADE;
 ALTER TABLE RecExt_Estudiante ADD CONSTRAINT fk_recext_estudiante__secretario FOREIGN KEY (Id_secretario) REFERENCES Secretario (Id_secretario) ON DELETE SET NULL;
