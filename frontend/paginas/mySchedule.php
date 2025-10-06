@@ -16,9 +16,17 @@ verificarInicioSesion();
 </head>
 
 <body>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Botón hamburguesa -->
+    <button class="hamburger" onclick="toggleSidebar()">
+        <img src="img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+    </button>
+
     <div class="dashboard-container">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h2>ITSP</h2>
             </div>
@@ -59,7 +67,8 @@ verificarInicioSesion();
             <p>Aún no hay un horario definido</p>
         </main>
     </div>
-
+<!-- Script para menu hamburguesa-->
+    <script src="scripts/menuHamburgesa.js"></script>
     <!-- Script para el dropdown -->
     <script src="../scripts/indexDropMenu.js"></script>
 </body>
