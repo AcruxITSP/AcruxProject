@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/styles.css">
 
 </head>
 
@@ -48,13 +48,13 @@
                     <input type="submit">
                     <p style="color: red;">Esto aun no funciona</p>
                     <br>
-                    <a href="menuRecursos.php">Volver</a>
+                    <a href="ver.php">Volver</a>
                 </form>
             </div>
         </div>
 
-        <script src="../scripts/filtroCrearIntervalos.js"></script>
-        <script src="../scripts/filtroDefinirDias.js"></script>
+        <script src="../../scripts/filtroCrearIntervalos.js"></script>
+        <script src="../../scripts/filtroDefinirDias.js"></script>
     </body>
 
 </html>

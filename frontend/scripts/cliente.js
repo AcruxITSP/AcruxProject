@@ -61,6 +61,23 @@ export async function client_aulas_fetchAll() {
     return registros;
 }
 
+export async function client_hora_fetchAll() {
+    const diasDeClase = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+    let registros = [];
+
+    for (let i = 0; i < diasDeClase.length; i++) {
+        for (let j = 1; j <= 8; j++) {
+            // Por comodiad, guardo los intervalos como numeros, pero el programa debe
+            // recibir los intervalos en el formato "horaEntrada - horaSalida"
+            // Ej: "7:00 - 7:45"
+            const registro = new Hora(j, diasDeClase[i]);
+            registros.push(registro);
+        }
+    }
+
+    return registros;
+}
+
 class RegistroPartediario {
     constructor(fechaHora, accion) {
         this.fechaHora = fechaHora;
@@ -88,5 +105,12 @@ class RegistroAula {
         this.piso = piso;
         this.proposito = proposito;
         this.cantidadSillas = cantidadSillas;
+    }
+}
+
+class Hora {
+    constructor(intervalo, dia){
+        this.intervalo = intervalo;
+        this.dia = dia;
     }
 }

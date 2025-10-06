@@ -65,7 +65,7 @@ verificarInicioSesion();
             <div class="resources-container">
                 <div class="resource-card">
                     <i class="fas fa-calendar-days icon-card"></i>
-                    <a href="planillaHorario.php">Planilla de Horario</a>
+                    <a href="planillaHorario/ver.php">Planilla de Horario</a>
                 </div>
                 <div class="resource-card">
                     <i class="fas fa-book icon-card"></i>

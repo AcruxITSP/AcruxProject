@@ -10,6 +10,7 @@
 <body>
     <style>
         /* Esto se puede sobrescribir nomas */
+        /* Nota: Si no hay registros, se mostrara un mensaje de error */
         form {
             margin-top: 1rem;
             margin-bottom: 1rem;

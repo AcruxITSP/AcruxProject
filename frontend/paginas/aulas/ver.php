@@ -7,6 +7,8 @@
 </head>
 <body>
     <style>
+        /* Nota: Si no hay registros, se mostrara un mensaje de error */
+        
         td {
             padding: 0.2rem 1rem 0.2rem 1rem;
         }

@@ -6,6 +6,7 @@
     <title>Ver materias</title>
 </head>
 <body>
+    <!-- Nota: Si no hay registros, se mostrara un mensaje de error -->
     <h2>Materias</h2>
 
     <template id="tpl-lista-materias">
