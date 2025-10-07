@@ -173,10 +173,11 @@ CREATE TABLE Bloque (
 
 CREATE TABLE Reserva (
     Id_reserva INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Id_intervalo_inicio INT UNSIGNED NOT NULL,
+    Id_intervalo_final INT UNSIGNED NOT NULL,
     Id_aula INT UNSIGNED NOT NULL,
     Id_funcionario INT UNSIGNED NOT NULL,
-    Fecha_Hora_Inicio DATETIME NOT NULL,
-    Fecha_Hora_final DATETIME
+    Fecha DATETIME NOT NULL
 );
 
 
@@ -302,6 +303,8 @@ ALTER TABLE Bloque ADD CONSTRAINT uq_clase__horario UNIQUE (id_clase, id_hora);
 
 ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE CASCADE;
 ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
+ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__intervalo_inicio FOREIGN KEY (Id_intervalo_inicio) REFERENCES Hora (Id_hora) ON DELETE CASCADE;
+ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__intervalo_final FOREIGN KEY (Id_intervalo_final) REFERENCES Hora (Id_hora) ON DELETE CASCADE;
 
 ALTER TABLE Hora ADD CONSTRAINT fk_hora__intervalo FOREIGN KEY (Id_intervalo) REFERENCES Intervalo (Id_intervalo) ON DELETE CASCADE;
 ALTER TABLE Hora ADD CONSTRAINT fk_hora__dia FOREIGN KEY (Id_dia) REFERENCES Dia (Id_dia) ON DELETE CASCADE;
