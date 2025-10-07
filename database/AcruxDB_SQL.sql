@@ -173,10 +173,10 @@ CREATE TABLE Bloque (
 
 CREATE TABLE Reserva (
     Id_reserva INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Id_hora INT UNSIGNED NOT NULL,
     Id_aula INT UNSIGNED NOT NULL,
     Id_funcionario INT UNSIGNED NOT NULL,
-    Fecha DATE NOT NULL
+    Fecha_Hora_Inicio DATETIME NOT NULL,
+    Fecha_Hora_final DATETIME
 );
 
 
@@ -300,7 +300,6 @@ ALTER TABLE Bloque ADD CONSTRAINT uq_grupo__horario UNIQUE (id_grupo, id_hora);
 -- Tampoco se le puede asignar una clase a varios grupos al mismo tiempo (porque, en teoria, un profesor no le puede dar clase a más de un grupo a la vez)
 ALTER TABLE Bloque ADD CONSTRAINT uq_clase__horario UNIQUE (id_clase, id_hora);
 
-ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__hora FOREIGN KEY (Id_hora) REFERENCES Hora (Id_hora) ON DELETE CASCADE;
 ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__aula FOREIGN KEY (Id_aula) REFERENCES Aula (Id_aula) ON DELETE CASCADE;
 ALTER TABLE Reserva ADD CONSTRAINT fk_reserva__funcionario FOREIGN KEY (Id_funcionario) REFERENCES Funcionario (Id_funcionario) ON DELETE CASCADE;
 
@@ -362,11 +361,11 @@ ALTER TABLE Auxiliar_Cargo ADD CONSTRAINT fk_auxiliar_cargo__cargo FOREIGN KEY (
 -- Registros de Prueba
 INSERT INTO Persona (Nombre, Apellido, DNI, Email, Contrasena)
 VALUES
-('Susana', 'Arbelo', '56473235', 'susanarbelo@gmail.com', '123'),
-('Federico', 'Fagundez', '53748294', 'federicofagundez@gmail.com', '123'),
-('Facundo', 'Rubil', '53759106','facundorubil@gmail.com', '123'),
-('Ana', 'Inés', '57480926', 'anaines@gmil.com', '123'),
-('Yanela', 'López', '57848372', 'yanelalopez@gmail.com', '123'),
+('Pablo', 'Hernandez', '56473235', 'susanarbelo@gmail.com', '123'),
+('Jhon', 'Doe', '53748294', 'federicofagundez@gmail.com', '123'),
+('Roberto', 'Salvatierra', '53759106','facundorubil@gmail.com', '123'),
+('Alma', 'Sanchez', '57480926', 'anaines@gmil.com', '123'),
+('Zoe', 'Salvatierra', '57848372', 'yanelalopez@gmail.com', '123'),
 ('Paula', 'Fernandez', '54638076', 'paulafernandez@gmail.com', '123'),
 ('Roberto', 'Gutierrez', '65594733', 'robertogutierrez@gmail.com', '123'),
 ('Pancho', 'Mendoza', '65859476', NULL, '123'),
@@ -661,6 +660,7 @@ INSERT INTO Turno_Grupo (Id_grupo, Id_turno)
 VALUES
 (1, 1),
 (2, 1);
+
 
 INSERT INTO Dia (Nombre)
 VALUES
