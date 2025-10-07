@@ -667,35 +667,35 @@
         margin-top: 20px;
     }
     /* Contenedor de la planilla */
-        .schedule-edit-container {
-            max-width: 900px;
-            margin: 40px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
+    .schedule-edit-container {
+        max-width: 800px;
+        margin: 30px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
 
-        .btn-editar {
-            background-color: rgb(202, 202, 0);
-        }
+    .btn-editar {
+        background-color: rgb(202, 202, 0);
+    }
 
-        .btn-eliminar {
-            background-color: rgb(204, 3, 3);
-            color:black
-        }
-        /* Tabla dentro del contenedor */
-        .schedule-edit-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .btn-eliminar {
+        background-color: rgb(204, 3, 3);
+        color:black
+    }
+    /* Tabla dentro del contenedor */
+    .schedule-edit-container table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        .schedule-edit-container th,
-        .schedule-edit-container td {
-            padding: 12px 15px;
-            border: 1px solid #4b4b4bff;
-            text-align: center;
-            font-size: 16px;
+    .schedule-edit-container th,
+    .schedule-edit-container td {
+        padding: 12px 15px;
+        border: 1px solid #4b4b4bff;
+        text-align: center;
+        font-size: 16px;
         }
 
         .schedule-edit-container th {

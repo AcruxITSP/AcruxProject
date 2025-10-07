@@ -55,7 +55,7 @@
                 <td>40</td>
                 <td>
                     <div class="button-group">
-                        <a href="editar.php" class="btn-link btn-editar">
+                        <a href="editar.php" class="btn-link btn-editar">   
                             <img src="../../img/pencil.svg" alt="Editar" class="icon-btn">
                         </a>
                         <a href="#" class="btn-link btn-eliminar">X</a>
@@ -66,6 +66,7 @@
 
         <div class="button-group">
             <a href="../menuRecursos.php" class="btn-link">Volver al menú</a>
+
             <a href="registrar.php" class="btn-link">Nuevo registro</a>
             <a href="../reservas/ver.php" class="btn-link">Ver reservas</a>
         </div>

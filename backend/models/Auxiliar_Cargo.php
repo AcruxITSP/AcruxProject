@@ -46,7 +46,7 @@ class AuxiliarCargo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f685-79c8-89c9-3dd168dea583";
+    const SQL_DEFAULT = "0199bae7-2d6d-7669-a82a-649e78fbc7d4";
 
     protected mysqli $con;
 	public int $idAuxiliar;

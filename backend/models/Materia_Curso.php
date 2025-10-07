@@ -46,7 +46,7 @@ class MateriaCurso extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f650-7ec0-8c60-12121b72b241";
+    const SQL_DEFAULT = "0199bae7-2d2f-77b6-80f2-a053274f436a";
 
     protected mysqli $con;
 	public int $idMateria;

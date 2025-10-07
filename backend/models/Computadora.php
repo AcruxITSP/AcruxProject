@@ -51,7 +51,7 @@ class Computadora extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f66c-77be-bf4a-99c88579cfb9";
+    const SQL_DEFAULT = "0199bae7-2d4d-765b-ae57-ff93797aba7b";
 
     protected mysqli $con;
 	public int $idCompu;

@@ -7,9 +7,7 @@
     <title>Ver planilla de horarios</title>
     <link rel="stylesheet" href="../../styles/styles.css">
 </head>
-
 <body>
-
     <div class="schedule-container">
         <h2>Planilla de horarios</h2>
         <br>

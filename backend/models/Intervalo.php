@@ -58,7 +58,7 @@ class Intervalo extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b59e-cd60-7e39-b8bd-94e3c78bb142";
+    const SQL_DEFAULT = "0199bae7-2d3a-73f4-8d98-388cb2eecbec";
 
     protected mysqli $con;
 	public int $idIntervalo;

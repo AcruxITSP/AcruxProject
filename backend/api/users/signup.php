@@ -11,6 +11,7 @@ require_once dirname(__FILE__).'/../../models/Auxiliar_Cargo.php';
 require_once dirname(__FILE__).'/../../models/Estudiante.php';
 require_once dirname(__FILE__).'/../../models/Secretario.php';
 require_once dirname(__FILE__).'/../../models/Administrador.php';
+require_once dirname(__FILE__).'/../../models/Telefono_Persona.php';
 
 enum SignupError : string
 {
@@ -29,6 +30,7 @@ $dni = $_POST["dni"] ?? null;
 $email = $_POST["email"] ?? null;
 $contrasena = $_POST["contrasena"] ?? null;
 $rol = $_POST["rol"] ?? null;
+$telefonos = json_decode($_POST["telefonos"] ?? "{}");
 $contrasenaHash = password_hash($contrasena, PASSWORD_BCRYPT);
 
 $usuario = null;
@@ -52,9 +54,18 @@ function crearPersona() : Persona
     global $dni;
     global $email;
     global $contrasenaHash;
+    global $telefonos;
     $createPersonaResult = Persona::create($con, $nombre, $apellido, $dni, $email, $contrasenaHash);
     if(!($createPersonaResult instanceof Persona)) Respuestas::enviarError($createPersonaResult);
-    return $createPersonaResult;
+    $persona = $createPersonaResult;
+
+    foreach($telefonos as $telefono)
+    {
+        $createTelefonoPersonaResult = TelefonoPersona::create($con, $telefono, $persona->idPersona);
+        if(!($createTelefonoPersonaResult instanceof TelefonoPersona)) Respuestas::enviarError($createTelefonoPersonaResult);
+    }
+
+    return $persona;
 }
 
 function crearFuncionario() : Funcionario

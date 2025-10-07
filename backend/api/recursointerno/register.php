@@ -25,9 +25,12 @@ $con = connectDb();
 // TODO: VALIDAR
 $tipo = $_POST['tipo'] ?? null;
 $tipo = normalizeTitle($tipo);
+
 $idAula = (int)($_POST['id_aula'] ?? 0);
+
 $cantidad = $_POST['cantidad'] ?? null;
 if($cantidad !== null) $cantidad = (int)$cantidad;
+else $cantidad = 0;
 
 for($i = 0; $i < $cantidad; ++$i)
 {

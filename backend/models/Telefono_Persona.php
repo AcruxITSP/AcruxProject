@@ -58,7 +58,7 @@ class TelefonoPersona extends BaseModel
     * Este valor constante no tiene ningún significado, es solo un indicador y dicho
     * valor debería ser imposible de replicar por accidente (se utiliza un GUID por este motivo)
     */
-    const SQL_DEFAULT = "0199b599-f61f-7ccf-a8a8-181afb0e16c9";
+    const SQL_DEFAULT = "0199bae7-2cfa-7b12-a4ef-d41569c0f256";
 
     protected mysqli $con;
 	public int $idTel;
