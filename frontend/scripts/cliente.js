@@ -243,23 +243,23 @@ class Horas
         return response;
     }
     /**
-    * Calls the Horas's "get" endpoint using POST method and the arguments  as form data.
+    * Calls the Horas's "gettoday" endpoint using POST method and the arguments  as form data.
 
     * @returns A Promise that resolves to the Response object from the fetch call.
     */
-    static async getToday()
+    static async gettoday()
     {
         let formData = new FormData();
 
-        return await Horas.getTodayWith(formData);
+        return await Horas.gettodayWith(formData);
     }
 
     /**
-    * Calls the Horas's "get" endpoint using POST method and the given form data.
+    * Calls the Horas's "gettoday" endpoint using POST method and the given form data.
     * @param formData The FormData object containing the form fields to send.
     * @returns A Promise that resolves to the Response object from the fetch call.
     */
-    static async getTodayWith(formData)
+    static async gettodayWith(formData)
     {
         let endpointPath = '/backend/api/horas/getToday.php';
         const response = await fetch(endpointPath, {
@@ -416,6 +416,33 @@ class Recursointerno
 /** API calls for "Reservas" related endpoints. */
 class Reservas
 {
+    /**
+    * Calls the Reservas's "getfromlogin" endpoint using POST method and the arguments  as form data.
+
+    * @returns A Promise that resolves to the Response object from the fetch call.
+    */
+    static async getfromlogin()
+    {
+        let formData = new FormData();
+
+        return await Reservas.getfromloginWith(formData);
+    }
+
+    /**
+    * Calls the Reservas's "getfromlogin" endpoint using POST method and the given form data.
+    * @param formData The FormData object containing the form fields to send.
+    * @returns A Promise that resolves to the Response object from the fetch call.
+    */
+    static async getfromloginWith(formData)
+    {
+        let endpointPath = '/backend/api/reservas/getFromLogin.php';
+        const response = await fetch(endpointPath, {
+            method: 'POST',
+            body: formData
+        });
+
+        return response;
+    }
     /**
     * Calls the Reservas's "register" endpoint using POST method and the arguments 'id_hora_inicio', 'id_hora_final' and 'id_aula' as form data.
     * @param id_hora_inicio The value for the 'id_hora_inicio' form field
