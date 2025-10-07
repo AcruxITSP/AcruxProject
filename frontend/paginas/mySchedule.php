@@ -64,10 +64,83 @@ verificarInicioSesion();
 
             <h2>Su horario de esta semana: </h2>
             <br>
-            <p>Aún no hay un horario definido</p>
+            <table class="schedule-table">
+                <tr>
+                    <th class="empty"></th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+                <tr>
+                    <td>7:00 - 7:45</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7:50 - 8:35</td>
+                    <td>Sistemas Operativos</td>
+                    <td></td>
+                    <td>Ciberseguridad</td>
+                    <td>Sistemas Operativos</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>8:40 - 9:25</td>
+                    <td>Inglés Tec.</td>
+                    <td>Inglés Tec.</td>
+                    <td>Ciberseguridad</td>
+                    <td>Sistemas Operativos</td>
+                    <td>Matemáticas</td>
+                </tr>
+                <tr>
+                    <td>9:30 - 10:15</td>
+                    <td>Inglés Tec.</td>
+                    <td>Inglés Tec.</td>
+                    <td>Emprendedurismo</td>
+                    <td>física</td>
+                    <td>Matemáticas</td>
+                </tr>
+                <tr>
+                    <td>10:20 - 11:05</td>
+                    <td>Profundización</td>
+                    <td>Profundización</td>
+                    <td>Emprendedurismo</td>
+                    <td>física</td>
+                    <td>Cálculo</td>
+                </tr>
+                <tr>
+                    <td>11:10 - 11:55</td>
+                    <td>Profundización</td>
+                    <td>Profundización</td>
+                    <td>Matemáticas</td>
+                    <td>Programación</td>
+                    <td>Cálculo</td>
+                </tr>
+                <tr>
+                    <td>12:00 - 12:45</td>
+                    <td>Filosofía</td>
+                    <td>Filosofía</td>
+                    <td>Programación</td>
+                    <td>Programación</td>
+                    <td>Ingeniería</td>
+                </tr>
+                <tr>
+                    <td>12:50 - 13:35</td>
+                    <td>Profundización</td>
+                    <td>Filosofía</td>
+                    <td>Programación</td>
+                    <td>Programación</td>
+                    <td>Ingeniería</td>
+                </tr>
+            </table>
         </main>
     </div>
-<!-- Script para menu hamburguesa-->
+    <!-- Script para menu hamburguesa-->
     <script src="scripts/menuHamburgesa.js"></script>
     <!-- Script para el dropdown -->
     <script src="../scripts/indexDropMenu.js"></script>

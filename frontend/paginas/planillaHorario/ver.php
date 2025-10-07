@@ -93,7 +93,6 @@
                 <img src="../../img/arrow-left.svg" alt="Volver" style="width:20px; height:20px; margin-right:8px;">
                 Volver
             </a>
-
         </div>
     </div>
 
