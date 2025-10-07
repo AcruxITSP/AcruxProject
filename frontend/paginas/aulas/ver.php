@@ -26,6 +26,10 @@
             text-decoration: none;
         }
 
+        a.links-moverse {
+            margin-right: 2rem;
+        }
+
         a[href="#"] {
             background-color: red;
             color: black;
@@ -48,7 +52,7 @@
         <tr>
             <td>2B</td>
             <td>PB</td>
-            <td>Informatica</td>
+            <td>Informática</td>
             <td>25</td>
             <td>
                 <div class="botones-edit-delete">
@@ -60,7 +64,7 @@
         <tr>
             <td>1A</td>
             <td>1</td>
-            <td>Lab. Fisica</td>
+            <td>Lab. Física</td>
             <td>20</td>
             <td>
                 <div class="botones-edit-delete">
@@ -83,7 +87,9 @@
         </tr>
     </table>
     <br>
-    <a href="registrar.php">Nuevo registro</a>
+    <a href="../menuRecursos.php" class="links-moverse">Volver al menú</a>
+    <a href="registrar.php" class="links-moverse">Nuevo registro</a>
+    <a href="../reservas/ver.php" class="links-moverse">Ver reservas</a>
 </body>
 
 </html>

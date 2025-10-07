@@ -17,10 +17,10 @@
 
     <form>
         <label for="curso-nombre">Nombre:</label>
-        <input type="text" id="curso-nombre">
+        <input type="text" id="curso-nombre"><br><br>
 
         <label for="curso-duracionAnios">Duracion (años):</label>
-        <input type="number" id="curso-duracionAnios">
+        <input type="number" id="curso-duracionAnios"><br><br>
 
         <input type="submit">
     </form>

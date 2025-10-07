@@ -46,7 +46,6 @@
                         </div>
                     </div>
                     <input type="submit">
-                    <p style="color: red;">Esto aun no funciona</p>
                     <br>
                     <a href="ver.php">Volver</a>
                 </form>

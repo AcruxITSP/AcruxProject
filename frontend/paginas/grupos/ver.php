@@ -28,6 +28,10 @@
             text-decoration: none;
         }
 
+        a.links-moverse {
+            margin-right: 2rem;
+        }
+
         a[href = "#"]{
             background-color: red;
             color: black;
@@ -47,8 +51,8 @@
         </tr>
         <tr>
             <td>3ro MD</td>
-            <td>Susana Arbelo</td>
-            <td>Informatica Bilingue</td>
+            <td>Zoe Salvatierra</td>
+            <td>Informática Bilingüe</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -58,8 +62,8 @@
         </tr>
         <tr>
             <td>3do MR</td>
-            <td>Federico Fagundez</td>
-            <td>Informatica</td>
+            <td>Alma Sanchez</td>
+            <td>Informática</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -69,7 +73,8 @@
         </tr>
     </table>
     <br>
-    <a href="registrar.php">Nuevo registro</a>
+    <a href="../menuRecursos.php" class="links-moverse">Volver al menú</a>
+    <a href="registrar.php" class="links-moverse">Nuevo registro</a>
 </body>
 
 </html>

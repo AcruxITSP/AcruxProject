@@ -16,6 +16,10 @@
             border: 1px solid #4b4b4bff;
         }
 
+        a.links-moverse {
+            margin-right: 2rem;
+        }
+
         .empty {
             border: 1px solid lightgray;
         }
@@ -97,9 +101,11 @@
         </tr>
     </table>
     <br>
-    <a href="editar.php">Editar la planilla actual</a>
+    <a href="editar.php" class="links-moverse">Editar la planilla actual</a>
     <br><br>
-    <a href="registrar.php">Hacer una nueva planilla</a>
+    <a href="registrar.php" class="links-moverse">Hacer una nueva planilla</a>
+    <br><br>
+    <a href="../menuRecursos.php" class="links-moverse">Volver al menú</a>
 </body>
 
 </html>

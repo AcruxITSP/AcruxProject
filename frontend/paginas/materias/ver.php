@@ -28,6 +28,10 @@
             text-decoration: none;
         }
 
+        a.links-moverse {
+            margin-right: 2rem;
+        }
+
         a[href = "#"]{
             background-color: red;
             color: black;
@@ -43,7 +47,7 @@
             <th>Nombre</th>
         </tr>
         <tr>
-            <td>Sociologia</td>
+            <td>Sociología</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -52,7 +56,7 @@
             </td>
         </tr>
         <tr>
-            <td>Programacion</td>
+            <td>Programación</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -71,7 +75,8 @@
         </tr>
     </table>
     <br>
-    <a href="registrar.php">Nuevo registro</a>
+    <a href="../menuRecursos.php" class="links-moverse">Volver al menú</a>
+    <a href="registrar.php" class="links-moverse">Nuevo registro</a>
 </body>
 
 </html>

@@ -24,9 +24,8 @@
 
         <input type="submit" value="Registrar">
     </form>
-
     <br>
-    <a href="../menurecursos.php">Volver</a>
+    <a href="ver.php">Volver</a>
 </body>
 
 </html>
