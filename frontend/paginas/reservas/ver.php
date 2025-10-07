@@ -1,100 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas de salones</title>
+    <title>Registrar reservas</title>
     <link rel="stylesheet" href="../../styles/styles.css">
-
 </head>
 
 <body>
-    <style>
-        /* Nota: Si no hay registros, se mostrara un mensaje de error */
+    <div class="forms-container">
+        <div class="form-card">
+            <h2>Registrar Reserva</h2>
+            <form action="#" method="post">
+                <label for="id_hora">ID de la hora:</label>
+                <input type="number" id="id_hora" name="id_hora" placeholder="Ingrese el ID de la hora" required>
 
-        td {
-            padding: 0.2rem 1rem 0.2rem 1rem;
-            width: 10rem;
-            text-align: center;
-        }
+                <label for="id_aula">ID del aula:</label>
+                <input type="number" id="id_aula" name="id_aula" placeholder="Ingrese el ID del aula" required>
 
-        .botones-edit-delete {
-            display: flex;
-            justify-content: space-around;
-        }
+                <label for="id_funcionario">ID del funcionario:</label>
+                <input type="number" id="id_funcionario" name="id_funcionario" placeholder="Ingrese el ID del funcionario" required>
 
-        a {
-            text-decoration: none;
-            margin-right: 4rem;
-        }
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
 
-        a[href = "#"]{
-            background-color: red;
-            color: black;
-            font-weight: bold;
-            padding: 2px;
-        }
+                <input type="submit" value="Registrar">
+            </form>
 
-        th.reservador {
-            width: 20%;
-        }
-    </style>
-
-    <h2>Reservas de salones</h2>
-    <br>
-    <table>
-        <tr>
-            <th>Aula</th>
-            <th class="reservador">Reservador</th>
-            <th>Dia</th>
-            <th>Desde</th>
-            <th>Hasta</th>
-            <th>Botones</th>
-        </tr>
-        <tr>
-            <td>3B</td>
-            <td>Jhon Doe</td>
-            <td>03/07/2025</td>
-            <td>12:00</td>
-            <td>12:45</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>2C</td>
-            <td>Pablo Hernandez</td>
-            <td>06/08/2025</td>
-            <td>7:50</td>
-            <td>8:35</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>1D</td>
-            <td>Roberto Salvatierra</td>
-            <td>10/5/2025</td>
-            <td>7:00</td>
-            <td>10:15</td>
-            <td>
-                <div class="botones-edit-delete">
-                    <a href="editar.php"> editar </a>
-                    <a href="#"> X </a>
-                </div>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <a href="registrar.php" class="links-moverse">Hacer una reserva</a>
-    <a href="../aulas/ver.php" class="links-moverse">Volver</a>
+            <a href="ver.php">Volver</a>
+        </div>
+    </div>
 </body>
 
 </html>
