@@ -39,6 +39,7 @@ $_SESSION["dni"] = $persona->dni;
 $_SESSION["email"] = $persona->email;
 $_SESSION["contrasenaHash"] = $persona->contrasena;
 $_SESSION["rol"] = null;
+$_SESSION["username"] = $_SESSION["nombre"]. " ". $_SESSION["apellido"];
 
 // Obtener y guardar Funcionario (si aplica)
 $sql = "SELECT Funcionario.* 

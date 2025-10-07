@@ -242,6 +242,33 @@ class Horas
 
         return response;
     }
+    /**
+    * Calls the Horas's "get" endpoint using POST method and the arguments  as form data.
+
+    * @returns A Promise that resolves to the Response object from the fetch call.
+    */
+    static async getToday()
+    {
+        let formData = new FormData();
+
+        return await Horas.getTodayWith(formData);
+    }
+
+    /**
+    * Calls the Horas's "get" endpoint using POST method and the given form data.
+    * @param formData The FormData object containing the form fields to send.
+    * @returns A Promise that resolves to the Response object from the fetch call.
+    */
+    static async getTodayWith(formData)
+    {
+        let endpointPath = '/backend/api/horas/getToday.php';
+        const response = await fetch(endpointPath, {
+            method: 'POST',
+            body: formData
+        });
+
+        return response;
+    }
 }
 
 /** API calls for "Intervalos" related endpoints. */

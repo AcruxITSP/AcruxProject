@@ -6,27 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar reservas</title>
     <link rel="stylesheet" href="../../styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <form>
-        <label for="id_hora">Ingrese el id de la hora:</label>
-        <input type="number" id="id_hora" name="id_hora" required><br><br>
+    <form id="reserva-registrar-form">
+        <label for="id_aula">Aula</label>
+        <select id="id_aula" name="id_aula"></select>
 
-        <label for="id_aula">Ingrese el id del aula:</label>
-        <input type="number" id="id_aula" name="id_aula" required><br><br>
+        <label for="id_hora_inicio">Hora Inicio</label>
+        <select id="id_hora_inicio" name="id_hora_inicio"></select>
 
-        <label for="id_funcionario">Ingrese el id del funcionario:</label>
-        <input type="number" id="id_funcionario" name="id_funcionario" required><br><br>
-
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha"><br><br>
+        <label for="id_hora_final">Hora Final</label>
+        <select id="id_hora_final" name="id_hora_final"></select>
 
         <input type="submit" value="Registrar">
     </form>
 
+    <template id="template_option">
+        <option value=""></option>
+    </template>
+
     <br>
     <a href="../menurecursos.php">Volver</a>
+
+    <script src="../../scripts/cliente.js"></script>
+    <script src="registrar.js"></script>
 </body>
 
 </html>
