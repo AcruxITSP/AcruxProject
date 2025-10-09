@@ -46,7 +46,7 @@
     </table>
     <br>
 
-    <a href="../menuRecursos.php" class="links-moverse">Volver al menú</a>
+    <a href="../menuRecursos.php" class="links-moverse">Volver al menú</a> 
     <a href="registrar.php" class="links-moverse">Nuevo registro</a>
 
 </body>

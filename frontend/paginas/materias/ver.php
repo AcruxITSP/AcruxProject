@@ -24,28 +24,31 @@
                 <tr>
                     <td>Sociología</td>
                     <td>
-                        <div class="botones-edit-delete">
-                            <a href="editar.php">Editar</a>
-                            <a href="#" class="btn-eliminar">X</a>
-                        </div>
+                        <div class="button-group">
+                        <a href="editar.php" class="btn-link btn-editar">
+                            <img src="../../img/pencil.svg" alt="Editar" class="icon-btn">
+                        </a>
+                        <a href="#" class="btn-eliminar btn-link">X</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Programación</td>
                     <td>
-                        <div class="botones-edit-delete">
-                            <a href="editar.php">Editar</a>
-                            <a href="#" class="btn-eliminar">X</a>
-                        </div>
+                        <div class="button-group">
+                        <a href="editar.php" class="btn-link btn-editar">
+                            <img src="../../img/pencil.svg" alt="Editar" class="icon-btn">
+                        </a>
+                        <a href="#" class="btn-eliminar btn-link">X</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Emprendedurismo</td>
                     <td>
-                        <div class="botones-edit-delete">
-                            <a href="editar.php">Editar</a>
-                            <a href="#" class="btn-eliminar">X</a>
-                        </div>
+                        <div class="button-group">
+                        <a href="editar.php" class="btn-link btn-editar">
+                            <img src="../../img/pencil.svg" alt="Editar" class="icon-btn">
+                        </a>
+                        <a href="#" class="btn-eliminar btn-link">X</a>
                     </td>
                 </tr>
             </tbody>

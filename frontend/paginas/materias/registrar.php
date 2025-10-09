@@ -19,8 +19,10 @@
                 <input type="submit" value="Registrar">
             </form>
 
-            <a href="ver.php" class="links-moverse">Volver</a>
-        </div>
+<a href="ver.php" class="volver">
+            <img src="../../img/arrow-left.svg" alt="Volver" style="width:20px; height:20px; margin-right:8px;">
+            Volver
+        </a>        </div>
     </div>
 
 </body>

@@ -47,8 +47,10 @@
                     </div>
                     <input type="submit">
                     <br>
-                    <a href="ver.php">Volver</a>
-                </form>
+                    <a href="ver.php" class="volver">
+                        <img src="../../img/arrow-left.svg" alt="Volver" style="width:20px; height:20px; margin-right:8px;">
+                        Volver</a> 
+                    </form>
             </div>
         </div>
     </body>
