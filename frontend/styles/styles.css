@@ -1083,3 +1083,22 @@
         margin: 20px auto;
     }
 }
+
+button#btn-submit-reserva {
+    background: #0f316d;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+button#btn-submit-reserva:hover { 
+    background: #1f4587; 
+    transform: translateY(-2px); 
+} /* ENLACE VOLVER */ 

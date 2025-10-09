@@ -68,7 +68,7 @@
             <a href="../menuRecursos.php" class="btn-link">Volver al menú</a>
 
             <a href="registrar.php" class="btn-link">Nuevo registro</a>
-            <a href="../reservas/ver.php" class="btn-link">Ver reservas</a>
+            <a href="../reservas/registrar.php" class="btn-link">Reservar</a>
         </div>
     </div>
 </body>

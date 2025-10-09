@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,23 +9,49 @@
 </head>
 
 <body>
-    <form>
-        <label for="id_hora">Ingrese el id de la hora:</label>
-        <input type="number" id="id_hora" name="id_hora" required><br><br>
+    <div class="forms-container">
+        <div class="form-card">
+            <h2>Registrar Reserva</h2>
+            <form action="#" method="post">
+                <label>Código del aula:</label>
+                <select>
+                    <option>2B</option>
+                    <option>1A</option>
+                    <option>3D</option>
+                </select>
 
-        <label for="id_aula">Ingrese el id del aula:</label>
-        <input type="number" id="id_aula" name="id_aula" required><br><br>
+                <label>Hora de inicio:</label>
+                <select>
+                    <option>7:00 - 7:45</option>
+                    <option>7:50 - 8:35</option>
+                    <option>8:40 - 9:25</option>
+                    <option>9:30 - 10:15</option>
+                    <option>10:20 - 11:05</option>
+                    <option>11:10 - 11:55</option>
+                    <option>12:00 - 12:45</option>
+                    <option>12:50 - 13:35</option>
+                </select>
 
-        <label for="id_funcionario">Ingrese el id del funcionario:</label>
-        <input type="number" id="id_funcionario" name="id_funcionario" required><br><br>
+                <label>Hora de final:</label>
+                <select>
+                    <option>7:00 - 7:45</option>
+                    <option>7:50 - 8:35</option>
+                    <option>8:40 - 9:25</option>
+                    <option>9:30 - 10:15</option>
+                    <option>10:20 - 11:05</option>
+                    <option>11:10 - 11:55</option>
+                    <option>12:00 - 12:45</option>
+                    <option>12:50 - 13:35</option>
+                </select>
 
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha"><br><br>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </form>
+            <button id="btn-submit-reserva">Registrar</button>
 
-        <input type="submit" value="Registrar">
-    </form>
-    <br>
-    <a href="ver.php">Volver</a>
+            <a href="../aulas/ver.php">Volver</a>
+        </div>
+    </div>
 </body>
 
 </html>
