@@ -1,44 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver planilla de horarios</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
 </head>
 <body>
-    <style>
-        /* Nota: Si no hay registros, se mostrara un mensaje de error */
-
-        td, th {
-            padding: 0.4rem 1rem 0.4rem 1rem;
-            border: 1px solid #4b4b4bff;
-        }
-
-
-
-        .empty {
-            border: 1px solid lightgray;
-        }
-
-    </style>
-
-    <h2>Planilla de horarios</h2>
-
-    <template id="tpl">
-        <table>
+    <div class="schedule-container">
+        <h2>Planilla de horarios</h2>
+        <br>
+        <table class="schedule-table">
             <tr>
                 <th class="empty"></th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+            <tr>
+                <td>7:00 - 7:45</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7:50 - 8:35</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8:40 - 9:25</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9:30 - 10:15</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10:20 - 11:05</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>11:10 - 11:55</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>12:00 - 12:45</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>12:50 - 13:35</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </table>
-    </template>
 
-    <div id="tablaHorario"></div>
+        <div class="button-group">
+            <a href="editar.php" class="btn-link">Editar la planilla actual</a>
+            <a href="registrar.php" class="btn-link">Hacer una nueva planilla</a>
+            <a href="../menuRecursos.php" class="volver">
+                <img src="../../img/arrow-left.svg" alt="Volver" style="width:20px; height:20px; margin-right:8px;">
+                Volver
+            </a>
+        </div>
+    </div>
 
-    <p id="errorMsg"></p>
-    <a href="registrar.php">Crear una planilla</a><br><br>
-
-    <a href="../menuRecursos.php">Volver al menu</a>
-
-    <script type="module" src="../../scripts/paginaPlanillaHorario.js"></script>
 </body>
-</html>

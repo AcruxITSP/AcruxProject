@@ -32,7 +32,7 @@
             <!-- Definir Días -->
             <div class="form-card">
                 <h2>Definir Dias</h2>
-                <form id="formDias" action="../scriptsPhp/scriptDefinirDias.php" method="post">
+                <form id="formDias" method="post">
                     <h3>Seleccione todos los días en los que se dictará clase durante la semana</h3>
                     <div class="checkbox-group two-columns">
                         <div class="column">
@@ -46,15 +46,13 @@
                         </div>
                     </div>
                     <input type="submit">
-                    <p style="color: red;">Esto aun no funciona</p>
                     <br>
-                    <a href="ver.php">Volver</a>
-                </form>
+                    <a href="ver.php" class="volver">
+                        <img src="../../img/arrow-left.svg" alt="Volver" style="width:20px; height:20px; margin-right:8px;">
+                        Volver</a> 
+                    </form>
             </div>
         </div>
-
-        <script src="../../scripts/filtroCrearIntervalos.js"></script>
-        <script src="../../scripts/filtroDefinirDias.js"></script>
     </body>
 
 </html>

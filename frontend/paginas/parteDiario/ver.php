@@ -30,6 +30,7 @@
 
         a {
             text-decoration: none;
+            margin-right: 4rem;
         }
 
         a[href = "#"]{
@@ -54,7 +55,7 @@
             <td>2025-07-31</td>
             <td>09:30</td>
             <td>El estudiante Thiago Diaz se retiró por dolor de cabeza</td>
-            <td>Susana Arbelo</td>
+            <td>Zoe Salvatierra</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -63,10 +64,10 @@
             </td>
         </tr>
         <tr>
-            <td>2025-07-31</td>
-            <td>09:30</td>
-            <td>El estudiante Thiago Diaz se retiró por dolor de cabeza</td>
-            <td>Susana Arbelo</td>
+            <td>2025-05-20</td>
+            <td>12:10</td>
+            <td>La estudiante Olivia Gómez se retiró. Su madre la vino a buscar</td>
+            <td>Zoe Salvatierra</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -75,10 +76,10 @@
             </td>
         </tr>
         <tr>
-            <td>2025-07-31</td>
-            <td>09:30</td>
-            <td>El estudiante Thiago Diaz se retiró por dolor de cabeza</td>
-            <td>Susana Arbelo</td>
+            <td>2025-09-04</td>
+            <td>14:30</td>
+            <td>El estudiante Felipe Mendez</td>
+            <td>Zoe Salvatierra</td>
             <td>
                 <div class="botones-edit-delete">
                     <a href="editar.php"> editar </a>
@@ -88,7 +89,8 @@
         </tr>
     </table>
     <br>
-    <a href="registrar.php">Nuevo registro</a>
+    <a href="registrar.php" class="links-moverse">Nuevo registro</a>
+    <a href="../menuRecursos.php" class="links-moverse">Volver</a>
 </body>
 
 </html>

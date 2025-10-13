@@ -19,7 +19,7 @@ verificarInicioSesion();
 
   <!-- Botón hamburguesa -->
   <button class="hamburger" onclick="toggleSidebar()">
-  <img src="img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+  <img src="img/menuhamburguesa" alt="menu" class="hamburger-icon">
 </button>
 
   <div class="dashboard-container">
@@ -28,7 +28,6 @@ verificarInicioSesion();
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h2>ITSP</h2>
-        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
       </div>
       <nav class="sidebar-nav">
         <a href="index.php"><i class="fas fa-home"></i> Inicio</a>

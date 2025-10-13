@@ -13,7 +13,7 @@
             width: 15rem;
         }
     </style>
-    <h2>Editar la informacion del administrador</h2>
+    <h2>Editar la informacion de la materia</h2>
 
     <form>
         <input type="text" placeholder="Nombre de la materia">
