@@ -41,9 +41,9 @@
                     <td>Informática</td>
                     <td>
                         <div class="botones-edit-delete">
-                            <a href="editar.php">editar</a>
-                            <a href="#">X</a>
-                        </div>
+                        <a href="editar.php">editar</a>
+                        <a href="#">X</a>
+                    </div>
                     </td>
                 </tr>
             </tbody>
