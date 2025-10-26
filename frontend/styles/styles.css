@@ -1918,6 +1918,10 @@ div.targeta-intervalo {
     box-shadow: 0 3px 8px var(--sombra);
 }
 
+#main-ver-cursos>button#crear-con-template {
+    bottom: 90px;
+}
+
 
 /*////////////////////*/
 /* Pagina My Schedule */
