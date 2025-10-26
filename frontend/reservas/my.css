@@ -25,6 +25,7 @@ main {
     max-width: 600px;
 }
 
+/** MIS RESERVAS **/
 /* Contenedor principal de cada reserva */
 div[name="div-reserva"] {
     background: #ffffff;

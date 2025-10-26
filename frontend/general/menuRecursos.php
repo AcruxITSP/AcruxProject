@@ -69,7 +69,7 @@
                     <i class="fas fa-user-tie icon-card"></i>
                     <span>Mi horario</span>
                 </a>
-                 <a href="#" class="resource-card">
+                 <a href="../reservas/my.php" class="resource-card">
                     <i class="fas fa-user-tie icon-card"></i>
                     <span>Mis reservas</span>
                 </a>
