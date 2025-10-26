@@ -1,0 +1,26 @@
+
+- Viernes 17:17 - 3:24
+- Sabado 14:07 - 2:17
+- Domingo 13:45 - 15:32, 4:28 - ???
+- Lunes 10:08 - 16:32
+- Martes 9:15 - 9:43
+- Miercoles ???
+- Jueves 11:34 - (Salida del ITSP), 7:16 - ???
+- Viernes 16:46 - 19:14
+- Sabado 11:04 - 13:27, 14:41 - 19:41
+- Domingo 12:15 - 13:43, 16:39 - 17:51
+- Lunes 7:07 - 8:50
+- Miercoles 8:40 - ???
+- Jueves (Hora de SO y RUBIL) + 15:13 - 16:24
+
+---
+
+- Agregar backend de horas al front (el front lo esta haciendo nehuel)
+
+- Borrar reservas al marcar ausencias
+- Evitar reservas en ausencias
+
+- Hacer que en la pagina de reserva te muestre en que horas reservaste y la cantidad.
+- Validar la disponibilidad de recursos en backend (si no esta hecho)
+- Hacer que la validacion de profe libre para asignar horario sea en backend tambien.
+- Hacer que la validacion de espacio libre para asignar horario sea backend tambien.
