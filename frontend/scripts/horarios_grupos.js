@@ -170,10 +170,37 @@ async function traerYMostrarHorarios() {
  * Función temporal para borrar una hora (no implementada aún).
  */
 async function borrarHoraAsync() {
-	Swal.fire({
-		title: "En mantenimiento",
-		icon: "info"
-	});
+	const resultadoDeAdvertencia = await Swal.fire({
+        title: "Borrar Hora",
+        text: "Borrara la ultima hora de este grupo para este dia.",
+        icon: "info",
+
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Borrar"
+    });
+
+    if(!resultadoDeAdvertencia.isConfirmed) return;
+
+	const formData = new FormData();
+	formData.append("nombre_dia", dia);
+	formData.append("id_grupo", domSelectGrupo.value);
+	let respuesta = await fetch("../../backend/horarios/grupos_borrar_hora.php", {method: "POST", body: formData});
+	respuesta = await respuesta.json();
+
+	if (!respuesta.ok)
+	{
+		switch(respuesta.value)
+		{
+			default:
+				Swal.fire({
+					title: "Error Desconocido",
+					text: respuesta.data,
+					icon: "error"
+				});
+		}
+	}
+
 	await traerYMostrarHorarios();
 }
 
