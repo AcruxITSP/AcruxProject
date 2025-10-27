@@ -1,9 +1,5 @@
 <?php
-// Comprobar si la carpeta actual es "frontend/general"
-$pattern = '/(\\|\/)general$/';
-$string = __DIR__;
-
-$coincidencias = preg_match($pattern, $string);
+$root = "/frontend";
 ?>
 
 <!-- Top Header con dropdown -->
@@ -19,13 +15,8 @@ $coincidencias = preg_match($pattern, $string);
       <i class="fas fa-caret-down"></i>
     </div>
     <div class="dropdown-menu" id="dropdownMenu">
-      <?php if ($coincidencias == 1): ?>
-        <a href="myAccount.php">Mi cuenta</a>
-        <a href="configuracion.php">Configuración</a>
-      <?php else: ?>
-        <a href="../general/myAccount.php">Mi cuenta</a>
-        <a href="../general/configuracion.php">Configuración</a>
-      <?php endif; ?>
+      <a href="<?= $root ?>/general/myAccount.php">Mi cuenta</a>
+      <a href="<?= $root ?>/general/configuracion.php">Configuración</a>
       <form action="../scriptsPhp/scriptCerrarSesion.php" method="post">
         <button id="btn-unLog" type="submit">Cerrar sesión</button>
       </form>
