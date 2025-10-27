@@ -1416,6 +1416,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 #body-ver-ausencias {
     padding: 3rem;
+    padding-left: calc(240px + 3rem);
 }
 
 #main-ver-ausencias {
@@ -1479,18 +1480,17 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /* Pagina Registrar Ausencia */
 /*///////////////////////////*/
 
+#main-registrar-ausencia {
+    display: grid;
+    grid-row: 20vh 80vh;
+}
 
 #modal-registrar-ausencia {
-    position: fixed;
     inset: 0;
-    background-color: var(--blanco);
-    /*display: none; /* Hidden by default */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(2px);
 }
 
 #modal-registrar-ausencia form {
@@ -1499,7 +1499,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     border-radius: 14px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     width: 400px;
     /* increased width */
     max-width: 90vw;

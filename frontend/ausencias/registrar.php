@@ -4,12 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rgistrar Ausencias</title>
+    <title>Registrar Ausencias</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <main>
+    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+
+    <main class="main-content" id="main-registrar-ausencia">
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+        
         <div id="modal-registrar-ausencia">
             <form>
                 <h2>Registrar Ausencia</h2>
@@ -30,6 +35,9 @@
             </form>
         </div>
     </main>
+
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>
