@@ -17,8 +17,9 @@
             
         </div>
 
-        <button onclick="location.href='crear.php'">Crear Curso</button>
-        <button id="crear-con-template">Crear targeta <br> (Template) </button>
+        <?php if(esAdscripto()):?>
+            <button onclick="location.href='#'">Crear</button>
+        <?php endif; ?>
     </main>
 
     <template id="tpl-targeta-asignatura">
