@@ -153,9 +153,15 @@ form#form-login input[type="submit"]:active {
 #body-espacio-reservar {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
     min-height: 100vh;
+    padding: 3rem;
+    padding-left: calc(240px + 3rem);
+    display: grid;
+    grid-template-rows: 5rem 1fr;
+}
+
+#body-espacio-reservar #main-content {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* === CONTENEDOR PRINCIPAL === */
@@ -1661,22 +1667,27 @@ div.targeta-intervalo {
 /*  Pagina Ver Espacios */
 /*//////////////////////*/
 
+#body-ver-espacios {
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+}
+
 #main-ver-espacios {
-    padding: 3rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #lista-espacios {
-    width: 65%;
-    max-height: 28rem;
+    width: 90%;
+    max-height: 24rem;
     padding-top: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     overflow-y: scroll;
 }
 
@@ -1771,6 +1782,7 @@ div.targeta-intervalo {
     display: flex;
     justify-content: center;
     padding: 2rem;
+    padding-left: calc(240px + 2rem);
     font-family: "Segoe UI", Roboto, sans-serif;
 }
 

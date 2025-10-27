@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Ver Espacios</title>
 </head>
 
 <body id="body-ver-espacios">
+    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+
+    <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    
     <main id="main-ver-espacios">
         <div id="lista-espacios">
             <div class="targeta-espacio">
@@ -66,6 +71,8 @@
     </template>
 
     <script src="../scripts/espacios_agregar.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>
