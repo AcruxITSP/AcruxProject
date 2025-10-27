@@ -880,10 +880,18 @@ form#form-login input[type="submit"]:active {
 #body-crear-recursos {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-crear-recursos #main-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 /* ======== CONTENEDOR PRINCIPAL ======== */
@@ -991,21 +999,17 @@ select:focus {
 /* Pagina Ver Recurso */
 /*////////////////////*/
 
-/* ======== RESET ======== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Roboto, sans-serif;
-}
-
 /* ======== BASE ======== */
 #body-ver-recursos {
     background-color: var(--celeste-palido2);
     color: var(--negro);
+    padding: 2rem;
+    padding-left: calc(340px + 2rem);
+}
+
+#body-ver-recurso #main-content {
     display: flex;
     justify-content: center;
-    padding: 2rem;
 }
 
 #main-ver-recursos {
@@ -1196,6 +1200,11 @@ div[name="espacios"] {
 #body-reservar-externo {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
     min-height: 100vh;
+    padding: 3rem;
+    padding-left: calc(240px + 2rem);
+}
+
+#body-reservar-externo #main-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1313,6 +1322,26 @@ form[form-id="form-reservar-externo"] input[type="submit"] {
 
 form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     background: var(--verde);
+}
+
+
+/*///////////////////////////////*/
+/* Pagina Editar Recurso Externo */
+/*///////////////////////////////*/
+
+#body-recurso-externo-editar {
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+}
+
+
+/*///////////////////////////////*/
+/* Pagina Editar Recurso Externo */
+/*///////////////////////////////*/
+
+#body-recurso-interno-editar {
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
 }
 
 

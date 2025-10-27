@@ -1,7 +1,6 @@
 <?php
 include '../util/sesiones.php';
-if(!esAdscripto())
-{
+if (!esAdscripto()) {
     header("Location: ../cuenta/login.php");
     die();
 }
@@ -9,37 +8,46 @@ if(!esAdscripto())
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php require __DIR__.'/../systems/inputlist/ilists.php'; ?>
+    <?php require __DIR__ . '/../systems/inputlist/ilists.php'; ?>
     <title>Document</title>
     <link rel="stylesheet" href="../styles/styles.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body id="body-crear-recursos">
-    <main id="main-crear-recursos">
-        <form id="form-crear-recursos">
-            <h1>Crear Recurso</h1>
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
 
-            <label for="localidad">Localidad</label>
-            <select name="localidad">
-                <option value="externo">Externo</option>
-                <option value="interno">Interno</option>
-            </select>
+    <div id="main-content">
+        <main id="main-crear-recursos">
+            <form id="form-crear-recursos">
+                <h1>Crear Recurso</h1>
 
-            <label for="tipo">Tipo</label>
-            <input name="tipo">
+                <label for="localidad">Localidad</label>
+                <select name="localidad">
+                    <option value="externo">Externo</option>
+                    <option value="interno">Interno</option>
+                </select>
 
-            <!-- aqui se moveran los inputs dependiendo de la localidad -->
-            <div id="inputs-segun-localidad">
-                
-            </div>
+                <label for="tipo">Tipo</label>
+                <input name="tipo">
 
-            <input type="submit" value="Registrar Recurso">
-        </form>
-    </main>
+                <!-- aqui se moveran los inputs dependiendo de la localidad -->
+                <div id="inputs-segun-localidad">
+
+                </div>
+
+                <input type="submit" value="Registrar Recurso">
+            </form>
+        </main>
+    </div>
 
     <!-- Aca se almacenas los inputs que no deben aparecer en el formulario hasta que se les indiquen-->
     <div id="inputs-apartados">
@@ -61,5 +69,8 @@ if(!esAdscripto())
 
     <script src="../inputs.js"></script>
     <script src="../scripts/recursos_crear.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
+
 </html>
