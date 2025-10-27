@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="my.css">
-    <?php require __DIR__.'/../includes/header.php' ?>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <?php require __DIR__ . '/../includes/header.php' ?>
 </head>
-<body>
+
+<body id="body-reservas-my">
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
+
     <main id="reservas-container">
-        
+
     </main>
 
     <template id="template-div-reserva-recurso">
@@ -50,5 +58,8 @@
     </template>
 
     <script src="../scripts/reservas_my.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
+
 </html>
