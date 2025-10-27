@@ -1,3 +1,4 @@
+<?php include '../util/sesiones.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -65,14 +66,19 @@
                     <i class="fas fa-user-tie icon-card"></i>
                     <span>Funcionarios</span>
                 </a>
-                <a href="mySchedule.php" class="resource-card">
-                    <i class="fas fa-user-tie icon-card"></i>
-                    <span>Mi horario</span>
-                </a>
-                 <a href="../reservas/my.php" class="resource-card">
-                    <i class="fas fa-user-tie icon-card"></i>
-                    <span>Mis reservas</span>
-                </a>
+                <?php if(esProfesor()): ?>
+                    <a href="mySchedule.php" class="resource-card">
+                        <i class="fas fa-user-tie icon-card"></i>
+                        <span>Mi horario</span>
+                    </a>
+                <?php endif; ?>
+
+                <?php if(estaLogeado()): ?>
+                    <a href="../reservas/my.php" class="resource-card">
+                        <i class="fas fa-user-tie icon-card"></i>
+                        <span>Mis reservas</span>
+                    </a>
+                <?php endif; ?>
                
             </div>
 
