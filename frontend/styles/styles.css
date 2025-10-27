@@ -2008,3 +2008,22 @@ div.targeta-intervalo {
 #main-my-schedule .btn:hover {
     background-color: var(--azul-oscuro);
 }
+
+/*////////////////////*/
+/*  Pagina Ver Asignaturas - depende de Cursos */
+/*////////////////////*/
+
+.asignatura-horizontal
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 500px) {
+    .asignatura-horizontal
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

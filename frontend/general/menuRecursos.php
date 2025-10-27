@@ -50,7 +50,7 @@
                     <i class="fas fa-graduation-cap icon-card"></i>
                     <span>Cursos</span>
                 </a>
-                <a href="#" class="resource-card">
+                <a href="../asignaturas/ver.php" class="resource-card">
                     <i class="fas fa-book icon-card"></i>
                     <span>Asignaturas</span>
                 </a>

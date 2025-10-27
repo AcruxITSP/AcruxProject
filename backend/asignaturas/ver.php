@@ -25,32 +25,51 @@ function obtenerDatosMaterias($con)
     $sqlMaterias = "SELECT * FROM materia";
     $resultMaterias = SQL::valueQuery($con, $sqlMaterias, "");
     if($resultMaterias instanceof ErrorDB) Respuestas::enviarError($resultMaterias, $con);
+    
     while($materia = $resultMaterias->fetch_assoc())
     {
         $idMateria = $materia['id_materia'];
-        $respuesta[] = $materia;
-        $respuesta[count($respuesta)-1]['docentes'] = [];
 
-        // Obtener los docentes que dictan la materia
+        // Estructura base de cada materia
+        $materiaData = $materia;
+        $materiaData['docentes'] = [];
+        $materiaData['cursos'] = [];
+
+        // === DOCENTES ===
         $sqlDocentes = "SELECT
-                        profesor.id_profesor,
-                        usuario.id_usuario,
-                        usuario.nombre as nombre_profesor,
-                        usuario.apellido as apellido_profesor
-                        FROM materia, clase, profesor, usuario
-                        WHERE clase.id_materia = materia.id_materia
-                        AND clase.id_profesor = profesor.id_profesor
-                        AND profesor.id_usuario = usuario.id_usuario
-                        AND materia.id_materia = ?";
+                            profesor.id_profesor,
+                            usuario.id_usuario,
+                            usuario.nombre AS nombre_profesor,
+                            usuario.apellido AS apellido_profesor
+                        FROM clase
+                        INNER JOIN profesor ON clase.id_profesor = profesor.id_profesor
+                        INNER JOIN usuario ON profesor.id_usuario = usuario.id_usuario
+                        WHERE clase.id_materia = ?";
         $resultDocentes = SQL::valueQuery($con, $sqlDocentes, "i", $idMateria);
         if($resultDocentes instanceof ErrorDB) Respuestas::enviarError($resultDocentes, $con);
         while($docente = $resultDocentes->fetch_assoc())
         {
-            $respuesta[count($respuesta)-1]['docentes'][] = $docente;
+            $materiaData['docentes'][] = $docente;
         }
+
+        // === CURSOS ===
+        $sqlCursos = "SELECT 
+                          curso.id_curso,
+                          curso.nombre AS nombre_curso
+                      FROM curso
+                      INNER JOIN curso_materia ON curso.id_curso = curso_materia.id_curso
+                      WHERE curso_materia.id_materia = ?";
+        $resultCursos = SQL::valueQuery($con, $sqlCursos, "i", $idMateria);
+        if($resultCursos instanceof ErrorDB) Respuestas::enviarError($resultCursos, $con);
+        while($curso = $resultCursos->fetch_assoc())
+        {
+            $materiaData['cursos'][] = $curso;
+        }
+
+        // Agregar al arreglo final
+        $respuesta[] = $materiaData;
     }
 
     return $respuesta;
-    
 }
 ?>
