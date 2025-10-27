@@ -295,6 +295,11 @@ form#form-login input[type="submit"]:active {
     box-shadow: 0 2px 12px var(--gris2);
 }
 
+.hora-profe-ausente
+{
+    background-color: rgb(248, 139, 139) !important;
+}
+
 /* ======== SELECT GROUP ======== */
 #select-grupo {
     width: 100%;

@@ -4,7 +4,7 @@ require_once dirname(__FILE__) ."/../other/respuestas.php";
 require_once dirname(__FILE__) ."/../util/timing.php";
 require_once dirname(__FILE__) ."/../other/time.php";
 
-function profeEstaAusente($con, $idProfesor, $idDia, $fecha, $numeroPeriodo)
+function profeEstaAusente($con, $idProfesor, $fecha, $numeroPeriodo)
 {
     $sql = "SELECT 
                 CASE 
@@ -18,14 +18,13 @@ function profeEstaAusente($con, $idProfesor, $idDia, $fecha, $numeroPeriodo)
                         WHERE a.id_profesor = ?
                         AND ia.fecha = ?
                         AND ? BETWEEN pi.numero AND pf.numero
-                        AND (WEEKDAY(ia.fecha) + 1) = ?
                     )
                     THEN 'AUSENTE'
                     ELSE 'PRESENTE'
                 END AS estado;
             ";
 
-    $result = SQL::valueQuery($con, $sql, "isii", $idProfesor, $fecha, $numeroPeriodo, $idDia);
+    $result = SQL::valueQuery($con, $sql, "isi", $idProfesor, $fecha, $numeroPeriodo);
 
     if ($result instanceof ErrorDB) {
         Respuestas::enviarError($result, $con);
