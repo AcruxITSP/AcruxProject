@@ -14,9 +14,9 @@
 
             <div class="curso">
                 <div class="desc">
-                    <p>Tecnologías de la Información</p>
+                    <p class="nombre-curso">Tecnologías de la Información</p>
                 </div>
-                <ul>
+                <ul class="curso-materias">
                     <li>Matemática</li>
                     <li>Programación</li>
                     <li>Bases de Datos</li>
@@ -117,6 +117,23 @@
         </div>
 
         <button onclick="location.href='crear.php'">Crear Curso</button>
+        <button id="crear-con-template">Crear targeta <br> (Template) </button>
     </main>
+
+    <template id="tpl-targeta-curso">
+        <div class="curso">
+                <div class="desc">
+                    <p class="nombre-curso"></p>
+                </div>
+                <ul class="curso-materias">
+                </ul>
+                <div class="botones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+    </template>
+
+    <script src="../scripts/crear_targeta_curso.js"></script>
 </body>
 </html>

@@ -270,7 +270,7 @@ ALTER TABLE Clase
 -- Curso ↔ Materia)
 -- ============================
 
-ALTER Curso_Materia
+ALTER TABLE Curso_Materia
   ADD CONSTRAINT fk__curso_materia_curso FOREIGN KEY (id_curso) REFERENCES Curso(id_curso) ON DELETE CASCADE,
   ADD CONSTRAINT fk__curso_materia_materia FOREIGN KEY (id_materia) REFERENCES Materia(id_materia) ON DELETE CASCADE;
 
