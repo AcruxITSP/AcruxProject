@@ -18,10 +18,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     if(!isset($nombreDia)) Respuestas::enviarError('INDIQUE_NOMBRE_DIA');
     if(!isset($numeroIntervalo)) Respuestas::enviarOk('INDIQUE_NUMERO_INTERVALO');
 
-    $fecha = obtenerFechaActual();
     $idDia = obtenerNumeroDiaPorNombre($nombreDia);
-
+    $fechaAVer = obtenerFechaEnSemanaActual($idDia);
     $con = connectDb();
-    Respuestas::enviarOk(profeEstaAusente($con, $idProfesor, $idDia, $fecha, $numeroIntervalo));
+    Respuestas::enviarOk(profeEstaAusente($con, $idProfesor, $fechaAVer, $numeroIntervalo));
 }
 ?>
