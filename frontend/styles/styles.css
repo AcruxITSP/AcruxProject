@@ -984,8 +984,8 @@ select:focus {
 /* ======== RESPONSIVE ======== */
 @media (max-width: 500px) {
     main {
-        margin: 20px;
-        padding: 20px;
+        margin: 0;
+        padding: 0;
     }
 
     form h1 {
@@ -1515,7 +1515,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
   color: var(--blanco);
   border: none;
   font-size: 24px;
-  padding: 10px 14px;
+  padding: 8px 10px 3px 10px;
   border-radius: 8px;
   cursor: pointer;
   z-index: 1001;
@@ -1574,9 +1574,17 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     left: -260px;
   }
 
+  .sidebar-header h2 {
+    display: none;
+  }
+
   .main-content {
     margin-left: 0;
     padding-top: 60px;
+  }
+
+  body {
+    padding-left: 2rem !important;
   }
 }
 

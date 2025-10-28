@@ -23,3 +23,8 @@ $root = "/frontend";
     <!-- <a href="#"><i class="fas fa-list"></i> Parte Diario</a> -->
   </nav>
 </aside>
+
+<!-- Botón hamburguesa -->
+<button class="hamburger" onclick="toggleSidebar()">
+  <img src="../img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+</button>
