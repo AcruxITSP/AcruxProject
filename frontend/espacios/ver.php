@@ -1,71 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
-    <title>Ver Espacios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Salones ITSP</title>
 </head>
+<body id="body-ver-salones">
+    <main id="main-ver-salones">
+        <h1>Salones</h1>
+        <div class="contenedor-salones">
 
-<body id="body-ver-espacios">
-    <main id="main-ver-espacios">
-        <div id="lista-espacios">
-            <div class="targeta-espacio">
-                <div class="imagen-espacio">
-                    <div class="marco-imagen-espacio"></div>
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Salón 1</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Bruno</span></p>
                 </div>
-                <div class="espacio-info">
-                    <h1 class="nombre-espacio">Salon 5</h1>
-                    <p class="reservado">Reservado</p>
-                </div>
-                <div class="container-btn-reservar">
-                    <input class="btn-reservar" value="Reservar">
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
-            <div class="targeta-espacio">
-                <div class="imagen-espacio">
-                    <div class="marco-imagen-espacio"></div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Salón 2</p>
+                    <p class="estado libre">Libre</p>
                 </div>
-                <div class="espacio-info">
-                    <h1 class="nombre-espacio">Salon 5</h1>
-                    <p class="reservado">Reservado</p>
-                </div>
-                <div class="container-btn-reservar">
-                    <input class="btn-reservar" value="Reservar">
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
-            <div class="targeta-espacio">
-                <div class="imagen-espacio">
-                    <div class="marco-imagen-espacio"></div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Salón 3</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Martínez</span></p>
                 </div>
-                <div class="espacio-info">
-                    <h1 class="nombre-espacio">Salon 5</h1>
-                    <p class="reservado">Reservado</p>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
-                <div class="container-btn-reservar">
-                    <input class="btn-reservar" value="Reservar">
+            </div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Salón 4</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. González</span></p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Salón 5</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Fernandez</span></p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
         </div>
-        <button id="btn-agregar-espacio">Agregar Espacio</button>
+
+        <h1>Aulas</h1>
+        <div class="contenedor-aulas">
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Aula 1</p>
+                    <p class="estado libre">Libre</p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Aula 2</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Povea</span></p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Aula 3</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Rubil</span></p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <h1>Laboratorios</h1>
+        <div class="contenedor-laboratorios">
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Laboratorio Electricidad</p>
+                    <p class="estado libre">Libre</p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Laboratorio de Mantenimiento</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Galmarini</span></p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="info">
+                    <p class="nombre">Laboratorio Robótica</p>
+                    <p class="estado ocupado">Ocupado por <span>Prof. Rubil</span></p>
+                </div>
+                <div class="acciones">
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar"><i class="bi bi-pencil"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="location.href='crear.php'">Crear Salón</button>
+        <button id="crear-con-template">Crear Tarjeta<br>(Template)</button>
     </main>
-    <template id="tpl-targeta-espacio">
-        <div class="targeta-espacio">
-            <div class="imagen-espacio">
-                <div class="marco-imagen-espacio"></div>
-            </div>
-            <div class="espacio-info">
-                <h1 class="nombre-espacio"></h1>
-                <p class="reservado"></p>
-            </div>
-            <div class="container-btn-reservar">
-                <input class="btn-reservar" value="Reservar">
-            </div>
-        </div>
-    </template>
-
-    <script src="../scripts/espacios_agregar.js"></script>
 </body>
-
 </html>
