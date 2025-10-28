@@ -142,6 +142,8 @@
     </template>
 
     <script src="../scripts/crear_targeta_curso.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>
