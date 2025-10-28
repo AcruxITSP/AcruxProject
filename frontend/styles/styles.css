@@ -389,18 +389,6 @@ select:focus {
     }
 }
 
-/* ======== RESPONSIVE ======== */
-@media (max-width: 500px) {
-    main {
-        margin: 20px;
-        padding: 20px;
-    }
-
-    form h1 {
-        font-size: 1.5rem;
-    }
-}
-
 .espacio-cantidad-div
 {
     height: fit-content !important;
@@ -789,6 +777,7 @@ select:focus {
 #main-crear-grupos #form-crear label {
     font-weight: 600;
     color: var(--azul-grisaceo);
+    margin-top: 2rem;
 }
 
 #main-crear-grupos #form-crear input,
@@ -805,6 +794,12 @@ select {
 select:focus {
     border-color: var(--azul-oscuro);
     box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+#main-crear-grupos #form-crear .codigo-grupo {
+    display: grid;
+    grid-template-columns: 30% 68%;
+    gap: 2%;
 }
 
 /* ======== BOTÓN DE ENVÍO ======== */
@@ -842,16 +837,6 @@ select:focus {
 }
 
 /* ======== RESPONSIVE ======== */
-@media (max-width: 500px) {
-    main {
-        margin: 20px;
-        padding: 20px;
-    }
-
-    form h1 {
-        font-size: 1.5rem;
-    }
-}
 
 .espacio-cantidad-div
 {
@@ -2217,9 +2202,9 @@ div.targeta-intervalo {
 }
 
 
-/*////////////////////*/
-/*  Pagina Ver Cursos */
-/*////////////////////*/
+/*///////////////////*/
+/* Pagina Ver Cursos */
+/*///////////////////*/
 
 /* ======== BASE ======== */
 #body-ver-cursos {
@@ -2378,6 +2363,130 @@ div.targeta-intervalo {
 
 #main-ver-cursos>button#crear-con-template {
     bottom: 90px;
+}
+
+
+/*////////////////////*/
+/* Pagina Crear Curso */
+/*////////////////////*/
+
+/* ======== ESTILOS GENERALES ======== */
+#body-crear-cursos {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-crear-cursos #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-crear-cursos {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+#main-crear-cursos #inputs-apartados
+{
+    display: none;
+}
+
+/* ======== TÍTULO ======== */
+#main-crear-cursos #form-editar h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+/* ======== CAMPOS DEL FORMULARIO ======== */
+
+#main-crear-cursos #form-editar,
+#inputs-segun-localidad,
+#inputs-para-externo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#main-crear-cursos #form-editar label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+}
+
+#main-crear-cursos #form-editar input,
+select, textarea {
+    padding: 10px 12px;
+    margin-top: 1rem;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#main-crear-cursos #form-editar textarea {
+    height: 4rem;
+}
+
+#main-crear-cursos #form-editar input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#main-crear-cursos #form-editar input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#main-crear-cursos #form-editar input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#main-crear-cursos #form-editar .div-vacio {
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid black;
+    border-style: dashed;
+    color: var(--gris4);
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.espacio-cantidad-div
+{
+    height: fit-content !important;
+    display: flex !important;
 }
 
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php require __DIR__ . '/../systems/inputlist/ilists.php'; ?>
-    <title>Document</title>
+    <title>Crear Grupos</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -26,36 +26,26 @@
                     <input type="text" placeholder="Grado" class="grado-grupo">
                     <input type="text" placeholder="nombre" class="nombre-grupo">
                 </div>
-                <label for="materia">Materia</label>
-                <select name="materia" id="materia">
-                    <option>Programacion</option>
-                    <option>Ciberseguridad</option>
-                    <option>Emprendedurismo</option>
+
+                <label for="curso">Curso</label>
+                <select name="curso" id="curso">
+                    <option>Informatica</option>
+                    <option>Informatica Bilingue</option>
+                    <option>Robotica</option>
                 </select>
 
-                <label for="docente">Docente</label>
-                <select name="docente" id="docente">
-                    <option>Hernesto Rodriguez</option>
-                    <option>Pablo Sanchez</option>
-                    <option>Walter White</option>
+                <label for="adscrito">Adscrito</label>
+                <select name="adscrito" id="adscrito">
+                    <option>Abdul Velara</option>
+                    <option>Juan Juanez</option>
+                    <option>Joaquin Gomez</option>
                 </select>
-
-                <label for="espacio">Espacio</label>
-                <select name="espacio" id="espacio">
-                    <option>Salon 1</option>
-                    <option>Lab. Quimica</option>
-                    <option>Salon 3</option>
-                </select>
-
-                <div class="div-vacio"> Div vacio</div>
 
                 <input type="submit" value="Guardar">
             </form>
         </main>
     </div>
 
-    <script src="../inputs.js"></script>
-    <script src="../scripts/recursos_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
