@@ -362,6 +362,18 @@ INSERT INTO Materia (id_materia, nombre) VALUES
 (2, "Ciberseguridad"),
 (3, "Ingles");
 
+INSERT INTO Curso (id_curso, nombre) VALUE
+(1, "Informatica Bilingue Web"),
+(2, "Informatica Web");
+
+INSERT INTO Curso_Materia (id_curso, id_materia) VALUE
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 1),
+(2, 2);
+
+
 INSERT INTO Dia (id_dia, nombre) VALUES
 (1, 'Lunes'),
 (2, 'Martes'),
