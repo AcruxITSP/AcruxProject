@@ -2,28 +2,38 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Document</title>
 </head>
+
 <body id="body-ver-recursos">
-    <main id="main-ver-recursos">
-        <h1>Recursos Externos</h1>
-        <div id="div-recursos-externos">
-            
-        </div>
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
 
-        <h1 id="h-recursos-internos">Recursos Internos</h1>
-        <div id="div-recursos-internos">
-            
-        </div>
+    <div id="main-content">
+        <main id="main-ver-recursos">
+            <h1>Recursos Externos</h1>
+            <div id="div-recursos-externos">
 
-        <?php if(esAdscripto()):?> <button onclick="location.href='crear.php'">Crear Recurso</button> <?php endif;?>
-    </main>
+            </div>
+
+            <h1 id="h-recursos-internos">Recursos Internos</h1>
+            <div id="div-recursos-internos">
+
+            </div>
+
+            <?php if (esAdscripto()): ?> <button onclick="location.href='crear.php'">Crear Recurso</button> <?php endif; ?>
+        </main>
+    </div>
 
     <template id="template-div-recurso-externo">
         <div>
@@ -38,9 +48,9 @@
                 <p name="ocupado">Ocupado: 0</p>
             </div>
             <div name="botones">
-                <?php if(esAdscripto()):?> <button name="borrar">Borrar</button> <?php endif;?>
-                <?php if(esAdscripto()):?> <button name="editar"><i class="bi bi-pencil"></i></button> <?php endif;?>
-                <?php if(estaLogeado()):?> <button name="reservar">Reservar</button> <?php endif;?>
+                <?php if (esAdscripto()): ?> <button name="borrar">Borrar</button> <?php endif; ?>
+                <?php if (esAdscripto()): ?> <button name="editar"><i class="bi bi-pencil"></i></button> <?php endif; ?>
+                <?php if (estaLogeado()): ?> <button name="reservar">Reservar</button> <?php endif; ?>
             </div>
         </div>
     </template>
@@ -55,8 +65,8 @@
             <div name="espacios">
             </div>
             <div name="botones">
-                <?php if(esAdscripto()):?> <button name="borrar">Borrar</button> <?php endif;?>
-                <?php if(esAdscripto()):?> <button name="editar"><i class="bi bi-pencil"></i></button> <?php endif;?>
+                <?php if (esAdscripto()): ?> <button name="borrar">Borrar</button> <?php endif; ?>
+                <?php if (esAdscripto()): ?> <button name="editar"><i class="bi bi-pencil"></i></button> <?php endif; ?>
             </div>
         </div>
     </template>
@@ -66,10 +76,13 @@
             <p name="espacio"></p>
             <p name="cantidad"></p>
             <p name="disponibilidad"></p>
-            <?php if(estaLogeado()):?> <a name="reservar" href="">Reservar</button> <?php endif;?>
+            <?php if (estaLogeado()): ?> <a name="reservar" href="">Reservar</button> <?php endif; ?>
         </div>
     </template>
 
     <script src="../scripts/recursos_ver.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
+
 </html>

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Cursos ITSP</title>
 </head>
+
 <body id="body-ver-cursos">
+    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+
     <main id="main-ver-cursos">
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+        
         <h1>Educación media tecnológica</h1>
         <div class="div-cursos-educacion-media">
 
@@ -24,7 +31,7 @@
                     <li>Inglés Técnico</li>
                 </ul>
                 <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
@@ -41,7 +48,7 @@
                     <li>Inglés Técnico</li>
                 </ul>
                 <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
@@ -58,7 +65,7 @@
                     <li>Ingles</li>
                 </ul>
                 <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
@@ -80,7 +87,7 @@
 
                 </ul>
                 <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
@@ -96,7 +103,7 @@
                     <li>Inglés </li>
                 </ul>
                 <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
@@ -110,7 +117,7 @@
                     <li>Informatica</li>
                 </ul>
                 <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
+                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar"><i class="bi bi-pencil"></i></button>
                 </div>
             </div>
@@ -122,18 +129,19 @@
 
     <template id="tpl-targeta-curso">
         <div class="curso">
-                <div class="desc">
-                    <p class="nombre-curso"></p>
-                </div>
-                <ul class="curso-materias">
-                </ul>
-                <div class="botones">
-                    <button class="borrar"><i class="bi bi-trash-fill"></i></button>                    
-                    <button class="editar"><i class="bi bi-pencil"></i></button>
-                </div>
+            <div class="desc">
+                <p class="nombre-curso"></p>
             </div>
+            <ul class="curso-materias">
+            </ul>
+            <div class="botones">
+                <button class="borrar"><i class="bi bi-trash-fill"></i></button>
+                <button class="editar"><i class="bi bi-pencil"></i></button>
+            </div>
+        </div>
     </template>
 
     <script src="../scripts/crear_targeta_curso.js"></script>
 </body>
+
 </html>

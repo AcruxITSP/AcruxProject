@@ -19,7 +19,7 @@
 
   <div class="dashboard-container">
     <!-- Traer el codigo del side-bar -->
-    <?php include_once dirname(__FILE__) . '/../includes/blockSidebarMenu.php' ?>
+    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
 
     <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
@@ -28,7 +28,7 @@
     <main class="main-content">
 
       <!-- Traer el codigo del "top header" -->
-      <?php include_once dirname(__FILE__) . '/../includes/blockTopHeader.php' ?>
+      <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
 
       <!-- Imagen de ITSP -->
       <div class="banner-img">
@@ -68,6 +68,7 @@
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </section>
+
       <script src="../scripts/menuHamburgesa.js"></script>
       <script src="../scripts/dropdownMenu.js"></script>
     </main>

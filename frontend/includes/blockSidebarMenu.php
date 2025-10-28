@@ -1,3 +1,7 @@
+<?php
+$root = "/frontend";
+?>
+
 <!-- Sidebar -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
@@ -5,9 +9,9 @@
     <button class="close-btn" onclick="toggleSidebar()">&times;</button>
   </div>
   <nav class="sidebar-nav">
-    <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
-    <a href="menuRecursos.php"><i class="fas fa-book"></i> Dashboard</a>
-    <a href="contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
+    <a href="<?= $root ?>/general/index.php"><i class="fas fa-home"></i> Inicio</a>
+    <a href="<?= $root ?>/general/menuRecursos.php"><i class="fas fa-book"></i> Dashboard</a>
+    <a href="<?= $root ?>/general/contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
 
     <?php @session_start(); ?>
     <?php if (isset($_SESSION['username'])) : ?>

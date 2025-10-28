@@ -1,3 +1,7 @@
+<?php
+$root = "/frontend";
+?>
+
 <!-- Top Header con dropdown -->
 <header class="main-header">
   <div class="user-dropdown">
@@ -11,8 +15,8 @@
       <i class="fas fa-caret-down"></i>
     </div>
     <div class="dropdown-menu" id="dropdownMenu">
-      <a href="myAccount.php">Mi cuenta</a>
-      <a href="configuracion.php">Configuración</a>
+      <a href="<?= $root ?>/general/myAccount.php">Mi cuenta</a>
+      <a href="<?= $root ?>/general/configuracion.php">Configuración</a>
       <form action="../scriptsPhp/scriptCerrarSesion.php" method="post">
         <button id="btn-unLog" type="submit">Cerrar sesión</button>
       </form>
