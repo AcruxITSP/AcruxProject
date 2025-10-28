@@ -777,6 +777,7 @@ form#form-login input[type="submit"]:active {
   cursor: pointer;
   font-size: 18px;
   color: var(--azul-oscuro);
+  user-select: none;
 }
 
 .user-info i {
@@ -1540,6 +1541,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 .overlay.active {
   display: block;
+  background-color: transparent;
 }
 
 .scrollable-list {

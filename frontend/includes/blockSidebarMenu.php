@@ -26,5 +26,5 @@ $root = "/frontend";
 
 <!-- Botón hamburguesa -->
 <button class="hamburger" onclick="toggleSidebar()">
-  <img src="../img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+  <img src="<?= $root ?>/img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
 </button>

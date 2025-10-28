@@ -50,8 +50,8 @@ if (!estaLogeado()) {
     </div>
 
     <script src="../../scripts/recursos_externos_reservar.js"></script>
-    <script src="../scripts/menuHamburgesa.js"></script>
-    <script src="../scripts/dropdownMenu.js"></script>
+    <script src="../../scripts/menuHamburgesa.js"></script>
+    <script src="../../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>

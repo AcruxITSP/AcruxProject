@@ -17,7 +17,7 @@ $root = "/frontend";
     <div class="dropdown-menu" id="dropdownMenu">
       <a href="<?= $root ?>/general/myAccount.php">Mi cuenta</a>
       <a href="<?= $root ?>/general/configuracion.php">Configuración</a>
-      <form action="../scriptsPhp/scriptCerrarSesion.php" method="post">
+      <form action="#" method="post">
         <button id="btn-unLog" type="submit">Cerrar sesión</button>
       </form>
     </div>
