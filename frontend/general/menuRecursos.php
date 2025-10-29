@@ -12,9 +12,6 @@
 </head>
 
 <body>
-    <!-- Overlay -->
-    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
     <!-- Botón hamburguesa -->
     <button class="hamburger" onclick="toggleSidebar()">
     <i class="fas fa-bars"></i> 

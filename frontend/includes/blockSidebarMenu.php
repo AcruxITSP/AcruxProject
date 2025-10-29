@@ -28,3 +28,6 @@ $root = "/frontend";
 <button class="hamburger" onclick="toggleSidebar()">
   <img src="<?= $root ?>/img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
 </button>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
