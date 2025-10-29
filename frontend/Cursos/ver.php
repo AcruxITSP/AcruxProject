@@ -43,6 +43,8 @@
     </template>
 
     <script src="../scripts/cursos_ver.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>
