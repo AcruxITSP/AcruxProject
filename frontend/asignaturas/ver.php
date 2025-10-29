@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <?php require dirname(__FILE__).'/../includes/header.php'?>
     <title>Cursos ITSP</title>
 </head>
 <body id="body-ver-cursos">
+    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+
     <main id="main-ver-cursos">
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
         <h1>Asignaturas</h1>
         <div class="div-cursos-educacion-media" id="asignatura-container">
             
@@ -49,5 +53,7 @@
     </template>
 
     <script src="../scripts/asignaturas_ver.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 </html>
