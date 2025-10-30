@@ -26,7 +26,7 @@
         <div class="funcionario">
           <div class="desc">
             <p class="nombre-funcionario">Facundo Rubil</p>
-            <p>Docente de Programación</p>
+            <p>Docente</p>
           </div>
           <ul class="info-funcionario">
             <li>Cédula: 11111111</li>
@@ -41,7 +41,7 @@
         <div class="funcionario">
           <div class="desc">
             <p class="nombre-funcionario">Franco Povea</p>
-            <p>Profesor de Sistemas Operativos</p>
+            <p>Docente</p>
           </div>
           <ul class="info-funcionario">
             <li>Cédula: 22222222</li>
