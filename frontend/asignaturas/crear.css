@@ -43,11 +43,130 @@
     /* thumb, track */
 }
 
-.asignarua {
+/*/////////////////////////*/
+/* Pagina Crear Asignatura */
+/*/////////////////////////*/
 
+/* ======== ESTILOS GENERALES ======== */
+#body-crear-asignatura {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
 
-background-color: var(--azul-oscuro);
-color: var(--blanco);
+#body-crear-asignatura #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-crear-asignatura {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
 
+#inputs-apartados
+{
+    display: none;
+}
+
+/* ======== TÍTULO ======== */
+#form-crear-asignatura h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+/* ======== CAMPOS DEL FORMULARIO ======== */
+
+#form-crear-asignatura,
+#inputs-segun-localidad,
+#inputs-para-externo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form-crear-asignatura label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+}
+
+#form-crear-asignatura input,
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-crear-asignatura input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#form-crear-asignatura input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#form-crear-asignatura input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+div.vacio {
+    height: 2rem;
+    border: 1px solid black;
+    border-style: dashed
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 500px) {
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    form h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.espacio-cantidad-div
+{
+    height: fit-content !important;
+    display: flex !important;
 }
