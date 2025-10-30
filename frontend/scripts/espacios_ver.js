@@ -37,6 +37,7 @@ function uiCrearTarjeta(espacio)
     const domEditar = domDivTarjeta.querySelector("[name='editar']");
 
     domNombre.innerText = `${espacio.tipo} ${espacio.numero ?? ''}`;
+    domBorrar.onclick = () => borrarEspacioAsync(espacio.id_espacio);
 
     const disponibilidad = espacio.disponibilidad;
     domEstado.innerText = disponibilidad.estado; // Libre, ausente, etc...
@@ -61,6 +62,55 @@ function uiAgregarTarjeta(espacio)
     const domDivPorTipo = uiAgregarDivPorTipo(espacio.tipo);
     const domContenedorSalones = domDivPorTipo.querySelector("[name='contenedor-salones']");
     domContenedorSalones.appendChild(domDivTarjeta);
+}
+
+async function borrarEspacioAsync(idEspacio)
+{
+    const resultadoDeAdvertencia = await Swal.fire({
+        title: "Borrar Espacio",
+        text: "",
+        icon: "info",
+
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Borrar"
+    });
+
+    if(!resultadoDeAdvertencia.isConfirmed) return;
+
+    let formData = new FormData();
+    formData.append("id", idEspacio)
+    let respuesta = await fetch('/backend/espacios/borrar.php', {method: "POST", body: formData});
+    respuesta = await respuesta.json();
+    
+    if(respuesta.ok)
+    {
+        await Swal.fire({
+            title: "Espacio Eliminado!",
+            text: `El espacio ha sido eliminado exitosamente.`,
+            icon: "success"
+        });
+        location.reload();
+    }
+    else
+    {
+        switch(respuesta.value)
+        {
+            case "NECESITA_LOGIN":
+                Swal.fire({
+                    title: "Login Requerido",
+                    text: `Necesitas iniciar sesion para eliminar un espacio.`,
+                    icon: "error"
+                });
+                break;
+            default:
+                Swal.fire({
+                    title: "Error Desconocido",
+                    text: `Un error desconocido ha ocurrido`,
+                    icon: "error"
+                });
+        }
+    }
 }
 
 async function inicializar()
