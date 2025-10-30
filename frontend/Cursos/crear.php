@@ -21,13 +21,9 @@
         <main id="main-crear-cursos">
             <form id="form-editar">
                 <h1>Crear Curso</h1>
-
                 <input type="text" placeholder="Nombre">
-
                 <textarea placeholder="Descripcion"></textarea>
-
                 <div class="div-vacio"> Div vacio</div>
-
                 <input type="submit" value="Guardar">
             </form>
         </main>
