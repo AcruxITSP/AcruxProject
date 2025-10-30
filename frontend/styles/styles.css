@@ -3119,6 +3119,10 @@ select:focus {
     animation: fadeIn 0.4s ease;
 }
 
+#form-crear-asignatura>* {
+    margin-bottom: 1rem;
+}
+
 /* ======== TÍTULO ======== */
 #form-crear-asignatura h1 {
     text-align: center;
@@ -3139,6 +3143,7 @@ select {
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
+    width: 100%;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
