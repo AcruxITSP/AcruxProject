@@ -2297,7 +2297,7 @@ div.targeta-intervalo {
     color: var(--gris5);
     padding: 2rem;
     display: grid;
-    grid-template-rows: 3rem 1fr;
+    grid-template-rows: 1rem 1fr;
     font-family: "Segoe UI", Roboto, sans-serif;
 }
 
@@ -2734,9 +2734,11 @@ select:focus {
 /*/////////////////// */
 
 #body-my-schedule {
-    padding-top: 1rem;
+    padding: 2rem;
     background-color: var(--blanco);
     color: var(--gris5);
+    display: grid;
+    grid-template-rows: 2rem 1fr;
 }
 
 #body-my-schedule .header {

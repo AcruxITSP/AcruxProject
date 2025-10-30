@@ -152,7 +152,6 @@
         </div>
 
         <button onclick="location.href='crear.php'">Crear Salón</button>
-        <button id="crear-con-template">Crear Tarjeta<br>(Template)</button>
     </main>
 
     <script src="../scripts/menuHamburgesa.js"></script>
