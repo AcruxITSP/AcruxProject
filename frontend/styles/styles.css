@@ -283,6 +283,112 @@ form#form-login input[type="submit"]:active {
     background: var(--azul-oscuro);
 }
 
+
+/*/////////////////////////////////////////////*/
+/*             Pagina crear espacios           */
+/*/////////////////////////////////////////////*/
+
+/* === estilos para crear_espacio === */
+
+#body-crear-espacio {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--celeste-palido1);
+  margin: 0;
+  padding: 2rem;
+  padding-left: calc(240px + 2rem);
+}
+
+/* Centra el contenido principal */
+#main-crear-espacio {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  min-height: calc(100vh - 100px);
+}
+
+/* === FORMULARIO === */
+#form-crear-espacio {
+  background: var(--blanco);
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Título */
+#form-crear-espacio h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--azul-oscuro);
+}
+
+/* Etiquetas */
+#form-crear-espacio label {
+  font-weight: 600;
+  color: var(--gris5);
+  margin-bottom: 4px;
+}
+
+/* Campos de texto, select y textarea */
+#form-crear-espacio input[type="text"],
+#form-crear-espacio input[type="number"],
+#form-crear-espacio input[type="file"],
+#form-crear-espacio select,
+#form-crear-espacio textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gris2);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--blanco);
+}
+
+#form-crear-espacio input:focus,
+#form-crear-espacio select:focus,
+#form-crear-espacio textarea:focus {
+  border-color: var(--azul-claro);
+  box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* Botón de enviar */
+#form-crear-espacio input[type="submit"] {
+  background-color: var(--azul);
+  color: var(--blanco);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+#form-crear-espacio input[type="submit"]:hover {
+  background-color: var(--azul-oscuro);
+  transform: translateY(-1px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  #form-crear-espacio {
+    padding: 30px 20px;
+  }
+
+  #form-crear-espacio h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
 /*///////////////////////*/
 /* Pagina Editar Horario */
 /*///////////////////////*/
@@ -1399,6 +1505,10 @@ select:focus {
 /*//////////////////////*/
 /* Pagina Menu Recursos */
 /*//////////////////////*/
+
+#body-menuRecursos {
+    padding-left: 80px;
+}
 
 /* TARJETAS RECURSOS */
 .resources-container {

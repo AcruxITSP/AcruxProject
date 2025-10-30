@@ -11,7 +11,7 @@
     
 </head>
 
-<body>
+<body id="body-menuRecursos">
     <!-- Botón hamburguesa -->
     <button class="hamburger" onclick="toggleSidebar()">
     <i class="fas fa-bars"></i> 
