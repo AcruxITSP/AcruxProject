@@ -350,7 +350,7 @@ INSERT INTO PeriodoReservaRecurso (id_reserva, id_periodo) VALUES
 (3, 5);
 
 INSERT INTO Espacio (id_espacio, tipo, numero) VALUES
-(1, "Salon", 5),
+(1, "Salón", 5),
 (2, "Aula", 1);
 
 INSERT INTO Grupo (id_adscrito, grado, nombre) VALUES
@@ -358,13 +358,13 @@ INSERT INTO Grupo (id_adscrito, grado, nombre) VALUES
 (1, 1, 'BE');
 
 INSERT INTO Materia (id_materia, nombre) VALUES
-(1, "Programacion"),
+(1, "Programación"),
 (2, "Ciberseguridad"),
-(3, "Ingles");
+(3, "Inglés");
 
 INSERT INTO Curso (id_curso, nombre) VALUE
-(1, "Informatica Bilingue Web"),
-(2, "Informatica Web");
+(1, "Informática Bilingue Web"),
+(2, "Informática Web");
 
 INSERT INTO Curso_Materia (id_curso, id_materia) VALUE
 (1, 1),
