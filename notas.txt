@@ -12,6 +12,8 @@
 - Lunes 7:07 - 8:50
 - Miercoles 8:40 - ???
 - Jueves (Hora de SO y RUBIL) + 15:13 - 16:24
+- ???
+- Miercoles ???
 
 ---
 
@@ -20,7 +22,6 @@
 - Borrar reservas al marcar ausencias
 - Evitar reservas en ausencias
 
-- Hacer que en la pagina de reserva te muestre en que horas reservaste y la cantidad.
 - Validar la disponibilidad de recursos en backend (si no esta hecho)
 - Hacer que la validacion de profe libre para asignar horario sea en backend tambien.
 - Hacer que la validacion de espacio libre para asignar horario sea backend tambien.

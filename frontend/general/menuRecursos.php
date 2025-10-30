@@ -35,7 +35,7 @@
                     <i class="fas fa-laptop icon-card"></i>
                     <span>Recursos</span>
                 </a>
-                <a href="../recursos/ver.php#h-recursos-internos" class="resource-card">
+                <a href="../espacios/ver.php" class="resource-card">
                     <i class="fas fa-chalkboard icon-card"></i>
                     <span>Espacios</span>
                 </a>
