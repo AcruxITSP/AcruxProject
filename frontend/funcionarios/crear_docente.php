@@ -30,7 +30,6 @@
                         <input type="text" placeholder="contraseña">
                         <input type="text" placeholder="CI">
                         <input type="text" placeholder="email">
-                        <input type="text" placeholder="nombre">
                     </div>
 
                     <div id="lista-materias">
