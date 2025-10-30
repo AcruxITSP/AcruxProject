@@ -2295,10 +2295,15 @@ div.targeta-intervalo {
 #body-ver-salones {
     background-color: var(--celeste-palido1);
     color: var(--gris5);
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+#body-ver-salones div.main-content {
     display: flex;
     justify-content: center;
-    padding: 2rem;
-    font-family: "Segoe UI", Roboto, sans-serif;
 }
 
 #main-ver-salones {
