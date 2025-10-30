@@ -732,6 +732,7 @@ select:focus {
     justify-content: center;
     z-index: 1000;
     backdrop-filter: blur(2px);
+    margin-left: 240px;
 }
 
 #modal-agregar-hora form {
