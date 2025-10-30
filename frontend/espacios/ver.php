@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Salones ITSP</title>
 </head>
+
 <body id="body-ver-salones">
+    <div class="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
+
+    <div class="main-content">
     <main id="main-ver-salones">
         <h1>Salones</h1>
         <div class="contenedor-salones">
@@ -143,7 +152,10 @@
         </div>
 
         <button onclick="location.href='crear.php'">Crear Salón</button>
-        <button id="crear-con-template">Crear Tarjeta<br>(Template)</button>
     </main>
+
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
+
 </html>
