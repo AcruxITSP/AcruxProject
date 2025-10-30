@@ -1854,107 +1854,148 @@ div.targeta-intervalo {
 /*  Pagina Ver Espacios */
 /*//////////////////////*/
 
-#body-ver-espacios {
+/* ======== BASE ======== */
+#body-ver-salones {
+    background-color: var(--celeste-palido1);
+    color: var(--gris5);
+    display: flex;
+    justify-content: center;
     padding: 2rem;
-    padding-left: calc(240px + 2rem);
+    font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-#main-ver-espacios {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#lista-espacios {
-    width: 90%;
-    max-height: 24rem;
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    overflow-y: scroll;
-}
-
-#main-ver-espacios .targeta-espacio {
-    width: 90%;
-    height: 9rem;
-    display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
-    grid-template-rows: 6rem;
-    padding: 3%;
-    gap: 5%;
-    text-align: center;
-    border: 1px solid var(--negro);
-}
-
-.marco-imagen-espacio {
-    width: 7rem;
-    height: 100%;
-    background-color: var(--azul-claro);
-}
-
-.imagen-espacio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.espacio-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.espacio-info * {
-    margin: 0;
-}
-
-.espacio-info p {
-    font-size: 18px;
-}
-
-.espacio-info p.reservado {
-    color: var(--coral);
-    font-weight: bold;
-}
-
-.container-btn-reservar {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.btn-reservar {
-    background-color: var(--azul-claro);
-    color: var(--blanco);
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-}
-
-.btn-reservar {
+#main-ver-salones {
     width: 100%;
-    height: 50%;
-    border-radius: 6px;
+    max-width: 800px;
+}
+
+/* ======== TITULOS ======== */
+#main-ver-salones h1 {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--azul-oscuro);
+    padding-bottom: 0.3rem;
+}
+
+/* ======== CONTENEDORES ======== */
+#main-ver-salones .contenedor-salones,
+.contenedor-aulas,
+.contenedor-laboratorios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ======== TARJETAS ======== */
+#main-ver-salones .tarjeta {
+    background-color: var(--blanco);
     border: 1px solid var(--gris2);
-    font-size: 18px;
-    text-align: center;
-}
-
-.btn-reservar:hover {
-    background-color: var(--azul-claro);
-}
-
-#btn-agregar-espacio {
-    color: var(--blanco);
-    background-color: var(--azul-claro);
-    width: 30%;
+    border-radius: 8px;
     padding: 1rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+#main-ver-salones .tarjeta:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 2px 6px var(--sombra-azul);
+}
+
+/* ======== INFORMACIÓN ======== */
+#main-ver-salones .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.5rem;
+}
+
+#main-ver-salones .info .nombre {
+    font-weight: bold;
+    color: var(--gris5);
+}
+
+#main-ver-salones .info .estado {
+    font-size: 0.95rem;
+}
+
+#main-ver-salones .info .estado.libre {
+    color: var(--verde-libre);
+    font-weight: 600;
+}
+
+#main-ver-salones .info .estado.ocupado {
+    color: var(--rojo-ocupado);
+}
+
+/* ======== BOTONES ======== */
+#main-ver-salones .acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.6rem;
+    margin-top: 0.3rem;
+}
+
+#main-ver-salones .acciones button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--negro);
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+#main-ver-salones .acciones .borrar {
+    background-color: var(--coral2);
+}
+
+#main-ver-salones .acciones .editar {
+    background-color: var(--mostaza);
+}
+
+#main-ver-salones .acciones button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* ======== BOTONES PRINCIPALES ======== */
+#main-ver-salones > button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--sombra);
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#main-ver-salones > button:hover {
+    background-color: var(--azul-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px var(--sombra);
+}
+
+#main-ver-salones > button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px var(--sombra);
+}
+
+#main-ver-salones > button#crear-con-template {
+    bottom: 90px;
 }
 
 
@@ -2203,9 +2244,9 @@ div.targeta-intervalo {
     background-color: var(--azul-oscuro);
 }
 
-/*////////////////////*/
+/*/////////////////////////////////////////////*/
 /*  Pagina Ver Asignaturas - depende de Cursos */
-/*////////////////////*/
+/*/////////////////////////////////////////////*/
 
 .asignatura-horizontal
 {
