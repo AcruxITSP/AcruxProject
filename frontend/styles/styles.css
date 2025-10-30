@@ -44,6 +44,10 @@
     /* thumb, track */
 }
 
+div#menues {
+    height: 2rem;
+}
+
 /* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   width: 10px;
@@ -153,7 +157,7 @@ form#form-login input[type="submit"]:active {
 
 #body-espacio-reservar {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 3rem;
     padding-left: calc(240px + 3rem);
     display: grid;
@@ -286,7 +290,7 @@ form#form-login input[type="submit"]:active {
 /* ======== ESTILOS GENERALES ======== */
 #body-editar-horarios {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
-    min-height: 100vh;
+    min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
@@ -406,7 +410,7 @@ select:focus {
     padding: 2rem;
     padding-left: calc(10px + 2rem);
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 80vh;
     margin: 0;
     display: grid;
     grid-template-rows: 3rem 1fr;
@@ -575,6 +579,146 @@ select:focus {
     #body-ver-funcionarios .botones-flotantes {
         bottom: 15px;
         right: 15px;
+    }
+}
+
+
+/*/////////////////////////*/
+/* Pagina Crear docente */
+/*/////////////////////////*/
+
+/* ======== ESTILOS GENERALES ======== */
+#body-crear-docente {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-crear-docente #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-crear-docente {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+/* ======== TÍTULO ======== */
+#form-crear-docente #grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#form-crear-docente h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+#form-crear-docente label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+}
+
+#form-crear-docente input {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-crear-docente input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+#form-crear-docente #lista-materias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-crear-docente #lista-materias h2 {
+    color: var(--azul-oscuro);
+}
+
+#form-crear-docente #lista-materias div#materias {
+    height: 4rem;
+    border: 1px solid black;
+    border-style: dashed;
+    width: 80%;
+}
+
+/* ======== CAMPOS DEL FORMULARIO ======== */
+
+#form-crear-docente,
+#inputs-segun-localidad,
+#inputs-para-externo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#form-crear-docente input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#form-crear-docente input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#body-crear-docente div.vacio {
+    height: 2rem;
+    border: 1px solid black;
+    border-style: dashed
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 500px) {
+    #body-crear-docente main {
+        margin: 0;
+        padding: 0;
+    }
+
+    #body-crear-docente form h1 {
+        font-size: 1.5rem;
     }
 }
 
@@ -908,7 +1052,7 @@ select:focus {
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-grupos {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
-    min-height: 100vh;
+    min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
@@ -1121,7 +1265,7 @@ select:focus {
 /* DASHBOARD */
 .dashboard-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .sidebar {
@@ -1312,7 +1456,7 @@ select:focus {
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-recursos {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
-    min-height: 100vh;
+    min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
@@ -1632,7 +1776,7 @@ div[name="espacios"] {
 
 #body-reservar-externo {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 3rem;
     padding-left: calc(240px + 2rem);
 }
@@ -1784,7 +1928,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 #body-reservas-my {
     background: #f2f4f8;
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 2rem;
     padding-left: calc(400px + 2rem);
 }
@@ -2612,7 +2756,7 @@ div.targeta-intervalo {
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-cursos {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
-    min-height: 100vh;
+    min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
@@ -2830,3 +2974,112 @@ select:focus {
         gap: 20px;
     }
 }
+
+
+/*/////////////////////////*/
+/* Pagina Crear Asignatura */
+/*/////////////////////////*/
+
+/* ======== ESTILOS GENERALES ======== */
+#body-crear-asignatura {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 80vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-crear-asignatura #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-crear-asignatura {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+/* ======== TÍTULO ======== */
+#form-crear-asignatura h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+#form-crear-asignatura label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+}
+
+#form-crear-asignatura input,
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-crear-asignatura input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#form-crear-asignatura input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#form-crear-asignatura input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#main-crear-asignatura div.vacio {
+    height: 2rem;
+    border: 1px solid black;
+    border-style: dashed
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 500px) {
+    #main-crear-asignatura {
+        margin: 0;
+        padding: 0;
+    }
+
+    #main-crear-asignatura form h1 {
+        font-size: 1.5rem;
+    }
+}
+

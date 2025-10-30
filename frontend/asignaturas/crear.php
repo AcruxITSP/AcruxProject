@@ -8,14 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php require __DIR__ . '/../systems/inputlist/ilists.php'; ?>
     <title>Document</title>
-    <link rel="stylesheet" href="crear.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body id="body-crear-asignatura">
     <div id="menues">
-        <?php // include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
-        <?php // include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
     </div>
 
     <div id="main-content">
@@ -33,8 +33,6 @@
         </main>
     </div>
 
-    <script src="../inputs.js"></script>
-    <script src="../scripts/recursos_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
