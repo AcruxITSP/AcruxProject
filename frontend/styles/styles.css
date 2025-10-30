@@ -32,6 +32,7 @@
 /*////////////////////////////*/
 /* Atributos Default Globales */
 /*////////////////////////////*/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -276,6 +277,305 @@ form#form-login input[type="submit"]:active {
 
 #form-reservar-espacio input[type="submit"]:hover {
     background: var(--azul-oscuro);
+}
+
+/*///////////////////////*/
+/* Pagina Editar Horario */
+/*///////////////////////*/
+
+/* ======== ESTILOS GENERALES ======== */
+#body-editar-horarios {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-editar-horarios #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-editar-horarios {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+#inputs-apartados
+{
+    display: none;
+}
+
+/* ======== TÍTULO ======== */
+#form-editar h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+/* ======== CAMPOS DEL FORMULARIO ======== */
+
+#form-editar,
+#inputs-segun-localidad,
+#inputs-para-externo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form-editar label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+}
+
+#form-editar input,
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-editar input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#form-editar input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#form-editar input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#form-editar .div-vacio {
+    padding: 1rem;
+    border: 1px solid black;
+    border-style: dashed;
+    color: var(--gris4);
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.espacio-cantidad-div
+{
+    height: fit-content !important;
+    display: flex !important;
+}
+
+
+/*///////////////////////////*/
+/*  Pagina Ver Funcionarios  */
+/*///////////////////////////*/
+
+#body-ver-funcionarios {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    padding: 2rem;
+    padding-left: calc(10px + 2rem);
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+}
+
+#body-ver-funcionarios div.main-content {
+    display: flex;
+    justify-content: center;
+    background-color: inherit;
+}
+
+#body-ver-funcionarios main {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* === HEADER === */
+#body-ver-funcionarios .page-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: 0 0 1rem 0;
+    padding: 0.8rem 0;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+#body-ver-funcionarios .page-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+}
+
+/* === GRID === */
+#body-ver-funcionarios .contenedor-funcionarios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: var(--celeste-palido2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--sombra);
+    box-sizing: border-box;
+}
+
+/* === TARJETAS === */
+#body-ver-funcionarios .funcionario {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris2);
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    min-height: 120px;
+}
+
+#body-ver-funcionarios .funcionario:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 3px 8px var(--sombra-azul);
+    transform: translateY(-2px);
+}
+
+#body-ver-funcionarios .desc p:first-child {
+    font-weight: bold;
+    color: var(--azul-oscuro2);
+    font-size: 1.05rem;
+    margin: 0 0 0.15rem 0;
+}
+
+#body-ver-funcionarios .desc p:last-child {
+    color: var(--gris4);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+#body-ver-funcionarios .info-funcionario {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+}
+
+#body-ver-funcionarios .info-funcionario li {
+    background: var(--celeste-palido1);
+    padding: 0.28rem 0.6rem;
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* === BOTONES DE LAS TARJETAS === */
+#body-ver-funcionarios .funcionario .botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.6rem;
+    margin-top: auto;
+}
+
+#body-ver-funcionarios .funcionario .botones button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blanco);
+    transition: transform 0.1s ease, opacity 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+#body-ver-funcionarios .funcionario .botones .borrar {
+    background-color: var(--coral2);
+}
+
+#body-ver-funcionarios .funcionario .botones .editar {
+    background-color: var(--mostaza);
+}
+
+#body-ver-funcionarios .funcionario .botones button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* === BOTONES FLOTANTES ABAJO DERECHA === */
+#body-ver-funcionarios .botones-flotantes {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 100;
+}
+
+#body-ver-funcionarios .botones-flotantes button {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px var(--sombra);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+@media (max-width: 900px) {
+
+    #body-ver-funcionarios .contenedor-funcionarios {
+        grid-template-columns: 1fr;
+    }
+
+    #body-ver-funcionarios .botones-flotantes {
+        bottom: 15px;
+        right: 15px;
+    }
 }
 
 
@@ -601,6 +901,133 @@ form#form-login input[type="submit"]:active {
 }
 
 
+/*/////////////////////*/
+/* Pagina Crear Grupos */
+/*/////////////////////*/
+
+/* ======== ESTILOS GENERALES ======== */
+#body-crear-grupos {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-crear-grupos #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-crear-grupos {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+#main-crear-grupos #inputs-apartados
+{
+    display: none;
+}
+
+/* ======== TÍTULO ======== */
+#main-crear-grupos #form-crear h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+/* ======== CAMPOS DEL FORMULARIO ======== */
+
+#main-crear-grupos #form-crear,
+#inputs-segun-localidad,
+#inputs-para-externo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#main-crear-grupos #form-crear label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+    margin-top: 2rem;
+}
+
+#main-crear-grupos #form-crear input,
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#main-crear-grupos #form-crear input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+#main-crear-grupos #form-crear .codigo-grupo {
+    display: grid;
+    grid-template-columns: 30% 68%;
+    gap: 2%;
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#main-crear-grupos #form-crear input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#main-crear-grupos #form-crear input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#main-crear-grupos #form-crear .div-vacio {
+    padding: 1rem;
+    border: 1px solid black;
+    border-style: dashed;
+    color: var(--gris4);
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== RESPONSIVE ======== */
+
+.espacio-cantidad-div
+{
+    height: fit-content !important;
+    display: flex !important;
+}
+
+
 /*//////////////*/
 /* Pagina Index */
 /*//////////////*/
@@ -777,6 +1204,7 @@ form#form-login input[type="submit"]:active {
   cursor: pointer;
   font-size: 18px;
   color: var(--azul-oscuro);
+  user-select: none;
 }
 
 .user-info i {
@@ -984,8 +1412,8 @@ select:focus {
 /* ======== RESPONSIVE ======== */
 @media (max-width: 500px) {
     main {
-        margin: 20px;
-        padding: 20px;
+        margin: 0;
+        padding: 0;
     }
 
     form h1 {
@@ -1515,7 +1943,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
   color: var(--blanco);
   border: none;
   font-size: 24px;
-  padding: 10px 14px;
+  padding: 8px 10px 3px 10px;
   border-radius: 8px;
   cursor: pointer;
   z-index: 1001;
@@ -1540,6 +1968,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 .overlay.active {
   display: block;
+  background-color: transparent;
 }
 
 .scrollable-list {
@@ -1574,9 +2003,17 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     left: -260px;
   }
 
+  .sidebar-header h2 {
+    display: none;
+  }
+
   .main-content {
     margin-left: 0;
     padding-top: 60px;
+  }
+
+  body {
+    padding-left: 2rem !important;
   }
 }
 
@@ -1854,113 +2291,154 @@ div.targeta-intervalo {
 /*  Pagina Ver Espacios */
 /*//////////////////////*/
 
-#body-ver-espacios {
+/* ======== BASE ======== */
+#body-ver-salones {
+    background-color: var(--celeste-palido1);
+    color: var(--gris5);
+    display: flex;
+    justify-content: center;
     padding: 2rem;
-    padding-left: calc(240px + 2rem);
+    font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-#main-ver-espacios {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#lista-espacios {
-    width: 90%;
-    max-height: 24rem;
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    overflow-y: scroll;
-}
-
-#main-ver-espacios .targeta-espacio {
-    width: 90%;
-    height: 9rem;
-    display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
-    grid-template-rows: 6rem;
-    padding: 3%;
-    gap: 5%;
-    text-align: center;
-    border: 1px solid var(--negro);
-}
-
-.marco-imagen-espacio {
-    width: 7rem;
-    height: 100%;
-    background-color: var(--azul-claro);
-}
-
-.imagen-espacio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.espacio-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.espacio-info * {
-    margin: 0;
-}
-
-.espacio-info p {
-    font-size: 18px;
-}
-
-.espacio-info p.reservado {
-    color: var(--coral);
-    font-weight: bold;
-}
-
-.container-btn-reservar {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.btn-reservar {
-    background-color: var(--azul-claro);
-    color: var(--blanco);
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-}
-
-.btn-reservar {
+#main-ver-salones {
     width: 100%;
-    height: 50%;
-    border-radius: 6px;
+    max-width: 800px;
+}
+
+/* ======== TITULOS ======== */
+#main-ver-salones h1 {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--azul-oscuro);
+    padding-bottom: 0.3rem;
+}
+
+/* ======== CONTENEDORES ======== */
+#main-ver-salones .contenedor-salones,
+.contenedor-aulas,
+.contenedor-laboratorios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ======== TARJETAS ======== */
+#main-ver-salones .tarjeta {
+    background-color: var(--blanco);
     border: 1px solid var(--gris2);
-    font-size: 18px;
-    text-align: center;
-}
-
-.btn-reservar:hover {
-    background-color: var(--azul-claro);
-}
-
-#btn-agregar-espacio {
-    color: var(--blanco);
-    background-color: var(--azul-claro);
-    width: 30%;
+    border-radius: 8px;
     padding: 1rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+#main-ver-salones .tarjeta:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 2px 6px var(--sombra-azul);
+}
+
+/* ======== INFORMACIÓN ======== */
+#main-ver-salones .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.5rem;
+}
+
+#main-ver-salones .info .nombre {
+    font-weight: bold;
+    color: var(--gris5);
+}
+
+#main-ver-salones .info .estado {
+    font-size: 0.95rem;
+}
+
+#main-ver-salones .info .estado.libre {
+    color: var(--verde-libre);
+    font-weight: 600;
+}
+
+#main-ver-salones .info .estado.ocupado {
+    color: var(--rojo-ocupado);
+}
+
+/* ======== BOTONES ======== */
+#main-ver-salones .acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.6rem;
+    margin-top: 0.3rem;
+}
+
+#main-ver-salones .acciones button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--negro);
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+#main-ver-salones .acciones .borrar {
+    background-color: var(--coral2);
+}
+
+#main-ver-salones .acciones .editar {
+    background-color: var(--mostaza);
+}
+
+#main-ver-salones .acciones button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* ======== BOTONES PRINCIPALES ======== */
+#main-ver-salones > button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--sombra);
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#main-ver-salones > button:hover {
+    background-color: var(--azul-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px var(--sombra);
+}
+
+#main-ver-salones > button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px var(--sombra);
+}
+
+#main-ver-salones > button#crear-con-template {
+    bottom: 90px;
 }
 
 
-/*////////////////////*/
-/*  Pagina Ver Cursos */
-/*////////////////////*/
+/*///////////////////*/
+/* Pagina Ver Cursos */
+/*///////////////////*/
 
 /* ======== BASE ======== */
 #body-ver-cursos {
@@ -2123,6 +2601,130 @@ div.targeta-intervalo {
 
 
 /*////////////////////*/
+/* Pagina Crear Curso */
+/*////////////////////*/
+
+/* ======== ESTILOS GENERALES ======== */
+#body-crear-cursos {
+    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    gap: 1rem;
+}
+
+#body-crear-cursos #main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+#main-crear-cursos {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+#main-crear-cursos #inputs-apartados
+{
+    display: none;
+}
+
+/* ======== TÍTULO ======== */
+#main-crear-cursos #form-editar h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--azul-grisaceo);
+}
+
+/* ======== CAMPOS DEL FORMULARIO ======== */
+
+#main-crear-cursos #form-editar,
+#inputs-segun-localidad,
+#inputs-para-externo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#main-crear-cursos #form-editar label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+}
+
+#main-crear-cursos #form-editar input,
+select, textarea {
+    padding: 10px 12px;
+    margin-top: 1rem;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#main-crear-cursos #form-editar textarea {
+    height: 4rem;
+}
+
+#main-crear-cursos #form-editar input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* ======== BOTÓN DE ENVÍO ======== */
+#main-crear-cursos #form-editar input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#main-crear-cursos #form-editar input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#main-crear-cursos #form-editar .div-vacio {
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid black;
+    border-style: dashed;
+    color: var(--gris4);
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.espacio-cantidad-div
+{
+    height: fit-content !important;
+    display: flex !important;
+}
+
+
+/*////////////////////*/
 /* Pagina My Schedule */
 /*/////////////////// */
 
@@ -2203,9 +2805,9 @@ div.targeta-intervalo {
     background-color: var(--azul-oscuro);
 }
 
-/*////////////////////*/
+/*/////////////////////////////////////////////*/
 /*  Pagina Ver Asignaturas - depende de Cursos */
-/*////////////////////*/
+/*/////////////////////////////////////////////*/
 
 .asignatura-horizontal
 {

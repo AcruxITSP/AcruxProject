@@ -12,17 +12,9 @@
 
 <body id="body-index">
 
-  <!-- Botón hamburguesa -->
-  <button class="hamburger" onclick="toggleSidebar()">
-    <img src="img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
-  </button>
-
   <div class="dashboard-container">
     <!-- Traer el codigo del side-bar -->
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
-
-    <!-- Overlay -->
-    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
     <!-- Contenido principal -->
     <main class="main-content">

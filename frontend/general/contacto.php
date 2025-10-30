@@ -28,6 +28,8 @@
 
     <!-- Script para el dropdown -->
     <script src="../scripts/indexDropMenu.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>
