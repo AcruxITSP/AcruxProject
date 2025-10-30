@@ -86,7 +86,7 @@
 
       <!-- BOTONES FLOTANTES -->
       <div class="botones-flotantes">
-        <button onclick="location.href='#'"><i class="bi bi-person-plus"></i> Crear funcionario</button>
+        <button onclick="location.href='crear_docente.php'"><i class="bi bi-person-plus"></i> Crear funcionario</button>
       </div>
     </main>
   </div>
