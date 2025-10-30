@@ -32,6 +32,7 @@
 /*////////////////////////////*/
 /* Atributos Default Globales */
 /*////////////////////////////*/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -276,6 +277,188 @@ form#form-login input[type="submit"]:active {
 
 #form-reservar-espacio input[type="submit"]:hover {
     background: var(--azul-oscuro);
+}
+
+
+/*///////////////////////////*/
+/*  Pagina Ver Funcionarios  */
+/*///////////////////////////*/
+
+#body-ver-funcionarios {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    padding: 2rem;
+    padding-left: calc(10px + 2rem);
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+}
+
+#body-ver-funcionarios div.main-content {
+    display: flex;
+    justify-content: center;
+    background-color: inherit;
+}
+
+#body-ver-funcionarios main {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* === HEADER === */
+#body-ver-funcionarios .page-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: 0 0 1rem 0;
+    padding: 0.8rem 0;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+#body-ver-funcionarios .page-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+}
+
+/* === GRID === */
+#body-ver-funcionarios .contenedor-funcionarios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: var(--celeste-palido2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--sombra);
+    box-sizing: border-box;
+}
+
+/* === TARJETAS === */
+#body-ver-funcionarios .funcionario {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris2);
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    min-height: 120px;
+}
+
+#body-ver-funcionarios .funcionario:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 3px 8px var(--sombra-azul);
+    transform: translateY(-2px);
+}
+
+#body-ver-funcionarios .desc p:first-child {
+    font-weight: bold;
+    color: var(--azul-oscuro2);
+    font-size: 1.05rem;
+    margin: 0 0 0.15rem 0;
+}
+
+#body-ver-funcionarios .desc p:last-child {
+    color: var(--gris4);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+#body-ver-funcionarios .info-funcionario {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+}
+
+#body-ver-funcionarios .info-funcionario li {
+    background: var(--celeste-palido1);
+    padding: 0.28rem 0.6rem;
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* === BOTONES DE LAS TARJETAS === */
+#body-ver-funcionarios .funcionario .botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.6rem;
+    margin-top: auto;
+}
+
+#body-ver-funcionarios .funcionario .botones button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blanco);
+    transition: transform 0.1s ease, opacity 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+#body-ver-funcionarios .funcionario .botones .borrar {
+    background-color: var(--coral2);
+}
+
+#body-ver-funcionarios .funcionario .botones .editar {
+    background-color: var(--mostaza);
+}
+
+#body-ver-funcionarios .funcionario .botones button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* === BOTONES FLOTANTES ABAJO DERECHA === */
+#body-ver-funcionarios .botones-flotantes {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 100;
+}
+
+#body-ver-funcionarios .botones-flotantes button {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px var(--sombra);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+@media (max-width: 900px) {
+
+    #body-ver-funcionarios .contenedor-funcionarios {
+        grid-template-columns: 1fr;
+    }
+
+    #body-ver-funcionarios .botones-flotantes {
+        bottom: 15px;
+        right: 15px;
+    }
 }
 
 
