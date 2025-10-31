@@ -1692,6 +1692,7 @@ select:focus {
     color: var(--negro);
     padding: 2rem;
     padding-left: calc(340px + 2rem);
+    padding-bottom: 6rem;
 }
 
 #body-ver-recurso #main-content {

@@ -51,11 +51,11 @@
                     <i class="fas fa-book icon-card"></i>
                     <span>Asignaturas</span>
                 </a>
-                <a href="#"class="resource-card">
+                <a href="../grupos/ver.php"class="resource-card">
                     <i class="fas fa-users icon-card"></i>
                     <span>Grupos</span>
                 </a>
-                <a href="#" class="resource-card">
+                <a href="../ausencias/ver.php" class="resource-card">
                     <i class="fas fa-user-tie icon-card"></i>
                     <span>Ausencias</span>
                 </a>

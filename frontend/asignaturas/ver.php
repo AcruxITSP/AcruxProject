@@ -22,7 +22,7 @@
         </div>
 
         <?php if(esAdscripto()):?>
-            <button onclick="location.href='#'">Crear</button>
+            <button onclick="location.href='crear.php'">Crear</button>
         <?php endif; ?>
     </main>
 
