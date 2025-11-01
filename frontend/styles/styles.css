@@ -1997,22 +1997,34 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /* Pagina Editar Recurso Externo */
 /*///////////////////////////////*/
 
-/*
 #body-recurso-externo-editar {
-    
+    display: grid;
+    grid-row: 2rem 1fr;
 }
-*/
+
+#body-recurso-externo-editar div.main-content{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
 
 
 /*///////////////////////////////*/
 /* Pagina Editar Recurso Externo */
 /*///////////////////////////////*/
 
-/*
 #body-recurso-interno-editar {
-    
+    display: grid;
+    grid-row: 2rem 1fr;
 }
-*/
+
+#body-recurso-interno-editar div.main-content{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
 
 
 /*////////////////////*/
@@ -2156,8 +2168,6 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     }
 }
 
-
-
 /*-----------------------*/
 /* Clases "multi-pagina" */
 /*.......................*/
@@ -2216,6 +2226,69 @@ body.menues-incluidos {
     flex-direction: column;
     gap: 8px;
     overflow-y: scroll;
+}
+
+
+/* === Formulario Basico === */
+
+.main-formulario-basico {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--gris2);
+    animation: fadeIn 0.4s ease;
+}
+
+.formulario-basico {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-basico h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.formulario-basico label {
+    font-weight: 600;
+    color: var(--azul-grisaceo);
+    margin-bottom: 0;
+}
+
+.formulario-basico input,
+select {
+    padding: 10px 12px;
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gris1);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formulario-basico input:focus,
+select:focus {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 5px var(--sombra-azul);
+}
+
+/* --- BOTÓN DE ENVÍO --- */
+.formulario-basico input[type="submit"] {
+    margin-top: 10px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.formulario-basico input[type="submit"]:hover {
+    background-color: var(--azul-oscuro);
 }
 
 
