@@ -9,7 +9,7 @@
     <title>Mi cuenta</title>
 </head>
 
-<body>
+<body class="menues-incluidos">
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
 
     <main class="main-content">

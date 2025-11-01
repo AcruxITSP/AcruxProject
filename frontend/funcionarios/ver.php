@@ -10,7 +10,7 @@
   <title>Funcionarios ITSP</title>
 </head>
 
-<body id="body-ver-funcionarios">
+<body id="body-ver-funcionarios" class="menues-incluidos">
   <div class="menues">
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
     <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>

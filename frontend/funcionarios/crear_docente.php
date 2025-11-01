@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body id="body-crear-docente">
+<body id="body-crear-docente" class="menues-incluidos">
     <div id="menues">
         <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' 
         ?>

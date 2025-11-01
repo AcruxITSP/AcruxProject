@@ -44,6 +44,10 @@
     /* thumb, track */
 }
 
+body {
+
+}
+
 div#menues {
     height: 2rem;
 }
@@ -158,8 +162,6 @@ form#form-login input[type="submit"]:active {
 #body-espacio-reservar {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
     min-height: 80vh;
-    padding: 3rem;
-    padding-left: calc(240px + 3rem);
     display: grid;
     grid-template-rows: 5rem 1fr;
 }
@@ -294,8 +296,6 @@ form#form-login input[type="submit"]:active {
   font-family: "Poppins", sans-serif;
   background-color: var(--celeste-palido1);
   margin: 0;
-  padding: 2rem;
-  padding-left: calc(240px + 2rem);
 }
 
 /* Centra el contenido principal */
@@ -400,8 +400,6 @@ form#form-login input[type="submit"]:active {
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     gap: 1rem;
 }
 
@@ -513,7 +511,6 @@ select:focus {
 
 #body-ver-funcionarios {
     font-family: "Segoe UI", Roboto, sans-serif;
-    padding: 2rem;
     padding-left: calc(10px + 2rem);
     box-sizing: border-box;
     min-height: 80vh;
@@ -700,8 +697,6 @@ select:focus {
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     gap: 1rem;
 }
 
@@ -838,8 +833,6 @@ select:focus {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--celeste-palido1);
     margin: 0;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     color: var(--gris5);
 }
 
@@ -1054,9 +1047,7 @@ select:focus {
 #body-grupos-ver {
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
     gap: 1rem;
-    padding-left: calc(240px + 3rem);
 }
 
 #body-grupos-ver #main-content {
@@ -1162,8 +1153,6 @@ select:focus {
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     gap: 1rem;
 }
 
@@ -1570,8 +1559,6 @@ select:focus {
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     gap: 1rem;
 }
 
@@ -1688,9 +1675,7 @@ select:focus {
 
 /* ======== BASE ======== */
 #body-ver-recursos {
-    background-color: var(--celeste-palido2);
     color: var(--negro);
-    padding: 2rem;
     padding-left: calc(340px + 2rem);
     padding-bottom: 6rem;
 }
@@ -1888,8 +1873,6 @@ div[name="espacios"] {
 #body-reservar-externo {
     background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
     min-height: 80vh;
-    padding: 3rem;
-    padding-left: calc(240px + 2rem);
 }
 
 #body-reservar-externo #main-content {
@@ -2017,20 +2000,22 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /* Pagina Editar Recurso Externo */
 /*///////////////////////////////*/
 
+/*
 #body-recurso-externo-editar {
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
+    
 }
+*/
 
 
 /*///////////////////////////////*/
 /* Pagina Editar Recurso Externo */
 /*///////////////////////////////*/
 
+/*
 #body-recurso-interno-editar {
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
+    
 }
+*/
 
 
 /*////////////////////*/
@@ -2040,7 +2025,6 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 #body-reservas-my {
     background: #f2f4f8;
     min-height: 80vh;
-    padding: 2rem;
     padding-left: calc(400px + 2rem);
 }
 
@@ -2181,9 +2165,14 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /* Clases "multi-pagina" */
 /*.......................*/
 
+body.menues-incluidos {
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    background-color: var(--celeste-palido1);
+}
+
 .main-content {
   flex-grow: 1;
-  background-color: var(--celeste-palido1);
   padding: 30px;
   margin-left: 0;
 }
@@ -2296,12 +2285,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 /*/////////////////////*/
 /* Pagina Ver Ausencia */
-/*/////////////////////*/
-
-#body-ver-ausencias {
-    padding: 3rem;
-    padding-left: calc(240px + 3rem);
-}
+/*/////////////////////*/y
 
 #main-ver-ausencias {
     display: grid;
@@ -2451,11 +2435,6 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /*///////////////////*/
 /*  Pagina de horas  */
 /*///////////////////*/
-
-#body-horas {
-    padding: 3rem;
-    padding-left: calc(240px + 3rem);
-}
 
 #modal-registrar-hora {
     display: flex;
@@ -2704,11 +2683,14 @@ div.targeta-intervalo {
 #body-ver-cursos {
     background-color: var(--celeste-palido1);
     color: var(--gris5);
+    font-family: "Segoe UI", Roboto, sans-serif;
+    display: grid;
+    grid-row: 2rem 1fr;
+}
+
+#body-ver-cursos #main-content {
     display: flex;
     justify-content: center;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
-    font-family: "Segoe UI", Roboto, sans-serif;
 }
 
 #main-ver-cursos {
@@ -2871,8 +2853,6 @@ div.targeta-intervalo {
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     gap: 1rem;
 }
 
@@ -3098,8 +3078,6 @@ select:focus {
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
     grid-row: 2rem 1fr;
-    padding: 2rem;
-    padding-left: calc(240px + 2rem);
     gap: 1rem;
 }
 

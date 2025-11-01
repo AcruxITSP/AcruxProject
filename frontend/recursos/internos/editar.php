@@ -17,7 +17,7 @@ if (!estaLogeado()) {
     <title>Document</title>
 </head>
 
-<body id="body-recurso-interno-editar">
+<body id="body-recurso-interno-editar" class="menues-incluidos">
     <?php include_once __DIR__ . '/../../includes/blockSidebarMenu.php' ?>
     <?php include_once __DIR__ . '/../../includes/blockTopHeader.php' ?>
     

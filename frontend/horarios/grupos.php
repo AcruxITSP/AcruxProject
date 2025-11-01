@@ -13,7 +13,7 @@
     <?php require dirname(__FILE__) . '/../includes/header.php' ?>
 </head>
 
-<body id="body-horarios-grupos">
+<body id="body-horarios-grupos" class="menues-incluidos">
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
     <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
 

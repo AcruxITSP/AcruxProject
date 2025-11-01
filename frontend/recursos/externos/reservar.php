@@ -19,7 +19,7 @@ if (!estaLogeado()) {
     <title>Document</title>
 </head>
 
-<body id="body-reservar-externo">
+<body id="body-reservar-externo" class="menues-incluidos">
     <div id="menues">
         <?php include_once __DIR__ . '/../../includes/blockSidebarMenu.php' ?>
         <?php include_once __DIR__ . '/../../includes/blockTopHeader.php' ?>

@@ -1,4 +1,4 @@
-<?php require __DIR__.'/../util/sesiones.php'; ?>
+<?php require __DIR__ . '/../util/sesiones.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,18 +13,22 @@
     <title>Cursos ITSP</title>
 </head>
 
-<body id="body-ver-cursos">
-    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
-
-    <main id="main-ver-cursos">
+<body id="body-ver-cursos" class="menues-incluidos">
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
         <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
-        
-        <h1>Cursos</h1>
-        <div class="div-cursos-educacion-media" id="curso-container">
-        </div>
+    </div>
 
-        <button onclick="location.href='crear.php'">Crear Curso</button>
-    </main>
+    <div id="main-content">
+        <main id="main-ver-cursos">
+
+            <h1>Cursos</h1>
+            <div class="div-cursos-educacion-media" id="curso-container">
+            </div>
+
+            <button onclick="location.href='crear.php'">Crear Curso</button>
+        </main>
+    </div>
 
     <template id="tpl-targeta-curso">
         <div class="curso">
@@ -34,7 +38,7 @@
             <ul class="curso-materias" name="materias">
             </ul>
             <div class="botones">
-                <?php if(esAdscripto()): ?>
+                <?php if (esAdscripto()): ?>
                     <button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button>
                     <button class="editar" name="button-editar"><i class="bi bi-pencil"></i></button>
                 <?php endif; ?>

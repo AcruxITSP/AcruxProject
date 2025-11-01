@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 
-<body id="body-espacio-reservar">
+<body id="body-espacio-reservar" class="menues-incluidos">
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
 
     <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>

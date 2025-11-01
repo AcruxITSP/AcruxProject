@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body id="body-my-schedule">
+<body id="body-my-schedule" class="menues-incluidos">
     <div class="menues">
         <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
         <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>

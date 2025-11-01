@@ -11,7 +11,7 @@
     <?php require dirname(__FILE__).'/../includes/header.php'?>
     <title>Cursos ITSP</title>
 </head>
-<body id="body-ver-cursos">
+<body id="body-ver-cursos" class="menues-incluidos">
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
 
     <main id="main-ver-cursos">

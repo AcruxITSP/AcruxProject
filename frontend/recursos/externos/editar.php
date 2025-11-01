@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<body id="body-recurso-externo-editar">
+<body id="body-recurso-externo-editar" class="menues-incluidos">
     <?php include_once '../../includes/blockSidebarMenu.php' ?>
     <?php include_once '../../includes/blockTopHeader.php' ?>
 

@@ -9,7 +9,7 @@
   <title>Crear Espacio</title>
 </head>
 
-<body id="body-crear-espacio">
+<body id="body-crear-espacio" class="menues-incluidos">
   <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
   <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
 
