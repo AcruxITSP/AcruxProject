@@ -39,7 +39,7 @@
                     <i class="fas fa-chalkboard icon-card"></i>
                     <span>Espacios</span>
                 </a>
-                <a href="../horarios/grupos.php" class="resource-card">
+                <a href="../horarios/grupos/ver.php" class="resource-card">
                     <i class="fas fa-calendar-days icon-card"></i>
                     <span>Horarios</span>
                 </a>
