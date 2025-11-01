@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div id="div-btn-agregar">
-                <input type="button" id="btn-agregar-grupo" name="agregar" value="Agregar con template">
+                <input type="button" id="btn-agregar-grupo" name="agregar" value="Agregar">
             </div>
         </main>
     </div>

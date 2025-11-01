@@ -27,11 +27,11 @@
             </div>
             <div class="targeta-ausencia-usuario">
                 <div class="marco-imagen"></div>
-                <p>Sans Undertale</p>
+                <p>Martin Gomez</p>
             </div>
             <div class="targeta-ausencia-usuario">
                 <div class="marco-imagen"></div>
-                <p>Homero</p>
+                <p>Relleno</p>
             </div>
             <div class="targeta-ausencia-usuario">
                 <div class="marco-imagen"></div>
@@ -95,29 +95,29 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Se le durmió el gallo</p>
+                    <p><strong>Motivo:</strong> Problemas de salud </p>
                 </div>
             </div>
             <div class="targeta-ausencia">
                 <div class="container-hora-fecha">
                     <p>12/5/2025</p>
                     <hr class="vertical">
-                    <p>Todo el día</p>
+                    <p>9:30 - 12:00</p>
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Se fue a cambiarse el nombre</p>
+                    <p><strong>Motivo:</strong> Asuntos legales</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
                 <div class="container-hora-fecha">
                     <p>15/09/2015</p>
                     <hr class="vertical">
-                    <p>9:30 - 12:00</p>
+                    <p>Todo el día</p>
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> ee e e e</p>
+                    <p><strong>Motivo:</strong> Solicitó el día libre</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -128,7 +128,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -139,7 +139,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -150,7 +150,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -161,7 +161,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -172,7 +172,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -183,7 +183,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
             <div class="targeta-ausencia">
@@ -194,7 +194,7 @@
                 </div>
                 <hr class="horizontal">
                 <div class="motivo-container">
-                    <p><strong>Motivo:</strong> Dou</p>
+                    <p><strong>Motivo:</strong> Relleno</p>
                 </div>
             </div>
         </div>
