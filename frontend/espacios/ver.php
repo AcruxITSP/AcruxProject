@@ -27,8 +27,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Bruno</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -38,8 +39,9 @@
                         <p class="estado libre">Libre</p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -49,8 +51,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Martínez</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -60,8 +63,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. González</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -71,8 +75,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Fernandez</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -86,8 +91,9 @@
                         <p class="estado libre">Libre</p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -97,8 +103,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Povea</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -108,8 +115,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Rubil</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -123,8 +131,9 @@
                         <p class="estado libre">Libre</p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -134,8 +143,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Galmarini</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
 
@@ -145,8 +155,9 @@
                         <p class="estado ocupado">Ocupado por <span>Prof. Rubil</span></p>
                     </div>
                     <div class="acciones">
-                        <button class="borrar"><i class="bi bi-trash-fill"></i></button>
-                        <button class="editar"><i class="bi bi-pencil"></i></button>
+                        <a class="borrar"><i class="bi bi-trash-fill"></i></a>
+                        <a class="editar" href="editar.php"><i class="bi bi-pencil"></i></a>
+                        <a class="reservar" href="reservar.php">Reservar</a>
                     </div>
                 </div>
             </div>

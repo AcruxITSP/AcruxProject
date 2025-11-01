@@ -2677,21 +2677,30 @@ div.targeta-intervalo {
 
 /* ======== BOTONES ======== */
 #main-ver-salones .acciones {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        'eliminar editar'
+        'reservar reservar';
+    gap: 0.7rem;
     border-top: 1px solid var(--gris1);
-    padding-top: 0.6rem;
+    padding: 0.6rem 0.4rem 0.2rem 85%;
     margin-top: 0.3rem;
 }
 
-#main-ver-salones .acciones button {
+#main-ver-salones .acciones a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     border: none;
     border-radius: 4px;
     padding: 0.45rem 0.8rem;
     cursor: pointer;
     font-weight: 600;
-    color: var(--negro);
+    color: var(--blanco);
     transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
@@ -2703,7 +2712,12 @@ div.targeta-intervalo {
     background-color: var(--mostaza);
 }
 
-#main-ver-salones .acciones button:hover {
+#main-ver-salones .acciones .reservar {
+    background-color: var(--azul-oscuro);
+    grid-area: reservar;
+}
+
+#main-ver-salones .acciones a:hover {
     transform: scale(1.05);
     opacity: 0.9;
 }
