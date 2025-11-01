@@ -12,6 +12,7 @@
     --azul-grisaceo: #343a80;
     --azul-oscuro: #0f316d;
     --azul-oscuro2: #1f2357;
+    --verde-agua: #9ee4b3;
     --verde-claro: #5bbd5b;
     --verde: #4cae4c;
     --coral: #dc3545;
@@ -467,7 +468,7 @@ select:focus {
 
 #form-editar .div-vacio {
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--negro);
     border-style: dashed;
     color: var(--gris4);
 }
@@ -749,7 +750,7 @@ select:focus {
 
 #form-crear-docente #lista-materias div#materias {
     height: 4rem;
-    border: 1px solid black;
+    border: 1px solid var(--negro);
     border-style: dashed;
     width: 80%;
 }
@@ -781,7 +782,7 @@ select:focus {
 
 #body-crear-docente div.vacio {
     height: 2rem;
-    border: 1px solid black;
+    border: 1px solid var(--negro);
     border-style: dashed
 }
 
@@ -1226,7 +1227,7 @@ select:focus {
 
 #main-crear-grupos #form-crear .div-vacio {
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--negro);
     border-style: dashed;
     color: var(--gris4);
 }
@@ -2018,7 +2019,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /*////////////////////*/
 
 #body-reservas-my {
-    background: #f2f4f8;
+    background: var(--celeste-palido1);
     min-height: 80vh;
     padding-left: calc(400px + 2rem);
 }
@@ -2041,9 +2042,9 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /** MIS RESERVAS **/
 /* Contenedor principal de cada reserva */
 #body-reservas-my div[name="div-reserva"] {
-    background: #ffffff;
+    background: var(--blanco);
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--sombra);
     padding: 1.5rem;
     width: 100%;
     display: flex;
@@ -2054,7 +2055,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 #body-reservas-my div[name="div-reserva"]:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px var(--sombra);
 }
 
 /* Parte superior: imagen + nombre del espacio */
@@ -2068,13 +2069,13 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    background: #e0e0e0;
+    background: var(--gris1);
     object-fit: cover;
 }
 
 #body-reservas-my .div-reserva-top h3[name="espacio"] {
     font-size: 1.3rem;
-    color: #333;
+    color: var(--gris5);
     font-weight: 600;
 }
 
@@ -2087,8 +2088,8 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 }
 
 #body-reservas-my div[name="div-periodo"] {
-    background: #f7f9fc;
-    border: 1.5px solid #dfe4ea;
+    background: var(--celeste-palido1);
+    border: 1.5px solid var(--gris2);
     border-radius: 10px;
     padding: 0.6rem 1rem;
     display: flex;
@@ -2100,17 +2101,17 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 
 #body-reservas-my .reservado
 {
-    background: #9ee4b3 !important;
+    background: var(--verde-agua) !important;
 }
 
 #body-reservas-my div[name="div-periodo"]:hover {
-    background: #edf4ff;
-    border-color: #4a90e2;
+    background: var(--celeste-palido2);
+    border-color: var(--verde-agua);
 }
 
 #body-reservas-my div[name="div-periodo"] p {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--gris4);
 }
 
 /* Botones */
@@ -2120,9 +2121,9 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 }
 
 #body-reservas-my button[name="button-borrar"] {
-    background: #ff5c5c;
+    background: var(--coral);
     border: none;
-    color: white;
+    color: var(--blanco);
     font-weight: bold;
     border-radius: 8px;
     padding: 0.5rem 1rem;
@@ -2131,7 +2132,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 }
 
 #body-reservas-my button[name="button-borrar"]:hover {
-    background: #ff3c3c;
+    background: var(--coral2);
 }
 
 #body-reservas-my button[name="button-borrar"]:active {
@@ -2525,7 +2526,7 @@ select:focus {
     padding-bottom: 1rem;
     display: grid;
     gap: 2%;
-    grid-template-rows: 20rem 3rem;
+    grid-template-rows: 21rem 3rem;
 }
 
 div.targeta-intervalo {
@@ -2533,6 +2534,12 @@ div.targeta-intervalo {
     border-radius: 10px;
     text-align: center;
     font-size: 22px;
+    padding: 1rem;
+}
+
+#formulario-registrar-horario {
+    border: 1px solid var(--gris4);
+    border-radius: 15px;
     padding: 1rem;
 }
 
@@ -3002,7 +3009,7 @@ select:focus {
 #main-crear-cursos #form-editar .div-vacio {
     padding: 1rem;
     margin-top: 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--negro);
     border-style: dashed;
     color: var(--gris4);
 }
@@ -3206,7 +3213,7 @@ select:focus {
 
 #main-crear-asignatura div.vacio {
     height: 2rem;
-    border: 1px solid black;
+    border: 1px solid var(--negro);
     border-style: dashed
 }
 
