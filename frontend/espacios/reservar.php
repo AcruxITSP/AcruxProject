@@ -11,9 +11,10 @@
 </head>
 
 <body id="body-espacio-reservar" class="menues-incluidos">
-    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
-
-    <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
 
     <div id="main-content">
         <main id="main-espacio-reservar">

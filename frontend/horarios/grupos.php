@@ -14,8 +14,10 @@
 </head>
 
 <body id="body-horarios-grupos" class="menues-incluidos">
-    <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
-    <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
 
     <main id="main-horarios-grupos">
         <select id="select-grupo"></select>

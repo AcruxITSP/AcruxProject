@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="menues-incluidos">
+<body>
     <div class="dashboard-container">
         <!-- Traer el codigo del side-bar -->
         <?php include_once dirname(__FILE__).'/../includes/blockSidebarMenu.php' ?>

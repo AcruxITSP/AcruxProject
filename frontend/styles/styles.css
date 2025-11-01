@@ -297,23 +297,10 @@ form#form-login input[type="submit"]:active {
   margin: 0;
 }
 
-/* Centra el contenido principal */
-#main-crear-espacio {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 20px;
-  min-height: calc(100vh - 100px);
-}
-
 /* === FORMULARIO === */
 #form-crear-espacio {
   background: var(--blanco);
   width: 100%;
-  max-width: 600px;
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px var(--sombra);
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -518,7 +505,7 @@ select:focus {
     grid-template-rows: 3rem 1fr;
 }
 
-#body-ver-funcionarios div.main-content {
+#body-ver-funcionarios div#main-content {
     display: flex;
     justify-content: center;
     background-color: inherit;
@@ -1674,7 +1661,6 @@ select:focus {
 /* ======== BASE ======== */
 #body-ver-recursos {
     color: var(--negro);
-    padding-left: calc(340px + 2rem);
     padding-bottom: 6rem;
 }
 
@@ -2002,7 +1988,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     grid-row: 2rem 1fr;
 }
 
-#body-recurso-externo-editar div.main-content{
+#body-recurso-externo-editar div#main-content{
     display: flex;
     justify-content: center;
     padding: 0;
@@ -2014,12 +2000,12 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 /* Pagina Editar Recurso Externo */
 /*///////////////////////////////*/
 
-#body-recurso-interno-editar {
+#body-recurso-externo-editar {
     display: grid;
     grid-row: 2rem 1fr;
 }
 
-#body-recurso-interno-editar div.main-content{
+#body-recurso-externo-editar div#main-content{
     display: flex;
     justify-content: center;
     padding: 0;
@@ -2181,6 +2167,13 @@ body.menues-incluidos {
   flex-grow: 1;
   padding: 30px;
   margin-left: 0;
+}
+
+/* Este main-content refiere a la parte de la pagina donde no estan los menues */
+#main-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 /* Botón hamburguesa */
@@ -2354,7 +2347,11 @@ select:focus {
 
 /*/////////////////////*/
 /* Pagina Ver Ausencia */
-/*/////////////////////*/y
+/*/////////////////////*/
+
+#body-ver-ausencias #main-content {
+    display: block;
+}
 
 #main-ver-ausencias {
     display: grid;
@@ -2597,13 +2594,12 @@ div.targeta-intervalo {
 /* ======== BASE ======== */
 #body-ver-salones {
     color: var(--gris5);
-    padding: 2rem;
     display: grid;
     grid-template-rows: 1rem 1fr;
     font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-#body-ver-salones div.main-content {
+#body-ver-salones div#main-content {
     display: flex;
     justify-content: center;
 }

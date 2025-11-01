@@ -11,12 +11,12 @@
 </head>
 
 <body id="body-ver-funcionarios" class="menues-incluidos">
-  <div class="menues">
+  <div id="menues">
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
     <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
   </div>
 
-  <div class="main-content">
+  <div id="main-content">
     <main>
       <header class="page-header">
         <h1>Funcionarios ITSP</h1>

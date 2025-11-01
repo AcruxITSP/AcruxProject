@@ -18,12 +18,12 @@ if (!estaLogeado()) {
 </head>
 
 <body id="body-recurso-interno-editar" class="menues-incluidos">
-    <div class="menues">
+    <div id="menues">
         <?php include_once '../../includes/blockSidebarMenu.php' ?>
         <?php include_once '../../includes/blockTopHeader.php' ?>
     </div>
 
-    <div class="main-content">
+    <div id="main-content">
         <main class="main-formulario-basico">
             <form class="formulario-basico">
                 <h1>Editar Recurso Interno</h1>

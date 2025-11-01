@@ -9,7 +9,7 @@
     <title>Configuracion</title>
 </head>
 
-<body class="menues-incluidos">
+<body>
     <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
 
     <main class="main-content">
