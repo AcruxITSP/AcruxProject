@@ -28,7 +28,7 @@ if (!estaLogeado()) {
             <form class="formulario-basico">
                 <h1>Editar Recurso Interno</h1>
                 
-                <label for="imagen">Imagen</label>
+                <label for="imagen">Imágen</label>
                 <input type="file" name="imagen">
 
                 <label for="tipo">Tipo</label>
@@ -40,7 +40,7 @@ if (!estaLogeado()) {
                 <label for="number">Cantidad</label>
                 <input type="number" name="cantidad" min="0" max="500"></input>
 
-                <input type="submit" value="Registrar Recurso">
+                <input type="submit" value="Guardar">
             </form>
         </main>
     </div>

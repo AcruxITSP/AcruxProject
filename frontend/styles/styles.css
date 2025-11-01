@@ -2243,6 +2243,7 @@ body.menues-incluidos {
 .formulario-basico h1 {
     margin-bottom: 1rem;
     text-align: center;
+    color: var(--azul-grisaceo);
 }
 
 .formulario-basico label {

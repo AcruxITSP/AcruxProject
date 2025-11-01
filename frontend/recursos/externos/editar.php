@@ -34,7 +34,7 @@
                 <label for="number">Cantidad</label>
                 <input type="number" name="cantidad" min="0" max="500" id="number"></input>
 
-                <input type="submit" value="Registrar Recurso">
+                <input type="submit" value="Guardar">
             </form>
         </main>
     </div>
