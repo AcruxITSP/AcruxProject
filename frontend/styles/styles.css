@@ -45,7 +45,7 @@
 }
 
 body {
-
+    background-color: var(--celeste-palido1);
 }
 
 div#menues {
@@ -294,7 +294,6 @@ form#form-login input[type="submit"]:active {
 
 #body-crear-espacio {
   font-family: "Poppins", sans-serif;
-  background-color: var(--celeste-palido1);
   margin: 0;
 }
 
@@ -831,7 +830,6 @@ select:focus {
 /* ======== GENERAL ======== */
 #body-horarios-grupos {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--celeste-palido1);
     margin: 0;
     color: var(--gris5);
 }
@@ -1778,7 +1776,6 @@ div[name="espacios"] {
     padding: 0.6rem 0.8rem;
     margin-top: 0.4rem;
     background-color: var(--celeste-palido1);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2168,7 +2165,6 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 body.menues-incluidos {
     padding: 2rem;
     padding-left: calc(240px + 2rem);
-    background-color: var(--celeste-palido1);
 }
 
 .main-content {
@@ -2527,7 +2523,6 @@ div.targeta-intervalo {
 
 /* ======== BASE ======== */
 #body-ver-salones {
-    background-color: var(--celeste-palido1);
     color: var(--gris5);
     padding: 2rem;
     display: grid;
@@ -2681,7 +2676,6 @@ div.targeta-intervalo {
 
 /* ======== BASE ======== */
 #body-ver-cursos {
-    background-color: var(--celeste-palido1);
     color: var(--gris5);
     font-family: "Segoe UI", Roboto, sans-serif;
     display: grid;
