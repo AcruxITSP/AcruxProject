@@ -18,22 +18,34 @@
     </div>
 
     <div id="main-content">
-        <main class="main-formulario-basico">
-            <form class="formulario-basico">
-                <h1>Agregar Hora</h1>
-
-                <div name="periodo-inicio-container"></div>
+         <main id="main-editar-horarios">
+            <form id="form-editar">
+                <h1>Editar Hora</h1>
 
                 <label for="materia">Materia</label>
-                <select name="materia"></select>
+                <select name="materia" id="materia">
+                    <option>Programacion</option>
+                    <option>Ciberseguridad</option>
+                    <option>Emprendedurismo</option>
+                </select>
 
-                <label for="profesor">Profesor</label>
-                <select name="profesor"></select>
+                <label for="docente">Docente</label>
+                <select name="docente" id="docente">
+                    <option>Hernesto Rodriguez</option>
+                    <option>Pablo Sanchez</option>
+                    <option>Walter White</option>
+                </select>
 
                 <label for="espacio">Espacio</label>
-                <select name="espacio"></select>
+                <select name="espacio" id="espacio">
+                    <option>Salon 1</option>
+                    <option>Lab. Quimica</option>
+                    <option>Salon 3</option>
+                </select>
 
-                <input type="submit" value="Agregar">
+                <div class="div-vacio"> Div vacio</div>
+
+                <input type="submit" value="Guardar">
             </form>
         </main>
     </div>
