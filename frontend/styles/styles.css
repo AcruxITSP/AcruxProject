@@ -1108,6 +1108,7 @@ select:focus {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     box-sizing: border-box;
+    padding-top: 2px;
 }
 
 /* === TARJETAS === */
