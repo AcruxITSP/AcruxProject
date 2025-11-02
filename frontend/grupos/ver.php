@@ -32,8 +32,8 @@
                         <p class="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
-                        <a href="editar.php"><input type="button" name="editar" value="E"></a>
-                        <a><input type="button" name="borrar" value="X"></a>
+                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
+                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div name="targeta-grupo">
@@ -49,8 +49,8 @@
                         <p class="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
-                        <a href="editar.php"><input type="button" name="editar" value="E"></a>
-                        <a><input type="button" name="borrar" value="X"></a>
+                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
+                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div name="targeta-grupo">
@@ -66,8 +66,8 @@
                         <p class="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
-                        <a href="editar.php"><input type="button" name="editar" value="E"></a>
-                        <a><input type="button" name="borrar" value="X"></a>
+                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
+                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div name="targeta-grupo">
@@ -83,8 +83,8 @@
                         <p class="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
-                        <a href="editar.php"><input type="button" name="editar" value="E"></a>
-                        <a><input type="button" name="borrar" value="X"></a>
+                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
+                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -108,8 +108,8 @@
                 <p class="nombre-curso">Informática</p>
             </div>
             <div name="botones">
-                <input type="button" name="editar" value="E">
-                <input type="button" name="borrar" value="X">
+                <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
+                <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
             </div>
         </div>
     </template>

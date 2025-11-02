@@ -1183,7 +1183,7 @@ select:focus {
     margin-top: auto;
 }
 
-#body-grupos-ver div[name="botones"] input[type="button"] {
+#body-grupos-ver div[name="botones"] button {
     border: none;
     border-radius: 6px;
     padding: 0.45rem 0.8rem;
@@ -1197,15 +1197,15 @@ select:focus {
     font-size: 1rem;
 }
 
-#body-grupos-ver div[name="botones"] input[name="borrar"] {
+#body-grupos-ver div[name="botones"] button[name="borrar"] {
     background-color: var(--coral2);
 }
 
-#body-grupos-ver div[name="botones"] input[name="editar"] {
+#body-grupos-ver div[name="botones"] button[name="editar"] {
     background-color: var(--mostaza);
 }
 
-#body-grupos-ver div[name="botones"] input[type="button"]:hover {
+#body-grupos-ver div[name="botones"] button:hover {
     transform: scale(1.05);
     opacity: 0.9;
 }
