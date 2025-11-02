@@ -88,8 +88,7 @@
                 </div>
             </div>
             <div id="div-btn-agregar">
-                <!-- <input type="button" id="btn-agregar-grupo" name="agregar" value="Agregar"> -->
-                <a href="crear">Registrar grupo</a>
+                <a href="crear.php">Registrar grupo</a>
             </div>
         </main>
     </div>
