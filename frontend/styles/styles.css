@@ -3179,7 +3179,7 @@ div.targeta-intervalo {
     padding: 0.45rem 0.8rem;
     cursor: pointer;
     font-weight: 600;
-    color: var(--negro);
+    color: var(--blanco);
     transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
