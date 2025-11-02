@@ -7,6 +7,7 @@
     <title>Ausencias</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body id="body-ver-ausencias">
@@ -199,7 +200,9 @@
             </div>
         </div>
     </main>
-
+<button class="btn-volver" onclick="history.back()" title="Volver">
+  <i class="bi bi-arrow-left"></i>
+</button>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>

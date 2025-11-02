@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Grupos</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 
 <body id="body-grupos-ver">
     <div id="menues">
@@ -112,7 +113,9 @@
             </div>
         </div>
     </template>
-
+<button class="btn-volver" onclick="history.back()" title="Volver">
+  <i class="bi bi-arrow-left"></i>
+</button>
     <script src="../scripts/crear_targeta_grupo.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
