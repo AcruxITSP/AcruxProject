@@ -1044,7 +1044,7 @@ select:focus {
 
 #main-grupos-ver {
     width: 80%;
-    height: 85vh;
+    height: 80vh;
     background-color: var(--gris1);
     padding: 1.5rem;
 }
@@ -1111,10 +1111,15 @@ select:focus {
     height: 12%;
     margin-top: 1rem;
     margin-left: 1.3rem;
+    padding-right: 1.3rem;
+    width: 100%;
 }
 
-#main-grupos-ver input[name="agregar"] {
-    width: 100%;
+#main-grupos-ver #div-btn-agregar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     height: 100%;
     border: none;
     background-color: var(--azul-claro);
@@ -1123,7 +1128,7 @@ select:focus {
     cursor: pointer;
 }
 
-#main-grupos-ver input[name="agregar"]:hover {
+#main-grupos-ver #div-btn-agregar a:hover {
     background-color: var(--azul);
 }
 

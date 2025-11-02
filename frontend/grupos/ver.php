@@ -88,7 +88,8 @@
                 </div>
             </div>
             <div id="div-btn-agregar">
-                <input type="button" id="btn-agregar-grupo" name="agregar" value="Agregar">
+                <!-- <input type="button" id="btn-agregar-grupo" name="agregar" value="Agregar"> -->
+                <a href="crear">Registrar grupo</a>
             </div>
         </main>
     </div>
@@ -113,7 +114,7 @@
         </div>
     </template>
 
-    <script src="../scripts/crear_targeta_grupo.js"></script>
+    <!-- <script src="../scripts/crear_targeta_grupo.js"></script> -->
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
