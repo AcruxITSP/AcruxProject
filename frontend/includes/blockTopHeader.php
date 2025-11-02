@@ -17,9 +17,12 @@ $root = "/frontend";
     <div class="dropdown-menu" id="dropdownMenu">
       <a href="<?= $root ?>/general/myAccount.php">Mi cuenta</a>
       <a href="<?= $root ?>/general/configuracion.php">Configuración</a>
-      <form action="#" method="post">
-        <button id="btn-unLog" type="submit">Cerrar sesión</button>
-      </form>
+      <?php @session_start(); ?>
+      <?php if (isset($_SESSION['username'])) : ?>
+        <a id="btn-cerrar-sesion" href="../cuenta/logout.php">Cerrar sesión</a>
+      <?php else: ?>
+        <a id="btn-iniciar-sesion" href="../cuenta/login.php">Iniciar Sesión</a>
+      <?php endif; ?>
     </div>
   </div>
 </header>

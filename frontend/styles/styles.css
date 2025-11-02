@@ -1448,6 +1448,7 @@ select:focus {
 .dropdown-menu {
   display: none;
   position: absolute;
+  top: 2rem;
   right: 0;
   background-color: var(--blanco);
   min-width: 160px;
@@ -1457,8 +1458,7 @@ select:focus {
   z-index: 10;
 }
 
-.dropdown-menu a,
-#btn-unLog {
+.dropdown-menu a {
   color: var(--azul-oscuro2);
   padding: 12px 16px;
   text-decoration: none;
@@ -1467,11 +1467,11 @@ select:focus {
   transition: background-color 0.15s ease;
 }
 
-.dropdown-menu a:not(#btn-unLog):hover {
+.dropdown-menu a:not(#btn-cerrar-sesion):hover {
     background-color: var(--gris1);
 }
 
-#btn-unLog {
+#btn-cerrar-sesion, #btn-iniciar-sesion {
   border: none;
   background-color: transparent;
   width: 100%;
@@ -1480,8 +1480,13 @@ select:focus {
   transition-duration: 500ms;
 }
 
-#btn-unLog:hover {
+#btn-cerrar-sesion:hover {
   background-color: var(--coral);
+  color: var(--negro);
+}
+
+#btn-iniciar-sesion:hover {
+  background-color: var(--verde-agua) !important;
   color: var(--negro);
 }
 
