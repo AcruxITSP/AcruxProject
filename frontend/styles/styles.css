@@ -498,10 +498,10 @@ select:focus {
 
 #body-ver-funcionarios {
     font-family: "Segoe UI", Roboto, sans-serif;
-    padding-left: calc(10px + 2rem);
     box-sizing: border-box;
     min-height: 80vh;
     margin: 0;
+    padding-bottom: 6rem;
     display: grid;
     grid-template-rows: 3rem 1fr;
 }
@@ -648,16 +648,20 @@ select:focus {
 }
 
 #body-ver-funcionarios .botones-flotantes button {
-    background-color: var(--azul-oscuro);
+    background-color: var(--azul);
     color: var(--blanco);
     border: none;
     border-radius: 10px;
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 1.2rem;
     font-size: 1rem;
     font-weight: 600;
     box-shadow: 0 4px 8px var(--sombra);
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
+}
+
+#body-ver-funcionarios .botones-flotantes button:hover {
+    background-color: var(--azul-claro);
 }
 
 @media (max-width: 900px) {

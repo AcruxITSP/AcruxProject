@@ -33,8 +33,8 @@
             <li>Correo: facundo.rubil@itsp.edu.uy</li>
           </ul>
           <div class="botones">
-            <button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button>
-            <button class="editar" title="Editar"><i class="bi bi-pencil"></i></button>
+            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
+            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
 
@@ -48,8 +48,8 @@
             <li>Correo: franco.povea@itsp.edu.uy</li>
           </ul>
           <div class="botones">
-            <button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button>
-            <button class="editar" title="Editar"><i class="bi bi-pencil"></i></button>
+            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
+            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
 
@@ -63,8 +63,8 @@
             <li>Correo: lucia.fernandez@itsp.edu.uy</li>
           </ul>
           <div class="botones">
-            <button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button>
-            <button class="editar" title="Editar"><i class="bi bi-pencil"></i></button>
+            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
+            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
 
@@ -78,8 +78,8 @@
             <li>Correo: carlos.gomez@itsp.edu.uy</li>
           </ul>
           <div class="botones">
-            <button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button>
-            <button class="editar" title="Editar"><i class="bi bi-pencil"></i></button>
+            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
+            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
       </div>
