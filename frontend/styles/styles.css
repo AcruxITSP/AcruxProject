@@ -2440,7 +2440,7 @@ select:focus {
     border-radius: 14px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 1rem;
     width: 400px;
     /* increased width */
     max-width: 90vw;
@@ -2461,6 +2461,7 @@ select:focus {
 #modal-registrar-ausencia label:not([for="allDay"]) {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 15px;
     margin-bottom: 4px;
 }
@@ -2469,9 +2470,17 @@ select:focus {
     user-select: none;
 }
 
+#modal-registrar-ausencia label[for="allDay"] {
+    color: var(--negro);
+    font-size: 14px;
+    display: flex;
+    gap: 1rem;
+}
+
 #modal-registrar-ausencia input[type="date"] {
     width: 80%;
     margin-left: 10%;
+    margin: 0;
 }
 
 #modal-registrar-ausencia input[type="submit"] {
@@ -2501,7 +2510,10 @@ select:focus {
 
 #modal-registrar-ausencia #input-motivo {
     height: 4rem;
+    width: 100%;
     box-sizing: border-box;
+    margin-top: 0;
+    border-color: var(--gris3);
 }
 
 
