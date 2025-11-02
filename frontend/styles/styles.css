@@ -638,8 +638,8 @@ select:focus {
 /* === BOTONES FLOTANTES ABAJO DERECHA === */
 #body-ver-funcionarios .botones-flotantes {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 15px;
+    right: 105px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1047,93 +1047,204 @@ select:focus {
 }
 
 #main-grupos-ver {
-    width: 80%;
-    height: 80vh;
-    background-color: var(--gris1);
-    padding: 1.5rem;
+    width: 80
 }
+/*///////////////////////////*/
+/*  Página Ver Grupos  */
+/*///////////////////////////*/
 
-#main-grupos-ver #lista-targetas-grupos {
-    height: 60vh;
-    border: 1px solid var(--negro);
-    margin-left: 1.3rem;
-    align-items: center;
-}
-
-#main-grupos-ver div[name="targeta-grupo"] {
-    width: 95%;
+#body-grupos-ver {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
     display: grid;
-    grid-template-rows: 30% 50% 20%;
-    height: 25rem;
-    border: 1px solid var(--negro);
+    grid-template-rows: 3rem 1fr;
+    background-color: var(--celeste-palido1);
 }
 
-#main-grupos-ver div[name="targeta-grupo"] div[name="encabezado"] {
+/* === CONTENEDOR PRINCIPAL === */
+#body-grupos-ver #main-content {
+    display: flex;
+    justify-content: center;
+    background-color: inherit;
+}
+
+#body-grupos-ver #main-grupos-ver {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* === HEADER (si luego agregás un título) === */
+#body-grupos-ver .page-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: 0 0 1rem 0;
+    padding: 0.8rem 0;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+#body-grupos-ver .page-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+}
+
+/* === GRID DE TARJETAS === */
+#body-grupos-ver #lista-targetas-grupos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: var(--celeste-palido2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--sombra);
+    box-sizing: border-box;
+}
+
+/* === TARJETAS === */
+#body-grupos-ver div[name="targeta-grupo"] {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris2);
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    min-height: 120px;
+}
+
+#body-grupos-ver div[name="targeta-grupo"]:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 3px 8px var(--sombra-azul);
+    transform: translateY(-2px);
+}
+
+/* === ENCABEZADO DE LA TARJETA === */
+#body-grupos-ver div[name="encabezado"] {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    padding-left: 1.5rem;
-    border-bottom: 1px solid var(--negro)
+    gap: 1rem;
+    border-bottom: 1px solid var(--gris1);
+    padding-bottom: 0.6rem;
 }
 
-#main-grupos-ver .marco-imagen {
-    height: 2.5rem;
-    width: 2.5rem;
+#body-grupos-ver .marco-imagen {
+    height: 3rem;
+    width: 3rem;
     background-color: var(--azul-claro);
-    border-radius: 25px;
+    border-radius: 50%;
 }
 
-#main-grupos-ver div[name="targeta-grupo"] div[name="info-grupo"] {
-    display: grid;
-    grid-template-columns: 20% 60%;
-    grid-template-rows: 50% 50%;
-    gap: 20px;
-    padding: 2rem;
-    border: 1px 1px 0 1px solid var(--negro);
+#body-grupos-ver .nombre-grupo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    margin: 0;
 }
 
-#main-grupos-ver div[name="targeta-grupo"] div[name="botones"] {
+/* === INFORMACIÓN DEL GRUPO === */
+#body-grupos-ver div[name="info-grupo"] {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+    color: var(--gris5);
+}
+
+#body-grupos-ver div[name="info-grupo"] p {
+    background: var(--celeste-palido1);
+    padding: 0.28rem 0.6rem;
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* === BOTONES DE LA TARJETA === */
+#body-grupos-ver div[name="botones"] {
     display: flex;
     justify-content: flex-end;
+    gap: 0.6rem;
+    border-top: 1px solid var(--gris1);
+    padding-top: 0.6rem;
+    margin-top: auto;
+}
+
+#body-grupos-ver div[name="botones"] input[type="button"] {
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blanco);
+    transition: transform 0.1s ease, opacity 0.15s ease;
+    display: inline-flex;
     align-items: center;
-    gap: 1rem;  
-    padding-right: 1rem;
+    justify-content: center;
+    font-size: 1rem;
 }
 
-#main-grupos-ver #lista-targetas-grupos input[type="button"]:not([name="agregar"]){
-    height: 90%;
-    width: 2.5rem;
-    font-size: 1.5rem;
-    border: 1px solid var(--negro);
+#body-grupos-ver div[name="botones"] input[name="borrar"] {
+    background-color: var(--coral2);
 }
 
-#main-grupos-ver #lista-targetas-grupos input[name="borrar"] { background-color: var(--coral); }
-#main-grupos-ver #lista-targetas-grupos input[name="editar"] { background-color: var(--mostaza); color: var(--negro); }
-
-#main-grupos-ver #div-btn-agregar {
-    height: 12%;
-    margin-top: 1rem;
-    margin-left: 1.3rem;
-    padding-right: 1.3rem;
-    width: 100%;
+#body-grupos-ver div[name="botones"] input[name="editar"] {
+    background-color: var(--mostaza);
 }
 
-#main-grupos-ver #div-btn-agregar a {
+#body-grupos-ver div[name="botones"] input[type="button"]:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* === BOTÓN AGREGAR === */
+#body-grupos-ver #div-btn-agregar {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    height: 100%;
-    border: none;
-    background-color: var(--azul-claro);
-    color: var(--blanco);
-    font-size: 2rem;
-    cursor: pointer;
+    margin-top: 1.5rem;
 }
 
-#main-grupos-ver #div-btn-agregar a:hover {
+#body-grupos-ver input[name="agregar"] {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px var(--sombra);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    width: 100%;
+}
+
+#body-grupos-ver input[name="agregar"]:hover {
     background-color: var(--azul);
+    transform: translateY(-2px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+
+    #body-grupos-ver #lista-targetas-grupos {
+        grid-template-columns: 1fr;
+    }
+
+    #body-grupos-ver {
+        padding-left: 2rem;
+    }
 }
 
 
@@ -2361,68 +2472,155 @@ select:focus {
 }
 
 
-/*/////////////////////*/
-/* Pagina Ver Ausencia */
-/*/////////////////////*/
+/*///////////////////////////*/
+/*  Página Ver Ausencias */
+/*///////////////////////////*/
 
-#body-ver-ausencias #main-content {
-    display: block;
+#body-ver-ausencias {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    padding: 2rem;
+    padding-left: calc(240px + 2rem);
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--celeste-palido1);
 }
 
+#body-ver-ausencias h2 {
+    font-size: 1.8rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+/* === MAIN === */
 #main-ver-ausencias {
     display: grid;
-    grid-template-columns: 30% 60%;
+    grid-template-columns: 30% 65%;
     gap: 5%;
-    max-height: 60vh;
+    height: auto;
 }
 
-.targeta-ausencia hr.horizontal {
-    border: 1px solid var(--gris4);
-    width: 100%;
+/* === LISTA DE USUARIOS === */
+#body-ver-ausencias .scrollable-list {
+    background-color: var(--celeste-palido2);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px var(--sombra);
+    overflow-y: auto;
+    max-height: 70vh;
 }
 
-.targeta-ausencia hr.vertical {
-    border: 1px solid var(--gris4);
-    height: 75%;
-}
-
-.targeta-ausencia-usuario {
+#body-ver-ausencias .targeta-ausencia-usuario {
     display: flex;
     align-items: center;
-    padding: 0.5rem 2rem;
     gap: 1rem;
-    border: 1px solid var(--negro);
+    background-color: var(--blanco);
+    border: 1px solid var(--gris2);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#body-ver-ausencias .targeta-ausencia-usuario:hover {
+    transform: translateY(-2px);
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 3px 8px var(--sombra-azul);
+}
+
+#body-ver-ausencias .targeta-ausencia-usuario p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--azul-oscuro);
 }
 
 #body-ver-ausencias .marco-imagen {
     height: 2.5rem;
     width: 2.5rem;
     background-color: var(--azul-claro);
-    border-radius: 25px;
+    border-radius: 50%;
 }
 
-.targeta-ausencia {
+/* === TARJETAS DE AUSENCIA === */
+#body-ver-ausencias .targeta-ausencia {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris2);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px var(--sombra);
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
-    border: 1px solid var(--negro);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.targeta-ausencia > div {
-    height: 3rem;
+#body-ver-ausencias .targeta-ausencia:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 3px 8px var(--sombra-azul);
 }
 
-.targeta-ausencia .container-hora-fecha {
+/* === ENCABEZADO DE FECHA Y HORA === */
+#body-ver-ausencias .container-hora-fecha {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0.1rem 6rem;
-    max-height: 2.5rem;
+    gap: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--celeste-palido1);
+    border-radius: 6px;
+    color: var(--gris6);
+    font-weight: 600;
+    text-align: center;
 }
 
-.targeta-ausencia .motivo-container {
+#body-ver-ausencias .targeta-ausencia hr.horizontal {
+    border: none;
+    border-top: 1px solid var(--gris3);
+    margin: 0.7rem 0;
+}
+
+#body-ver-ausencias .targeta-ausencia hr.vertical {
+    border: none;
+    border-left: 1px solid var(--gris4);
+    height: 1.5rem;
+}
+
+/* === MOTIVO === */
+#body-ver-ausencias .motivo-container {
     display: flex;
     align-items: center;
+    background-color: var(--celeste-palido2);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    color: var(--gris6);
+    font-size: 0.95rem;
+}
+
+#body-ver-ausencias .motivo-container strong {
+    color: var(--azul-oscuro);
+}
+
+/* === SCROLL === */
+#body-ver-ausencias .scrollable-list::-webkit-scrollbar {
+    width: 8px;
+}
+#body-ver-ausencias .scrollable-list::-webkit-scrollbar-thumb {
+    background-color: var(--gris3);
+    border-radius: 4px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 950px) {
+    #main-ver-ausencias {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #body-ver-ausencias {
+        padding-left: 2rem;
+    }
 }
 
 
@@ -2526,11 +2724,75 @@ select:focus {
 }
 
 
+/*/////////////////////*/
+/*// Botón de volver //*/
+/*/////////////////////*/
+
+.btn-volver {
+    position: fixed;
+    bottom: 20px;   /* lo acerca más al borde inferior */
+    right: 25px;    /* lo pega al borde derecho */
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--sombra);
+    transition: background 0.2s ease, transform 0.15s ease;
+    z-index: 300;
+}
+
+.btn-volver:hover {
+    background-color: var(--azul-claro);
+    transform: scale(1.05);
+}
+
+
+/*///////////////////*/
+/*// Botón de volver //*/
+/*///////////////////*/
+.btn-volver {
+    position: fixed;
+    bottom: 20px;   /* lo acerca más al borde inferior */
+    right: 25px;    /* lo pega al borde derecho */
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--sombra);
+    transition: background 0.2s ease, transform 0.15s ease;
+    z-index: 300;
+}
+
+.btn-volver:hover {
+    background-color: var(--azul-claro);
+    transform: scale(1.05);
+}
+
+
 /*///////////////////*/
 /*  Pagina de horas  */
 /*///////////////////*/
 
-#body-horas #main-content {
+#body-horas {
+    padding: 3rem;
+    padding-left: calc(240px + 3rem);
+}
+
+#modal-registrar-hora {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -3143,7 +3405,7 @@ select:focus {
 }
 
 /*/////////////////////////////////////////////*/
-/*  Pagina Ver Asignaturas - depende de Cursos */
+/*  Pagina Ver Asignaturas */
 /*/////////////////////////////////////////////*/
 
 .asignatura-horizontal
