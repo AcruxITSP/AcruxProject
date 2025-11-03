@@ -35,7 +35,7 @@
         <label for="capacidad">Capacidad</label>
         <input type="number" name="capacidad" id="capacidad" min="1" max="500" placeholder="Ej: 30" required>
 
-        <label for="tipo">Ubicacion </label>
+        <label for="tipo">Ubicación </label>
         <select name="ubicacion" id="ubicacion" required>
           <option value="">Seleccionar ubicación...</option>
           <option value="Planta baja">Planta baja</option>

@@ -29,7 +29,7 @@ if (!estaLogeado()) {
         <main id="main-reservar-externo">
             <h1>Reservar Recurso Externo</h1>
             <div id="top">
-                <img id="imagen">
+                <img id="imagen" src="../../img/resource-icon.png">
                 <p id="tipo">Salon X</p>
                 <p id="espacio"></p>
             </div>

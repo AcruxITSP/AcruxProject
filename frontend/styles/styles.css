@@ -2070,7 +2070,7 @@ form[form-id="form-reservar-externo"] #checkboxes-intervalos {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: 300px;
     height: 80px;
     border: 2px solid var(--gris2);
     border-radius: 10px;
@@ -2083,7 +2083,7 @@ form[form-id="form-reservar-externo"] #checkboxes-intervalos {
 #main-reservar-externo label[name="label"] p[name="text"] {
     text-align: center;
     line-height: 1.2;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 /* Ocultamos el checkbox nativo */
@@ -2120,6 +2120,7 @@ form[form-id="form-reservar-externo"] input[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     transition: background 0.2s;
+    width: 300px;
 }
 
 form[form-id="form-reservar-externo"] input[type="submit"]:hover {
@@ -2168,7 +2169,6 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
 #body-reservas-my {
     background: var(--celeste-palido1);
     min-height: 80vh;
-    padding-left: calc(400px + 2rem);
 }
 
 #body-reservas-my #reservas-container {
@@ -2216,7 +2216,6 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    background: var(--gris1);
     object-fit: cover;
 }
 
