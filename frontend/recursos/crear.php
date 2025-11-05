@@ -31,13 +31,13 @@ if (!esAdscripto()) {
                 <h1>Crear Recurso</h1>
 
                 <label for="localidad">Localidad</label>
-                <select name="localidad">
+                <select name="localidad" id="localidad">
                     <option value="externo">Externo</option>
                     <option value="interno">Interno</option>
                 </select>
 
                 <label for="tipo">Tipo</label>
-                <input name="tipo">
+                <input name="tipo" id="tipo">
 
                 <!-- aqui se moveran los inputs dependiendo de la localidad -->
                 <div id="inputs-segun-localidad">
@@ -53,12 +53,12 @@ if (!esAdscripto()) {
     <div id="inputs-apartados">
         <div id="inputs-para-externo">
             <label for="id_espacio">Espacio</label>
-            <select name="id_espacio">
+            <select name="id_espacio" id="id_espacio">
                 <option value="0">N/A</option>
             </select>
 
             <label for="cantidad_total">Cantidad</label>
-            <input type="number" name="cantidad_total" min="1" max="500"></input>
+            <input type="number" name="cantidad_total" id="cantidad_total" min="1" max="500"></input>
         </div>
 
         <div id="inputs-para-interno">
