@@ -954,7 +954,6 @@ select:focus {
 #modal-agregar-hora {
     position: fixed;
     inset: 0;
-    margin-left: 240px;
     background-color: var(--blanco);
     display: none;
     /* Hidden by default */
@@ -962,11 +961,11 @@ select:focus {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    backdrop-filter: blur(2px);
 }
 
+
 #modal-agregar-hora form {
-    background: var(--blanco);
+    background: var(--celeste-palido1);
     padding: 40px;
     border-radius: 14px;
     display: flex;
@@ -1025,6 +1024,12 @@ select:focus {
 
 [name="div-hora"] button[name="button-editar"]:hover {
     opacity: 0.9;
+}
+
+@media (min-width: 900px) {
+    #modal-agregar-hora {
+        margin-left: 240px;
+    }
 }
 
 
@@ -2450,6 +2455,10 @@ select:focus {
         left: -260px;
     }
 
+    .sidebar .sidebar-nav a{
+        margin-bottom: 1rem;
+    }
+
     .sidebar-header h2 {
         display: none;
     }
@@ -2655,11 +2664,6 @@ select:focus {
 /*///////////////////////////*/
 /* Pagina Registrar Ausencia */
 /*///////////////////////////*/
-
-#main-registrar-ausencia {
-    display: grid;
-    grid-row: 20vh 80vh;
-}
 
 #modal-registrar-ausencia {
     inset: 0;
