@@ -46,7 +46,7 @@
 }
 
 body {
-    background-color: var(--celeste-palido1);
+    background-color: var(--celeste-palido1) !important;
 }
 
 div#menues {
@@ -162,7 +162,6 @@ form#form-login input[type="submit"]:active {
 /*////////////////////////////*/
 
 #body-espacio-reservar {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
     min-height: 80vh;
     display: grid;
     grid-template-rows: 5rem 1fr;
@@ -383,7 +382,6 @@ form#form-login input[type="submit"]:active {
 
 /* ======== ESTILOS GENERALES ======== */
 #body-editar-horarios {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
@@ -683,7 +681,6 @@ select:focus {
 
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-docente {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 100vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
@@ -1260,7 +1257,6 @@ select:focus {
 
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-grupos {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
@@ -1677,7 +1673,6 @@ select:focus {
 
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-recursos {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
@@ -2002,7 +1997,6 @@ div[name="botones"] button:hover {
 /*/////////////////////////////////*/
 
 #body-reservar-externo {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--blanco));
     min-height: 80vh;
 }
 
@@ -3212,7 +3206,6 @@ div.targeta-intervalo {
 
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-cursos {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
@@ -3435,7 +3428,6 @@ select:focus {
 
 /* ======== ESTILOS GENERALES ======== */
 #body-crear-asignatura {
-    background: linear-gradient(135deg, var(--celeste-palido2), var(--celeste-palido1));
     min-height: 80vh;
     font-family: 'Segoe UI', Roboto, sans-serif;
     display: grid;
