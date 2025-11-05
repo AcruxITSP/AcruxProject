@@ -14,22 +14,24 @@
 
     <main class="main-content" id="main-registrar-ausencia">
         <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
-        
+
         <div id="modal-registrar-ausencia">
-            <form>
-                <h2>Registrar Ausencia</h2>
+            <form class="formulario-basico">
+                <h1>Registrar Ausencia</h1>
                 <label for="fechaInicio">Inicio <input type="date" id="fechaInicio"></label>
                 <label for="fechaFin">Fin <input type="date" id="fechaFin"></label>
 
-                <p>Horas</p>
-                <label for="allDay"><input type="checkbox" id="allDay"> Todo el día</label>
+                <label>Hora</label>
+                <label for="allDay" id="allday-label">Todo el día <input type="checkbox" id="allDay"></label>
 
                 <div id="lista-intervalos">
                     Aca van los intervalos
                 </div>
 
-                <p>Motivo</p>
-                <textarea id="input-motivo"></textarea>
+                <div>
+                    <label>Motivo</label>
+                    <textarea id="input-motivo"></textarea>
+                </div>
 
                 <input type="submit" value="Registrar">
             </form>

@@ -142,10 +142,7 @@ function uiMostrarHoras(horarios) {
  * (Placeholder) Muestra un mensaje indicando que la edición de módulos está en mantenimiento.
  */
 function irAEditarModulo(idModulo) {
-	Swal.fire({
-		title: "En mantenimiento",
-		icon: "info"
-	});
+	window.location.href = "editar.php";
 }
 
 /**
@@ -185,7 +182,7 @@ async function borrarHoraAsync() {
 	const formData = new FormData();
 	formData.append("nombre_dia", dia);
 	formData.append("id_grupo", domSelectGrupo.value);
-	let respuesta = await fetch("../../backend/horarios/grupos_borrar_hora.php", {method: "POST", body: formData});
+	let respuesta = await fetch("../../../backend/horarios/grupos_borrar_hora.php", {method: "POST", body: formData});
 	respuesta = await respuesta.json();
 
 	if (!respuesta.ok)
