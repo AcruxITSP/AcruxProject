@@ -243,7 +243,7 @@ form#form-login input[type="submit"]:active {
 #main-espacio-reservar label[name="label"] p[name="text"] {
     text-align: center;
     line-height: 1.2;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 /* Ocultamos el checkbox nativo */
@@ -277,9 +277,10 @@ form#form-login input[type="submit"]:active {
     color: var(--blanco);
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     cursor: pointer;
     transition: background 0.2s;
+    width: 500px;
 }
 
 #form-reservar-espacio input[type="submit"]:hover {
@@ -2112,7 +2113,7 @@ form[form-id="form-reservar-externo"] #checkboxes-intervalos {
 
 /* === BOTÓN SUBMIT === */
 form[form-id="form-reservar-externo"] input[type="submit"] {
-    background: var(--verde-claro);
+    background: var(--azul);
     color: var(--blanco);
     border: none;
     border-radius: 8px;
@@ -2123,7 +2124,7 @@ form[form-id="form-reservar-externo"] input[type="submit"] {
 }
 
 form[form-id="form-reservar-externo"] input[type="submit"]:hover {
-    background: var(--verde);
+    background: var(--azul-claro);
 }
 
 

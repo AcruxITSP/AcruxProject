@@ -32,6 +32,9 @@
           <option value="otro">Otro</option>
         </select>
 
+        <label for="numero">Número</label>
+        <input type="number" name="numero" id="numero" min="1" max="100">
+
         <label for="capacidad">Capacidad</label>
         <input type="number" name="capacidad" id="capacidad" min="1" max="500" placeholder="Ej: 30" required>
 
@@ -41,9 +44,9 @@
           <option value="Planta baja">Planta baja</option>
           <option value="primer piso">Primer piso </option>
           <option value="segundo piso">Segundo Piso </option>
+        </select>
 
-
-          <input type="submit" value="Registrar Espacio">
+        <input type="submit" value="Registrar Espacio">
       </form>
     </main>
   </div>
