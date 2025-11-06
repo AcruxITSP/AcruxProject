@@ -44,7 +44,7 @@
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
