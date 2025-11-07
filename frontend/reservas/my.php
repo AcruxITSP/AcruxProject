@@ -17,6 +17,8 @@
     </div>
 
     <div id="main-content">
+        <h2>Mis Reservas</h2>
+
         <main id="reservas-container">
 
         </main>
@@ -42,7 +44,7 @@
     <template id="template-div-reserva-espacio">
         <div name="div-reserva">
             <div class="div-reserva-top">
-                <img name="image">
+                <img name="image" src="../img/space-icon.png">
                 <h3 name="espacio">Salon 5</h3>
             </div>
             <div name="div-periodos"></div>

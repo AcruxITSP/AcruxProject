@@ -2171,6 +2171,12 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     min-height: 80vh;
 }
 
+#body-reservas-my #main-content { 
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    gap: 1rem;
+}
+
 #body-reservas-my #reservas-container {
     display: flex;
     justify-content: center;
@@ -2183,7 +2189,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     align-items: center;
     gap: 1.5rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 /** MIS RESERVAS **/
@@ -3674,4 +3680,78 @@ select:focus {
     #main-crear-asignatura form h1 {
         font-size: 1.5rem;
     }
+}
+
+/*//////////////////*/
+/* Pagina Contactos */
+/*//////////////////*/
+
+#body-contactos .main-content {
+    margin: 0;
+}
+
+#body-contactos h2 {
+    margin-bottom: 2rem;
+}
+
+#body-contactos h3 {
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+#body-contactos #contacto-itsp {
+    height: 6rem;
+    width: 100%;
+    border: 1px solid var(--negro);
+}
+
+#body-contactos #contactos-equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#body-contactos .targeta-contacto { 
+    width: 18rem;
+    border: 1px solid var(--negro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+#body-contactos .targeta-contacto:not(#contacto-itsp) {
+    border-radius: 5%;
+}
+
+#body-contactos .targeta-contacto img {
+    width: 6rem;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+#body-contactos .targeta-contacto .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+#body-contactos .targeta-contacto .area-especializacion {
+    color: var(--gris4);
+}
+
+#body-contactos h2.nombre {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+#body-contactos .targeta-contacto .contactos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    width: 100%;
 }
