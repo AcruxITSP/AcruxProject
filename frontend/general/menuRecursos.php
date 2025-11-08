@@ -11,7 +11,7 @@
     
 </head>
 
-<body id="body-menuRecursos">
+<body id="body-menuRecurso">
     <!-- Botón hamburguesa -->
     <button class="hamburger" onclick="toggleSidebar()">
     <i class="fas fa-bars"></i> 
@@ -39,7 +39,7 @@
                     <i class="fas fa-chalkboard icon-card"></i>
                     <span>Espacios</span>
                 </a>
-                <a href="../horarios/grupos.php" class="resource-card">
+                <a href="../horarios/grupos/ver.php" class="resource-card">
                     <i class="fas fa-calendar-days icon-card"></i>
                     <span>Horarios</span>
                 </a>
@@ -51,11 +51,11 @@
                     <i class="fas fa-book icon-card"></i>
                     <span>Asignaturas</span>
                 </a>
-                <a href="#"class="resource-card">
+                <a href="../grupos/ver.php"class="resource-card">
                     <i class="fas fa-users icon-card"></i>
                     <span>Grupos</span>
                 </a>
-                <a href="#" class="resource-card">
+                <a href="../ausencias/ver.php" class="resource-card">
                     <i class="fas fa-user-tie icon-card"></i>
                     <span>Ausencias</span>
                 </a>

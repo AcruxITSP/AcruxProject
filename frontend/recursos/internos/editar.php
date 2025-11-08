@@ -17,28 +17,33 @@ if (!estaLogeado()) {
     <title>Document</title>
 </head>
 
-<body id="body-recurso-interno-editar">
-    <?php include_once __DIR__ . '/../../includes/blockSidebarMenu.php' ?>
-    <?php include_once __DIR__ . '/../../includes/blockTopHeader.php' ?>
-    
-    <main>
-        <form id="form">
-            <h1>Editar Recurso Interno</h1>
-            <label for="imagen">Imagen</label>
-            <input type="file" name="imagen">
+<body id="body-recurso-interno-editar" class="menues-incluidos">
+    <div id="menues">
+        <?php include_once '../../includes/blockSidebarMenu.php' ?>
+        <?php include_once '../../includes/blockTopHeader.php' ?>
+    </div>
 
-            <label for="tipo">Tipo</label>
-            <select name="tipo"></select>
+    <div id="main-content">
+        <main class="main-formulario-basico">
+            <form class="formulario-basico">
+                <h1>Editar Recurso Interno</h1>
+                
+                <label for="imagen">Imágen</label>
+                <input type="file" name="imagen">
 
-            <label for="espacio">Espacio</label>
-            <select name="espacio"></select>
+                <label for="tipo">Tipo</label>
+                <select name="tipo"></select>
 
-            <label for="number">Cantidad</label>
-            <input type="number" name="cantidad" min="0" max="500"></input>
+                <label for="espacio">Espacio</label>
+                <select name="espacio"></select>
 
-            <input type="submit" value="Registrar Recurso">
-        </form>
-    </main>
+                <label for="number">Cantidad</label>
+                <input type="number" name="cantidad" min="0" max="500"></input>
+
+                <input type="submit" value="Guardar">
+            </form>
+        </main>
+    </div>
 
     <script src="crear.js"></script>
     <script src="../../scripts/menuHamburgesa.js"></script>

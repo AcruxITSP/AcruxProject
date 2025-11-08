@@ -11,18 +11,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body id="body-crear-docente">
+<body id="body-crear-docente" class="menues-incluidos">
     <div id="menues">
-        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' 
-        ?>
-        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' 
-        ?>
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
     </div>
 
     <div id="main-content">
         <main id="main-crear-docente">
             <form id="form-crear-docente">
                 <h1>Crear Docente</h1>
+                
                 <div id="grid">
                     <div id="inputs">
                         <input type="text" placeholder="nombre">
@@ -39,8 +38,6 @@
                 </div>
 
                 <input type="submit" value="Crear">
-
-
             </form>
         </main>
     </div>

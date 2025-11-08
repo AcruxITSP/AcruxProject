@@ -61,7 +61,7 @@ CREATE TABLE Curso (
 DROP TABLE IF EXISTS Materia;
 CREATE TABLE Materia (
   id_materia INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(30) NOT NULL UNIQUE
+    nombre VARCHAR(30) UNIQUE NOT NULL
 );
 
 DROP TABLE IF EXISTS Curso_Materia;
@@ -139,8 +139,10 @@ CREATE TABLE Clase (
 DROP TABLE IF EXISTS Espacio;
 CREATE TABLE Espacio (
     id_espacio INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    tipo ENUM('Salón', 'Aula', 'Lab. Física', 'Lab. Química', 'SUM', 'Zoom', 'Taller Manenimiento', 'Taller Electrónica', 'Taller', 'Laboratorio') NOT NULL DEFAULT 'Salon', -- Ejemplo: Id de la entrada 'Salon' o 'Aula'
-    numero INT UNSIGNED NULL -- Ejemplo: 1 (para Aula 1, o Salon 1)
+    tipo ENUM('Salón', 'Aula', 'Lab. Física', 'Lab. Química', 'Videoconferencias', 'Taller Mantenimiento', 'Taller Electrónica', 'Taller', 'Laboratorio') NOT NULL DEFAULT 'Salón', -- Ejemplo: Id de la entrada 'Salon' o 'Aula'
+    numero INT UNSIGNED NULL, -- Ejemplo: 1 (para Aula 1, o Salon 1)
+    capacidad INT UNSIGNED NOT NULL,
+    ubicacion ENUM('Planta baja', 'Primer piso', 'Segundo piso') NOT NULL DEFAULT 'Planta baja'
 );
 
 -- Contiene las informacion sobre que recurso interno tiene cada aula
@@ -349,9 +351,9 @@ INSERT INTO PeriodoReservaRecurso (id_reserva, id_periodo) VALUES
 (2, 3),
 (3, 5);
 
-INSERT INTO Espacio (id_espacio, tipo, numero) VALUES
-(1, "Salón", 5),
-(2, "Aula", 1);
+INSERT INTO Espacio (id_espacio, tipo, numero, capacidad, ubicacion) VALUES
+(1, "Salón", 5, 30, 'Planta baja'),
+(2, "Aula", 1, 20, 'Segundo piso');
 
 INSERT INTO Grupo (id_adscrito, grado, nombre) VALUES
 (1, 3, 'MD'),

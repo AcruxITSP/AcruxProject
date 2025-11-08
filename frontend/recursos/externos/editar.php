@@ -9,30 +9,35 @@
     <title>Document</title>
 </head>
 
-<body id="body-recurso-externo-editar">
-    <?php include_once '../../includes/blockSidebarMenu.php' ?>
-    <?php include_once '../../includes/blockTopHeader.php' ?>
+<body id="body-recurso-externo-editar" class="menues-incluidos">
+    <div id="menues">
+        <?php include_once '../../includes/blockSidebarMenu.php' ?>
+        <?php include_once '../../includes/blockTopHeader.php' ?>
+    </div>
 
-    <main>
-        <form id="form">
-            <h1>Editar Recurso Externo</h1>
-            <label for="imagen">Imagen</label>
-            <input type="file" name="imagen">
+    <div id="main-content">
+        <main class="main-formulario-basico">
+            <form class="formulario-basico">
+                <h1>Editar Recurso Externo</h1>
 
-            <label for="tipo">Tipo</label>
-            <select name="tipo"></select>
+                <label for="imagen">Imágen</label>
+                <input type="file" name="imagen" id="imagen">
 
-            <label for="espacio">Espacio</label>
-            <select name="espacio">
-                <option value="0">No es especifico al espacio.</option>
-            </select>
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo"></select>
 
-            <label for="number">Cantidad</label>
-            <input type="number" name="cantidad" min="0" max="500"></input>
+                <label for="espacio">Espacio</label>
+                <select name="espacio" id="espacio">
+                    <option value="0">No se especificó el espacio.</option>
+                </select>
 
-            <input type="submit" value="Registrar Recurso">
-        </form>
-    </main>
+                <label for="number">Cantidad</label>
+                <input type="number" name="cantidad" min="0" max="500" id="number"></input>
+
+                <input type="submit" value="Guardar">
+            </form>
+        </main>
+    </div>
 
     <script src="../../scripts/recursos_externos_editar.js"></script>
     <script src="../../scripts/menuHamburgesa.js"></script>
