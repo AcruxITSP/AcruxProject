@@ -13,26 +13,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     if(!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
 
-    if(!isset($_POST['nombre'])) Respuestas::enviarError("NECESITA_NOMBRE");
-    if(!isset($_POST['id_profesores'])) Respuestas::enviarError("NECESITA_ID_PROFESORES");
+    if(!isset($_POST['tipo'])) Respuestas::enviarError("NECESITA_TIPO");
+    if(!isset($_POST['numero'])) Respuestas::enviarError("NECESITA_NUMERO");
+    if(!isset($_POST['capacidad'])) Respuestas::enviarError("NECESITA_CAPACIDAD");
+    if(!isset($_POST['ubicacion'])) Respuestas::enviarError("NECESITA_UBICACION");
 
-    $nombre = $_POST['nombre'];
-    $idProfesores = $_POST['id_profesores'];
+    $tipo = $_POST['tipo'];
+    $numero = $_POST['numero'];
+    $capacidad = $_POST['capacidad'];
+    $ubicacion = $_POST['ubicacion'];
 
     $con = connectDb();
     $con->begin_transaction();
 
-    $sql = "INSERT INTO materia(nombre) VALUES (?)";
-    $result = SQL::actionQuery($con, $sql, "s", $nombre);
+    $sql = "INSERT INTO Espacio(tipo, numero, capacidad, ubicacion) VALUES (?, ?, ?, ?)";
+    $result = SQL::actionQuery($con, $sql, "siis", $tipo, $numero, $capacidad, $ubicacion);
     if($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
-    $idMateria = $con->insert_id;
-
-    foreach($idProfesores as $idProfesor)
-    {
-        $sql = "INSERT INTO clase(id_materia, id_profesor) VALUES (?, ?)";
-        $result = SQL::actionQuery($con, $sql, "ii", $idMateria, $idProfesor);
-        if($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
-    }
 
     Respuestas::enviarOk(null, $con);
 }

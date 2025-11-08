@@ -139,7 +139,7 @@ CREATE TABLE Clase (
 DROP TABLE IF EXISTS Espacio;
 CREATE TABLE Espacio (
     id_espacio INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    tipo ENUM('Salón', 'Aula', 'Lab. Física', 'Lab. Química', 'Videoconferencias', 'Taller Mantenimiento', 'Taller Electrónica', 'Taller', 'Laboratorio') NOT NULL DEFAULT 'Salón', -- Ejemplo: Id de la entrada 'Salon' o 'Aula'
+    tipo ENUM('Salón', 'Aula', 'Lab. Física', 'Lab. Química', 'Videoconferencias', 'Taller Mantenimiento', 'Taller Electrónica', 'Taller', 'Laboratorio') NOT NULL DEFAULT 'Salón', 
     numero INT UNSIGNED NULL, -- Ejemplo: 1 (para Aula 1, o Salon 1)
     capacidad INT UNSIGNED NOT NULL,
     ubicacion ENUM('Planta baja', 'Primer piso', 'Segundo piso') NOT NULL DEFAULT 'Planta baja'
@@ -277,6 +277,15 @@ ALTER TABLE Curso_Materia
   ADD CONSTRAINT fk__curso_materia_materia FOREIGN KEY (id_materia) REFERENCES Materia(id_materia) ON DELETE CASCADE;
 
 -- ============================
+-- ESPACIOS
+-- ============================
+
+ALTER TABLE Espacio
+  ADD CONSTRAINT unique_tipo_numero UNIQUE (tipo, numero), -- Evitar que 2 espacios tengan el mismo "tipo" y "numero"
+  ADD CONSTRAINT chk_tipo_not_empty CHECK (tipo <> ''), -- Evitar que el atributo "tipo" contenga un string vacío
+  ADD CONSTRAINT chk_ubicacion_not_empty CHECK (ubicacion <> '');
+
+-- ============================
 -- RESERVAS DE ESPACIOS
 -- ============================
 
@@ -381,7 +390,9 @@ INSERT INTO Dia (id_dia, nombre) VALUES
 (2, 'Martes'),
 (3, 'Miercoles'),
 (4, 'Jueves'),
-(5, 'Viernes');
+(5, 'Viernes'),
+(6, 'Sábado'),
+(7, 'Domingo');
 
 INSERT INTO Hora (id_hora, id_dia, id_periodo) VALUES
 ( 1, 1, 1),
