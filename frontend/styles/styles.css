@@ -1315,6 +1315,10 @@ select:focus {
     margin-top: 2rem;
 }
 
+#main-crear-grupos #form-crear .codigo-grupo label {
+    margin-top: 0;
+}
+
 #main-crear-grupos #form-crear input,
 select {
     padding: 10px 12px;
@@ -1333,6 +1337,7 @@ select:focus {
 
 #main-crear-grupos #form-crear .codigo-grupo {
     display: grid;
+    grid-template-rows: 2rem 1fr;
     grid-template-columns: 30% 68%;
     gap: 2%;
 }

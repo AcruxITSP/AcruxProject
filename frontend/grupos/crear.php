@@ -23,8 +23,10 @@
                 <h1>Crear Grupo</h1>
 
                 <div class="codigo-grupo">
+                    <label>Grupo</label>
+                    <label>Nombre</label>
                     <input type="text" placeholder="Grado" class="grado-grupo">
-                    <input type="text" placeholder="nombre" class="nombre-grupo">
+                    <input type="text" placeholder="Nombre" class="nombre-grupo">
                 </div>
 
                 <label for="curso">Curso</label>

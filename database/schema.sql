@@ -122,7 +122,7 @@ CREATE TABLE Grupo (
   id_grupo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_adscrito INT UNSIGNED NULL, -- puede quedar NULL si se borra adscrito
     grado ENUM('1', '2', '3', '4') NOT NULL, -- Ejemplo: 1 - Primero, 2 - Segundo, 3 - Tercero
-    nombre VARCHAR(5), -- Ejemplo: MD, MA, etc.
+    nombre VARCHAR(5) NOT NULL, -- Ejemplo: MD, MA, etc.
     id_curso INT UNSIGNED NULL
 );
 
@@ -210,6 +210,20 @@ CREATE TABLE PeriodoReservaEspacio (
 -- -- -- -- RESTRICCIONES DE CLAVES FORANEAS
 
 -- ============================
+-- ENUMs ESTRICTOS
+-- ============================
+
+ALTER TABLE Espacio
+  ADD CONSTRAINT chk_tipo_not_empty CHECK (tipo <> ''), -- Evitar que el atributo "tipo" contenga un string vacío
+  ADD CONSTRAINT chk_ubicacion_not_empty CHECK (ubicacion <> '');
+
+ALTER TABLE Dia
+  ADD CONSTRAINT chk_nombre_not_empty CHECK (nombre <> '');
+
+ALTER TABLE Grupo
+  ADD CONSTRAINT chk_grado_not_empty CHECK (grado <> '');
+
+-- ============================
 -- USUARIOS BASE
 -- ============================
 
@@ -240,7 +254,8 @@ ALTER TABLE Ausencia_IntervaloAusencia
 
 ALTER TABLE Grupo
   ADD CONSTRAINT fk__grupo_adscrito FOREIGN KEY (id_adscrito) REFERENCES Adscrito(id_adscrito) ON DELETE SET NULL,
-  ADD CONSTRAINT fk__grupo_curso FOREIGN KEY (id_curso) REFERENCES Curso(id_curso) ON DELETE SET NULL;
+  ADD CONSTRAINT fk__grupo_curso FOREIGN KEY (id_curso) REFERENCES Curso(id_curso) ON DELETE SET NULL,
+  ADD CONSTRAINT unique_nombre_grado UNIQUE (nombre, grado); -- Evitar que 2 espacios tengan el mismo "tipo" y "numero"
 
 -- ============================
 -- HORAS
@@ -281,9 +296,7 @@ ALTER TABLE Curso_Materia
 -- ============================
 
 ALTER TABLE Espacio
-  ADD CONSTRAINT unique_tipo_numero UNIQUE (tipo, numero), -- Evitar que 2 espacios tengan el mismo "tipo" y "numero"
-  ADD CONSTRAINT chk_tipo_not_empty CHECK (tipo <> ''), -- Evitar que el atributo "tipo" contenga un string vacío
-  ADD CONSTRAINT chk_ubicacion_not_empty CHECK (ubicacion <> '');
+  ADD CONSTRAINT unique_tipo_numero UNIQUE (tipo, numero); -- Evitar que 2 espacios tengan el mismo "tipo" y "numero"
 
 -- ============================
 -- RESERVAS DE ESPACIOS
