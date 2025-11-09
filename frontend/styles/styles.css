@@ -2443,6 +2443,10 @@ select:focus {
     background-color: var(--azul-oscuro);
 }
 
+.show {
+    display: block !important;
+}
+
 
 /*---------------------------------*/
 /* Responsive para clases generales*/
@@ -2780,9 +2784,47 @@ select:focus {
     background-color: var(--azul-claro);
 }
 
-#modal-registrar-ausencia #lista-intervalos {
-    height: 3rem;
+#modal-registrar-ausencia #select-intervalos {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#modal-registrar-ausencia #label-opcionesIntervalos {
+    user-select: none;
+    cursor: pointer;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    background-color: var(--blanco);
+    width: 100%;
+    max-height: 12rem;
+    margin-bottom: 5rem;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos label {
+    color: var(--negro);
     border: 1px solid var(--negro);
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos label:hover {
+    border-color: var(--verde-claro);
+}
+
+#modal-registrar-ausencia #opcionesIntervalos input[type="checkbox"]{
+    display: none;
+}
+
+label:has(input[type="checkbox"]:checked) {
+    background-color: var(--verde-claro);
+    border-color: var(--verde-claro) !important;
 }
 
 #modal-registrar-ausencia #input-motivo {
