@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body id="body-crear-cursos">
+<body id="body-crear-cursos" class="menues-incluidos">
     <div id="menues">
         <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
         <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
@@ -24,7 +24,8 @@
                 <input type="text" placeholder="Nombre">
                 <textarea placeholder="Descripcion"></textarea>
                 <div class="div-vacio"> Div vacio</div>
-                <input type="submit" value="Guardar">
+
+                <input type="submit" value="Registrar">
             </form>
         </main>
     </div>

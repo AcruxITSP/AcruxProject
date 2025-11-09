@@ -13,12 +13,6 @@ $root = "/frontend";
     <a href="<?= $root ?>/general/menuRecursos.php"><i class="fas fa-book"></i> Dashboard</a>
     <a href="<?= $root ?>/general/contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
 
-    <?php @session_start(); ?>
-    <?php if (isset($_SESSION['username'])) : ?>
-      <a href="../cuenta/logout.php"><i class="fas fa-envelope"></i>Cerrar Sesion</a>
-    <?php else: ?>
-      <a href="../cuenta/login.php"><i class="fas fa-envelope"></i>Iniciar Sesion</a>
-    <?php endif; ?>
     <!-- <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a> -->
     <!-- <a href="#"><i class="fas fa-list"></i> Parte Diario</a> -->
   </nav>

@@ -27,3 +27,5 @@
 - Validar la disponibilidad de recursos en backend (si no esta hecho)
 - Hacer que la validacion de profe libre para asignar horario sea en backend tambien.
 - Hacer que la validacion de espacio libre para asignar horario sea backend tambien.
+
+---

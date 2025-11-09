@@ -10,20 +10,22 @@
     <?php require __DIR__ . '/../includes/header.php' ?>
 </head>
 
-<body id="body-reservas-my">
+<body id="body-reservas-my" class="menues-incluidos">
     <div id="menues">
         <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
         <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
     </div>
 
-    <main id="reservas-container">
+    <div id="main-content">
+        <main id="reservas-container">
 
-    </main>
+        </main>
+    </div>
 
     <template id="template-div-reserva-recurso">
         <div name="div-reserva">
             <div class="div-reserva-top">
-                <img name="image">
+                <img name="image" src="../img/resource-icon.png">
                 <div class="titulos-reserva-recurso">
                     <h3 name="tipo">Control TV S5</h3>
                     <h5 name="espacio">Salon 5</h5>

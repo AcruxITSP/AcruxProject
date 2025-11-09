@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Mi cuenta</title>
 </head>
-<body>
-    <h2>Mi cuenta</h2>
-    <br>
-    <a href="index.php">Volver al menu</a>
+
+<body class="menues-incluidos">
+    <div id="menues">
+        <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
+        <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
+    </div>
+
+    <div id="main-content">
+        <h2>Mi cuenta</h2>
+
+        <button class="btn-volver" onclick="history.back()" title="Volver">
+            <i class="bi bi-arrow-left"></i>
+        </button>
+    </div>
+
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
+
 </html>
