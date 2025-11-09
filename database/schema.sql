@@ -350,8 +350,13 @@ INSERT INTO PeriodoReservaRecurso (id_reserva, id_periodo) VALUES
 (3, 5);
 
 INSERT INTO Espacio (id_espacio, tipo, numero) VALUES
-(1, "Salón", 5),
-(2, "Aula", 1);
+(1, "Salon", 5),
+(2, "Aula", 1),
+(3, "Salon", 1),
+(4, "Salon", 2),
+(5, "Salon", 3),
+(6, "Aula", 2),
+(7, "Aula", 3);
 
 INSERT INTO Grupo (id_adscrito, grado, nombre) VALUES
 (1, 3, 'MD'),
