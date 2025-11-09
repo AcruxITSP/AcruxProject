@@ -22,14 +22,14 @@
                 <div name="targeta-grupo">
                     <div name="encabezado">
                         <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo">3MD</h1>
+                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
                     </div>
                     <div name="info-grupo">
                         <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta">Silvana Salvatierra</p>
+                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
 
                         <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso">Informática</p>
+                        <p class="nombre-curso" name="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
                         <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
@@ -39,14 +39,14 @@
                 <div name="targeta-grupo">
                     <div name="encabezado">
                         <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo">3MD</h1>
+                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
                     </div>
                     <div name="info-grupo">
                         <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta">Silvana Salvatierra</p>
+                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
 
                         <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso">Informática</p>
+                        <p class="nombre-curso" name="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
                         <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
@@ -56,14 +56,14 @@
                 <div name="targeta-grupo">
                     <div name="encabezado">
                         <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo">3MD</h1>
+                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
                     </div>
                     <div name="info-grupo">
                         <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta">Silvana Salvatierra</p>
+                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
 
                         <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso">Informática</p>
+                        <p class="nombre-curso" name="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
                         <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
@@ -73,14 +73,14 @@
                 <div name="targeta-grupo">
                     <div name="encabezado">
                         <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo">3MD</h1>
+                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
                     </div>
                     <div name="info-grupo">
                         <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta">Silvana Salvatierra</p>
+                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
 
                         <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso">Informática</p>
+                        <p class="nombre-curso" name="nombre-curso">Informática</p>
                     </div>
                     <div name="botones">
                         <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
@@ -98,14 +98,14 @@
         <div name="targeta-grupo">
             <div name="encabezado">
                 <div class="marco-imagen"></div>
-                <h1 class="nombre-grupo"></h1>
+                <h1 class="nombre-grupo" name="nombre-grupo"></h1>
             </div>
             <div name="info-grupo">
                 <p><strong>Adscripto/a: </strong></p>
-                <p class="nombre-adscripta">Silvana Salvatierra</p>
+                <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
 
                 <p><strong>Curso: </strong></p>
-                <p class="nombre-curso">Informática</p>
+                <p class="nombre-curso" name="nombre-curso">Informática</p>
             </div>
             <div name="botones">
                 <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
@@ -118,7 +118,7 @@
         <i class="bi bi-arrow-left"></i>
     </button>
 
-    <!-- <script src="../scripts/crear_targeta_grupo.js"></script> -->
+    <script src="../scripts/grupos_ver.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
