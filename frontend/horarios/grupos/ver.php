@@ -44,13 +44,13 @@
                 <div name="periodo-inicio-container"></div>
 
                 <label for="materia">Materia</label>
-                <select name="materia"></select>
+                <select name="materia" id="materia"></select>
 
                 <label for="profesor">Profesor</label>
-                <select name="profesor"></select>
+                <select name="profesor" id="profesor"></select>
 
                 <label for="espacio">Espacio</label>
-                <select name="espacio"></select>
+                <select name="espacio" id="espacio"></select>
 
                 <p id="modal-error-profe-ocupado">El profesor se encuentra ocupado en este horario.</p>
                 <p id="modal-error-espacio-ocupado">El espacio se encuentra ocupado en este horario.</p>

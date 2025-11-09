@@ -122,7 +122,7 @@ CREATE TABLE Grupo (
   id_grupo INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_adscrito INT UNSIGNED NULL, -- puede quedar NULL si se borra adscrito
     grado ENUM('1', '2', '3', '4') NOT NULL, -- Ejemplo: 1 - Primero, 2 - Segundo, 3 - Tercero
-    nombre VARCHAR(5), -- Ejemplo: MD, MA, etc.
+    nombre VARCHAR(5) NOT NULL, -- Ejemplo: MD, MA, etc.
     id_curso INT UNSIGNED NULL
 );
 
@@ -139,8 +139,10 @@ CREATE TABLE Clase (
 DROP TABLE IF EXISTS Espacio;
 CREATE TABLE Espacio (
     id_espacio INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    tipo ENUM('Salón', 'Aula', 'Lab. Física', 'Lab. Química', 'SUM', 'Zoom', 'Taller Manenimiento', 'Taller Electrónica', 'Taller', 'Laboratorio') NOT NULL DEFAULT 'Salon', -- Ejemplo: Id de la entrada 'Salon' o 'Aula'
-    numero INT UNSIGNED NULL -- Ejemplo: 1 (para Aula 1, o Salon 1)
+    tipo ENUM('Salón', 'Aula', 'Lab. Física', 'Lab. Química', 'Videoconferencias', 'Taller Mantenimiento', 'Taller Electrónica', 'Taller', 'Laboratorio') NOT NULL DEFAULT 'Salón', 
+    numero INT UNSIGNED NULL, -- Ejemplo: 1 (para Aula 1, o Salon 1)
+    capacidad INT UNSIGNED NOT NULL,
+    ubicacion ENUM('Planta baja', 'Primer piso', 'Segundo piso') NOT NULL DEFAULT 'Planta baja'
 );
 
 -- Contiene las informacion sobre que recurso interno tiene cada aula
@@ -208,6 +210,20 @@ CREATE TABLE PeriodoReservaEspacio (
 -- -- -- -- RESTRICCIONES DE CLAVES FORANEAS
 
 -- ============================
+-- ENUMs ESTRICTOS
+-- ============================
+
+ALTER TABLE Espacio
+  ADD CONSTRAINT chk_tipo_not_empty CHECK (tipo <> ''), -- Evitar que el atributo "tipo" contenga un string vacío
+  ADD CONSTRAINT chk_ubicacion_not_empty CHECK (ubicacion <> '');
+
+ALTER TABLE Dia
+  ADD CONSTRAINT chk_nombre_not_empty CHECK (nombre <> '');
+
+ALTER TABLE Grupo
+  ADD CONSTRAINT chk_grado_not_empty CHECK (grado <> '');
+
+-- ============================
 -- USUARIOS BASE
 -- ============================
 
@@ -238,7 +254,8 @@ ALTER TABLE Ausencia_IntervaloAusencia
 
 ALTER TABLE Grupo
   ADD CONSTRAINT fk__grupo_adscrito FOREIGN KEY (id_adscrito) REFERENCES Adscrito(id_adscrito) ON DELETE SET NULL,
-  ADD CONSTRAINT fk__grupo_curso FOREIGN KEY (id_curso) REFERENCES Curso(id_curso) ON DELETE SET NULL;
+  ADD CONSTRAINT fk__grupo_curso FOREIGN KEY (id_curso) REFERENCES Curso(id_curso) ON DELETE SET NULL,
+  ADD CONSTRAINT unique_nombre_grado UNIQUE (nombre, grado); -- Evitar que 2 espacios tengan el mismo "tipo" y "numero"
 
 -- ============================
 -- HORAS
@@ -273,6 +290,13 @@ ALTER TABLE Clase
 ALTER TABLE Curso_Materia
   ADD CONSTRAINT fk__curso_materia_curso FOREIGN KEY (id_curso) REFERENCES Curso(id_curso) ON DELETE CASCADE,
   ADD CONSTRAINT fk__curso_materia_materia FOREIGN KEY (id_materia) REFERENCES Materia(id_materia) ON DELETE CASCADE;
+
+-- ============================
+-- ESPACIOS
+-- ============================
+
+ALTER TABLE Espacio
+  ADD CONSTRAINT unique_tipo_numero UNIQUE (tipo, numero); -- Evitar que 2 espacios tengan el mismo "tipo" y "numero"
 
 -- ============================
 -- RESERVAS DE ESPACIOS
@@ -349,14 +373,9 @@ INSERT INTO PeriodoReservaRecurso (id_reserva, id_periodo) VALUES
 (2, 3),
 (3, 5);
 
-INSERT INTO Espacio (id_espacio, tipo, numero) VALUES
-(1, "Salon", 5),
-(2, "Aula", 1),
-(3, "Salon", 1),
-(4, "Salon", 2),
-(5, "Salon", 3),
-(6, "Aula", 2),
-(7, "Aula", 3);
+INSERT INTO Espacio (id_espacio, tipo, numero, capacidad, ubicacion) VALUES
+(1, "Salón", 5, 30, 'Planta baja'),
+(2, "Aula", 1, 20, 'Segundo piso');
 
 INSERT INTO Grupo (id_adscrito, grado, nombre) VALUES
 (1, 3, 'MD'),
@@ -384,7 +403,9 @@ INSERT INTO Dia (id_dia, nombre) VALUES
 (2, 'Martes'),
 (3, 'Miercoles'),
 (4, 'Jueves'),
-(5, 'Viernes');
+(5, 'Viernes'),
+(6, 'Sábado'),
+(7, 'Domingo');
 
 INSERT INTO Hora (id_hora, id_dia, id_periodo) VALUES
 ( 1, 1, 1),

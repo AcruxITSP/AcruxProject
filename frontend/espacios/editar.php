@@ -48,8 +48,8 @@
         </main>
     </div>
 
-    <script src="../../scripts/menuHamburgesa.js"></script>
-    <script src="../../scripts/dropdownMenu.js"></script>
+    <script src="../scripts/menuHamburgesa.js"></script>
+    <script src="../scripts/dropdownMenu.js"></script>
 </body>
 
 </html>

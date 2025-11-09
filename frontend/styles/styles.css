@@ -243,7 +243,7 @@ form#form-login input[type="submit"]:active {
 #main-espacio-reservar label[name="label"] p[name="text"] {
     text-align: center;
     line-height: 1.2;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 /* Ocultamos el checkbox nativo */
@@ -277,9 +277,10 @@ form#form-login input[type="submit"]:active {
     color: var(--blanco);
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     cursor: pointer;
     transition: background 0.2s;
+    width: 500px;
 }
 
 #form-reservar-espacio input[type="submit"]:hover {
@@ -954,7 +955,6 @@ select:focus {
 #modal-agregar-hora {
     position: fixed;
     inset: 0;
-    margin-left: 240px;
     background-color: var(--blanco);
     display: none;
     /* Hidden by default */
@@ -962,11 +962,11 @@ select:focus {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    backdrop-filter: blur(2px);
 }
 
+
 #modal-agregar-hora form {
-    background: var(--blanco);
+    background: var(--celeste-palido1);
     padding: 40px;
     border-radius: 14px;
     display: flex;
@@ -1025,6 +1025,12 @@ select:focus {
 
 [name="div-hora"] button[name="button-editar"]:hover {
     opacity: 0.9;
+}
+
+@media (min-width: 900px) {
+    #modal-agregar-hora {
+        margin-left: 240px;
+    }
 }
 
 
@@ -1309,6 +1315,10 @@ select:focus {
     margin-top: 2rem;
 }
 
+#main-crear-grupos #form-crear .codigo-grupo label {
+    margin-top: 0;
+}
+
 #main-crear-grupos #form-crear input,
 select {
     padding: 10px 12px;
@@ -1327,6 +1337,7 @@ select:focus {
 
 #main-crear-grupos #form-crear .codigo-grupo {
     display: grid;
+    grid-template-rows: 2rem 1fr;
     grid-template-columns: 30% 68%;
     gap: 2%;
 }
@@ -2107,7 +2118,7 @@ form[form-id="form-reservar-externo"] #checkboxes-intervalos {
 
 /* === BOTÓN SUBMIT === */
 form[form-id="form-reservar-externo"] input[type="submit"] {
-    background: var(--verde-claro);
+    background: var(--azul);
     color: var(--blanco);
     border: none;
     border-radius: 8px;
@@ -2118,7 +2129,7 @@ form[form-id="form-reservar-externo"] input[type="submit"] {
 }
 
 form[form-id="form-reservar-externo"] input[type="submit"]:hover {
-    background: var(--verde);
+    background: var(--azul-claro);
 }
 
 
@@ -2165,6 +2176,12 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     min-height: 80vh;
 }
 
+#body-reservas-my #main-content {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    gap: 1rem;
+}
+
 #body-reservas-my #reservas-container {
     display: flex;
     justify-content: center;
@@ -2177,7 +2194,7 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     align-items: center;
     gap: 1.5rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 /** MIS RESERVAS **/
@@ -2450,6 +2467,10 @@ select:focus {
         left: -260px;
     }
 
+    .sidebar .sidebar-nav a {
+        margin-bottom: 1rem;
+    }
+
     .sidebar-header h2 {
         display: none;
     }
@@ -2656,11 +2677,6 @@ select:focus {
 /* Pagina Registrar Ausencia */
 /*///////////////////////////*/
 
-#main-registrar-ausencia {
-    display: grid;
-    grid-row: 20vh 80vh;
-}
-
 #modal-registrar-ausencia {
     inset: 0;
     display: flex;
@@ -2749,6 +2765,150 @@ select:focus {
     box-sizing: border-box;
     margin-top: 0;
     border-color: var(--gris3);
+}
+
+
+/*///////////////////////*/
+/*  Página Mis Ausencias */
+/*///////////////////////*/
+
+#body-mis-ausencias {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+#body-mis-ausencias #main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#body-mis-ausencias #main-content h2 {
+    font-size: 1.8rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+/* === MAIN === */
+#main-mis-ausencias {
+    display: grid;
+    grid-template-columns: 50% 48%;
+    gap: 2%;
+    height: auto;
+}
+
+/* === LISTA DE USUARIOS === */
+#body-mis-ausencias .scrollable-list {
+    background-color: var(--celeste-palido2);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px var(--sombra);
+    overflow-y: auto;
+    max-height: 85vh;
+}
+
+#body-mis-ausencias #scrollable-list-ausencias {
+    min-width: 60vh;
+}
+
+/* === TARJETAS DE AUSENCIA === */
+#body-mis-ausencias .targeta-ausencia {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris2);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px var(--sombra);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#body-mis-ausencias .targeta-ausencia:hover {
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 3px 8px var(--sombra-azul);
+}
+
+/* === ENCABEZADO DE FECHA Y HORA === */
+#body-mis-ausencias .container-hora-fecha {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--celeste-palido1);
+    border-radius: 6px;
+    color: var(--gris6);
+    font-weight: 600;
+    text-align: center;
+}
+
+#body-mis-ausencias .targeta-ausencia hr.horizontal {
+    border: none;
+    border-top: 1px solid var(--gris3);
+    margin: 0.7rem 0;
+}
+
+#body-mis-ausencias .targeta-ausencia hr.vertical {
+    border: none;
+    border-left: 1px solid var(--gris4);
+    height: 1.5rem;
+}
+
+/* === MOTIVO === */
+#body-mis-ausencias .motivo-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--celeste-palido2);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    color: var(--gris6);
+    font-size: 0.95rem;
+}
+
+#body-mis-ausencias .motivo-container strong {
+    color: var(--azul-oscuro);
+}
+
+/* === SCROLL === */
+#body-mis-ausencias .scrollable-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#body-mis-ausencias .scrollable-list::-webkit-scrollbar-thumb {
+    background-color: var(--gris3);
+    border-radius: 4px;
+}
+
+#body-mis-ausencias .formulario-basico {
+    padding: 2rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+    #main-mis-ausencias {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #body-mis-ausencias #main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 700px) {
+    #main-mis-ausencias {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #body-mis-ausencias #main-content {
+        align-items: center;
+
+    }
 }
 
 
@@ -3452,6 +3612,10 @@ select:focus {
     animation: fadeIn 0.4s ease;
 }
 
+#form-crear-asignatura>* {
+    margin-bottom: 1rem;
+}
+
 /* ======== TÍTULO ======== */
 #form-crear-asignatura h1 {
     text-align: center;
@@ -3472,6 +3636,7 @@ select {
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
+    width: 100%;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -3524,5 +3689,114 @@ select:focus {
 
     #main-crear-asignatura form h1 {
         font-size: 1.5rem;
+    }
+}
+
+/*//////////////////*/
+/* Pagina Contactos */
+/*//////////////////*/
+
+#body-contactos .main-content {
+    margin: 0;
+}
+
+#body-contactos h2 {
+    margin-bottom: 2rem;
+}
+
+#body-contactos h3 {
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+#body-contactos #contacto-itsp {
+    height: 12rem;
+    width: 100%;
+    border: 1px solid var(--gris2);
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    background-color: var(--blanco);
+}
+
+#body-contactos #contacto-itsp div#logo-itsp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#body-contactos #contacto-itsp img {
+    position: relative;
+    width: 8rem;
+    margin-bottom: 0;
+    border-radius: 100%;
+    bottom: 0;
+}
+
+#body-contactos #contacto-itsp .contactos {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 10%;
+}
+
+#body-contactos #contactos-equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 1.5rem;
+}
+
+#body-contactos .targeta-contacto {
+    width: 18rem;
+    border: 1px solid var(--gris2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--blanco);
+    border-radius: 5%;
+}
+
+#body-contactos .targeta-contacto img {
+    width: 6rem;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+}
+
+#body-contactos .targeta-contacto .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+#body-contactos .targeta-contacto .area-especializacion {
+    color: var(--gris4);
+}
+
+#body-contactos h2.nombre {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+#body-contactos .targeta-contacto .contactos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+@media (max-width: 675px){
+    #body-contactos #contacto-itsp  {
+        grid-template-columns: 1fr;
+        grid-template-rows: 12rem 1fr;
+        height: 20rem;
+        border-radius: 5%;
     }
 }
