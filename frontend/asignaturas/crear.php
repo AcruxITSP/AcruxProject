@@ -22,16 +22,21 @@
             <form id="form-crear-asignatura">
                 <h1>Crear asignatura</h1>
 
-                <input type="text" placeholder="nombre"></label>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" type="text" placeholder="nombre"></label>
 
-                <div class="vacio"></div>
-                <div class="vacio"></div>
+                <label for="select-profesores">Profesor</label>
+                <select id="select-profesores" name="id_profesores[]"></select>
+
+                <label for="select-cursos">Curso</label>
+                <select id="select-cursos" name="id_cursos[]"></select>
 
                 <input type="submit" value="Crear">
             </form>
         </main>
     </div>
 
+    <script src="../scripts/asignaturas_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
