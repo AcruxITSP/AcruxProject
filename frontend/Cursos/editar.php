@@ -4,24 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php require __DIR__ . '/../systems/inputlist/ilists.php'; ?>
+    <title>Editar Curso</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>Configuracion</title>
 </head>
 
-<body class="menues-incluidos">
+<body id="body-crear-cursos" class="menues-incluidos">
     <div id="menues">
         <?php include_once __DIR__ . '/../includes/blockSidebarMenu.php' ?>
         <?php include_once __DIR__ . '/../includes/blockTopHeader.php' ?>
     </div>
 
     <div id="main-content">
-        <h2>Configuraciones</h2>
+        <main id="main-crear-cursos">
+            <form id="form-editar">
+                <h1>Editar Curso</h1>
 
-        <button class="btn-volver" onclick="history.back()" title="Volver">
-            <i class="bi bi-arrow-left"></i>
-        </button>
+                <input type="text" placeholder="Nombre">
+
+                <textarea placeholder="Descripcion"></textarea>
+
+                <div class="div-vacio">Div vacio</div>
+
+                <input type="submit" value="Guardar">
+            </form>
+        </main>
     </div>
 
     <script src="../scripts/menuHamburgesa.js"></script>

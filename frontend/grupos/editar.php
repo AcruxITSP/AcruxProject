@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php require __DIR__ . '/../systems/inputlist/ilists.php'; ?>
-    <title>Crear Grupos</title>
+    <title>Editar Grupo</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -20,13 +20,11 @@
     <div id="main-content">
         <main id="main-crear-grupos">
             <form id="form-crear">
-                <h1>Crear Grupo</h1>
+                <h1>Editar Grupo</h1>
 
                 <div class="codigo-grupo">
-                    <label>Grupo</label>
-                    <label>Nombre</label>
                     <input type="text" placeholder="Grado" class="grado-grupo">
-                    <input type="text" placeholder="Nombre" class="nombre-grupo">
+                    <input type="text" placeholder="nombre" class="nombre-grupo">
                 </div>
 
                 <label for="curso">Curso</label>

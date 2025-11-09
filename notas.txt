@@ -14,10 +14,12 @@
 - Jueves (Hora de SO y RUBIL) + 15:13 - 16:24
 - ???
 - Miercoles ???
+- Jueves ???
 
 ---
 
 - Agregar backend de horas al front (el front lo esta haciendo nehuel)
+- Agregar el back de espacios/ver.php al front.
 
 - Borrar reservas al marcar ausencias
 - Evitar reservas en ausencias
@@ -25,3 +27,5 @@
 - Validar la disponibilidad de recursos en backend (si no esta hecho)
 - Hacer que la validacion de profe libre para asignar horario sea en backend tambien.
 - Hacer que la validacion de espacio libre para asignar horario sea backend tambien.
+
+---
