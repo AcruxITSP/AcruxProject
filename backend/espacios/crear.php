@@ -20,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     $tipo = $_POST['tipo'];
     $numero = $_POST['numero'];
+    if($numero == '') $numero = null;
     $capacidad = $_POST['capacidad'];
     $ubicacion = $_POST['ubicacion'];
 
