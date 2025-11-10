@@ -2812,6 +2812,7 @@ select:focus {
     font-size: 1rem;
     display: flex;
     justify-content: center;
+    user-select: none;
 }
 
 #modal-registrar-ausencia #opcionesIntervalos label:hover {
@@ -2822,9 +2823,9 @@ select:focus {
     display: none;
 }
 
-label:has(input[type="checkbox"]:checked) {
+#modal-registrar-ausencia #opcionesIntervalos label:has(input[type="checkbox"]:checked) {
     background-color: var(--verde-claro);
-    border-color: var(--verde-claro) !important;
+    border-color: var(--verde) !important;
 }
 
 #modal-registrar-ausencia #input-motivo {
@@ -3458,76 +3459,74 @@ div.targeta-intervalo {
     animation: fadeIn 0.4s ease;
 }
 
-#main-crear-cursos #inputs-apartados {
-    display: none;
-}
-
-/* ======== TÍTULO ======== */
-#main-crear-cursos #form-editar h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    color: var(--azul-grisaceo);
-}
-
-/* ======== CAMPOS DEL FORMULARIO ======== */
-
-#main-crear-cursos #form-editar,
-#inputs-segun-localidad,
-#inputs-para-externo {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#main-crear-cursos #form-editar label {
-    font-weight: 600;
-    color: var(--azul-grisaceo);
-}
-
-#main-crear-cursos #form-editar input,
-select,
-textarea {
+#main-crear-cursos textarea {
     padding: 10px 12px;
-    margin-top: 1rem;
     border: 1px solid var(--gris1);
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 1rem;
 }
 
-#main-crear-cursos #form-editar textarea {
+#main-crear-cursos textarea {
     height: 4rem;
 }
 
-#main-crear-cursos #form-editar input:focus,
-select:focus {
-    border-color: var(--azul-oscuro);
-    box-shadow: 0 0 5px var(--sombra-azul);
+#main-crear-cursos #label-opcionesMaterias {
+    width: 100%;
 }
 
-/* ======== BOTÓN DE ENVÍO ======== */
-#main-crear-cursos #form-editar input[type="submit"] {
-    margin-top: 10px;
-    background-color: var(--azul);
-    color: var(--blanco);
-    font-weight: bold;
-    border: none;
+#main-crear-cursos #select-materias {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#main-crear-cursos #label-opcionesMaterias {
+    user-select: none;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
 }
 
-#main-crear-cursos #form-editar input[type="submit"]:hover {
-    background-color: var(--azul-oscuro);
+#main-crear-cursos #opcionesMaterias {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    background-color: var(--blanco);
+    width: 100%;
+    max-height: 8rem;
+    margin-bottom: 5rem;
 }
 
-#main-crear-cursos #form-editar .div-vacio {
-    padding: 1rem;
-    margin-top: 1rem;
+#main-crear-cursos #opcionesMaterias label {
+    color: var(--negro);
     border: 1px solid var(--negro);
-    border-style: dashed;
-    color: var(--gris4);
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+
+#main-crear-cursos #opcionesMaterias label:hover {
+    border-color: var(--verde-claro);
+}
+
+#main-crear-cursos #opcionesMaterias input[type="checkbox"]{
+    display: none;
+}
+
+#main-crear-cursos #opcionesMaterias label:has(input[type="checkbox"]:checked) {
+    background-color: var(--verde-claro);
+    border-color: var(--verde) !important;
+}
+
+#main-crear-cursos #input-motivo {
+    height: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    border-color: var(--gris3);
 }
 
 /* ======== ANIMACIONES ======== */
