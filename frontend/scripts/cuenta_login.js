@@ -3,7 +3,7 @@ const formLogin = document.getElementById("form-login");
 formLogin.addEventListener('submit', async e => {
     e.preventDefault();
     const formData = new FormData(formLogin);
-    let respuesta = await fetch('/backend/cuenta/login.php', {method:"POST", body: formData});
+    let respuesta = await fetch('../../backend/cuenta/login.php', {method:"POST", body: formData});
     respuesta = await respuesta.json();
 
     let session = respuesta.value.session;

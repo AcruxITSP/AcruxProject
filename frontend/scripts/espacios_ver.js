@@ -80,7 +80,7 @@ async function borrarEspacioAsync(idEspacio)
 
     let formData = new FormData();
     formData.append("id", idEspacio)
-    let respuesta = await fetch('/backend/espacios/borrar.php', {method: "POST", body: formData});
+    let respuesta = await fetch('../../backend/espacios/borrar.php', {method: "POST", body: formData});
     respuesta = await respuesta.json();
     
     if(respuesta.ok)

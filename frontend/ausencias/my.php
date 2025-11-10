@@ -118,8 +118,9 @@
                     <label>Hora</label>
                     <label for="allDay" id="allday-label">Todo el día <input type="checkbox" id="allDay"></label>
 
-                    <div id="lista-intervalos">
-                        Aca van los intervalos
+                    <div id="select-intervalos">
+                        <input id="label-opcionesIntervalos" type="text" placeholder="Seleccione los intervalos" readonly>
+                        <div id="opcionesIntervalos" class="scrollable-list"></div>
                     </div>
 
                     <div>
@@ -136,6 +137,7 @@
         </button>
     </div>
 
+    <script src="../scripts/ausencias_registrar.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>

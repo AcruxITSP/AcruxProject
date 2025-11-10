@@ -39,7 +39,7 @@ function IListEspacioCantidadSuplier(name)  // El nombre es requerido por la "fi
 
 async function inicializar()
 {
-    let respuesta = await fetch('/backend/recursos/crear.php', {method:"GET"});
+    let respuesta = await fetch('../../backend/recursos/crear.php', {method:"GET"});
     respuesta = await respuesta.json();
     const tiposRecursos = respuesta.value.tipos_recursos;
     espacios = respuesta.value.espacios;
@@ -83,7 +83,7 @@ domForm.addEventListener('submit', async e => {
     const formData = new FormData(domForm);
     const tipo = domTipo.value;
 
-    let respuesta = await fetch('/backend/recursos/crear.php', {method:"POST", body: formData});
+    let respuesta = await fetch('../../backend/recursos/crear.php', {method:"POST", body: formData});
     respuesta = await respuesta.json();
 
     if(respuesta.ok)

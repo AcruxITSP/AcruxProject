@@ -32,10 +32,10 @@ if (!estaLogeado()) {
                 <input type="file" name="imagen">
 
                 <label for="tipo">Tipo</label>
-                <select name="tipo"></select>
+                <input name="tipo" id="tipo">
 
-                <label for="espacio">Espacio</label>
-                <select name="espacio"></select>
+                <label for="select-espacio">Espacio</label>
+                <select name="select-espacio" id="select-espacio"></select>
 
                 <label for="number">Cantidad</label>
                 <input type="number" name="cantidad" min="0" max="500"></input>
@@ -45,7 +45,7 @@ if (!estaLogeado()) {
         </main>
     </div>
 
-    <script src="crear.js"></script>
+    <script src="../../scripts/recursos_internos_editar.js"></script>
     <script src="../../scripts/menuHamburgesa.js"></script>
     <script src="../../scripts/dropdownMenu.js"></script>
 </body>

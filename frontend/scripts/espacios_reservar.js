@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async e => {
     const urlParams = new URLSearchParams(window.location.search);
     const idEspacio = urlParams.get("id");
 
-    let respuesta = await fetch(`/backend/espacios/reservar.php?id_espacio=${idEspacio}`);
+    let respuesta = await fetch(`../../backend/espacios/reservar.php?id_espacio=${idEspacio}`);
     respuesta = await respuesta.json();
 
     espacio = respuesta.value.espacio;
@@ -75,7 +75,7 @@ domForm.addEventListener('submit', async e => {
     const formData = new FormData(domForm);
     formData.append("id_espacio", idEspacio);
 
-    let respuesta = await fetch(`/backend/espacios/reservar.php`, {method:"POST", body: formData});
+    let respuesta = await fetch(`../../backend/espacios/reservar.php`, {method:"POST", body: formData});
     respuesta = await respuesta.json();
 
     if(respuesta.ok)

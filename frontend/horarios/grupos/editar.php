@@ -22,34 +22,21 @@
             <form id="form-editar">
                 <h1>Editar Hora</h1>
 
-                <label for="materia">Materia</label>
-                <select name="materia" id="materia">
-                    <option>Programacion</option>
-                    <option>Ciberseguridad</option>
-                    <option>Emprendedurismo</option>
-                </select>
+                <label for="select-materia">Materia</label>
+                <select name="select-materia" id="select-materia"></select>
 
-                <label for="docente">Docente</label>
-                <select name="docente" id="docente">
-                    <option>Hernesto Rodriguez</option>
-                    <option>Pablo Sanchez</option>
-                    <option>Walter White</option>
-                </select>
+                <label for="select-profesor">docente</label>
+                <select name="select-profesor" id="select-profesor"></select>
 
-                <label for="espacio">Espacio</label>
-                <select name="espacio" id="espacio">
-                    <option>Salon 1</option>
-                    <option>Lab. Quimica</option>
-                    <option>Salon 3</option>
-                </select>
-
-                <div class="div-vacio"> Div vacio</div>
+                <label for="select-espacio">Espacio</label>
+                <select name="select-espacio" id="select-espacio"></select>
 
                 <input type="submit" value="Guardar">
             </form>
         </main>
     </div>
 
+    <script src="../../scripts/horarios_grupos_editar.js"></script>
     <script src="../../scripts/menuHamburgesa.js"></script>
     <script src="../../scripts/dropdownMenu.js"></script>
 </body>

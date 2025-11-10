@@ -19,17 +19,27 @@
 
     <div id="main-content">
         <main id="main-crear-cursos">
-            <form id="form-editar">
+            <form class="formulario-basico">
                 <h1>Crear Curso</h1>
-                <input type="text" placeholder="Nombre">
-                <textarea placeholder="Descripcion"></textarea>
-                <div class="div-vacio"> Div vacio</div>
+
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
+
+                <label for="select-materias">Materias</label>
+                <div id="select-materias">
+                    <input id="label-opcionesMaterias" type="text" placeholder="Seleccione las materias" readonly>
+                    <div id="opcionesMaterias" class="scrollable-list"></div>
+                </div>
 
                 <input type="submit" value="Registrar">
             </form>
         </main>
     </div>
 
+    <script src="../scripts/cursos_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>

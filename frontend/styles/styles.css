@@ -787,6 +787,61 @@ select:focus {
     border-style: dashed
 }
 
+#form-crear-docente #label-opcionesMaterias {
+    width: 100%;
+}
+
+#form-crear-docente #select-materias {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#form-crear-docente #select-materias>label {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#form-crear-docente #label-opcionesMaterias {
+    user-select: none;
+    cursor: pointer;
+}
+
+#form-crear-docente #opcionesMaterias {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    background-color: var(--blanco);
+    width: 100%;
+    max-height: 8rem;
+    margin-bottom: 5rem;
+}
+
+#form-crear-docente #opcionesMaterias label {
+    color: var(--negro);
+    border: 1px solid var(--negro);
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+#form-crear-docente #opcionesMaterias label:hover {
+    border-color: var(--verde-claro);
+}
+
+#form-crear-docente #opcionesMaterias input[type="checkbox"] {
+    display: none;
+}
+
+#form-crear-docente #opcionesMaterias label:has(input[type="checkbox"]:checked) {
+    background-color: var(--verde-claro);
+    border-color: var(--verde) !important;
+}
+
 /* ======== ANIMACIONES ======== */
 @keyframes fadeIn {
     from {
@@ -2183,10 +2238,18 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     gap: 1rem;
 }
 
+#body-reservas-my #main-content>h2 {
+    text-align: center;
+}
+
 #body-reservas-my #reservas-container {
     display: flex;
     justify-content: center;
     align-items: start;
+}
+
+#body-reservas-my #reservas-container>h3 {
+    text-align: center;
 }
 
 #body-reservas-my main {
@@ -2443,6 +2506,10 @@ select:focus {
     background-color: var(--azul-oscuro);
 }
 
+.show {
+    display: block !important;
+}
+
 
 /*---------------------------------*/
 /* Responsive para clases generales*/
@@ -2603,6 +2670,31 @@ select:focus {
     box-shadow: 0 3px 8px var(--sombra-azul);
 }
 
+#body-ver-ausencias .botones {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#body-ver-ausencias .botones button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.45rem 0.8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--blanco);
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    width: 4rem;
+}
+
+#body-ver-ausencias .botones .borrar {
+    background-color: var(--coral);
+}
+
+#body-ver-ausencias .botones .borrar:hover {
+    background-color: var(--coral2);
+}
+
 /* === ENCABEZADO DE FECHA Y HORA === */
 #body-ver-ausencias .container-hora-fecha {
     display: flex;
@@ -2755,9 +2847,48 @@ select:focus {
     background-color: var(--azul-claro);
 }
 
-#modal-registrar-ausencia #lista-intervalos {
-    height: 3rem;
+#modal-registrar-ausencia #select-intervalos {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#modal-registrar-ausencia #label-opcionesIntervalos {
+    user-select: none;
+    cursor: pointer;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    background-color: var(--blanco);
+    width: 100%;
+    max-height: 12rem;
+    margin-bottom: 5rem;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos label {
+    color: var(--negro);
     border: 1px solid var(--negro);
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos label:hover {
+    border-color: var(--verde-claro);
+}
+
+#modal-registrar-ausencia #opcionesIntervalos input[type="checkbox"] {
+    display: none;
+}
+
+#modal-registrar-ausencia #opcionesIntervalos label:has(input[type="checkbox"]:checked) {
+    background-color: var(--verde-claro);
+    border-color: var(--verde) !important;
 }
 
 #modal-registrar-ausencia #input-motivo {
@@ -3391,76 +3522,66 @@ div.targeta-intervalo {
     animation: fadeIn 0.4s ease;
 }
 
-#main-crear-cursos #inputs-apartados {
-    display: none;
-}
-
-/* ======== TÍTULO ======== */
-#main-crear-cursos #form-editar h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    color: var(--azul-grisaceo);
-}
-
-/* ======== CAMPOS DEL FORMULARIO ======== */
-
-#main-crear-cursos #form-editar,
-#inputs-segun-localidad,
-#inputs-para-externo {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#main-crear-cursos #form-editar label {
-    font-weight: 600;
-    color: var(--azul-grisaceo);
-}
-
-#main-crear-cursos #form-editar input,
-select,
-textarea {
+#main-crear-cursos textarea {
     padding: 10px 12px;
-    margin-top: 1rem;
     border: 1px solid var(--gris1);
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 1rem;
 }
 
-#main-crear-cursos #form-editar textarea {
+#main-crear-cursos textarea {
     height: 4rem;
 }
 
-#main-crear-cursos #form-editar input:focus,
-select:focus {
-    border-color: var(--azul-oscuro);
-    box-shadow: 0 0 5px var(--sombra-azul);
+#main-crear-cursos #label-opcionesMaterias {
+    width: 100%;
 }
 
-/* ======== BOTÓN DE ENVÍO ======== */
-#main-crear-cursos #form-editar input[type="submit"] {
-    margin-top: 10px;
-    background-color: var(--azul);
-    color: var(--blanco);
-    font-weight: bold;
-    border: none;
+#main-crear-cursos #select-materias {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#main-crear-cursos #label-opcionesMaterias {
+    user-select: none;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
 }
 
-#main-crear-cursos #form-editar input[type="submit"]:hover {
-    background-color: var(--azul-oscuro);
+#main-crear-cursos #opcionesMaterias {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    background-color: var(--blanco);
+    width: 100%;
+    max-height: 8rem;
+    margin-bottom: 5rem;
 }
 
-#main-crear-cursos #form-editar .div-vacio {
-    padding: 1rem;
-    margin-top: 1rem;
+#main-crear-cursos #opcionesMaterias label {
+    color: var(--negro);
     border: 1px solid var(--negro);
-    border-style: dashed;
-    color: var(--gris4);
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+
+#main-crear-cursos #opcionesMaterias label:hover {
+    border-color: var(--verde-claro);
+}
+
+#main-crear-cursos #opcionesMaterias input[type="checkbox"] {
+    display: none;
+}
+
+#main-crear-cursos #opcionesMaterias label:has(input[type="checkbox"]:checked) {
+    background-color: var(--verde-claro);
+    border-color: var(--verde) !important;
 }
 
 /* ======== ANIMACIONES ======== */
@@ -3793,8 +3914,8 @@ select:focus {
     width: 100%;
 }
 
-@media (max-width: 675px){
-    #body-contactos #contacto-itsp  {
+@media (max-width: 675px) {
+    #body-contactos #contacto-itsp {
         grid-template-columns: 1fr;
         grid-template-rows: 12rem 1fr;
         height: 20rem;

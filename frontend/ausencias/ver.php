@@ -22,74 +22,74 @@
             <div class="scrollable-list" id="scrollable-list-ausencias-usuarios">
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Joaquin Pintos</p>
+                    <p class="nombre">Joaquin Pintos</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Hernesto Pereira</p>
+                    <p class="nombre">Hernesto Pereira</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Martin Gomez</p>
+                    <p class="nombre">Martin Gomez</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
                 <div class="targeta-ausencia-usuario">
                     <div class="marco-imagen"></div>
-                    <p>Relleno</p>
+                    <p class="nombre">Relleno</p>
                 </div>
             </div>
-            <div class="scrollable-list">
+            <div class="scrollable-list" id="scrollable-list-ausencias">
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
                         <p>11/11/1111</p>
@@ -99,6 +99,9 @@
                     <hr class="horizontal">
                     <div class="motivo-container">
                         <p><strong>Motivo:</strong> Problemas de salud </p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
@@ -111,6 +114,9 @@
                     <div class="motivo-container">
                         <p><strong>Motivo:</strong> Asuntos legales</p>
                     </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
+                    </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
@@ -122,6 +128,9 @@
                     <div class="motivo-container">
                         <p><strong>Motivo:</strong> Solicitó el día libre</p>
                     </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
+                    </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
@@ -131,73 +140,98 @@
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo:</strong>
+                        <p class="motivo">Relleno</p>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo: </strong>
+                        <p class="motivo">Relleno</p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo: </strong>
+                        <p class="motivo">Relleno</p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo: </strong>
+                        <p class="motivo">Relleno</p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo: </strong>
+                        <p class="motivo">Relleno</p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo: </strong>
+                        <p class="motivo">Relleno</p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
-                        <p>1012/2025</p>
+                        <p>10/12/2025</p>
                         <hr class="vertical">
                         <p>7:50 - 9:00</p>
                     </div>
                     <hr class="horizontal">
                     <div class="motivo-container">
-                        <p><strong>Motivo:</strong> Relleno</p>
+                        <strong>Motivo: </strong>
+                        <p class="motivo">Relleno</p>
+                    </div>
+                    <div class="botones">
+                        <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -207,6 +241,32 @@
         </button>
     </div>
 
+    <template id="tpl-tarjeta-ausencia-usuario">
+        <div class="targeta-ausencia-usuario">
+            <div class="marco-imagen"></div>
+            <p class="nombre" name="nombre"></p>
+        </div>
+    </template>
+
+    <template id="tpl-targeta-ausencia">
+        <div class="targeta-ausencia">
+            <div class="container-hora-fecha">
+                <p class="fecha" name="fecha">10/12/2025</p>
+                <hr class="vertical">
+                <p class="intervalo" name="intervalo">7:50 - 9:00</p>
+            </div>
+            <hr class="horizontal">
+            <div class="motivo-container">
+                <strong>Motivo:</strong>
+                <p class="motivo" name="motivo">Relleno</p>
+            </div>
+            <div class="botones">
+                <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
+            </div>
+        </div>
+    </template>
+
+    <script src="../scripts/ausencias_ver.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
