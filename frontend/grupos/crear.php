@@ -29,18 +29,12 @@
                     <input type="text" placeholder="Nombre" class="nombre-grupo">
                 </div>
 
-                <label for="curso">Curso</label>
-                <select name="curso" id="curso">
-                    <option>Informatica</option>
-                    <option>Informatica Bilingue</option>
-                    <option>Robotica</option>
-                </select>
+                <label>Curso</label>
+                <select name="select-curso" id="select-curso"></select>
 
-                <label for="adscrito">Adscrito</label>
-                <select name="adscrito" id="adscrito">
+                <label>Adscrito</label>
+                <select name="select-adscrito" id="select-adscrito">
                     <option>Abdul Velara</option>
-                    <option>Juan Juanez</option>
-                    <option>Joaquin Gomez</option>
                 </select>
 
                 <input type="submit" value="Guardar">
@@ -48,6 +42,7 @@
         </main>
     </div>
 
+    <script src="../scripts/grupos_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
