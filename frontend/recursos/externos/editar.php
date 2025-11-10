@@ -24,10 +24,10 @@
                 <input type="file" name="imagen" id="imagen">
 
                 <label for="tipo">Tipo</label>
-                <select name="tipo" id="tipo"></select>
+                <input name="tipo" id="tipo">
 
-                <label for="espacio">Espacio</label>
-                <select name="espacio" id="espacio">
+                <label for="select-espacio">Espacio</label>
+                <select name="select-espacio" id="select-espacio">
                     <option value="0">No se especificó el espacio.</option>
                 </select>
 
