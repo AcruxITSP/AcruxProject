@@ -25,11 +25,17 @@
                 <label for="nombre">Nombre</label>
                 <input id="nombre" type="text" placeholder="nombre"></label>
 
-                <label for="select-profesores">Profesor</label>
-                <select id="select-profesores" name="id_profesores[]"></select>
+                <label for="select-profesores">Profesores</label>
+                <div id="select-profesores" class="select-checkboxes">
+                    <input id="label-opcionesProfesores" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las profesores" readonly>
+                    <div id="opcionesProfesores" class="scrollable-list opcionesCheckboxes"></div>
+                </div>
 
-                <label for="select-cursos">Curso</label>
-                <select id="select-cursos" name="id_cursos[]"></select>
+                <label for="select-cursos">Cursos</label>
+                <div id="select-cursos" class="select-checkboxes">
+                    <input id="label-opcionesCursos" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las cursos" readonly>
+                    <div id="opcionesCursos" class="scrollable-list opcionesCheckboxes"></div>
+                </div>
 
                 <input type="submit" value="Crear">
             </form>
