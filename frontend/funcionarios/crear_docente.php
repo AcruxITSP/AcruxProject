@@ -21,7 +21,7 @@
         <main id="main-crear-docente">
             <form id="form-crear-docente">
                 <h1>Crear Docente</h1>
-                
+
                 <div id="grid">
                     <div id="inputs">
                         <input type="text" placeholder="nombre">
@@ -31,9 +31,10 @@
                         <input type="text" placeholder="email">
                     </div>
 
-                    <div id="lista-materias">
-                        <h2>Materias</h2>
-                        <div id="materias"></div>
+                    <div id="select-materias">
+                        <label>Materias</label>
+                        <input id="label-opcionesMaterias" type="text" placeholder="Seleccione las materias" readonly>
+                        <div id="opcionesMaterias" class="scrollable-list"></div>
                     </div>
                 </div>
 
@@ -42,6 +43,7 @@
         </main>
     </div>
 
+    <script src="../scripts/crear_docente.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
