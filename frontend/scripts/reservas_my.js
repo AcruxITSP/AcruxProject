@@ -188,4 +188,10 @@ async function inicializarAsync()
 
 document.addEventListener('DOMContentLoaded', async e => {
     await inicializarAsync();
+
+    if (domReservasContainer.innerText=="") {
+        const h3 = document.createElement("h3");
+        h3.innerText = "Actualmente no tiene ninguna reserva";
+        domReservasContainer.appendChild(h3);
+    } 
 })

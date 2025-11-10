@@ -1,6 +1,6 @@
-const domInputSelectMateria= document.getElementById("select-materia");
+const domInputSelectMateria = document.getElementById("select-materia");
 const domInputSelectProfesor = document.getElementById("select-profesor");
-const domInputSelectEspacio= document.getElementById("select-espacio");
+const domInputSelectEspacio = document.getElementById("select-espacio");
 
 /* Array de materias de ejemplo */
 const jsonStringMaterias = '[{"id_materia": "1", "nombre": "Programacion"}, {"id_materia": "2", "nombre": "Ciberseguridad" }, {"id_materia": "3", "nombre": "Biologia"}, {"id_materia": "4", "nombre": "Fisica"}, {"id_materia": "5", "nombre": "Logica"}, {"id_materia": "6", "nombre": "utulab"}, {"id_materia": "7", "nombre": "Sistemas Operativos"}, {"id_materia": "8", "nombre": "Filosofia"}, {"id_materia": "9", "nombre": "Sociologia"}]';
@@ -11,7 +11,7 @@ const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido"
 const profesores = JSON.parse(jsonStringProfesores);
 
 /* Array con datos de espacios. Ejemplo */
-const jsonStringEspacios = '[{"id_espacio": "1", "tipo": "Aula", "numero": "2"}, {"id_espacio": "2", "tipo": "Salón", "numero": "1"}, {"id_espacio": "3", "tipo": "Taller", "numero": ""}]';
+const jsonStringEspacios = '[{"id_espacio": "1", "tipo": "Salón", "numero": "1"}, {"id_espacio": "2", "tipo": "Aula", "numero": "2"}, {"id_espacio": "3", "tipo": "Taller", "numero": ""}]';
 const espacios = JSON.parse(jsonStringEspacios);
 
 /* Funciones */
@@ -35,9 +35,6 @@ function listaProfesoresOptions(profesores){
         option.innerText = `${profesor.nombre} ${profesor.apellido}`;
 
         domInputSelectProfesor.appendChild(option);
-
-        console.log("andubo creo");
-        console.log("option");
     });
 }
 
@@ -46,7 +43,7 @@ function listaEspaciosOptions(espacios){
         const option = document.createElement("option");
 
         option.value = `${espacio.id_espacio}`;
-        option.innerText = `${espacio.nombre}`;
+        option.innerText = `${espacio.tipo} ${espacio.numero}`;
 
         domInputSelectEspacio.appendChild(option);
     });
@@ -55,5 +52,3 @@ function listaEspaciosOptions(espacios){
 listaMateriasOptions(materias);
 listaProfesoresOptions(profesores);
 listaEspaciosOptions(espacios);
-
-console.log("WAZAAAAA");

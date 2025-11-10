@@ -2238,10 +2238,18 @@ form[form-id="form-reservar-externo"] input[type="submit"]:hover {
     gap: 1rem;
 }
 
+#body-reservas-my #main-content>h2 {
+    text-align: center;
+}
+
 #body-reservas-my #reservas-container {
     display: flex;
     justify-content: center;
     align-items: start;
+}
+
+#body-reservas-my #reservas-container>h3 {
+    text-align: center;
 }
 
 #body-reservas-my main {

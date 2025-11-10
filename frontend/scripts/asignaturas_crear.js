@@ -11,7 +11,7 @@ const cursos = JSON.parse(jsonStringCursos);
 
 /* Funciones */
 
-function IListProfesoresOptions(profesores){
+function listaProfesoresOptions(profesores){
     profesores.forEach(profesor => {
         const option = document.createElement("option");
 
@@ -22,7 +22,7 @@ function IListProfesoresOptions(profesores){
     });
 }
 
-function IListCursosOptions(cursos){
+function listaCursosOptions(cursos){
     cursos.forEach(curso => {
         const option = document.createElement("option");
 
@@ -35,5 +35,5 @@ function IListCursosOptions(cursos){
 
 /* Llamar a las funciones */
 
-IListProfesoresOptions(profesores);
-IListCursosOptions(cursos);
+listaProfesoresOptions(profesores);
+listaCursosOptions(cursos);
