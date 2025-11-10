@@ -16,92 +16,120 @@ require_once dirname(__FILE__).'/../util/strings.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    // Verifica si hay sesión activa
+    // Verificar si hay sesión activa
     if (!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
 
-    // Verifica parámetros obligatorios
+    // Verificar que se hayan enviado todos los parámetros necesarios
     if (!isset($_POST['id_materia'])) Respuestas::enviarError("NECESITA_ID_MATERIA");
     if (!isset($_POST['nombre'])) Respuestas::enviarError("NECESITA_NOMBRE");
     if (!isset($_POST['id_profesores'])) Respuestas::enviarError("NECESITA_ID_PROFESORES");
     if (!isset($_POST['id_cursos'])) Respuestas::enviarError("NECESITA_ID_CURSOS");
 
-    // Se obtienen los datos del POST
+    // Obtener datos del POST
     $idMateria = $_POST['id_materia'];
     $nombre = $_POST['nombre'];
     $idProfesores = $_POST['id_profesores'];
     $idCursos = $_POST['id_cursos'];
 
-    // Validación adicional: deben ser arrays
+    // Validar que las listas sean arrays
     if (!is_array($idProfesores)) Respuestas::enviarError("FORMATO_ID_PROFESORES_INVALIDO");
     if (!is_array($idCursos)) Respuestas::enviarError("FORMATO_ID_CURSOS_INVALIDO");
 
-    // Se establece la conexión y se inicia la transacción
+    // Iniciar conexión y transacción
     $con = connectDb();
     $con->begin_transaction();
 
-    // Verifica que la materia exista
+    // Verificar que la materia exista
     $sql = "SELECT id_materia FROM Materia WHERE id_materia = ?";
     $result = SQL::valueQuery($con, $sql, "i", $idMateria);
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
     if ($result->num_rows == 0) Respuestas::enviarError("MATERIA_NO_ENCONTRADA");
 
-    // Actualiza el nombre de la materia
+    // Actualizar nombre de la materia
     $sql = "UPDATE Materia SET nombre = ? WHERE id_materia = ?";
     $result = SQL::actionQuery($con, $sql, "si", $nombre, $idMateria);
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
 
-    // Elimina relaciones antiguas con cursos y profesores
-    $sql = "DELETE FROM Curso_Materia WHERE id_materia = ?";
-    $result = SQL::actionQuery($con, $sql, "i", $idMateria);
+    // Obtener relaciones actuales con cursos
+    $sql = "SELECT id_curso FROM Curso_Materia WHERE id_materia = ?";
+    $result = SQL::valueQuery($con, $sql, "i", $idMateria);
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+    $cursosActuales = [];
+    while ($row = $result->fetch_assoc()) $cursosActuales[] = (int)$row['id_curso'];
 
-    $sql = "DELETE FROM Clase WHERE id_materia = ?";
-    $result = SQL::actionQuery($con, $sql, "i", $idMateria);
+    // Obtener relaciones actuales con profesores
+    $sql = "SELECT id_profesor FROM Clase WHERE id_materia = ?";
+    $result = SQL::valueQuery($con, $sql, "i", $idMateria);
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+    $profesoresActuales = [];
+    while ($row = $result->fetch_assoc()) $profesoresActuales[] = (int)$row['id_profesor'];
 
-    // Inserta nuevas relaciones con cursos
-    foreach ($idCursos as $idCurso)
+    // Determinar qué cursos agregar y cuáles eliminar
+    $cursosAAgregar = array_diff($idCursos, $cursosActuales);
+    $cursosAEliminar = array_diff($cursosActuales, $idCursos);
+
+    // Determinar qué profesores agregar y cuáles eliminar
+    $profesoresAAgregar = array_diff($idProfesores, $profesoresActuales);
+    $profesoresAEliminar = array_diff($profesoresActuales, $idProfesores);
+
+    // Eliminar solo las relaciones de cursos que ya no estén asociadas
+    foreach ($cursosAEliminar as $idCurso)
+    {
+        $sql = "DELETE FROM Curso_Materia WHERE id_curso = ? AND id_materia = ?";
+        $result = SQL::actionQuery($con, $sql, "ii", $idCurso, $idMateria);
+        if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+    }
+
+    // Insertar nuevas relaciones de cursos
+    foreach ($cursosAAgregar as $idCurso)
     {
         $sql = "INSERT INTO Curso_Materia(id_curso, id_materia) VALUES (?, ?)";
         $result = SQL::actionQuery($con, $sql, "ii", $idCurso, $idMateria);
         if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
     }
 
-    // Inserta nuevas clases con los profesores seleccionados
-    foreach ($idProfesores as $idProfesor)
+    // Eliminar solo las relaciones de profesores que ya no estén asociadas
+    foreach ($profesoresAEliminar as $idProfesor)
+    {
+        $sql = "DELETE FROM Clase WHERE id_materia = ? AND id_profesor = ?";
+        $result = SQL::actionQuery($con, $sql, "ii", $idMateria, $idProfesor);
+        if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+    }
+
+    // Insertar nuevas relaciones de profesores
+    foreach ($profesoresAAgregar as $idProfesor)
     {
         $sql = "INSERT INTO Clase(id_materia, id_profesor) VALUES (?, ?)";
         $result = SQL::actionQuery($con, $sql, "ii", $idMateria, $idProfesor);
         if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
     }
 
-    // Confirma la transacción
+    // Confirmar transacción
     Respuestas::enviarOk(null, $con);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    // Verifica si hay sesión activa
+    // Verificar si hay sesión activa
     if (!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
 
-    // Verifica que se haya enviado el id de la materia
+    // Verificar que se haya enviado el id de la materia
     if (!isset($_GET['id_materia'])) Respuestas::enviarError("NECESITA_ID_MATERIA");
 
     $idMateria = $_GET['id_materia'];
 
     $con = connectDb();
 
-    // 1. Obtener nombre de la materia
+    // Obtener nombre de la materia
     $sql = "SELECT nombre FROM Materia WHERE id_materia = ?";
     $result = SQL::valueQuery($con, $sql, "i", $idMateria);
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
-
     if ($result->num_rows === 0) Respuestas::enviarError("MATERIA_NO_ENCONTRADA");
+
     $row = $result->fetch_assoc();
     $nombreMateria = $row['nombre'];
 
-    // 2. Obtener los profesores asociados a la materia
-    // Clase → Profesor → Usuario
+    // Obtener los profesores asociados a la materia
     $sql = "SELECT 
                 p.id_profesor AS id, 
                 u.nombre AS nombre, 
@@ -114,12 +142,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
 
     $profesores = [];
-    while ($row = $result->fetch_assoc()) {
-        $profesores[] = $row;
-    }
+    while ($row = $result->fetch_assoc()) $profesores[] = $row;
 
-    // 3. Obtener los cursos asociados
-    // Curso_Materia → Curso
+    // Obtener los cursos asociados
     $sql = "SELECT 
                 c.id_curso AS id, 
                 c.nombre AS nombre
@@ -130,11 +155,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
     if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
 
     $cursos = [];
-    while ($row = $result->fetch_assoc()) {
-        $cursos[] = $row;
-    }
+    while ($row = $result->fetch_assoc()) $cursos[] = $row;
 
-    // 4. Armar respuesta final
+    // Armar respuesta final
     $data = [
         "id_materia" => (int)$idMateria,
         "nombre" => $nombreMateria,
