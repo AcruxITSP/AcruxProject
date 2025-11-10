@@ -33,9 +33,7 @@
                 <select name="select-curso" id="select-curso"></select>
 
                 <label>Adscrito</label>
-                <select name="select-adscrito" id="select-adscrito">
-                    <option>Abdul Velara</option>
-                </select>
+                <select name="select-adscrito" id="select-adscrito"></select>
 
                 <input type="submit" value="Guardar">
             </form>
