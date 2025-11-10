@@ -138,7 +138,7 @@ async function borrarRecursoAsync(id, localidad)
 
     let formData = new FormData();
     formData.append("id", id)
-    let respuesta = await fetch('/backend/recursos/borrar.php', {method: "POST", body: formData});
+    let respuesta = await fetch('../../backend/recursos/borrar.php', {method: "POST", body: formData});
     respuesta = await respuesta.json();
     
     if(respuesta.ok)
@@ -173,7 +173,7 @@ async function borrarRecursoAsync(id, localidad)
 
 document.addEventListener('DOMContentLoaded', async e => {
     let formData = new FormData();
-    let respuesta = await fetch('/backend/recursos/ver.php', {method: "POST", body: formData});
+    let respuesta = await fetch('../../backend/recursos/ver.php', {method: "POST", body: formData});
     respuesta = await respuesta.json();
     if(!respuesta.ok)
     {

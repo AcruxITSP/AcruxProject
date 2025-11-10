@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async e => {
     const urlParams = new URLSearchParams(window.location.search);
     const idRecurso = urlParams.get("id");
 
-    let respuesta = await fetch(`/backend/recursos/externos/reservar.php?id_recurso=${idRecurso}`);
+    let respuesta = await fetch(`../../../backend/recursos/externos/reservar.php?id_recurso=${idRecurso}`);
     respuesta = await respuesta.json();
 
     intervalos = respuesta.value.intervalos;
@@ -71,7 +71,7 @@ domForm.addEventListener('submit', async e => {
     const formData = new FormData(domForm);
     formData.append("id_recurso", idRecurso);
 
-    let respuesta = await fetch(`/backend/recursos/externos/reservar.php`, {method:"POST", body: formData});
+    let respuesta = await fetch(`../../../backend/recursos/externos/reservar.php`, {method:"POST", body: formData});
     respuesta = await respuesta.json();
 
     if(respuesta.ok)

@@ -152,7 +152,7 @@ async function traerYMostrarHorarios() {
 	const grupo = domSelectGrupo.value;
 	console.log(`Mostrando horario del grupo ${grupo} en dia ${dia}`);
 
-	let response = await fetch(`/backend/horarios/grupos.php?dia=${dia}&id_grupo=${grupo}`);
+	let response = await fetch(`../../../backend/horarios/grupos.php?dia=${dia}&id_grupo=${grupo}`);
 	response = await response.json();
 	const horarios = response.value;
 
@@ -204,21 +204,21 @@ async function borrarHoraAsync() {
 // Estas funciones son placeholders, retornan siempre false.
 async function estaElProfeLibreEnAsync(idProfe, dia, numeroIntervalo)
 {
-	let respuesta = await fetch(`/backend/horarios/esta_profe_libre.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
+	let respuesta = await fetch(`../../../backend/horarios/esta_profe_libre.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
 	respuesta = await respuesta.json();
 	return respuesta.value;
 }
 
 async function estaElProfeAusenteEn(idProfe, dia, numeroIntervalo)
 {
-	let respuesta = await fetch(`/backend/horarios/esta_profe_ausente.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
+	let respuesta = await fetch(`../../../backend/horarios/esta_profe_ausente.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
 	respuesta = await respuesta.json();
 	return respuesta.value;
 }
 
 async function estaElEspacioLibreEnAsync(idEspacio, dia, numeroIntervalo)
 {
-	let respuesta = await fetch(`/backend/horarios/esta_espacio_libre.php?id_espacio=${idEspacio}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
+	let respuesta = await fetch(`../../../backend/horarios/esta_espacio_libre.php?id_espacio=${idEspacio}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
 	respuesta = await respuesta.json();
 	return respuesta.value;
 }
@@ -327,7 +327,7 @@ domModalAgregarHora_Cerrar.addEventListener('click', async e => esconderModalAgr
 async function inicializar() {
 	const grupoSeleccionado = domSelectGrupo.value;
 
-	let respuesta = await fetch("/backend/horarios/grupos_init.php");
+	let respuesta = await fetch("../../../backend/horarios/grupos_init.php");
 	respuesta = await respuesta.json();
 	const grupos = respuesta.value.grupos;
 
@@ -378,7 +378,7 @@ domFormAgregarHora.addEventListener('submit', async e => {
 	formData.append("nombre_dia", dia);
 	formData.append("grupo", domSelectGrupo.value);
 
-	let respuesta = await fetch('/backend/horarios/agregar_modulo.php', {
+	let respuesta = await fetch('../../../backend/horarios/agregar_modulo.php', {
 		method: "POST",
 		body: formData
 	});

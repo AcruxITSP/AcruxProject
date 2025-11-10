@@ -44,7 +44,7 @@ async function borrarRecursoAsync(idCurso)
 
     let formData = new FormData();
     formData.append("id", idCurso)
-    let respuesta = await fetch('../..//backend/cursos/borrar.php', {method: "POST", body: formData});
+    let respuesta = await fetch('../../backend/cursos/borrar.php', {method: "POST", body: formData});
     respuesta = await respuesta.json();
     
     if(respuesta.ok)
