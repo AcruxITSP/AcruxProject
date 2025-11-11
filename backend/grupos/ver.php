@@ -10,9 +10,6 @@ require_once dirname(__FILE__).'/../other/db_errors.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    // Verifica que el usuario esté logueado
-    if (!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
-
     $con = connectDb();
 
     // Obtiene todos los grupos con su curso y adscrito (si existen)
