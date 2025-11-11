@@ -39,8 +39,8 @@
             </ul>
             <div class="botones">
                 <?php if (esAdscripto()): ?>
-                    <a><button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button></a>
-                    <a href="editar.php"><button class="editar" name="button-editar"><i class="bi bi-pencil"></i></button></a>
+                    <button class="borrar" name="button-borrar"><i class="bi bi-trash-fill"></i></button>
+                    <button class="editar" name="button-editar"><i class="bi bi-pencil"></i></button>
                 <?php endif; ?>
             </div>
         </div>
