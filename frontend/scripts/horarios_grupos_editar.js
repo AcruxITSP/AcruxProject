@@ -7,7 +7,7 @@ const jsonStringMaterias = '[{"id_materia": "1", "nombre": "Programacion"}, {"id
 const materias = JSON.parse(jsonStringMaterias);
 
 /* Array con datos de profesores. Ejemplo */
-const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Enrico", "apellido": "Pucci"}]';
+const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
 const profesores = JSON.parse(jsonStringProfesores);
 
 /* Array con datos de espacios. Ejemplo */

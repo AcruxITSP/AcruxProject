@@ -10,7 +10,7 @@
 <body id="body-login">
     <form id="form-login">
         <h2>Log In</h2>
-        <input name="ci" type="text" minlength="8" maxlength="8" placeholder="Nombre de usuario" required>
+        <input name="ci" type="text" minlength="8" maxlength="8" placeholder="Cédula" required>
         <input name="password" type="password" placeholder="Contraseña" required>
         <input type="submit" value="Login">
     </form>

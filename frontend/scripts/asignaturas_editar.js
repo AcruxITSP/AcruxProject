@@ -5,11 +5,11 @@ const domLabelOpcionesCursos = document.getElementById("label-opcionesCursos");
 const domDivOpcionesCursos = document.getElementById("opcionesCursos");
 
 /* Array con datos de profesores. Ejemplo */
-const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Enrico", "apellido": "Pucci"}]';
+const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
 const profesores = JSON.parse(jsonStringProfesores);
 
 /* Array con cursos. Ejemplo */
-const jsonStringCursos = '[{"id_curso": "1", "nombre": "Informatica"}, {"id_curso": "2", "nombre": "Informatica Bilingue"}, {"id_curso": "3", "nombre": "Gastrobomia"}]';
+const jsonStringCursos = '[{"id_curso": "1", "nombre": "Informatica"}, {"id_curso": "2", "nombre": "Informatica Bilingüe"}, {"id_curso": "3", "nombre": "Diseño Gráfico"}]';
 const cursos = JSON.parse(jsonStringCursos);
 
 /* Funciones */

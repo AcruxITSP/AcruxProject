@@ -9,7 +9,7 @@ const usuario = JSON.parse(jsonStringUsuario);
 const jsonStringGrupo = '{"grado": "3", "nombre": "MD"}';
 const grupo = JSON.parse(jsonStringGrupo);
 
-const jsonStringCurso = '{"nombre": "Informática Bilingue"}';
+const jsonStringCurso = '{"nombre": "Informatica Bilingüe"}';
 const curso = JSON.parse(jsonStringCurso);
 
 /* Funciones */
