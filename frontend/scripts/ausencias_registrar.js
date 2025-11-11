@@ -40,7 +40,7 @@ form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
 
-    let respuesta = await fetch(`../../backend/ausencias/my.php`, { method: "POST", body: formData });
+    let respuesta = await fetch(`../../backend/ausencias/crear.php`, { method: "POST", body: formData });
     respuesta = await respuesta.json();
 
     if (respuesta.ok) {
