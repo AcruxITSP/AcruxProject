@@ -24,12 +24,15 @@
         <label for="tipo">Tipo de Espacio</label>
         <select name="tipo" id="tipo" required>
           <option value="">Seleccionar tipo...</option>
-          <option value="aula">Aula infromatica</option>
-          <option value="laboratorio">Laboratorio de quimica</option>
-          <option value="laboratorio">Laboratorio de robotica</option>
-          <option value="laboratorio">Laboratorio de electricidad</option>
-          <option value="taller">Taller de mantenimiento </option>
-          <option value="oficina">Oficina</option>
+          <option value="Salón">Salón</option>
+          <option value="Aula">Aula</option>
+          <option value="Lab. Física">Lab. Física</option>
+          <option value="Lab. Química">Lab. Química</option>
+          <option value="Videoconferencias">Videoconferencias</option>
+          <option value="Taller Mantenimiento">Taller Mantenimiento</option>
+          <option value="Taller Electrónica">Taller Electrónica</option>
+          <option value="Taller">Taller</option>
+          <option value="Laboratorio">Laboratorio</option>
           <option value="otro">Otro</option>
         </select>
 
@@ -43,8 +46,8 @@
         <select name="ubicacion" id="ubicacion" required>
           <option value="">Seleccionar ubicación...</option>
           <option value="Planta baja">Planta baja</option>
-          <option value="primer piso">Primer piso </option>
-          <option value="segundo piso">Segundo Piso </option>
+          <option value="Primer piso">Primer piso</option>
+          <option value="Segundo piso">Segundo Piso</option>
         </select>
 
         <input type="submit" value="Registrar Espacio">

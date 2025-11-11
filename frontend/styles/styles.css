@@ -2510,6 +2510,56 @@ select:focus {
     display: block !important;
 }
 
+.label-opcionesCheckboxes {
+    width: 100%;
+}
+
+.select-checkboxes {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.label-opcionesCheckboxes {
+    user-select: none;
+    cursor: pointer;
+}
+
+.opcionesCheckboxes {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    background-color: var(--blanco);
+    width: 100%;
+    max-height: 8rem;
+    z-index: 1500;
+}
+
+.opcionesCheckboxes label {
+    color: var(--negro) !important;
+    border: 1px solid var(--gris4) !important;
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.opcionesCheckboxes label:hover {
+    border-color: var(--verde-claro);
+}
+
+.opcionesCheckboxes input[type="checkbox"] {
+    display: none;
+}
+
+.opcionesCheckboxes label:has(input[type="checkbox"]:checked) {
+    background-color: var(--verde-claro);
+    border-color: var(--verde) !important;
+}
+
 
 /*---------------------------------*/
 /* Responsive para clases generales*/
@@ -3183,6 +3233,7 @@ div.targeta-intervalo {
 #main-ver-salones {
     width: 100%;
     max-width: 800px;
+    margin-bottom: 5rem;
 }
 
 /* ======== TITULOS ======== */
@@ -3210,7 +3261,7 @@ div.targeta-intervalo {
     border: 1px solid var(--gris2);
     border-radius: 8px;
     padding: 1rem;
-    height: 10rem;
+    height: 14rem;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -3235,19 +3286,21 @@ div.targeta-intervalo {
 #main-ver-salones .info .nombre {
     font-weight: bold;
     color: var(--gris5);
+    font-size: 1.1rem;
 }
 
-#main-ver-salones .info .estado {
+#main-ver-salones .info:not(.nombre) {
+    color: var(--gris5);
     font-size: 0.95rem;
 }
 
 #main-ver-salones .info .estado.libre {
-    color: var(--verde-libre);
+    color: var(--verde);
     font-weight: 600;
 }
 
 #main-ver-salones .info .estado.ocupado {
-    color: var(--rojo-ocupado);
+    color: var(--coral);
 }
 
 /* ======== BOTONES ======== */
@@ -3262,7 +3315,7 @@ div.targeta-intervalo {
     margin-top: 1rem;
 }
 
-#main-ver-salones .acciones a {
+#main-ver-salones .acciones button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3536,27 +3589,8 @@ div.targeta-intervalo {
     height: 4rem;
 }
 
-#main-crear-cursos #label-opcionesMaterias {
-    width: 100%;
-}
-
-#main-crear-cursos #select-materias {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-#main-crear-cursos #label-opcionesMaterias {
-    user-select: none;
-    cursor: pointer;
-}
-
 #main-crear-cursos #opcionesMaterias {
-    display: none;
-    position: absolute;
     top: 3rem;
-    background-color: var(--blanco);
-    width: 100%;
     max-height: 8rem;
     margin-bottom: 5rem;
 }
@@ -3569,19 +3603,6 @@ div.targeta-intervalo {
     display: flex;
     justify-content: center;
     user-select: none;
-}
-
-#main-crear-cursos #opcionesMaterias label:hover {
-    border-color: var(--verde-claro);
-}
-
-#main-crear-cursos #opcionesMaterias input[type="checkbox"] {
-    display: none;
-}
-
-#main-crear-cursos #opcionesMaterias label:has(input[type="checkbox"]:checked) {
-    background-color: var(--verde-claro);
-    border-color: var(--verde) !important;
 }
 
 /* ======== ANIMACIONES ======== */

@@ -1,5 +1,8 @@
-const domInputSelectProfesor = document.getElementById("select-profesores");
-const domInputSelectCurso = document.getElementById("select-cursos");
+const domLabelOpcionesProfesores = document.getElementById("label-opcionesProfesores");
+const domDivOpcionesProfesores = document.getElementById("opcionesProfesores");
+
+const domLabelOpcionesCursos = document.getElementById("label-opcionesCursos");
+const domDivOpcionesCursos = document.getElementById("opcionesCursos");
 
 /* Array con datos de profesores. Ejemplo */
 const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Enrico", "apellido": "Pucci"}]';
@@ -11,25 +14,49 @@ const cursos = JSON.parse(jsonStringCursos);
 
 /* Funciones */
 
+domLabelOpcionesCursos.addEventListener("click", () => {
+    domDivOpcionesCursos.classList.toggle("show");
+    domDivOpcionesProfesores.classList.remove("show");
+});
+
+domLabelOpcionesProfesores.addEventListener("click", () => {
+    domDivOpcionesProfesores.classList.toggle("show");
+    domDivOpcionesCursos.classList.remove("show");
+});
+
 function listaProfesoresOptions(profesores){
     profesores.forEach(profesor => {
-        const option = document.createElement("option");
+        const label = document.createElement("label");
+        const input = document.createElement("input");
 
-        option.value = `${profesor.id_profesor}`;
-        option.innerText = `${profesor.nombre} ${profesor.apellido}`;
+        const nodeProfesor = document.createTextNode(`${profesor.nombre} ${profesor.apellido}`);
 
-        domInputSelectProfesor.appendChild(option);
+        input.value = `${profesor.id_profesor}`;
+        input.type = "checkbox";
+        input.name = "id_profesor[]"
+
+        label.appendChild(input);
+        label.appendChild(nodeProfesor);
+
+        domDivOpcionesProfesores.appendChild(label);
     });
 }
 
-function listaCursosOptions(cursos){
+function listaCursosOptions(cursos) {
     cursos.forEach(curso => {
-        const option = document.createElement("option");
+        const label = document.createElement("label");
+        const input = document.createElement("input");
 
-        option.value = `${curso.id_curso}`;
-        option.innerText = `${curso.nombre}`;
+        const nodeCurso = document.createTextNode(`${curso.nombre}`);
 
-        domInputSelectCurso.appendChild(option);
+        input.value = `${curso.id_curso}`;
+        input.type = "checkbox";
+        input.name = "id_curso[]"
+
+        label.appendChild(input);
+        label.appendChild(nodeCurso);
+
+        domDivOpcionesCursos.appendChild(label);
     });
 }
 
