@@ -76,4 +76,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     // Confirmar cambios
     Respuestas::enviarOk(null, $con);
 }
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET')
+{
+    // Verificar login
+    if (!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
+
+    // Verificar parámetros obligatorios
+    if (!isset($_GET['id_curso'])) Respuestas::enviarError("NECESITA_ID_CURSO");
+
+    $idCurso = $_GET['id_curso'];
+
+    $con = connectDb();
+
+    // Verificar que el curso exista
+    $sql = "SELECT id_curso, nombre FROM Curso WHERE id_curso = ?";
+    $curso = SQL::valueQuery($con, $sql, "i", $idCurso);
+    if ($curso instanceof ErrorDB) Respuestas::enviarError($curso, $con);
+
+    if ($curso->num_rows == 0)
+        Respuestas::enviarError("CURSO_NO_ENCONTRADO", $con);
+
+    $dataCurso = $curso->fetch_assoc();
+
+    // Obtener las materias asociadas al curso
+    $sql = "
+        SELECT m.id_materia, m.nombre
+        FROM Curso_Materia cm
+        INNER JOIN Materia m ON cm.id_materia = m.id_materia
+        WHERE cm.id_curso = ?
+    ";
+    $materias = SQL::valueQuery($con, $sql, "i", $idCurso);
+    if ($materias instanceof ErrorDB) Respuestas::enviarError($materias, $con);
+
+    $listaMaterias = [];
+    while ($row = $materias->fetch_assoc())
+        $listaMaterias[] = [
+            "id_materia" => (int)$row["id_materia"],
+            "nombre" => $row["nombre"]
+        ];
+
+    // Enviar respuesta
+    $response = [
+        "id_curso" => (int)$dataCurso["id_curso"],
+        "nombre" => $dataCurso["nombre"],
+        "materias" => $listaMaterias
+    ];
+
+    Respuestas::enviarOk($response, $con);
+}
 ?>
