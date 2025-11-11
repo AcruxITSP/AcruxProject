@@ -16,7 +16,7 @@ if (!estaLogeado()) {
     <?php require __DIR__ . '/../../systems/inputlist/ilists.php'; ?>
     <link rel="stylesheet" href="../../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>Document</title>
+    <title>Editar Recursos Internos</title>
 </head>
 
 <body id="body-recurso-interno-editar" class="menues-incluidos">
