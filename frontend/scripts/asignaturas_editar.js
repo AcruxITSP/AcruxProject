@@ -83,8 +83,8 @@ form.addEventListener("submit", async e => {
 
     if (respuesta.ok) {
         await Swal.fire({
-            title: "Espacio Creado",
-            text: `El espacio ha sido creada exitosamente`,
+            title: "Asignatura Actualizada",
+            text: `La información de la asignatura fue actualizada exitosamente`,
             icon: "success"
         });
     }
@@ -93,7 +93,7 @@ form.addEventListener("submit", async e => {
             case "NECESITA_LOGIN":
                 Swal.fire({
                     title: "Login Requerido",
-                    text: `Necesitas iniciar sesion para crear un espacio.`,
+                    text: `Necesitas iniciar sesion para realizar esta acción`,
                     icon: "error"
                 });
                 break;

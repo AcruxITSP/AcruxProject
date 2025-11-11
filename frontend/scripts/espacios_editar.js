@@ -24,7 +24,7 @@ form.addEventListener("submit", async e => {
             case "NECESITA_LOGIN":
                 Swal.fire({
                     title: "Login Requerido",
-                    text: `Necesitas iniciar sesion para relizar esta acción.`,
+                    text: `Necesitas iniciar sesion para realizar esta acción.`,
                     icon: "error"
                 });
                 break;
