@@ -20,6 +20,7 @@ function uiCrearAsignatura(idAsignatura, nombre, cursos, docentes)
     });
 
     if(domButtonBorrar) domButtonBorrar.onclick = async () => { await borrarAsignaturaAsync(idAsignatura) };
+    if(domButtonEditar) domButtonEditar.onclick = async () => { editarAsignatura(idAsignatura) };
 
     return domDivAsignatura;
 }
@@ -28,6 +29,11 @@ function uiAgregarAsignatura(idAsignatura, nombre, cursos, docentes)
 {
     const domDivAsignatura = uiCrearAsignatura(idAsignatura, nombre, cursos, docentes);
     domAsignaturaContainer.appendChild(domDivAsignatura);
+}
+
+function editarAsignatura(idAsignatura)
+{
+    location.href = `editar.php?id=${idAsignatura}`;
 }
 
 async function borrarAsignaturaAsync(id)
