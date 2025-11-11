@@ -1037,11 +1037,6 @@ select:focus {
 /*  Pagina Ver Grupos  */
 /*/////////////////////*/
 
-#body-grupos-ver {
-    display: grid;
-    grid-row: 2rem 1fr;
-    gap: 1rem;
-}
 
 #body-grupos-ver #main-content {
     display: flex;
@@ -1050,12 +1045,8 @@ select:focus {
 }
 
 #main-grupos-ver {
-    width: 80
+    width: 80%;
 }
-
-/*///////////////////////////*/
-/*  Página Ver Grupos  */
-/*///////////////////////////*/
 
 #body-grupos-ver {
     font-family: "Segoe UI", Roboto, sans-serif;
@@ -1246,13 +1237,12 @@ select:focus {
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
 
+    @media (max-width: 900px) {
     #body-grupos-ver #lista-targetas-grupos {
         grid-template-columns: 1fr;
     }
+}
 
-    #body-grupos-ver {
-        padding-left: 2rem;
-    }
 }
 
 
@@ -2644,7 +2634,7 @@ select:focus {
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     #main-ver-ausencias {
-        grid-template-columns: 30% 65%;
+        grid-template-columns: 40% 65%;
         gap: 5%;
     }
 }
