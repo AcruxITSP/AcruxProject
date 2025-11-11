@@ -100,23 +100,11 @@ function uiCrearDivEspacioDeRecursoInterno(idEspacio, tipoEspacio, numeroEspacio
 
 function irAPaginaEditarExterno(idRecurso)
 {
-    Swal.fire({
-        title: "En mantenimiento",
-        icon: "info"
-    });
-    return;
-    
     location.href=`externos/editar.php?id=${idRecurso}`;
 }
 
 function irAPaginaEditarInterno(idRecurso)
 {
-    Swal.fire({
-        title: "En mantenimiento",
-        icon: "info"
-    });
-    return;
-
     location.href=`internos/editar.php?id=${idRecurso}`;
 }
 
