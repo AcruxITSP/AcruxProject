@@ -43,6 +43,7 @@ function uiCrearTarjeta(espacio)
 
     domNombre.innerText = `${espacio.tipo} ${espacio.numero ?? ''}`;
     domBorrar.onclick = () => borrarEspacioAsync(espacio.id_espacio);
+    domEditar.onclick = () => editarEspacio(espacio.id_espacio);
 
     const disponibilidad = espacio.disponibilidad;
     domEstado.innerText = disponibilidad.estado; // Libre, ausente, etc...
@@ -71,6 +72,11 @@ function uiAgregarTarjeta(espacio)
     const domDivPorTipo = uiAgregarDivPorTipo(espacio.tipo);
     const domContenedorSalones = domDivPorTipo.querySelector("[name='contenedor-salones']");
     domContenedorSalones.appendChild(domDivTarjeta);
+}
+
+function editarEspacio(idEspacio)
+{
+    location.href = `editar.php?id=${idEspacio}`;
 }
 
 async function borrarEspacioAsync(idEspacio)
