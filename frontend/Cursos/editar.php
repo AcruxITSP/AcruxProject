@@ -29,9 +29,9 @@
                 <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
 
                 <label for="select-materias">Materias</label>
-                <div id="select-materias">
-                    <input id="label-opcionesMaterias" type="text" placeholder="Seleccione las materias" readonly>
-                    <div id="opcionesMaterias" class="scrollable-list"></div>
+                <div id="select-materias" class="select-checkboxes">
+                    <input id="label-opcionesMaterias" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las materias" readonly>
+                    <div id="opcionesMaterias" class="scrollable-list opcionesCheckboxes"></div>
                 </div>
 
                 <input type="submit" value="Registrar">
