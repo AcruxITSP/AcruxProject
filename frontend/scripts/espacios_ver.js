@@ -33,8 +33,13 @@ function uiCrearTarjeta(espacio)
     const domDivTarjeta = domTemplateTarjeta.content.cloneNode(true).children[0];
     const domNombre = domDivTarjeta.querySelector("[name='nombre']");
     const domEstado = domDivTarjeta.querySelector("[name='estado']");
+    const domCapacidad = domDivTarjeta.querySelector("[name='capacidad'] span");
+    const domUbicacion = domDivTarjeta.querySelector("[name='ubicacion'] span");
     const domBorrar = domDivTarjeta.querySelector("[name='borrar']");
     const domEditar = domDivTarjeta.querySelector("[name='editar']");
+
+    domCapacidad.innerText = `${espacio.capacidad}`;
+    domUbicacion.innerText = `${espacio.ubicacion}`;
 
     domNombre.innerText = `${espacio.tipo} ${espacio.numero ?? ''}`;
     domBorrar.onclick = () => borrarEspacioAsync(espacio.id_espacio);
@@ -46,11 +51,15 @@ function uiCrearTarjeta(espacio)
     {
         const reservante = disponibilidad.reservante;
         domEstado.innerText += ` - ${reservante.nombre} ${reservante.apellido}`;
+        domEstado.classList.add("ocupado");
 
         if(reservante.grupo)
         {
             domEstado.innerText += ` - ${reservante.grupo}`;
         }
+    } else if (disponibilidad.estado.toLowerCase() == "libre"){
+        domEstado.innerText = "Libre";
+        domEstado.classList.add("libre");
     }
 
     return domDivTarjeta;

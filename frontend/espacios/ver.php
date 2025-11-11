@@ -43,7 +43,9 @@
         <div class="tarjeta">
           <div class="info">
             <p class="nombre" name="nombre">Salón 1</p>
-            <p class="estado ocupado" name="estado">Ocupado por <span>Prof. Bruno</span></p>
+            <p class="capacidad" name="capacidad">Capacidad: <span>20</span></p>
+            <p class="ubicacion" name="ubicacion">Ubicación: <span>Planta Baja</span></p>
+            <p class="estado" name="estado">Ocupado por <span>Prof. Bruno</span></p>
           </div>
           <div class="acciones">
             <button class="borrar" name="borrar"><i class="bi bi-trash-fill"></i></button>
