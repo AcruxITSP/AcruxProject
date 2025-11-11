@@ -55,4 +55,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     // Confirmar la transacción
     Respuestas::enviarOk(null, $con);
 }
+
+// PUEDE TIRAR LOS CÓDIGOS DE ERROR:
+// - NECESITA_LOGIN
+// - NECESITA_ID
+if($_SERVER['REQUEST_METHOD'] == 'GET')
+{
+    // Verifica que el usuario esté logueado
+    if(!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
+
+    // Verifica que se haya pasado el id del grupo
+    if(!isset($_GET['id'])) Respuestas::enviarError("NECESITA_ID");
+
+    $id = $_GET['id'];
+
+    $con = connectDb();
+
+    // Obtiene los datos principales del grupo
+    $sql = "SELECT id_grupo, grado, nombre, id_curso, id_adscrito FROM Grupo WHERE id_grupo = ?";
+    $result = SQL::valueQuery($con, $sql, "i", $id);
+    if($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+
+    // Si no se encontró ningún grupo, devuelve error
+    if($result->num_rows === 0)
+        Respuestas::enviarError("GRUPO_NO_ENCONTRADO", $con);
+
+    $grupo = $result->fetch_assoc();
+
+    // Obtiene los datos del curso asociado
+    $sql = "SELECT id_curso, nombre FROM Curso WHERE id_curso = ?";
+    $cursoResult = SQL::valueQuery($con, $sql, "i", $grupo['id_curso']);
+    if($cursoResult instanceof ErrorDB) Respuestas::enviarError($cursoResult, $con);
+    $grupo['curso'] = $cursoResult->num_rows > 0 ? $cursoResult->fetch_assoc() : null;
+
+    // Obtiene los datos del profesor adscrito
+    $sql = "SELECT id_usuario AS id, nombre, apellido FROM Usuario WHERE id_usuario = ?";
+    $adscritoResult = SQL::valueQuery($con, $sql, "i", $grupo['id_adscrito']);
+    if($adscritoResult instanceof ErrorDB) Respuestas::enviarError($adscritoResult, $con);
+    $grupo['adscrito'] = $adscritoResult->num_rows > 0 ? $adscritoResult->fetch_assoc() : null;
+
+    // Envía la respuesta con todos los datos del grupo
+    Respuestas::enviarOk($grupo, $con);
+}
 ?>
