@@ -88,8 +88,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     if($cursoResult instanceof ErrorDB) Respuestas::enviarError($cursoResult, $con);
     $grupo['curso'] = $cursoResult->num_rows > 0 ? $cursoResult->fetch_assoc() : null;
 
-    // Obtiene los datos del profesor adscrito
-    $sql = "SELECT id_usuario AS id, nombre, apellido FROM Usuario WHERE id_usuario = ?";
+    // Obtiene los datos del usuario adscrito
+    $sql = "SELECT usuario.id_usuario , id_adscrito, nombre, apellido
+            FROM usuario, adscrito
+            WHERE usuario.id_usuario = adscrito.id_usuario
+            AND id_adscrito = ?";
     $adscritoResult = SQL::valueQuery($con, $sql, "i", $grupo['id_adscrito']);
     if($adscritoResult instanceof ErrorDB) Respuestas::enviarError($adscritoResult, $con);
     $grupo['adscrito'] = $adscritoResult->num_rows > 0 ? $adscritoResult->fetch_assoc() : null;
