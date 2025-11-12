@@ -9,7 +9,6 @@ domLabelOpcionesMaterias.addEventListener("click", () => {
     domDivOpcionesMaterias.classList.toggle("show");
 });
 
-
 function listaMateriasOptions(materias) {
     materias.forEach(materia => {
         const label = document.createElement("label");
@@ -18,6 +17,7 @@ function listaMateriasOptions(materias) {
         const nodeMateria = document.createTextNode(`${materia.nombre}`);
 
         input.value = `${materia.id_materia}`;
+        input.setAttribute('registerName', `${materia.nombre}`);
         input.type = "checkbox";
         input.name = "id_materias[]"
 
@@ -77,14 +77,15 @@ form.addEventListener("submit", async e => {
     }
 });
 
-async function inicializar()
-{
-    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, {method:"GET"});
+async function inicializar() {
+    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, { method: "GET" });
     respuesta = await respuesta.json();
 
     const materias = respuesta.value;
-    
+
     listaMateriasOptions(materias);
+
+    addEvenListenersCheckboxes(domLabelOpcionesMaterias);
 }
 
 inicializar();
