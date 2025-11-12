@@ -1975,12 +1975,12 @@ select:focus {
 
 /* ======== RESPONSIVE ======== */
 @media (max-width: 500px) {
-    main {
+    #main-crear-recursos {
         margin: 0;
         padding: 0;
     }
 
-    form h1 {
+    #form-crear-recursos h1 {
         font-size: 1.5rem;
     }
 }
@@ -3887,7 +3887,7 @@ div.targeta-intervalo {
     width: 100%;
     max-width: 500px;
     background: var(--blanco);
-    padding: 30px;
+    padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 6px 20px var(--gris2);
     animation: fadeIn 0.4s ease;
@@ -3938,12 +3938,6 @@ select:focus {
     background-color: var(--azul-oscuro);
 }
 
-#main-crear-asignatura div.vacio {
-    height: 2rem;
-    border: 1px solid var(--negro);
-    border-style: dashed
-}
-
 /* ======== ANIMACIONES ======== */
 @keyframes fadeIn {
     from {
@@ -3959,11 +3953,6 @@ select:focus {
 
 /* ======== RESPONSIVE ======== */
 @media (max-width: 500px) {
-    #main-crear-asignatura {
-        margin: 0;
-        padding: 0;
-    }
-
     #main-crear-asignatura form h1 {
         font-size: 1.5rem;
     }
