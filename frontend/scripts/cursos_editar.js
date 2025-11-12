@@ -1,7 +1,10 @@
 const domLabelOpcionesMaterias = document.getElementById("label-opcionesMaterias");
 const domDivOpcionesMaterias = document.getElementById("opcionesMaterias");
-
+const domNombre = document.getElementById("nombre");
 const form = document.getElementById("form-editar-curso");
+
+const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+const id = urlParams.get("id"); // agarra el id de la url
 
 /*Funciones */
 
@@ -33,9 +36,6 @@ function listaMateriasOptions(materias) {
 form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
-
-    const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
-    const id = urlParams.get("id"); // agarra el id de la url
 
     formData.append("id_curso", id);
 
@@ -77,15 +77,18 @@ form.addEventListener("submit", async e => {
     }
 });
 
-async function inicializar() {
-    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, { method: "GET" });
+async function inicializar()
+{
+    respuesta = await fetch(`../../../backend/cursos/editar.php?id_curso=${id}`);
     respuesta = await respuesta.json();
+    const estadoCursoActual = respuesta.value;
 
-    const materias = respuesta.value;
-
-    listaMateriasOptions(materias);
-
+    listaMateriasOptions(estadoCursoActual.materias);
     addEvenListenersCheckboxes(domLabelOpcionesMaterias);
+
+    // cargar los valores 
+    domNombre.value = estadoCursoActual.nombre;
+    
 }
 
 inicializar();
