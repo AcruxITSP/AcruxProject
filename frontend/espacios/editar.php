@@ -46,8 +46,8 @@
                 <select name="ubicacion" id="ubicacion" required>
                     <option value="">Seleccionar ubicación...</option>
                     <option value="Planta baja">Planta baja</option>
-                    <option value="primer piso">Primer piso </option>
-                    <option value="segundo piso">Segundo Piso </option>
+                    <option value="Primer piso">Primer piso </option>
+                    <option value="Segundo piso">Segundo Piso </option>
                 </select>
 
                 <input type="submit" value="Registrar Espacio">
