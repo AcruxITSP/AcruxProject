@@ -57,4 +57,38 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     Respuestas::enviarOk(null, $con);
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET')
+{
+    if (!isset($_SESSION['id_usuario']))
+        Respuestas::enviarError("NECESITA_LOGIN");
+
+    if (!isset($_GET['id']))
+        Respuestas::enviarError("NECESITA_ID");
+
+    $id = $_GET['id'];
+
+    $con = connectDb();
+
+    $sql = "SELECT 
+                id_espacio,
+                tipo,
+                numero,
+                capacidad,
+                ubicacion,
+                CONCAT_WS(' ', tipo, numero) AS nombre
+            FROM espacio
+            WHERE id_espacio = ?";
+
+    $result = SQL::valueQuery($con, $sql, "i", $id);
+    if ($result instanceof ErrorDB)
+        Respuestas::enviarError($result, $con);
+
+    if ($result->num_rows == 0)
+        Respuestas::enviarError("ESPACIO_NO_EXISTE", $con);
+
+    $espacio = $result->fetch_assoc();
+
+    Respuestas::enviarOk($espacio, $con);
+}
 ?>

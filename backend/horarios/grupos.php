@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
                 pr.id_profesor,                                    -- ID del profesor
                 m.nombre AS nombre_materia,                        -- nombre de la materia
                 CONCAT(u.nombre, ' ', u.apellido) AS nombre_profesor, -- nombre completo del profesor
-                CONCAT(e.tipo, ' ', e.numero) AS nombre_espacio    -- tipo y número del espacio (aula, laboratorio, etc.)
+                CONCAT_WS(' ', e.tipo, e.numero) AS nombre_espacio    -- tipo y número del espacio (aula, laboratorio, etc.)
             FROM Grupo g
             JOIN Modulo mo         ON mo.id_grupo = g.id_grupo     -- relación grupo → módulos
             JOIN Hora h            ON h.id_hora = mo.id_hora       -- relación módulo → hora

@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST')
 
     if (!isset($_POST['id_espacio'])) Respuestas::enviarError("FALTA_ID_ESPACIO");
     $nuevoIdEspacio = $_POST['id_espacio'];
-    if ($nuevoIdEspacio === '') $nuevoIdEspacio = null;
+    if ($nuevoIdEspacio === '' || $nuevoIdEspacio == 0) $nuevoIdEspacio = null;
 
     if (!isset($_POST['cantidad'])) Respuestas::enviarError("FALTA_CANTIDAD");
     $nuevaCantidad = $_POST['cantidad'];
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST')
     $idRecursoExterno = $row['id_recurso_externo'];
 
     // Validar que el espacio exista (si id espacio no es null)
-    if (isset($nuevoIdEspacio) && $nuevoIdEspacio !== null)
+    if (isset($nuevoIdEspacio))
     {
         $sql = "SELECT COUNT(*) AS c FROM espacio WHERE id_espacio = ?";
         $result = SQL::valueQuery($con, $sql, "i", $nuevoIdEspacio);
