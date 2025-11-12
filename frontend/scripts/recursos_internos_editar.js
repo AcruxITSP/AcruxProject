@@ -6,6 +6,9 @@ const domIListEspaciosYCantidades = document.getElementById("ilist-espacios-y-ca
 
 let espacios = [];
 
+const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+const id = urlParams.get("id"); // agarra el id de la url
+
 // Codigo que se encarga de generar una lista de inputs que contienen:
 // Select para el espacio
 // Number para la cantidad de este recurso para el espacio seleccionado
@@ -31,6 +34,7 @@ function IListEspacioCantidadSuplier(name)  // El nombre es requerido por la "fi
 
 async function inicializar()
 {
+    // trae los tipos y espacios (reutilizamos el GET de crear para el de editar)
     let respuesta = await fetch('../../../backend/recursos/crear.php', {method:"GET"});
     respuesta = await respuesta.json();
     const tiposRecursos = respuesta.value.tipos_recursos;
@@ -41,6 +45,25 @@ async function inicializar()
     // Select para el espacio
     // Number para la cantidad de este recurso para el espacio seleccionado
     generateIList(domIListEspaciosYCantidades);
+
+    // Traemos los datos actuales del recurso
+    respuesta = await fetch(`../../../backend/recursos/editar_interno.php?id_recurso_base=${id}`);
+    respuesta = await respuesta.json();
+    const estadoActualRecurso = respuesta.value;
+    domTipo.value = estadoActualRecurso.tipo;
+
+    // Agregar los espacios en el formulario
+    const addEspacioButton = domIListEspaciosYCantidades.querySelector('button');
+    const inputContainer = domIListEspaciosYCantidades.querySelector('[name="input-container"]');
+    estadoActualRecurso.espacios.forEach(espacio => {
+        addEspacioButton.click();
+        const inputEspacioAgregado = inputContainer.lastChild;
+        const selectEspacio = inputEspacioAgregado.querySelector('[name="id_espacios[]"]');
+        const inputCantidades = inputEspacioAgregado.querySelector('[name="cantidades[]"]');
+        selectEspacio.value = espacio.id_espacio;
+        inputCantidades.value = espacio.cantidad;
+    });
+    
 }
 
 document.addEventListener('DOMContentLoaded', async e => {
@@ -52,9 +75,9 @@ domForm.addEventListener('submit', async e => {
     const formData = new FormData(domForm);
     const tipo = domTipo.value;
 
-    /* Hay que crear el script "recursos/internos/editar.php" */
+    formData.append("id_recurso_base", id);
 
-    let respuesta = await fetch('../../../backend/recursos/crear.php', {method:"POST", body: formData});
+    let respuesta = await fetch('../../../backend/recursos/editar_interno.php', {method:"POST", body: formData});
     respuesta = await respuesta.json();
 
     if(respuesta.ok)

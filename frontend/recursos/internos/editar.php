@@ -30,9 +30,6 @@ if (!estaLogeado()) {
             <form id="form-editar-recurso-interno" class="formulario-basico">
                 <h1>Editar Recurso Interno</h1>
 
-                <label for="imagen">Imágen</label>
-                <input type="file" name="imagen">
-
                 <label for="tipo">Tipo</label>
                 <input name="tipo" id="tipo">
 
