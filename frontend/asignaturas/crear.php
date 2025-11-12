@@ -25,15 +25,19 @@
                 <label for="nombre">Nombre</label>
                 <input id="nombre" type="text" name="nombre" placeholder="nombre" required></label>
 
-                <label for="select-profesores">Profesores</label>
+                <label for="select-profesores">Docentes</label>
                 <div id="select-profesores" class="select-checkboxes">
-                    <input id="label-opcionesProfesores" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las profesores" readonly>
+                    <div id="label-opcionesProfesores" class="label-opcionesCheckboxes">
+                        <p class="placeholder">Seleccione los docentes</p>
+                    </div>
                     <div id="opcionesProfesores" class="scrollable-list opcionesCheckboxes"></div>
                 </div>
 
                 <label for="select-cursos">Cursos</label>
                 <div id="select-cursos" class="select-checkboxes">
-                    <input id="label-opcionesCursos" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las cursos" readonly>
+                    <div id="label-opcionesCursos" class="label-opcionesCheckboxes">
+                        <p class="placeholder">Seleccione los cursos</p>
+                    </div>
                     <div id="opcionesCursos" class="scrollable-list opcionesCheckboxes"></div>
                 </div>
 
@@ -42,6 +46,7 @@
         </main>
     </div>
 
+    <script src="../util/multipleSelect.js"></script>
     <script src="../scripts/asignaturas_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
