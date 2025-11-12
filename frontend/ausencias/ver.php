@@ -266,7 +266,7 @@
         </div>
     </template>
 
-    <script src="../scripts/ausencias_ver.js"></script>
+    <script src="../scripts/ausencias_my_ver.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>

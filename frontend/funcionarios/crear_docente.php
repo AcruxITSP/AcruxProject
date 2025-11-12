@@ -43,7 +43,7 @@
         </main>
     </div>
 
-    <script src="../scripts/crear_docente.js"></script>
+    <script src="../scripts/funcionarios_crear_docente.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
