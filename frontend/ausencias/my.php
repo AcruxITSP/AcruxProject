@@ -110,13 +110,13 @@
                 </div>
             </div>
             <div id="modal-registrar-ausencia">
-                <form class="formulario-basico">
+                <form id="form-registrar-ausencia" class="formulario-basico">
                     <h1>Registrar Ausencia</h1>
-                    <label for="fechaInicio">Inicio <input type="date" id="fechaInicio"></label>
-                    <label for="fechaFin">Fin <input type="date" id="fechaFin"></label>
+                    <label for="fechaInicio">Inicio <input type="date" id="fechaInicio" name="fechaInicio"></label>
+                    <label for="fechaFin">Fin <input type="date" id="fechaFin" name="fechaFin"></label>
 
                     <label>Hora</label>
-                    <label for="allDay" id="allday-label">Todo el día <input type="checkbox" id="allDay"></label>
+                    <label for="allDay" id="allday-label">Todo el día <input type="checkbox" id="allDay" name="allDay"></label>
 
                     <div id="select-intervalos">
                         <input id="label-opcionesIntervalos" type="text" placeholder="Seleccione los intervalos" readonly>
@@ -124,8 +124,8 @@
                     </div>
 
                     <div>
-                        <label>Motivo</label>
-                        <textarea id="input-motivo"></textarea>
+                        <label for="input-motivo">Motivo</label>
+                        <textarea id="input-motivo" name="motivo"></textarea>
                     </div>
 
                     <input type="submit" value="Registrar">

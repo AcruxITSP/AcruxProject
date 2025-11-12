@@ -19,19 +19,16 @@
 
     <div id="main-content">
         <main id="main-crear-cursos">
-            <form class="formulario-basico">
+            <form id="form-editar-curso" class="formulario-basico">
                 <h1>Editar Curso</h1>
 
                 <label for="nombre">Nombre</label>
                 <input id="nombre" name="nombre" type="text" placeholder="Nombre">
-
-                <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
-
+                
                 <label for="select-materias">Materias</label>
-                <div id="select-materias">
-                    <input id="label-opcionesMaterias" type="text" placeholder="Seleccione las materias" readonly>
-                    <div id="opcionesMaterias" class="scrollable-list"></div>
+                <div id="select-materias" class="select-checkboxes">
+                    <input id="label-opcionesMaterias" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las materias" readonly>
+                    <div id="opcionesMaterias" class="scrollable-list opcionesCheckboxes"></div>
                 </div>
 
                 <input type="submit" value="Registrar">

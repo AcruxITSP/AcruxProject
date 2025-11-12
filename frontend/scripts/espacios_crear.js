@@ -22,7 +22,7 @@ form.addEventListener("submit", async e => {
             case "NECESITA_LOGIN":
                 Swal.fire({
                     title: "Login Requerido",
-                    text: `Necesitas iniciar sesion para crear un espacio.`,
+                    text: `Necesitas iniciar sesión para crear un espacio.`,
                     icon: "error"
                 });
                 break;

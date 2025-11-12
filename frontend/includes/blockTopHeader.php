@@ -19,9 +19,9 @@ $root = "/frontend";
       <a href="<?= $root ?>/general/configuracion.php">Configuración</a>
       <?php @session_start(); ?>
       <?php if (isset($_SESSION['username'])) : ?>
-        <a id="btn-cerrar-sesion" href="../cuenta/logout.php">Cerrar sesión</a>
+        <a id="btn-cerrar-sesion" href="<?= $root ?>/cuenta/logout.php">Cerrar sesión</a>
       <?php else: ?>
-        <a id="btn-iniciar-sesion" href="../cuenta/login.php">Iniciar Sesión</a>
+        <a id="btn-iniciar-sesion" href="<?= $root ?>/cuenta/login.php">Iniciar Sesión</a>
       <?php endif; ?>
     </div>
   </div>

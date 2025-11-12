@@ -19,11 +19,11 @@
 
     <div id="main-content">
         <main id="main-crear-asignatura">
-            <form id="form-crear-asignatura">
+            <form id="form-editar-asignatura" class="formulario-basico">
                 <h1>Editar asignatura</h1>
 
                 <label for="nombre">Nombre</label>
-                <input id="nombre" type="text" placeholder="nombre"></label>
+                <input id="nombre" type="text" name="nombre" placeholder="nombre"></label>
 
                 <label for="select-profesores">Profesores</label>
                 <div id="select-profesores" class="select-checkboxes">

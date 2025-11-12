@@ -70,6 +70,13 @@
                     </a>
                 <?php endif; ?>
 
+                <?php if(esProfesor()): ?>
+                    <a href="../ausencias/my.php" class="resource-card">
+                        <i class="fas fa-user-tie icon-card"></i>
+                        <span>Mis ausencias</span>
+                    </a>
+                <?php endif; ?>
+
                 <?php if(estaLogeado()): ?>
                     <a href="../reservas/my.php" class="resource-card">
                         <i class="fas fa-user-tie icon-card"></i>

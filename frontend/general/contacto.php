@@ -28,7 +28,7 @@
                     <img src="../img/utu.png">
                 </div>
                 <div class="contactos">
-                    <p class="telefono"><strong>Tel:</strong> 47242917 - 091731085</p>
+                    <p class="telefono"><strong>Tel:</strong> 4724 2917 - 091 731 085</p>
                     <p class="e-mail"><strong>E-mail:</strong> itsp@utu.edu.uy</p>
                     <p class="instagram"><strong>Instagram:</strong> its_utu.paysandu</p>
                 </div>
@@ -38,62 +38,62 @@
 
             <div id="contactos-equipo">
                 <div class="targeta-contacto">
-                    <img src="../img/utu.png">
+                    <img src="../img/foto_alejo.jpg">
                     <div class="info">
-                        <h2 class="nombre">Pablo Castro</h2>
-                        <p class="area-especializacion">Especialista en html</p>
+                        <h2 class="nombre">Alejo Bottesch</h2>
+                        <p class="area-especializacion">Desarrollador Backend</p>
                     </div>
                     <div class="contactos">
-                        <p class="telefono"><strong>Tel:</strong> 099090909</p>
-                        <p class="e-mail"><strong>E-mail:</strong> blablabla@gmail.cohhhhhhhhm</p>
+                        <p class="telefono"><strong>Tel:</strong> 099 389 992</p>
+                        <p class="e-mail"><strong>E-mail:</strong> alejobottesch.public@gmail.com</p>
                     </div>
                 </div>
 
                 <div class="targeta-contacto">
-                    <img src="../img/utu.png">
+                    <img src="../img/foto_nehuel.jpg">
                     <div class="info">
-                        <h2 class="nombre">Pablo Castro</h2>
-                        <p class="area-especializacion">Especialista en html</p>
+                        <h2 class="nombre">Nehuel Acosta</h2>
+                        <p class="area-especializacion">Desarrollador Backend</p>
                     </div>
                     <div class="contactos">
-                        <p class="telefono"><strong>Tel:</strong> 099090909</p>
-                        <p class="e-mail"><strong>E-mail:</strong> blablabla@gmail.cohhhhhhhhm</p>
+                        <p class="telefono"><strong>Tel:</strong> 097 962 771</p>
+                        <p class="e-mail"><strong>E-mail:</strong> nehuelacosta@gmail.com</p>
                     </div>
                 </div>
 
                 <div class="targeta-contacto">
-                    <img src="../img/utu.png">
+                    <img src="../img/foto_sofia.jpg">
                     <div class="info">
-                        <h2 class="nombre">Pablo Castro</h2>
-                        <p class="area-especializacion">Especialista en html</p>
+                        <h2 class="nombre">Sofía Verocai</h2>
+                        <p class="area-especializacion">Desarrolladora Frontend</p>
                     </div>
                     <div class="contactos">
-                        <p class="telefono"><strong>Tel:</strong> 099090909</p>
-                        <p class="e-mail"><strong>E-mail:</strong> blablabla@gmail.cohhhhhhhhm</p>
+                        <p class="telefono"><strong>Tel:</strong> 092 992 900</p>
+                        <p class="e-mail"><strong>E-mail:</strong> sofiaverocai10@gmail.com</p>
                     </div>
                 </div>
 
                 <div class="targeta-contacto">
-                    <img src="../img/utu.png">
+                    <img src="../img/foto_thiago.jpg">
                     <div class="info">
-                        <h2 class="nombre">Pablo Castro</h2>
-                        <p class="area-especializacion">Especialista en html</p>
+                        <h2 class="nombre">Thiago Díaz</h2>
+                        <p class="area-especializacion">Desarrollador Frontend</p>
                     </div>
                     <div class="contactos">
-                        <p class="telefono"><strong>Tel:</strong> 099090909</p>
-                        <p class="e-mail"><strong>E-mail:</strong> blablabla@gmail.cohhhhhhhhm</p>
+                        <p class="telefono"><strong>Tel:</strong> 097 071 420</p>
+                        <p class="e-mail"><strong>E-mail:</strong> diazthiago4455@gmail.com</p>
                     </div>
                 </div>
 
                 <div class="targeta-contacto">
-                    <img src="../img/utu.png">
+                    <img src="../img/foto_michel.jpg">
                     <div class="info">
-                        <h2 class="nombre">Pablo Castro</h2>
-                        <p class="area-especializacion">Especialista en html</p>
+                        <h2 class="nombre">Michel de Agustini</h2>
+                        <p class="area-especializacion">Desarrollador Frontend</p>
                     </div>
                     <div class="contactos">
-                        <p class="telefono"><strong>Tel:</strong> 099090909</p>
-                        <p class="e-mail"><strong>E-mail:</strong> blablabla@gmail.cohhhhhhhhm</p>
+                        <p class="telefono"><strong>Tel:</strong> 097 012 707</p>
+                        <p class="e-mail"><strong>E-mail:</strong> micho2017dag21@gmail.com</p>
                     </div>
                 </div>
             </div>
