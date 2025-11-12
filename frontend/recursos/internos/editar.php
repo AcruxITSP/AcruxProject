@@ -31,7 +31,7 @@ if (!estaLogeado()) {
                 <h1>Editar Recurso Interno</h1>
 
                 <label for="tipo">Tipo</label>
-                <input name="tipo" id="tipo">
+                <input name="tipo" id="tipo" required>
 
                 <label>Espacios</label>
                 <div id="ilist-espacios-y-cantidades" ilist-suplier="IListEspacioCantidadSuplier" ilist-title="" ilist-inames=""></div>

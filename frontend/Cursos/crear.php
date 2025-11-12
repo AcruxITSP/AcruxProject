@@ -23,7 +23,7 @@
                 <h1>Crear Curso</h1>
 
                 <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
 
                 <label for="select-materias">Materias</label>
                 <div id="select-materias" class="select-checkboxes">
