@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     // - Else => "Usuario"
     $sql = "
         SELECT
+            u.id_usuario,
             u.nombre,
             u.apellido,
             CASE
