@@ -1,3 +1,5 @@
+<?php include '../util/sesiones.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,7 +32,9 @@
     <main id="main-ver-salones">
 
       <!-- Keep button and dynamic templates from alejo-dev -->
-      <button onclick="location.href='crear.php'">Crear Salón</button>
+      <?php if (esAdscripto()): ?>
+        <button onclick="location.href='crear.php'">Crear Espacio</button>
+      <?php endif; ?>
 
       <template id="template-div-por-tipo">
         <div>
@@ -48,8 +52,10 @@
             <p class="estado" name="estado">Ocupado por <span>Prof. Bruno</span></p>
           </div>
           <div class="acciones">
-            <button class="borrar" name="borrar"><i class="bi bi-trash-fill"></i></button>
-            <button class="editar" name="editar"><i class="bi bi-pencil"></i></button>
+            <?php if (esAdscripto()): ?>
+              <button class="borrar" name="borrar"><i class="bi bi-trash-fill"></i></button>
+              <button class="editar" name="editar"><i class="bi bi-pencil"></i></button>
+            <?php endif; ?>
           </div>
         </div>
       </template>

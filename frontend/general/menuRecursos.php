@@ -55,10 +55,14 @@
                     <i class="fas fa-users icon-card"></i>
                     <span>Grupos</span>
                 </a>
-                <a href="../ausencias/ver.php" class="resource-card">
-                    <i class="fas fa-user-tie icon-card"></i>
-                    <span>Ausencias</span>
-                </a>
+
+                <?php if(estaLogeado()): ?>
+                    <a href="../ausencias/ver.php" class="resource-card">
+                        <i class="fas fa-user-tie icon-card"></i>
+                        <span>Ausencias</span>
+                    </a>
+                <?php endif; ?>
+
                 <a href="../funcionarios/ver.php"  class="resource-card">
                     <i class="fas fa-user-tie icon-card"></i>
                     <span>Funcionarios</span>

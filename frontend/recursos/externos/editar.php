@@ -20,9 +20,6 @@
             <form class="formulario-basico">
                 <h1>Editar Recurso Externo</h1>
 
-                <label for="imagen">Imágen</label>
-                <input type="file" name="imagen" id="imagen">
-
                 <label for="tipo">Tipo</label>
                 <input name="tipo" id="tipo">
 

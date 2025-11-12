@@ -24,8 +24,8 @@ function uiCrearTarjetaGrupo(grupo, curso, infoAdscrito){
     const domButtonEditar = domDivTarjeta.querySelector("[name='editar']");
 
     domNombreGrupo.innerText = `${grupo.grado}°${grupo.nombre}`;
-    domNombreAdscrito.innerText = `${infoAdscrito.nombre} ${infoAdscrito.apellido}`;
-    domNombreCurso.innerText = `${curso.nombre}`;
+    if(infoAdscrito) domNombreAdscrito.innerText = `${infoAdscrito.nombre} ${infoAdscrito.apellido}`;
+    if(curso) domNombreCurso.innerText = `${curso.nombre}`;
 
     if(domButtonEditar) domButtonEditar.onclick = () => editarGrupo(grupo.id_grupo);
     if(domButtonBorrar) domButtonBorrar.onclick = () => borrarGrupoAsync(grupo.id_grupo);

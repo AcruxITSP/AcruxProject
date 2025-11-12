@@ -26,7 +26,9 @@
             <div class="div-cursos-educacion-media" id="curso-container">
             </div>
 
-            <button onclick="location.href='crear.php'">Crear Curso</button>
+            <?php if (esAdscripto()): ?>
+                <button onclick="location.href='crear.php'">Crear Curso</button>
+            <?php endif ?>
         </main>
     </div>
 

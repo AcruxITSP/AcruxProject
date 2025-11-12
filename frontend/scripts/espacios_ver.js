@@ -42,8 +42,8 @@ function uiCrearTarjeta(espacio)
     domUbicacion.innerText = `${espacio.ubicacion}`;
 
     domNombre.innerText = `${espacio.tipo} ${espacio.numero ?? ''}`;
-    domBorrar.onclick = () => borrarEspacioAsync(espacio.id_espacio);
-    domEditar.onclick = () => editarEspacio(espacio.id_espacio);
+    if(domBorrar) domBorrar.onclick = () => borrarEspacioAsync(espacio.id_espacio);
+    if(domEditar) domEditar.onclick = () => editarEspacio(espacio.id_espacio);
 
     const disponibilidad = espacio.disponibilidad;
     domEstado.innerText = disponibilidad.estado; // Libre, ausente, etc...
