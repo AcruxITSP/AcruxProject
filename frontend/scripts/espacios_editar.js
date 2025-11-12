@@ -1,5 +1,8 @@
 const form = document.getElementById("formulario-editar-espacio");
 const domTipo = document.getElementById("tipo");
+const domNumero = document.getElementById("numero");
+const domCapacidad = document.getElementById("capacidad");
+const domUbicacion = document.getElementById("ubicacion");
 
 const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
 const id = urlParams.get("id"); // agarra el id de la url
@@ -55,7 +58,10 @@ async function inicializar()
     respuesta = await respuesta.json();
     const value = respuesta.value;
 
-    domTipo.value = value.id_tipo;
+    domTipo.value = value.tipo;
+    domNumero.value = value.numero;
+    domCapacidad.value = value.capacidad;
+    domUbicacion.value = value.ubicacion;
 }
 
 inicializar();
