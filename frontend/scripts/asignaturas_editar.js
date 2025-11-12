@@ -60,6 +60,39 @@ function listaCursosOptions(cursos) {
     });
 }
 
+function mostrarValoresActuales(materia) {
+    const inputNombre = document.querySelector("input[name='nombre']");
+    const labelSelectDocentes = document.querySelector("#label-opcionesProfesores");
+    const labelSelectCursos = document.querySelector("#select-cursos");
+
+    inputNombre.value = `${materia.nombre}`;
+
+    domLabelOpcionesProfesores.innerHTML = "";
+    domLabelOpcionesCursos.innerHTML = "";
+
+    materia.profesores.forEach(profesor => {
+        const inputProfesor = document.querySelector(`input[registername="${profesor.nombre} ${profesor.apellido}"]`);
+
+        const p = document.createElement("p");
+        p.innerText = `${profesor.nombre} ${profesor.apellido}`;
+        p.setAttribute('content', `${profesor.nombre} ${profesor.apellido}`);
+        domLabelOpcionesProfesores.appendChild(p);
+
+        inputProfesor.checked = true;
+    });
+
+    materia.cursos.forEach(curso => {
+        const inputCurso = document.querySelector(`input[registername="${curso.nombre}"]`);
+
+        const p = document.createElement("p");
+        p.innerText = `${curso.nombre}`;
+        p.setAttribute('content', `${curso.nombre}`);
+        domLabelOpcionesCursos.appendChild(p);
+
+        inputCurso.checked = true;
+    });
+}
+
 /* Envio del formulario */
 
 form.addEventListener("submit", async e => {
@@ -98,7 +131,7 @@ form.addEventListener("submit", async e => {
                     icon: "error"
                 });
                 break;
-            
+
             default:
                 Swal.fire({
                     title: "Error Desconocido",
@@ -109,15 +142,14 @@ form.addEventListener("submit", async e => {
     }
 });
 
-async function inicializar()
-{
-    let respuestaProfesores = await fetch(`../../../backend/usuarios/profesores.php`, {method:"GET"});
+async function inicializar() {
+    let respuestaProfesores = await fetch(`../../../backend/usuarios/profesores.php`, { method: "GET" });
     respuestaProfesores = await respuestaProfesores.json();
 
     const profesores = respuestaProfesores.value;
     listaProfesoresOptions(profesores);
 
-    let respuestaCursos = await fetch(`../../../backend/cursos/ver.php`, {method:"GET"});
+    let respuestaCursos = await fetch(`../../../backend/cursos/ver.php`, { method: "GET" });
     respuestaCursos = await respuestaCursos.json();
 
     const cursos = respuestaCursos.value;
@@ -125,6 +157,14 @@ async function inicializar()
 
     addEvenListenersCheckboxes(domLabelOpcionesProfesores);
     addEvenListenersCheckboxes(domLabelOpcionesCursos);
+
+    const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+    const id = urlParams.get("id"); // agarra el id de la url
+
+    respuesta = await fetch(`../../../backend/asignaturas/editar.php?id_materia=${id}`);
+    respuesta = await respuesta.json();
+    const estadoActualMateria = respuesta.value;
+    mostrarValoresActuales(estadoActualMateria);
 }
 
 inicializar();
