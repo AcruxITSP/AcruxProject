@@ -24,10 +24,10 @@
 
                 <div id="grid">
                     <div id="inputs">
-                        <input type="text" placeholder="nombre">
-                        <input type="text" placeholder="apellido">
-                        <input type="text" placeholder="contraseña">
-                        <input type="text" placeholder="CI">
+                        <input type="text" placeholder="nombre" required>
+                        <input type="text" placeholder="apellido" required>
+                        <input type="text" placeholder="contraseña" required>
+                        <input type="text" placeholder="CI" required>
                         <input type="text" placeholder="email">
                     </div>
 

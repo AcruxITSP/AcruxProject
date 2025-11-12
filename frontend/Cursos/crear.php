@@ -23,11 +23,13 @@
                 <h1>Crear Curso</h1>
 
                 <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
 
-                <label for="select-materias">Materias</label>
+                <label>Materias</label>
                 <div id="select-materias" class="select-checkboxes">
-                    <input id="label-opcionesMaterias" class="label-opcionesCheckboxes" type="text" placeholder="Seleccione las materias" readonly>
+                    <div id="label-opcionesMaterias" class="label-opcionesCheckboxes">
+                        <p class="placeholder">Seleccione las materias</p>
+                    </div>
                     <div id="opcionesMaterias" class="scrollable-list opcionesCheckboxes"></div>
                 </div>
 
@@ -36,6 +38,7 @@
         </main>
     </div>
 
+    <script src="../util/multipleSelect.js"></script>
     <script src="../scripts/cursos_crear.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>

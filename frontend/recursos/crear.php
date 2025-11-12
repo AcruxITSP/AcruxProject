@@ -37,7 +37,7 @@ if (!esAdscripto()) {
                 </select>
 
                 <label for="tipo">Tipo</label>
-                <input name="tipo" id="tipo">
+                <input name="tipo" id="tipo" required>
 
                 <!-- aqui se moveran los inputs dependiendo de la localidad -->
                 <div id="inputs-segun-localidad">
@@ -58,7 +58,7 @@ if (!esAdscripto()) {
             </select>
 
             <label for="cantidad_total">Cantidad</label>
-            <input type="number" name="cantidad_total" id="cantidad_total" min="1" max="500"></input>
+            <input type="number" name="cantidad_total" id="cantidad_total" min="1" max="500" required></input>
         </div>
 
         <div id="inputs-para-interno">

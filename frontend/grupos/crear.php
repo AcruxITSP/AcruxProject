@@ -25,8 +25,8 @@
                 <div class="codigo-grupo">
                     <label>Grupo</label>
                     <label>Nombre</label>
-                    <input name="grado" type="text" placeholder="Grado" class="grado-grupo">
-                    <input name="nombre" type="text" placeholder="Nombre" class="nombre-grupo">
+                    <input name="grado" type="text" placeholder="Grado" class="grado-grupo" required>
+                    <input name="nombre" type="text" placeholder="Nombre" class="nombre-grupo" required>
                 </div>
 
                 <label for="select-curso">Curso</label>

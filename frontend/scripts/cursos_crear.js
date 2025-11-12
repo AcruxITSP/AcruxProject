@@ -18,6 +18,7 @@ function listaMateriasOptions(materias) {
         const nodeMateria = document.createTextNode(`${materia.nombre}`);
 
         input.value = `${materia.id_materia}`;
+        input.setAttribute('registerName', `${materia.nombre}`);
         input.type = "checkbox";
         input.name = "id_materias[]"
 
@@ -74,6 +75,8 @@ async function inicializar()
     const materias = respuesta.value;
     
     listaMateriasOptions(materias);
+
+    addEvenListenersCheckboxes(domLabelOpcionesMaterias);
 }
 
 inicializar();

@@ -22,7 +22,7 @@
                 <h1>Editar Recurso Externo</h1>
 
                 <label for="tipo">Tipo</label>
-                <input name="tipo" id="tipo">
+                <input name="tipo" id="tipo" required>
 
                 <label for="id_espacio">Espacio</label>
                 <select name="id_espacio" id="select-espacio">
