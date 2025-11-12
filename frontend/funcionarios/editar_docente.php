@@ -33,8 +33,12 @@
 
                     <div id="select-materias">
                         <label>Materias</label>
-                        <input id="label-opcionesMaterias" type="text" placeholder="Seleccione las materias" readonly>
-                        <div id="opcionesMaterias" class="scrollable-list"></div>
+                        <div id="select-materias" class="select-checkboxes">
+                            <div id="label-opcionesMaterias" class="label-opcionesCheckboxes">
+                                <p class="placeholder">Seleccione las materias</p>
+                            </div>
+                            <div id="opcionesMaterias" class="scrollable-list opcionesCheckboxes"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -43,6 +47,7 @@
         </main>
     </div>
 
+    <script src="../util/multipleSelect.js"></script>
     <script src="../scripts/funcionarios_editar_docente.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>

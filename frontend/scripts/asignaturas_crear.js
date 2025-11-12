@@ -26,6 +26,7 @@ function listaProfesoresOptions(profesores){
         const nodeProfesor = document.createTextNode(`${profesor.nombre} ${profesor.apellido}`);
 
         input.value = `${profesor.id_profesor}`;
+        input.setAttribute('registerName', `${profesor.nombre} ${profesor.apellido}`);
         input.type = "checkbox";
         input.name = "id_profesores[]"
 
@@ -44,6 +45,7 @@ function listaCursosOptions(cursos) {
         const nodeCurso = document.createTextNode(`${curso.nombre}`);
 
         input.value = `${curso.id_curso}`;
+        input.setAttribute('registerName', `${curso.nombre}`);
         input.type = "checkbox";
         input.name = "id_cursos[]"
 
@@ -102,6 +104,9 @@ async function inicializar()
 
     const cursos = respuestaCursos.value;
     listaCursosOptions(cursos);
+
+    addEvenListenersCheckboxes(domLabelOpcionesProfesores);
+    addEvenListenersCheckboxes(domLabelOpcionesCursos);
 }
 
 inicializar();
