@@ -109,13 +109,10 @@ form.addEventListener("submit", async e => {
 
 async function inicializar()
 {
-    // El endpoint no existe aun
-    /*
-    let respuestaProfesores = await fetch(`../../../backend/usuarios/ver_profesor.php`, {method:"GET"});
+    let respuestaProfesores = await fetch(`../../../backend/usuarios/profesores.php`, {method:"GET"});
     respuestaProfesores = await respuestaProfesores.json();
 
     const profesores = respuestaProfesores.value;
-    */
     listaProfesoresOptions(profesores);
 
     let respuestaCursos = await fetch(`../../../backend/cursos/ver.php`, {method:"GET"});

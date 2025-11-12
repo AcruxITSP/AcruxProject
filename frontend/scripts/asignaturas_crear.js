@@ -6,10 +6,6 @@ const domDivOpcionesCursos = document.getElementById("opcionesCursos");
 
 const form = document.getElementById("form-crear-asignatura");
 
-/* Array con datos de profesores. Ejemplo */
-const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
-const profesores = JSON.parse(jsonStringProfesores);
-
 /* Funciones */
 
 domLabelOpcionesCursos.addEventListener("click", () => {
@@ -95,13 +91,10 @@ form.addEventListener("submit", async e => {
 
 async function inicializar()
 {
-    // El endpoint no existe aun
-    /*
-    let respuestaProfesores = await fetch(`../../../backend/usuarios/ver_profesor.php`, {method:"GET"});
+    let respuestaProfesores = await fetch(`../../../backend/usuarios/profesores.php`, {method:"GET"});
     respuestaProfesores = await respuestaProfesores.json();
 
     const profesores = respuestaProfesores.value;
-    */
     listaProfesoresOptions(profesores);
 
     let respuestaCursos = await fetch(`../../../backend/cursos/ver.php`, {method:"GET"});

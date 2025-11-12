@@ -3,10 +3,6 @@ const domDivAusenciasUsuarios = document.getElementById("scrollable-list-ausenci
 const domTemplateTarjetaAusencia = document.getElementById("tpl-targeta-ausencia");
 const domDivAusencias = document.getElementById("scrollable-list-ausencias");
 
-// Objeto de usuario de ejemplo (solo se ncesita el nombre, y la imagen si es que la implementamos)
-const jsonStringUsuario = '{"nombre": "Juan", "apellido": "Carlos"}';
-const usuario = JSON.parse(jsonStringUsuario);
-
 // Objetos de ausencia e intervaloAusencia de ejemplo
 const jsonAusencia = '{"id_ausencia": "1", "id_profesor": "1", "motivo": "Esta fue hecha con template"}';
 const ausencia= JSON.parse(jsonAusencia);
@@ -21,7 +17,7 @@ function uiCrearTarjetaUsuario(usuario){
 
     const domNombre = domDivTarjeta.querySelector("[name='nombre']");
 
-    domNombre.innerText = `${usuario.nombre}`;
+    domNombre.innerText = `${usuario.nombre} ${usuario.apellido}`;
     
     domDivAusenciasUsuarios.appendChild(domDivTarjeta);
 }
@@ -40,5 +36,19 @@ function uiCrearTarjetaAusencia(ausencia, intervaloAusencia){
     domDivAusencias.appendChild(domDivTarjeta);
 }
 
-uiCrearTarjetaUsuario(usuario);
 uiCrearTarjetaAusencia(ausencia, intervaloAusencia);
+
+async function inicializar()
+{
+    let response = await fetch("../../backend/usuarios/profesores.php");
+    response = await response.json();
+
+    const profesores = response.value;
+    profesores.forEach(profesor => {
+        uiCrearTarjetaUsuario(profesor);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', async e => {
+    await inicializar();
+})

@@ -3,11 +3,6 @@ const domInputSelectAdscrito = document.getElementById("select-adscrito");
 
 const form = document.getElementById("form-crear-grupo");
 
-/* Registros de Adscritos de ejemplo */
-const jsonStringAdscritos = '[{"id_adscrito": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_adscrito": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_adscrito": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
-const adscritos = JSON.parse(jsonStringAdscritos);
-
-
 /* Funciones */
 
 function listaAdscritosOptions(adscritos){
@@ -78,13 +73,10 @@ async function inicializar()
     const cursos = respuestaCursos.value;
     listaCursosOptions(cursos);
 
-    // El endpoint no existe aun
-    /*
-    let respuestaAdscritos = await fetch(`../../../backend/usuarios/ver_adscripto.php`, {method:"GET"});
+    let respuestaAdscritos = await fetch(`../../../backend/usuarios/adscriptos.php`, {method:"GET"});
     respuestaAdscritos = await respuestaAdscritos.json();
 
     const adscritos = respuestaAdscritos.value;
-    */
     listaAdscritosOptions(adscritos);
 }
 

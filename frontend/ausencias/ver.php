@@ -19,77 +19,8 @@
     <div id="main-content">
         <h2>Ausencias</h2>
         <main id="main-ver-ausencias">
-            <div class="scrollable-list" id="scrollable-list-ausencias-usuarios">
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Joaquin Pintos</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Hernesto Pereira</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Martin Gomez</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-                <div class="targeta-ausencia-usuario">
-                    <div class="marco-imagen"></div>
-                    <p class="nombre">Relleno</p>
-                </div>
-            </div>
-            <div class="scrollable-list" id="scrollable-list-ausencias">
+            <div id="scrollable-list-ausencias-usuarios" class="scrollable-list"></div>
+            <div id="scrollable-list-ausencias" class="scrollable-list">
                 <div class="targeta-ausencia">
                     <div class="container-hora-fecha">
                         <p>11/11/1111</p>
@@ -266,7 +197,7 @@
         </div>
     </template>
 
-    <script src="../scripts/ausencias_my_ver.js"></script>
+    <script src="../scripts/ausencias_ver.js"></script>
     <script src="../scripts/menuHamburgesa.js"></script>
     <script src="../scripts/dropdownMenu.js"></script>
 </body>
