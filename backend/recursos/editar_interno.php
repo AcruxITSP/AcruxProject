@@ -18,12 +18,27 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     if (!isset($_POST['cantidades'])) Respuestas::enviarError("FALTA_CANTIDADES_EN_ESPACIOS");
 
     $idRecursoBase = $_POST['id_recurso_base'];
-    $nuevoTipo = $_POST['tipo'];
+    $nuevoTipo = trim($_POST['tipo']);
     $nuevosIdEspacios = $_POST['id_espacios'];
     $nuevasCantidadesEnEspacio = $_POST['cantidades'];
 
+    if($nuevoTipo == "") Respuestas::enviarError("NOMBRE_VACIO");
+
+    // Validar que no haya espacios duplicados
+    $repetidos = array_diff_assoc($nuevosIdEspacios, array_unique($nuevosIdEspacios));
+    if (count($repetidos) > 0) {
+        Respuestas::enviarError("ESPACIO_YA_ESPECIFICADO");
+    }
+
     $con = connectDb();
     $con->begin_transaction();
+
+    // Validar que el tipo no se repita en otro recurso
+    $sql = "SELECT COUNT(*) AS c FROM recurso WHERE tipo = ? AND id_recurso != ?";
+    $result = SQL::valueQuery($con, $sql, "si", $nuevoTipo, $idRecursoBase);
+    if ($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+    $count = intval($result->fetch_assoc()['c']);
+    if ($count > 0) Respuestas::enviarError("TIPO_RECURSO_DUPLICADO", $con);
 
     // Obtener id_recurso_interno
     $sql = "SELECT id_recurso_interno FROM recursointerno WHERE id_recurso = ?";

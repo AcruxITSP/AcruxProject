@@ -82,114 +82,116 @@ domForm.addEventListener('submit', async e => {
 
     if(respuesta.ok)
     {
-        Swal.fire({
-            title: "Recurso Creado!",
-            text: `El recurso ${tipo} ha sido creado exitosamente.`,
+        await Swal.fire({
+            title: "Recurso Editado!",
+            text: `El recurso ${tipo} ha sido editado exitosamente.`,
             icon: "success"
         });
+        history.back();
     }
     else
     {
         switch(respuesta.value)
         {
-            case "TIPO_EN_USO":
-                Swal.fire({
-                    title: "Tipo de Recurso en Uso",
-                    text: `Ya hay recursos del tipo ${tipo} registrados.`,
-                    icon: "error"
-                });
-                break;
-            case "TIPO_QUIZAS_EN_USO":
-                Swal.fire({
-                    title: "Error de coneccion",
-                    text: `No se pudo revisar si ya hay recursos del tipo ${tipo} registrados.`,
-                    icon: "error"
-                });
-                break;
-            case "ESPACIO_REQUERIDO":
-                Swal.fire({
-                    title: "Espacio Requerido",
-                    text: `Es necesario especificar el espacio al que pertenece el recurso interno.`,
-                    icon: "error"
-                });
-                break;
-            case "LOCALIDAD_NO_ESPECIFICADA":
-            case "LOCALIDAD_INVALIDA":
-                Swal.fire({
-                    title: "Localidad Invalida",
-                    text: `Se debe especificar si el recurso es interno o externo.`,
-                    icon: "error"
-                });
-                break;
-            case "TIPO_NO_ESPECIFICADO":
-                Swal.fire({
-                    title: "Tipo No Especificado",
-                    text: `Se debe especificar el tipo de recurso.`,
-                    icon: "error"
-                });
-                break;
-            case "CANTIDAD_NO_ESPECIFICADA":
-                Swal.fire({
-                    title: "Cantidad No Especificada",
-                    text: `Se debe especificar la cantidad del recurso a registrar.`,
-                    icon: "error"
-                });
-                break;
-            case "ESPACIO_NO_ESPECIFICADO":
-                Swal.fire({
-                    title: "Espacio No Especificado",
-                    text: `Se debe especificar el espacio al que pertenece el recurso interno.`,
-                    icon: "error"
-                });
-                break;
-            case "CANTIDAD_INVALIDA":
-                Swal.fire({
-                    title: "Cantidad Invalida",
-                    text: `Debe especificar un valor mayor a cero.`,
-                    icon: "error"
-                });
-                break;
-            case "ESPACIO_NO_EXISTE":
-                Swal.fire({
-                    title: "Espacio Inexistente",
-                    text: `El espacio seleccionado no existe.`,
-                    icon: "error"
-                });
-                break;
-            case "ESPACIOS_NO_ESPECIFICADOS":
-                Swal.fire({
-                    title: "Espacios No Especificados",
-                    text: `Debe especificar los espacios a los cuales pertenece el recurso a crear.`,
-                    icon: "error"
-                });
-                break;
-            case "CANTIDADES_NO_ESPECIFICADAS":
-                Swal.fire({
-                    title: "Cantidades No Especificadas",
-                    text: `Debe especificar la cantidad del recurso por cada espacio seleccionado.`,
-                    icon: "error"
-                });
-                break;
-            case "ESPACIO_YA_ESPECIFICADO":
-                Swal.fire({
-                    title: "Espacio Repetido",
-                    text: `Se ha ingresado un espacio mas de 2 veces durante el registro de este recurso.`,
-                    icon: "error"
-                });
-                break;
+            // --- ERRORES COMUNES ---
             case "NECESITA_LOGIN":
                 Swal.fire({
                     title: "Login Requerido",
-                    text: `Necesitas iniciar sesion para crear un recurso.`,
+                    text: "Necesitas iniciar sesión para acceder a esta función.",
                     icon: "error"
                 });
                 break;
-            default:
+
+            case "FALTA_ID_RECURSO":
                 Swal.fire({
-                    title: "Error Desconocido",
-                    text: `Un error desconocido ha ocurrido`,
+                    title: "Falta información",
+                    text: "No se especificó el recurso a modificar o consultar.",
                     icon: "error"
                 });
+                break;
+
+            // --- ERRORES POST ---
+            case "FALTA_TIPO":
+                Swal.fire({
+                    title: "Tipo no especificado",
+                    text: "Debes indicar el tipo del recurso.",
+                    icon: "error"
+                });
+                break;
+
+            case "ESPACIO_YA_ESPECIFICADO":
+                Swal.fire({
+                    title: "Espacio ya especificado",
+                    text: "Has indicado mas de una vez un mismo espacio.",
+                    icon: "error"
+                });
+                break;
+
+            case "FALTA_ID_ESPACIOS":
+                Swal.fire({
+                    title: "Espacios no especificados",
+                    text: "Debes seleccionar al menos un espacio asociado al recurso.",
+                    icon: "error"
+                });
+                break;
+
+            case "FALTA_CANTIDADES_EN_ESPACIOS":
+                Swal.fire({
+                    title: "Cantidades faltantes",
+                    text: "Debes indicar la cantidad correspondiente para cada espacio.",
+                    icon: "error"
+                });
+                break;
+
+            case "NOMBRE_VACIO":
+                Swal.fire({
+                    title: "Nombre vacío",
+                    text: "El nombre o tipo del recurso no puede estar vacío.",
+                    icon: "error"
+                });
+                break;
+
+            case "TIPO_RECURSO_DUPLICADO":
+                Swal.fire({
+                    title: "Tipo duplicado",
+                    text: "Ya existe un recurso con este tipo. Elige otro nombre.",
+                    icon: "error"
+                });
+                break;
+
+            case "ESPACIO_NO_EXISTE":
+                Swal.fire({
+                    title: "Espacio inexistente",
+                    text: "Alguno de los espacios seleccionados no existe o fue eliminado.",
+                    icon: "error"
+                });
+                break;
+
+            // --- ERRORES GET ---
+            case "RECURSO_NO_EXISTE":
+                Swal.fire({
+                    title: "Recurso no encontrado",
+                    text: "El recurso solicitado no existe en el sistema.",
+                    icon: "error"
+                });
+                break;
+
+            case "RECURSO_INTERNO_NO_EXISTE":
+                Swal.fire({
+                    title: "Error interno",
+                    text: "El recurso interno asociado no fue encontrado.",
+                    icon: "error"
+                });
+                break;
+
+            // --- ERROR GENÉRICO ---
+            default:
+                Swal.fire({
+                    title: "Error desconocido",
+                    text: "Ha ocurrido un error inesperado. Intenta nuevamente.",
+                    icon: "error"
+                });
+                break;
         }
     }
 
