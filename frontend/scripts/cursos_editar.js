@@ -3,10 +3,6 @@ const domDivOpcionesMaterias = document.getElementById("opcionesMaterias");
 
 const form = document.getElementById("form-editar-curso");
 
-/* Array de materias de ejemplo */
-const jsonStringMaterias = '[{"id_materia": "1", "nombre": "Programacion"}, {"id_materia": "2", "nombre": "Ciberseguridad" }, {"id_materia": "3", "nombre": "Biologia"}, {"id_materia": "4", "nombre": "Fisica"}, {"id_materia": "5", "nombre": "Logica"}, {"id_materia": "6", "nombre": "utulab"}, {"id_materia": "7", "nombre": "Sistemas Operativos"}, {"id_materia": "8", "nombre": "Filosofia"}, {"id_materia": "9", "nombre": "Sociologia"}]';
-const materias = JSON.parse(jsonStringMaterias);
-
 /*Funciones */
 
 domLabelOpcionesMaterias.addEventListener("click", () => {
@@ -14,7 +10,7 @@ domLabelOpcionesMaterias.addEventListener("click", () => {
 });
 
 
-function IListMateriasOptions(materias) {
+function listaMateriasOptions(materias) {
     materias.forEach(materia => {
         const label = document.createElement("label");
         const input = document.createElement("input");
@@ -31,8 +27,6 @@ function IListMateriasOptions(materias) {
         domDivOpcionesMaterias.appendChild(label);
     });
 }
-
-IListMateriasOptions(materias);
 
 /* Formulario enviado */
 
@@ -82,3 +76,15 @@ form.addEventListener("submit", async e => {
         }
     }
 });
+
+async function inicializar()
+{
+    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, {method:"GET"});
+    respuesta = await respuesta.json();
+
+    const materias = respuesta.value;
+    
+    listaMateriasOptions(materias);
+}
+
+inicializar();
