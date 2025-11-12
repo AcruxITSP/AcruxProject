@@ -97,6 +97,15 @@ form.addEventListener("submit", async e => {
                     icon: "error"
                 });
                 break;
+
+            case "ID_ASIGNATURA_INVALIDA":
+                Swal.fire({
+                    title: "Asignatura No Encontrado",
+                    text: `No se ha seleccionado ninguna asignatura o la id no existe.`,
+                    icon: "error"
+                });
+                break;
+            
             default:
                 Swal.fire({
                     title: "Error Desconocido",

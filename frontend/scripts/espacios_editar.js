@@ -15,7 +15,7 @@ form.addEventListener("submit", async e => {
     if (respuesta.ok) {
         await Swal.fire({
             title: "Espacio Actualizado",
-            text: `La información del espacio fue actualizado exitosamente`,
+            text: `La información del espacio fue actualizada exitosamente`,
             icon: "success"
         });
     }
@@ -24,7 +24,7 @@ form.addEventListener("submit", async e => {
             case "NECESITA_LOGIN":
                 Swal.fire({
                     title: "Login Requerido",
-                    text: `Necesitas iniciar sesion para realizar esta acción.`,
+                    text: `Necesitas iniciar sesión para realizar esta acción.`,
                     icon: "error"
                 });
                 break;

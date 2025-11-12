@@ -90,7 +90,7 @@ form.addEventListener("submit", async e => {
                 });
                 break;
 
-            case "ID_ESPACIO_INVALIDA":
+            case "ID_MODULO_INVALIDA":
                 Swal.fire({
                     title: "Módulo No Encontrado",
                     text: `No se ha seleccionado ningún módulo o la id no existe.`,

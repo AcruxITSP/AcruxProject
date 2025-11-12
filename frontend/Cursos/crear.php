@@ -19,14 +19,11 @@
 
     <div id="main-content">
         <main id="main-crear-cursos">
-            <form class="formulario-basico">
+            <form id="form-crear-curso" class="formulario-basico">
                 <h1>Crear Curso</h1>
 
                 <label for="nombre">Nombre</label>
                 <input id="nombre" name="nombre" type="text" placeholder="Nombre">
-
-                <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" name="descripcion" placeholder="Descripcion"></textarea>
 
                 <label for="select-materias">Materias</label>
                 <div id="select-materias" class="select-checkboxes">
