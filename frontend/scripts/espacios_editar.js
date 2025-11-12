@@ -1,12 +1,14 @@
 const form = document.getElementById("formulario-editar-espacio");
+const domTipo = document.getElementById("tipo");
+
+const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+const id = urlParams.get("id"); // agarra el id de la url
+
+
 
 form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
-
-    const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
-    const id = urlParams.get("id"); // agarra el id de la url
-
     formData.append("id", id);
 
     let respuesta = await fetch(`../../backend/espacios/editar.php`, { method: "POST", body: formData });
@@ -46,3 +48,14 @@ form.addEventListener("submit", async e => {
         }
     }
 });
+
+async function inicializar()
+{
+    let respuesta = await fetch(`../../backend/espacios/editar.php?id=${id}`);
+    respuesta = await respuesta.json();
+    const value = respuesta.value;
+
+    domTipo.value = value.id_tipo;
+}
+
+inicializar();
