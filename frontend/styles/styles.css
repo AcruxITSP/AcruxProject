@@ -1146,7 +1146,6 @@ select:focus {
     justify-content: center;
     z-index: 1000;
     backdrop-filter: blur(2px);
-    margin-left: 240px;
 }
 
 
@@ -1161,6 +1160,11 @@ select:focus {
     /* increased width */
     max-width: 90vw;
     box-shadow: 0 10px 25px var(--gris2);
+}
+
+#modal-agregar-hora-cerrar:hover {
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 #modal-agregar-hora p {
@@ -3887,10 +3891,6 @@ div.targeta-intervalo {
     border-radius: 16px;
     box-shadow: 0 6px 20px var(--gris2);
     animation: fadeIn 0.4s ease;
-}
-
-#form-crear-asignatura>* {
-    margin-bottom: 1rem;
 }
 
 /* ======== TÍTULO ======== */

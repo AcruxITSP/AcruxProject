@@ -37,7 +37,7 @@
 
         <!-- Modal -->
         <div id="modal-agregar-hora">
-            <form id="form-agregar-hora">
+            <form id="form-agregar-hora" class="formulario-basico">
                 <p>Agregar Hora</p>
                 <input type="button" id="modal-agregar-hora-cerrar" value="X">
 

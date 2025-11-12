@@ -10,10 +10,6 @@ const form = document.getElementById("form-crear-asignatura");
 const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
 const profesores = JSON.parse(jsonStringProfesores);
 
-/* Array con cursos. Ejemplo */
-const jsonStringCursos = '[{"id_curso": "1", "nombre": "Informatica"}, {"id_curso": "2", "nombre": "Informatica Bilingüe"}, {"id_curso": "3", "nombre": "Diseño Gráfico"}]';
-const cursos = JSON.parse(jsonStringCursos);
-
 /* Funciones */
 
 domLabelOpcionesCursos.addEventListener("click", () => {
@@ -62,11 +58,6 @@ function listaCursosOptions(cursos) {
     });
 }
 
-/* Llamar a las funciones */
-
-listaProfesoresOptions(profesores);
-listaCursosOptions(cursos);
-
 /* Envio del formulario */
 
 form.addEventListener("submit", async e => {
@@ -101,3 +92,23 @@ form.addEventListener("submit", async e => {
         }
     }
 });
+
+async function inicializar()
+{
+    // El endpoint no existe aun
+    /*
+    let respuestaProfesores = await fetch(`../../../backend/usuarios/ver_profesor.php`, {method:"GET"});
+    respuestaProfesores = await respuestaProfesores.json();
+
+    const profesores = respuestaProfesores.value;
+    */
+    listaProfesoresOptions(profesores);
+
+    let respuestaCursos = await fetch(`../../../backend/cursos/ver.php`, {method:"GET"});
+    respuestaCursos = await respuestaCursos.json();
+
+    const cursos = respuestaCursos.value;
+    listaCursosOptions(cursos);
+}
+
+inicializar();
