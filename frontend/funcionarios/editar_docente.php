@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Crear">
+                <input type="submit" value="Guardar">
             </form>
         </main>
     </div>

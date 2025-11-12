@@ -32,8 +32,6 @@ function listaMateriasOptions(materias) {
     });
 }
 
-listaMateriasOptions(materias);
-
 /* Envio del Formulario */
 
 form.addEventListener("submit", async e => {
@@ -82,3 +80,15 @@ form.addEventListener("submit", async e => {
         }
     }
 });
+
+async function inicializar()
+{
+    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, {method:"GET"});
+    respuesta = await respuesta.json();
+
+    const materias = respuesta.value;
+    
+    listaMateriasOptions(materias);
+}
+
+inicializar();

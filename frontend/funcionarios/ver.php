@@ -54,8 +54,8 @@
           <?php endif; ?>
           <div class="botones">
             <?php if(esAdscripto()): ?>
-              <button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button>
-              <button class="editar" title="Editar"><i class="bi bi-pencil"></i></button>
+              <button class="borrar" name="borrar"><i class="bi bi-trash-fill"></i></button>
+              <button class="editar" name="editar"><i class="bi bi-pencil"></i></button>
             <?php endif; ?>
           </div>
         </div>
