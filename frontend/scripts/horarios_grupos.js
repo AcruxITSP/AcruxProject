@@ -201,7 +201,6 @@ async function borrarHoraAsync() {
 	await traerYMostrarHorarios();
 }
 
-// Estas funciones son placeholders, retornan siempre false.
 async function estaElProfeLibreEnAsync(idProfe, dia, numeroIntervalo)
 {
 	let respuesta = await fetch(`../../../backend/horarios/esta_profe_libre.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);

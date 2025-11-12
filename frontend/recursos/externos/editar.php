@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Editar Recursos Externos</title>
 </head>
 
@@ -17,14 +18,14 @@
 
     <div id="main-content">
         <main class="main-formulario-basico">
-            <form class="formulario-basico">
+            <form class="formulario-basico" id="form">
                 <h1>Editar Recurso Externo</h1>
 
                 <label for="tipo">Tipo</label>
                 <input name="tipo" id="tipo">
 
-                <label for="select-espacio">Espacio</label>
-                <select name="select-espacio" id="select-espacio">
+                <label for="id_espacio">Espacio</label>
+                <select name="id_espacio" id="select-espacio">
                     <option value="0">No se especificó el espacio.</option>
                 </select>
 

@@ -1,8 +1,10 @@
 const domInputSelectMateria = document.getElementById("select-materia");
 const domInputSelectProfesor = document.getElementById("select-profesor");
 const domInputSelectEspacio = document.getElementById("select-espacio");
+const form = document.getElementById("form-editar-horario");
 
-const form = document.getElementById("form-editar");
+const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+const id = urlParams.get("id"); // agarra el id de la url
 
 /* Array de materias de ejemplo */
 const jsonStringMaterias = '[{"id_materia": "1", "nombre": "Programacion"}, {"id_materia": "2", "nombre": "Ciberseguridad" }, {"id_materia": "3", "nombre": "Biologia"}, {"id_materia": "4", "nombre": "Fisica"}, {"id_materia": "5", "nombre": "Logica"}, {"id_materia": "6", "nombre": "utulab"}, {"id_materia": "7", "nombre": "Sistemas Operativos"}, {"id_materia": "8", "nombre": "Filosofia"}, {"id_materia": "9", "nombre": "Sociologia"}]';
@@ -61,16 +63,13 @@ form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
 
-    const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
-    const id = urlParams.get("id"); // agarra el id de la url
-
-    formData.append("id", id);
+    formData.append("id_modulo", id);
 
     for (var pair of formData.entries()) {
         console.log(pair[0] + ', ' + pair[1]);
     }
 
-    let respuesta = await fetch(`../../backend/horarios/grupos_editar_modulo.php`, { method: "POST", body: formData });
+    let respuesta = await fetch(`../../../backend/horarios/grupos_editar_modulo.php`, { method: "POST", body: formData });
     respuesta = await respuesta.json();
 
     if (respuesta.ok) {
@@ -107,3 +106,39 @@ form.addEventListener("submit", async e => {
         }
     }
 });
+
+async function estaElProfeLibreEnAsync(idProfe, dia, numeroIntervalo)
+{
+	let respuesta = await fetch(`../../../backend/horarios/esta_profe_libre.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
+	respuesta = await respuesta.json();
+	return respuesta.value;
+}
+
+async function estaElProfeAusenteEn(idProfe, dia, numeroIntervalo)
+{
+	let respuesta = await fetch(`../../../backend/horarios/esta_profe_ausente.php?id_profesor=${idProfe}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
+	respuesta = await respuesta.json();
+	return respuesta.value;
+}
+
+async function estaElEspacioLibreEnAsync(idEspacio, dia, numeroIntervalo)
+{
+	let respuesta = await fetch(`../../../backend/horarios/esta_espacio_libre.php?id_espacio=${idEspacio}&nombre_dia=${dia}&numero_intervalo=${numeroIntervalo}`);
+	respuesta = await respuesta.json();
+	return respuesta.value;
+}
+
+async function inicializar()
+{
+    let respuesta = await fetch(`../../../backend/horarios/agregar_modulo.php`);
+    respuesta = await respuesta.json();
+
+    respuesta = await fetch(`../../../backend/horarios/grupos_editar_modulo.php?id_modulo=${id}`);
+    respuesta = await respuesta.json();
+
+
+}
+
+window.addEventListener("pageshow", async e => {
+    inicializar();
+})

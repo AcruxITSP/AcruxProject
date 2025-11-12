@@ -19,17 +19,17 @@
 
     <div id="main-content">
          <main id="main-editar-horarios">
-            <form id="form-editar-horario">
+            <form id="form-editar-horario" class="formulario-basico">
                 <h1>Editar Hora</h1>
 
                 <label for="select-materia">Materia</label>
-                <select name="select-materia" id="select-materia"></select>
+                <select name="materia" id="select-materia"></select>
 
                 <label for="select-profesor">docente</label>
-                <select name="select-profesor" id="select-profesor"></select>
+                <select name="profesor" id="select-profesor"></select>
 
                 <label for="select-espacio">Espacio</label>
-                <select name="select-espacio" id="select-espacio"></select>
+                <select name="espacio" id="select-espacio"></select>
 
                 <input type="submit" value="Guardar">
             </form>
