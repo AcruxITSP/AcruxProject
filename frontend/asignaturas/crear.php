@@ -23,7 +23,7 @@
                 <h1>Crear asignatura</h1>
 
                 <label for="nombre">Nombre</label>
-                <input id="nombre" type="text" placeholder="nombre"></label>
+                <input id="nombre" type="text" name="nombre" placeholder="nombre"></label>
 
                 <label for="select-profesores">Profesores</label>
                 <div id="select-profesores" class="select-checkboxes">
