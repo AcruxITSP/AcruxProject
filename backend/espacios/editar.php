@@ -12,6 +12,7 @@ require_once dirname(__FILE__).'/../util/strings.php';
 // - NECESITA_ID
 // - NECESITA_TIPO / NUMERO / CAPACIDAD / UBICACION
 // - TIPO_NUMERO_REPETIDO
+// - ID_ESPACIO_INVALIDA
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     if(!isset($_SESSION['id_usuario'])) Respuestas::enviarError("NECESITA_LOGIN");
@@ -31,6 +32,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     $con = connectDb();
     $con->begin_transaction();
+
+    $sqlCheck = "SELECT COUNT(*) AS c FROM espacio WHERE id_espacio = ?";
+    $result = SQL::valueQuery($con, $sqlCheck, "i", $id);
+    if($result instanceof ErrorDB) Respuestas::enviarError($result, $con);
+    if($result->fetch_assoc()['c'] == 0) Respuestas::enviarError("ID_ESPACIO_INVALIDA", $con);
 
     // Verificar duplicado de tipo + numero (excluyendo el mismo id)
     $sqlCheck = "SELECT COUNT(*) AS total FROM espacio WHERE tipo = ? AND numero = ? AND id_espacio <> ?";

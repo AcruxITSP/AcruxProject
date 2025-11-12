@@ -16,8 +16,8 @@ function uiCrearCurso(idCurso, nombreCurso, nombreMaterias)
         domMaterias.innerHTML += `<li>${nombreMateria}</li>`;
     });
 
-    if(domButtonBorrar) domButtonBorrar.onclick = () => borrarRecursoAsync(idCurso);
-    if(domButtonEditar) domButtonEditar.onclick = () => editarRecurso(idCurso);
+    if(domButtonBorrar) domButtonBorrar.onclick = () => borrarCursoAsync(idCurso);
+    if(domButtonEditar) domButtonEditar.onclick = () => editarCurso(idCurso);
 
     return domDivCurso;
 } 
@@ -28,7 +28,12 @@ function uiAgregarCurso(idCurso, nombreCurso, nombreMaterias)
     domCursoContainer.appendChild(domDivCurso);
 }
 
-async function borrarRecursoAsync(idCurso)
+function editarCurso(idCurso)
+{
+    location.href = `editar.php?id=${idCurso}`;
+}
+
+async function borrarCursoAsync(idCurso)
 {
     const resultadoDeAdvertencia = await Swal.fire({
         title: "Borrar Curso",

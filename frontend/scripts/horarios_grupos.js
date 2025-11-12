@@ -142,7 +142,7 @@ function uiMostrarHoras(horarios) {
  * (Placeholder) Muestra un mensaje indicando que la edición de módulos está en mantenimiento.
  */
 function irAEditarModulo(idModulo) {
-	window.location.href = "editar.php";
+	window.location.href = `editar.php?id=${idModulo}`;
 }
 
 /**
