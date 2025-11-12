@@ -412,7 +412,7 @@ form#form-login input[type="submit"]:active {
 }
 
 /* ======== TÍTULO ======== */
-#form-editar h1 {
+#form-editar-formulario h1 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.8rem;
@@ -421,7 +421,7 @@ form#form-login input[type="submit"]:active {
 
 /* ======== CAMPOS DEL FORMULARIO ======== */
 
-#form-editar,
+#form-editar-formulario,
 #inputs-segun-localidad,
 #inputs-para-externo {
     display: flex;
@@ -429,12 +429,12 @@ form#form-login input[type="submit"]:active {
     gap: 15px;
 }
 
-#form-editar label {
+#form-editar-formulario label {
     font-weight: 600;
     color: var(--azul-grisaceo);
 }
 
-#form-editar input,
+#form-editar-formulario input,
 select {
     padding: 10px 12px;
     border: 1px solid var(--gris1);
@@ -444,14 +444,14 @@ select {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-#form-editar input:focus,
+#form-editar-formulario input:focus,
 select:focus {
     border-color: var(--azul-oscuro);
     box-shadow: 0 0 5px var(--sombra-azul);
 }
 
 /* ======== BOTÓN DE ENVÍO ======== */
-#form-editar input[type="submit"] {
+#form-editar-formulario input[type="submit"] {
     margin-top: 10px;
     background-color: var(--azul);
     color: var(--blanco);
@@ -461,11 +461,11 @@ select:focus {
     transition: background-color 0.2s, transform 0.1s;
 }
 
-#form-editar input[type="submit"]:hover {
+#form-editar-formulario input[type="submit"]:hover {
     background-color: var(--azul-oscuro);
 }
 
-#form-editar .div-vacio {
+#form-editar-formulario .div-vacio {
     padding: 1rem;
     border: 1px solid var(--negro);
     border-style: dashed;
@@ -1477,7 +1477,7 @@ select:focus {
 }
 
 /* ======== TÍTULO ======== */
-#main-crear-grupos #form-crear h1 {
+#main-crear-grupos #form-crear-grupo h1 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.8rem;
@@ -1494,17 +1494,17 @@ select:focus {
     gap: 15px;
 }
 
-#main-crear-grupos #form-crear label {
+#main-crear-grupos #form-crear-grupo label {
     font-weight: 600;
     color: var(--azul-grisaceo);
     margin-top: 2rem;
 }
 
-#main-crear-grupos #form-crear .codigo-grupo label {
+#main-crear-grupos #form-crear-grupo .codigo-grupo label {
     margin-top: 0;
 }
 
-#main-crear-grupos #form-crear input,
+#main-crear-grupos #form-crear-grupo input,
 select {
     padding: 10px 12px;
     border: 1px solid var(--gris1);
@@ -1514,13 +1514,13 @@ select {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-#main-crear-grupos #form-crear input:focus,
+#main-crear-grupos #form-crear-grupo input:focus,
 select:focus {
     border-color: var(--azul-oscuro);
     box-shadow: 0 0 5px var(--sombra-azul);
 }
 
-#main-crear-grupos #form-crear .codigo-grupo {
+#main-crear-grupos #form-crear-grupo .codigo-grupo {
     display: grid;
     grid-template-rows: 2rem 1fr;
     grid-template-columns: 30% 68%;
@@ -1528,7 +1528,7 @@ select:focus {
 }
 
 /* ======== BOTÓN DE ENVÍO ======== */
-#main-crear-grupos #form-crear input[type="submit"] {
+#main-crear-grupos #form-crear-grupo input[type="submit"] {
     margin-top: 10px;
     background-color: var(--azul);
     color: var(--blanco);
@@ -1538,15 +1538,8 @@ select:focus {
     transition: background-color 0.2s, transform 0.1s;
 }
 
-#main-crear-grupos #form-crear input[type="submit"]:hover {
+#main-crear-grupos #form-crear-grupo input[type="submit"]:hover {
     background-color: var(--azul-oscuro);
-}
-
-#main-crear-grupos #form-crear .div-vacio {
-    padding: 1rem;
-    border: 1px solid var(--negro);
-    border-style: dashed;
-    color: var(--gris4);
 }
 
 /* ======== ANIMACIONES ======== */
@@ -1567,6 +1560,18 @@ select:focus {
 .espacio-cantidad-div {
     height: fit-content !important;
     display: flex !important;
+}
+
+
+/*//////////////////////*/
+/* Pagina Editar Grupos */
+/*//////////////////////*/
+
+#main-crear-grupos #form-editar-grupo .codigo-grupo {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    grid-template-columns: 30% 68%;
+    gap: 2%;
 }
 
 

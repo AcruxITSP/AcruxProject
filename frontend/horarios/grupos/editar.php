@@ -19,7 +19,7 @@
 
     <div id="main-content">
          <main id="main-editar-horarios">
-            <form id="form-editar">
+            <form id="form-editar-horario">
                 <h1>Editar Hora</h1>
 
                 <label for="select-materia">Materia</label>

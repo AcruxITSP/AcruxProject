@@ -19,21 +19,21 @@
 
     <div id="main-content">
         <main id="main-crear-grupos">
-            <form id="form-crear">
+            <form id="form-crear-grupo" class="formulario-basico">
                 <h1>Crear Grupo</h1>
 
                 <div class="codigo-grupo">
                     <label>Grupo</label>
                     <label>Nombre</label>
-                    <input type="text" placeholder="Grado" class="grado-grupo">
-                    <input type="text" placeholder="Nombre" class="nombre-grupo">
+                    <input name="grado" type="text" placeholder="Grado" class="grado-grupo">
+                    <input name="nombre" type="text" placeholder="Nombre" class="nombre-grupo">
                 </div>
 
-                <label>Curso</label>
-                <select name="select-curso" id="select-curso"></select>
+                <label for="select-curso">Curso</label>
+                <select name="id_curso" id="select-curso"></select>
 
-                <label>Adscrito</label>
-                <select name="select-adscrito" id="select-adscrito"></select>
+                <label for="select-adscrito">Adscrito</label>
+                <select name="id_adscrito" id="select-adscrito"></select>
 
                 <input type="submit" value="Guardar">
             </form>
