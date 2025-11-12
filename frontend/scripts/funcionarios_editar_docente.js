@@ -3,9 +3,8 @@ const domDivOpcionesMaterias = document.getElementById("opcionesMaterias");
 
 const form = document.getElementById("form-editar-docente");
 
-/* Array de materias de ejemplo */
-const jsonStringMaterias = '[{"id_materia": "1", "nombre": "Programacion"}, {"id_materia": "2", "nombre": "Ciberseguridad" }, {"id_materia": "3", "nombre": "Biologia"}, {"id_materia": "4", "nombre": "Fisica"}, {"id_materia": "5", "nombre": "Logica"}, {"id_materia": "6", "nombre": "utulab"}, {"id_materia": "7", "nombre": "Sistemas Operativos"}, {"id_materia": "8", "nombre": "Filosofia"}, {"id_materia": "9", "nombre": "Sociologia"}]';
-const materias = JSON.parse(jsonStringMaterias);
+const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+    const id = urlParams.get("id"); // agarra el id de la url
 
 /*Funciones */
 
@@ -13,6 +12,22 @@ domLabelOpcionesMaterias.addEventListener("click", () => {
     domDivOpcionesMaterias.classList.toggle("show");
 });
 
+function mostrarValoresActuales(profesor) {
+    domNombre.value = profesor.nombre;
+
+    domLabelOpcionesMaterias.innerHTML = "";
+
+    curso.materias.forEach(materia => {
+        const inputMateria = document.querySelector(`input[registername="${materia.nombre}"]`);
+
+        const p = document.createElement("p");
+        p.innerText = `${materia.nombre}`;
+        p.setAttribute('content', `${materia.nombre}`);
+        domLabelOpcionesMaterias.appendChild(p);
+
+        inputMateria.checked = true;
+    });
+}
 
 function listaMateriasOptions(materias) {
     materias.forEach(materia => {
@@ -38,9 +53,6 @@ function listaMateriasOptions(materias) {
 form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
-
-    const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
-    const id = urlParams.get("id"); // agarra el id de la url
 
     formData.append("id", id);
 
@@ -92,6 +104,13 @@ async function inicializar()
     listaMateriasOptions(materias);
 
     addEvenListenersCheckboxes(domLabelOpcionesMaterias);
+
+    respuesta = await fetch(`../../../backend/profesor/editar.php?id_profesor=${id}`);
+    respuesta = await respuesta.json();
+    const estadoActualProfesor = respuesta.value;
+
+    // cargar los valores 
+    mostrarValoresActuales(estadoActual);
 }
 
 inicializar();

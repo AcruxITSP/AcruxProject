@@ -38,6 +38,8 @@ async function inicializar()
     const usuarios = respuesta.value;
     usuarios.forEach(usuario => {
         uiCrearTarjetaFuncionario(usuario);
+
+        console.log({usuario});
     });
 }
 

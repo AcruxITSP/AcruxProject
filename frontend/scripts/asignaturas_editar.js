@@ -6,9 +6,8 @@ const domDivOpcionesCursos = document.getElementById("opcionesCursos");
 
 const form = document.getElementById("form-editar-asignatura");
 
-/* Array con datos de profesores. Ejemplo */
-const jsonStringProfesores = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
-const profesores = JSON.parse(jsonStringProfesores);
+const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
+const id = urlParams.get("id"); // agarra el id de la url
 
 /* Funciones */
 
@@ -62,8 +61,6 @@ function listaCursosOptions(cursos) {
 
 function mostrarValoresActuales(materia) {
     const inputNombre = document.querySelector("input[name='nombre']");
-    const labelSelectDocentes = document.querySelector("#label-opcionesProfesores");
-    const labelSelectCursos = document.querySelector("#select-cursos");
 
     inputNombre.value = `${materia.nombre}`;
 
@@ -98,9 +95,6 @@ function mostrarValoresActuales(materia) {
 form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
-
-    const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
-    const id = urlParams.get("id"); // agarra el id de la url
 
     formData.append("id_materia", id);
 

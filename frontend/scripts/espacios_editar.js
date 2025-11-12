@@ -7,8 +7,6 @@ const domUbicacion = document.getElementById("ubicacion");
 const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
 const id = urlParams.get("id"); // agarra el id de la url
 
-
-
 form.addEventListener("submit", async e => {
     e.preventDefault();
     const formData = new FormData(form);
