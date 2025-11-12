@@ -1,3 +1,5 @@
+<?php include '../util/sesiones.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +25,9 @@
                 
             </div>
             <div id="div-btn-agregar">
-                <a href="crear.php" id="btn-agregar">Registrar grupo</a>
+                <?php if (esAdscripto()): ?>
+                    <a href="crear.php" id="btn-agregar">Registrar grupo</a>
+                <?php endif; ?>
             </div>
         </main>
     </div>
@@ -42,8 +46,10 @@
                 <p class="nombre-curso" name="nombre-curso">Informática</p>
             </div>
             <div name="botones">
-                <button name="editar"><i class="bi bi-pencil"></i></button>
-                <button name="borrar"><i class="bi bi-trash-fill"></i></button>
+                <?php if (esAdscripto()): ?>
+                    <button name="editar"><i class="bi bi-pencil"></i></button>
+                    <button name="borrar"><i class="bi bi-trash-fill"></i></button>
+                <?php endif; ?>
             </div>
         </div>
     </template>

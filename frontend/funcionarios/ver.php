@@ -1,3 +1,5 @@
+<?php include '../util/sesiones.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,70 +25,13 @@
       </header>
 
       <div class="contenedor-funcionarios">
-        <div class="funcionario">
-          <div class="desc">
-            <p class="nombre-funcionario" name="nombre-funcionario">Facundo Rubil</p>
-            <p class="cargo" name="cargo">Docente</p>
-          </div>
-          <ul class="info-funcionario">
-            <li class="CI" name="CI">Cédula: 11111111</li>
-            <li class="EMail" name="EMail">Correo: facundo.rubil@itsp.edu.uy</li>
-          </ul>
-          <div class="botones">
-            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
-          </div>
-        </div>
-
-        <div class="funcionario">
-          <div class="desc">
-            <p class="nombre-funcionario" name="nombre-funcionario">Franco Povea</p>
-            <p class="cargo" name="cargo">Docente</p>
-          </div>
-          <ul class="info-funcionario">
-            <li class="CI" name="CI">Cédula: 22222222</li>
-            <li class="EMail" name="EMail">Correo: franco.povea@itsp.edu.uy</li>
-          </ul>
-          <div class="botones">
-            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
-          </div>
-        </div>
-
-        <div class="funcionario">
-          <div class="desc">
-            <p class="nombre-funcionario" name="nombre-funcionario">Lucía Fernández</p>
-            <p class="cargo" name="cargo">Personal de Limpieza</p>
-          </div>
-          <ul class="info-funcionario">
-            <li class="CI" name="CI">Cédula: 33333333</li>
-            <li class="EMail" name="EMail">Correo: lucia.fernandez@itsp.edu.uy</li>
-          </ul>
-          <div class="botones">
-            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
-          </div>
-        </div>
-
-        <div class="funcionario">
-          <div class="desc">
-            <p class="nombre-funcionario" name="nombre-funcionario">Carlos Gómez</p>
-            <p class="cargo" name="cargo">Personal de Limpieza</p>
-          </div>
-          <ul class="info-funcionario">
-            <li class="CI" name="CI">Cédula: 44444444</li>
-            <li class="EMail" name="EMail">Correo: carlos.gomez@itsp.edu.uy</li>
-          </ul>
-          <div class="botones">
-            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
-          </div>
-        </div>
       </div>
 
       <!-- BOTONES FLOTANTES -->
       <div class="botones-flotantes">
+        <?php if(esAdscripto()): ?>
         <button onclick="location.href='crear_docente.php'"><i class="bi bi-person-plus"></i> Crear funcionario</button>
+        <?php endif; ?>
       </div>
     </main>
   </div>
@@ -101,13 +46,17 @@
             <p class="nombre-funcionario" name="nombre-funcionario">Carlos Gómez</p>
             <p class="cargo" name="cargo">Personal de Limpieza</p>
           </div>
-          <ul class="info-funcionario">
-            <li class="CI" name="CI">Cédula: 44444444</li>
-            <li class="EMail" name="EMail">Correo: carlos.gomez@itsp.edu.uy</li>
-          </ul>
+          <?php if(estaLogeado()): ?>
+            <ul class="info-funcionario">
+              <li class="CI" name="CI">Cédula: 44444444</li>
+              <li class="EMail" name="EMail">Correo: carlos.gomez@itsp.edu.uy</li>
+            </ul>
+          <?php endif; ?>
           <div class="botones">
-            <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
+            <?php if(esAdscripto()): ?>
+              <button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button>
+              <button class="editar" title="Editar"><i class="bi bi-pencil"></i></button>
+            <?php endif; ?>
           </div>
         </div>
       </div>
