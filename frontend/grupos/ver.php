@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 
@@ -19,74 +20,7 @@
     <div id="main-content">
         <main id="main-grupos-ver">
             <div class="scrollable-list" id="lista-targetas-grupos">
-                <div name="targeta-grupo">
-                    <div name="encabezado">
-                        <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
-                    </div>
-                    <div name="info-grupo">
-                        <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
-
-                        <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso" name="nombre-curso">Informática</p>
-                    </div>
-                    <div name="botones">
-                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
-                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
-                    </div>
-                </div>
-                <div name="targeta-grupo">
-                    <div name="encabezado">
-                        <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
-                    </div>
-                    <div name="info-grupo">
-                        <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
-
-                        <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso" name="nombre-curso">Informática</p>
-                    </div>
-                    <div name="botones">
-                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
-                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
-                    </div>
-                </div>
-                <div name="targeta-grupo">
-                    <div name="encabezado">
-                        <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
-                    </div>
-                    <div name="info-grupo">
-                        <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
-
-                        <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso" name="nombre-curso">Informática</p>
-                    </div>
-                    <div name="botones">
-                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
-                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
-                    </div>
-                </div>
-                <div name="targeta-grupo">
-                    <div name="encabezado">
-                        <div class="marco-imagen"></div>
-                        <h1 class="nombre-grupo" name="nombre-grupo">3MD</h1>
-                    </div>
-                    <div name="info-grupo">
-                        <p><strong>Adscripto/a: </strong></p>
-                        <p class="nombre-adscripta" name="nombre-adscripta">Silvana Salvatierra</p>
-
-                        <p><strong>Curso: </strong></p>
-                        <p class="nombre-curso" name="nombre-curso">Informática</p>
-                    </div>
-                    <div name="botones">
-                        <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
-                        <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
-                    </div>
-                </div>
+                
             </div>
             <div id="div-btn-agregar">
                 <a href="crear.php" id="btn-agregar">Registrar grupo</a>
@@ -108,8 +42,8 @@
                 <p class="nombre-curso" name="nombre-curso">Informática</p>
             </div>
             <div name="botones">
-                <a href="editar.php"><button name="editar"><i class="bi bi-pencil"></i></button></a>
-                <a><button name="borrar"><i class="bi bi-trash-fill"></i></button></a>
+                <button name="editar"><i class="bi bi-pencil"></i></button>
+                <button name="borrar"><i class="bi bi-trash-fill"></i></button>
             </div>
         </div>
     </template>
