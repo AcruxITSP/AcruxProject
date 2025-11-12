@@ -1,8 +1,10 @@
 const domInputSelectCurso = document.getElementById("select-curso");
 const domInputSelectAdscrito = document.getElementById("select-adscrito");
 
+const form = document.getElementById("form-crear-grupo");
+
 /* Array con datos de adscritos. Ejemplo */
-const jsonStringAdscritos = '[{"id_profesor": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_profesor": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_profesor": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
+const jsonStringAdscritos = '[{"id_adscrito": "1", "nombre": "Juan", "apellido": "Carlos"}, {"id_adscrito": "2", "nombre": "Pancho", "apellido": "Gomez"}, {"id_adscrito": "3", "nombre": "Fabian", "apellido": "Sosa"}]';
 const adscritos = JSON.parse(jsonStringAdscritos);
 
 /* Array con cursos. Ejemplo */
@@ -33,3 +35,41 @@ function IListCursosOptions(cursos){
 
 IListAdscritosOptions(adscritos);
 IListCursosOptions(cursos);
+
+/* Formularrio Enviado */
+
+form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    let respuesta = await fetch(`../../backend/grupos/crear.php`, {method:"POST", body: formData});
+    respuesta = await respuesta.json();
+
+    if(respuesta.ok)
+    {
+        await Swal.fire({
+            title: "Grupo Creado",
+            text: `El grupo ha sido creada exitosamente`,
+            icon: "success"
+        });
+    }
+    else
+    {
+        switch(respuesta.value)
+        {
+            case "NECESITA_LOGIN":
+                Swal.fire({
+                    title: "Login Requerido",
+                    text: `Necesitas iniciar sesión para crear un grupo.`,
+                    icon: "error"
+                });
+                break;
+            default:
+                Swal.fire({
+                    title: "Error Desconocido",
+                    text: `Un error desconocido ha ocurrido`,
+                    icon: "error"
+                });
+        }
+    }
+});

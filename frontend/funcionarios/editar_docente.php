@@ -19,7 +19,7 @@
 
     <div id="main-content">
         <main id="main-crear-docente">
-            <form id="form-crear-docente">
+            <form id="form-editar-docente" class="formulario-basico">
                 <h1>Editar Docente</h1>
 
                 <div id="grid">
