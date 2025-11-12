@@ -14,7 +14,7 @@ domLabelOpcionesMaterias.addEventListener("click", () => {
 });
 
 
-function IListMateriasOptions(materias) {
+function listaMateriasOptions(materias) {
     materias.forEach(materia => {
         const label = document.createElement("label");
         const input = document.createElement("input");
@@ -32,7 +32,7 @@ function IListMateriasOptions(materias) {
     });
 }
 
-IListMateriasOptions(materias);
+listaMateriasOptions(materias);
 
 /* Formulario enviado */
 

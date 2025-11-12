@@ -34,7 +34,7 @@
           </ul>
           <div class="botones">
             <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
+            <a href="editar_docente.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
 
@@ -49,7 +49,7 @@
           </ul>
           <div class="botones">
             <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
+            <a href="editar_docente.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
 
@@ -64,7 +64,7 @@
           </ul>
           <div class="botones">
             <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
+            <a href="editar_docente.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
           </ul>
           <div class="botones">
             <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
+            <a href="editar_docente.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
           </ul>
           <div class="botones">
             <a><button class="borrar" title="Borrar"><i class="bi bi-trash-fill"></i></button></a>
-            <a href="editar.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
+            <a href="editar_docente.php"><button class="editar" title="Editar"><i class="bi bi-pencil"></i></button></a>
           </div>
         </div>
       </div>
