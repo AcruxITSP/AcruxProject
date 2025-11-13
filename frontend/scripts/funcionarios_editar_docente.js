@@ -4,7 +4,7 @@ const domDivOpcionesMaterias = document.getElementById("opcionesMaterias");
 const form = document.getElementById("form-editar-docente");
 
 const urlParams = new URLSearchParams(window.location.search); //trae los parametros de la url
-    const id = urlParams.get("id"); // agarra el id de la url
+const id = urlParams.get("id"); // agarra el id de la url
 
 /*Funciones */
 
@@ -56,6 +56,19 @@ form.addEventListener("submit", async e => {
 
     formData.append("id", id);
 
+
+    Swal.fire({
+        title: "Pagina en proceso",
+        text: `La pagina aun no funciona`,
+        icon: "error"
+    });
+
+    return;
+
+
+
+    /* aun no hay un endpoint para editar la informacion de un docente */
+
     let respuesta = await fetch(`../../backend/usuarios/editar_profesor.php`, { method: "POST", body: formData });
     respuesta = await respuesta.json();
 
@@ -94,23 +107,15 @@ form.addEventListener("submit", async e => {
     }
 });
 
-async function inicializar()
-{
-    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, {method:"GET"});
+async function inicializar() {
+    let respuesta = await fetch(`../../../backend/asignaturas/ver.php`, { method: "GET" });
     respuesta = await respuesta.json();
 
     const materias = respuesta.value;
-    
+
     listaMateriasOptions(materias);
 
     addEvenListenersCheckboxes(domLabelOpcionesMaterias);
-
-    respuesta = await fetch(`../../../backend/profesor/editar.php?id_profesor=${id}`);
-    respuesta = await respuesta.json();
-    const estadoActualProfesor = respuesta.value;
-
-    // cargar los valores 
-    mostrarValoresActuales(estadoActual);
 }
 
 inicializar();
