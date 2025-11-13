@@ -1134,9 +1134,33 @@ select:focus {
     opacity: 0.9;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
     #modal-agregar-hora {
         margin-left: 240px;
+    }
+
+    /* Each hour block */
+    #body-horarios-grupos [name="div-hora"] {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--gris2);
+        padding: 10px;
+        border-radius: 8px;
+        background-color: var(--blanco);
+        transition: box-shadow 0.2s ease;
+    }
+
+    [name="div-hora"] button[name="button-editar"] {
+        width: 70%;
+    }
+
+    [name="div-botones"] {
+        width: 20%;
+        height: 4rem;
+        min-width: 5rem;
     }
 }
 

@@ -57,6 +57,13 @@ form.addEventListener("submit", async e => {
                     icon: "error"
                 });
                 break;
+            case "NECESITA_ID_MATERIAS":
+                Swal.fire({
+                    title: "Debe Especificar Materias",
+                    text: `Necesitas especificar las materias.`,
+                    icon: "error"
+                });
+                break;
             default:
                 Swal.fire({
                     title: "Error Desconocido",
