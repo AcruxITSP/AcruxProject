@@ -13,15 +13,12 @@ $root = BASE_PATH;
     <a href="<?= $root ?>/general/index.php"><i class="fas fa-home"></i> Inicio</a>
     <a href="<?= $root ?>/general/menuRecursos.php"><i class="fas fa-book"></i> Dashboard</a>
     <a href="<?= $root ?>/general/contacto.php"><i class="fas fa-envelope"></i> Contacto</a>
-
-    <!-- <a href="mySchedule.php"><i class="fas fa-calendar-days"></i> Mi horario</a> -->
-    <!-- <a href="#"><i class="fas fa-list"></i> Parte Diario</a> -->
   </nav>
 </aside>
 
 <!-- Botón hamburguesa -->
 <button class="hamburger" onclick="toggleSidebar()">
-  <img src="<?= $root ?>/img/icons8-menú-48.png" alt="menu" class="hamburger-icon">
+  <img src="<?= $root ?>/img/icons-menuHamburguesa.png" alt="menu" class="hamburger-icon">
 </button>
 
 <!-- Overlay -->
