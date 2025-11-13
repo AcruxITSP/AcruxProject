@@ -338,11 +338,13 @@ ALTER TABLE PeriodoReservaRecurso
 INSERT INTO Usuario (id_usuario, ci, nombre, apellido, contrasena, email) VALUES
 (1, "11111111", "Profesor", "A", "admin", "adminprofe@gmail.com"),
 (2, "22222222", "ADMIN", "ADS", "admin", "adminads@gmail.com"),
-(3, "33333333", "Profesor", "B", "admin", "adminprofe2@gmail.com");
+(3, "33333333", "Juan", "Gomez", "admin", "juangomez@gmail.com"),
+(4, "44444444", "Esteban", "Salvatierra", "admin", "estebansalvatierra@gmail.com"),
+(5, "55555555", "Miguel", "Hernandez", "admin", "miguelhernandez@gmail.com");
 
-INSERT INTO Profesor (id_usuario) VALUES (1), (3);
+INSERT INTO Profesor (id_usuario) VALUES (1), (3), (4);
 
-INSERT INTO Adscrito (id_usuario) VALUES (2);
+INSERT INTO Adscrito (id_usuario) VALUES (2), (5);
 
 INSERT INTO GeneracionPeriodos(entrada, salida, duracion_clase_minutos, duracion_recreo_minutos)
 VALUES ('07:00:00', '23:59:00', 45, 5);
@@ -356,16 +358,28 @@ INSERT INTO Periodo (id_periodo, numero, entrada, salida) VALUES
 
 INSERT INTO Recurso (`id_recurso`, `tipo`) VALUES 
 (1, 'HDMI'),
-(2, 'Alargue');
+(2, 'Alargue'),
+(3, 'Proyector'),
+(4, 'Televisón'),
+(5, 'AC'),
+(6, 'Escoba');
 
 INSERT INTO RecursoExterno (`cantidad_total`, `id_recurso_externo`, `id_recurso`) VALUES 
 ('5', 1, '1'),
-('8', 2, '2');
+('8', 2, '2'),
+('10', 3, '6');
+
+INSERT INTO RecursoInterno (`id_recurso_interno`, `id_recurso`) VALUES 
+(1, '3'),
+(2, '4'),
+(3, '5');
+
 
 INSERT INTO ReservaRecurso (id_reserva, id_usuario, id_recurso_externo, fecha, cantidad, hora_final) VALUES
 (1, 1, 1, '2025-10-11', 3, '11:05:00'),
 (2, 1, 1, '2025-10-11', 2, '09:25:00'),
 (3, 2, 1, '2025-10-11', 1, '11:05:00');
+
 INSERT INTO PeriodoReservaRecurso (id_reserva, id_periodo) VALUES
 (1, 1),
 (1, 3),
@@ -374,8 +388,16 @@ INSERT INTO PeriodoReservaRecurso (id_reserva, id_periodo) VALUES
 (3, 5);
 
 INSERT INTO Espacio (id_espacio, tipo, numero, capacidad, ubicacion) VALUES
-(1, "Salón", 5, 30, 'Planta baja'),
-(2, "Aula", 1, 20, 'Segundo piso');
+(1, "Salón", 1, 30, 'Planta baja'),
+(2, "Salón", 2, 30, 'Primer piso'),
+(3, "Aula", 1, 30, 'Planta baja'),
+(4, "Aula", 2, 25, 'Primer piso'),
+(5, "Videoconferencias", 1, 35, 'Segundo piso');
+
+INSERT INTO Espacio_RecursoInterno (`id_recurso_interno`, `id_espacio`, `cantidad`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 5, 2);
 
 INSERT INTO Grupo (id_adscrito, grado, nombre) VALUES
 (1, 3, 'MD'),
@@ -387,8 +409,9 @@ INSERT INTO Materia (id_materia, nombre) VALUES
 (3, "Inglés");
 
 INSERT INTO Curso (id_curso, nombre) VALUE
-(1, "Informática Bilingue Web"),
-(2, "Informática Web");
+(1, "Informática Bilingüe Web"),
+(2, "Informática Web"),
+(3, "Diseño Gráfico");
 
 INSERT INTO Curso_Materia (id_curso, id_materia) VALUE
 (1, 1),
@@ -449,5 +472,42 @@ INSERT INTO Modulo (id_modulo, id_hora, id_clase, id_espacio, id_grupo) VALUES
 (3, 4, 1, 1, 1), -- Lunes 4ta - PROFE: Programacion - Salon 5 - 3MD,
 (4, 5, 3, 1, 1), -- Lunes 5ta - PROFE: Ingles - Salon 5 - 3MD
 
-(5, 8, 1, 1, 1), -- Martes 4ta - PROFE: Programacion - Salon 5 - 3MD,
-(6, 9, 3, 1, 1); -- Martes 5ta - PROFE: Ingles - Salon 5 - 3MD
+(5, 2, 2, 2, 1), -- Martes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(6, 3, 2, 2, 1), -- Martes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(7, 4, 1, 1, 1), -- Martes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(8, 5, 3, 1, 1), -- Martes 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(9, 2, 2, 2, 1), -- Miércoles 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(10, 3, 2, 2, 1), -- Miércoles 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(11, 4, 1, 1, 1), -- Miércoles 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(12, 5, 3, 1, 1), -- Miércoles 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(13, 2, 2, 2, 1), -- Jueves 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(14, 3, 2, 2, 1), -- Jueves 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(15, 4, 1, 1, 1), -- Jueves 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(16, 5, 3, 1, 1), -- Jueves 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(17, 2, 2, 2, 1), -- Viernes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(18, 3, 2, 2, 1), -- Viernes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(19, 4, 1, 1, 1), -- Viernes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(20, 5, 3, 1, 1), -- Viernes 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+
+(21, 2, 2, 2, 2), -- Lunes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(22, 3, 2, 2, 2), -- Lunes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+
+(23, 2, 2, 2, 2), -- Martes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(24, 3, 2, 2, 2), -- Martes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(25, 4, 1, 1, 2), -- Martes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+
+(26, 2, 2, 2, 2), -- Miércoles 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(27, 5, 3, 1, 2), -- Miércoles 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(28, 2, 2, 2, 2), -- Jueves 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(29, 3, 2, 2, 2), -- Jueves 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(30, 4, 1, 1, 2), -- Jueves 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(31, 5, 3, 1, 2), -- Jueves 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(32, 2, 2, 2, 2), -- Viernes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(33, 3, 2, 2, 2), -- Viernes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(34, 4, 1, 1, 2); -- Viernes 4ta - PROFE: Programacion - Salon 5 - 3MD,
