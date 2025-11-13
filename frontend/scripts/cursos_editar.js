@@ -31,6 +31,23 @@ function listaMateriasOptions(materias) {
     });
 }
 
+function mostrarValoresActuales(curso) {
+    domNombre.value = curso.nombre;
+
+    domLabelOpcionesMaterias.innerHTML = "";
+
+    curso.materias.forEach(materia => {
+        const inputMateria = document.querySelector(`input[registername="${materia.nombre}"]`);
+
+        const p = document.createElement("p");
+        p.innerText = `${materia.nombre}`;
+        p.setAttribute('content', `${materia.nombre}`);
+        domLabelOpcionesMaterias.appendChild(p);
+
+        inputMateria.checked = true;
+    });
+}
+
 /* Formulario enviado */
 
 form.addEventListener("submit", async e => {
@@ -81,14 +98,13 @@ async function inicializar()
 {
     respuesta = await fetch(`../../../backend/cursos/editar.php?id_curso=${id}`);
     respuesta = await respuesta.json();
-    const estadoCursoActual = respuesta.value;
+    const estadoActualCurso = respuesta.value;
 
-    listaMateriasOptions(estadoCursoActual.materias);
+    listaMateriasOptions(estadoActualCurso.materias);
     addEvenListenersCheckboxes(domLabelOpcionesMaterias);
 
     // cargar los valores 
-    domNombre.value = estadoCursoActual.nombre;
-    
+    mostrarValoresActuales(estadoActualCurso);
 }
 
 inicializar();
