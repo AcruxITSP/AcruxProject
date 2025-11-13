@@ -1,6 +1,5 @@
 <?php
 include_once "rutaBase.php";
-
 $root = BASE_PATH;
 ?>
 
