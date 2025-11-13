@@ -1,5 +1,7 @@
 <?php
-$root = "/frontend";
+include_once "rutaBase.php";
+
+$root = BASE_PATH;
 ?>
 
 <!-- Sidebar -->
