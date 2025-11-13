@@ -18,7 +18,7 @@ function uiCrearTarjetaFuncionario(usuario){
     if(domEMail) domEMail.innerText = `E-Mail: ${usuario.email}`;
 
     if(domEditar) domEditar.onclick = () => {
-        if(usuario.cargo == "Profesor") editarDocente(usuario.id_docente);
+        if(usuario.cargo == "Profesor") editarDocente(usuario.id_usuario);
         else editarAdscripto(usuario.id_adscripto);
     };
     

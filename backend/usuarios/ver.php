@@ -41,6 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     while($row = $result->fetch_assoc())
     {
         $usuario = [
+            "id_usuario" => $row['id_usuario'],
             "nombre" => $row['nombre'],
             "apellido" => $row['apellido'],
             "cargo" => $row['cargo']
