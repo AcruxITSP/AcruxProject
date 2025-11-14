@@ -110,7 +110,7 @@
                         <i class="bi bi-arrow-left"></i>
                     </button>
 
-                    <button class="btn" id="btn-agregar-fila"><b>Agregar Fila (template)</b></button>
+                    
                 </div>
 
             </section>

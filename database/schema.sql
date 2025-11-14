@@ -444,10 +444,47 @@ INSERT INTO Clase (id_clase, id_profesor, id_materia) VALUES
 (3, 2, 3); -- PROFE2: Ingles
 
 INSERT INTO Modulo (id_modulo, id_hora, id_clase, id_espacio, id_grupo) VALUES
-(1, 2, 2, 2, 1), -- Lunes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
-(2, 3, 2, 2, 1), -- Lunes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
-(3, 4, 1, 1, 1), -- Lunes 4ta - PROFE: Programacion - Salon 5 - 3MD,
-(4, 5, 3, 1, 1), -- Lunes 5ta - PROFE: Ingles - Salon 5 - 3MD
+(1, 1, 3, 1, 1), -- Lunes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(2, 2, 2, 2, 1), -- Lunes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(3, 3, 1, 2, 1), -- Lunes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(4, 4, 3, 1, 1), -- Lunes 5ta - PROFE: Ingles - Salon 5 - 3MD
 
-(5, 8, 1, 1, 1), -- Martes 4ta - PROFE: Programacion - Salon 5 - 3MD,
-(6, 9, 3, 1, 1); -- Martes 5ta - PROFE: Ingles - Salon 5 - 3MD
+(5, 6, 2, 1, 1), -- Martes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(6, 7, 2, 1, 1), -- Martes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(7, 8, 1, 1, 1), -- Martes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(8, 9, 3, 1, 1), -- Martes 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(9, 11, 1, 1, 1), -- Miércoles 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(10, 12, 1, 2, 1), -- Miércoles 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(11, 13, 2, 2, 1), -- Miércoles 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(12, 14, 2, 2, 1), -- Miércoles 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(13, 16, 3, 1, 1), -- Jueves 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(14, 17, 2, 1, 1), -- Jueves 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(15, 18, 1, 1, 1), -- Jueves 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(16, 19, 3, 1, 1), -- Jueves 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(17, 21, 3, 2, 1), -- Viernes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(18, 22, 2, 2, 1), -- Viernes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(19, 23, 2, 2, 1), -- Viernes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(20, 24, 1, 2, 1), -- Viernes 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+
+(21, 1, 1, 1, 2), -- Lunes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(22, 2, 1, 2, 2), -- Lunes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+
+(23, 6, 2, 2, 2), -- Martes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(24, 7, 2, 2, 2), -- Martes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(25, 8, 2, 2, 2), -- Martes 4ta - PROFE: Programacion - Salon 5 - 3MD,
+
+(26, 11, 3, 1, 2), -- Miércoles 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(27, 12, 1, 1, 2), -- Miércoles 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(28, 16, 2, 2, 2), -- Jueves 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(29, 17, 3, 2, 2), -- Jueves 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(30, 18, 3, 1, 2), -- Jueves 4ta - PROFE: Programacion - Salon 5 - 3MD,
+(31, 19, 3, 2, 2), -- Jueves 5ta - PROFE: Ingles - Salon 5 - 3MD
+
+(32, 21, 1, 1, 2), -- Viernes 2da - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(33, 22, 2, 2, 2), -- Viernes 3ra - PROFE: Ciberseguridad - Aula 1 - 3MD,
+(34, 23, 1, 1, 2); -- Viernes 4ta - PROFE: Programacion - Salon 5 - 3MD,
